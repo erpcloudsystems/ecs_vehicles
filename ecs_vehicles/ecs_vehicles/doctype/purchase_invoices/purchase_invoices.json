@@ -43,16 +43,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Job Order",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
    "fieldname": "section_break_3",
    "fieldtype": "Section Break"
   },
