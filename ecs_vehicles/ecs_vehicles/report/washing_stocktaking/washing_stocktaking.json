@@ -1,0 +1,26 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-01-18 18:54:10.431450",
+ "disable_prepared_report": 1,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2023-01-18 18:54:10.431450",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Washing Stocktaking",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Voucher",
+ "report_name": "Washing Stocktaking",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: {month} {year}",
+ "creation": "2022-09-28 13:57:01.888556",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "month",
+  "year",
+  "column_break_3",
+  "code",
+  "disabled",
+  "section_break_5",
+  "receipt_table"
+ ],
+ "fields": [
+  {
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0634\u0647\u0631",
+   "options": "\n\u064a\u0646\u0627\u064a\u0631\n\u0641\u0628\u0631\u0627\u064a\u0631\n\u0645\u0627\u0631\u0633\n\u0627\u0628\u0631\u064a\u0644\n\u0645\u0627\u064a\u0648\n\u064a\u0648\u0646\u064a\u0648\n\u064a\u0648\u0644\u064a\u0648\n\u0623\u063a\u0633\u0637\u0633\n\u0633\u0628\u062a\u0645\u0628\u0631\n\u0623\u0643\u062a\u0648\u0628\u0631\n\u0646\u0648\u0641\u0645\u0628\u0631\n\u062f\u064a\u0633\u0645\u0628\u0631",
+   "read_only_depends_on": "eval:!(doc.__islocal)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0639\u0627\u0645",
+   "options": "Vehicle Model",
+   "read_only_depends_on": "eval:!(doc.__islocal)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "receipt_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0625\u0630\u0648\u0646 \u0627\u0644\u0625\u0636\u0627\u0641\u0629",
+   "no_copy": 1,
+   "options": "Receipt Voucher Table",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "code",
+   "fieldtype": "Int",
+   "label": "\u0627\u0644\u0643\u0648\u062f"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u062a\u0639\u0637\u064a\u0644"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-01-12 14:33:26.736301",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Release Date",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

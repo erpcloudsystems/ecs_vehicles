@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:engine_style",
+ "creation": "2022-06-08 10:20:59.589378",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code",
+  "engine_style"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "engine_style",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0637\u0631\u0627\u0632 \u0627\u0644\u0645\u062d\u0631\u0643",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "code",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0643\u0648\u062f \u0637\u0631\u0627\u0632 \u0627\u0644\u0645\u062d\u0631\u0643",
+   "no_copy": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-11-01 15:39:24.122671",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Engine Style",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "engine_style",
+ "track_changes": 1,
+ "track_seen": 1
+}

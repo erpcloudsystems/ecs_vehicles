@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-10-29 00:30:19.823509",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "main_name",
+  "signature_type",
+  "sign",
+  "signature_photo",
+  "column_break_5",
+  "is_default"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "\u0627\u0644\u062a\u0633\u0644\u0633\u0644",
+   "options": "SIGN-"
+  },
+  {
+   "fieldname": "main_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0644\u0648\u0627\u0621"
+  },
+  {
+   "depends_on": "eval:doc.signature_type==\"\u062a\u0648\u0642\u064a\u0639\"",
+   "fieldname": "sign",
+   "fieldtype": "Signature",
+   "label": "\u0627\u0644\u062a\u0648\u0642\u064a\u0639",
+   "mandatory_depends_on": "eval:doc.signature_type==\"\u062a\u0648\u0642\u064a\u0639\""
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "ignore_user_permissions": 1,
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u062a\u0648\u0642\u064a\u0639 \u0627\u0644\u062d\u0627\u0644\u064a"
+  },
+  {
+   "fieldname": "signature_type",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u0648\u0642\u064a\u0639",
+   "options": "\n\u0635\u0648\u0631\u0629\n\u062a\u0648\u0642\u064a\u0639",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.signature_type==\"\u0635\u0648\u0631\u0629\"",
+   "fieldname": "signature_photo",
+   "fieldtype": "Attach",
+   "label": "\u0625\u0636\u0627\u0641\u0629 \u0635\u0648\u0631\u0629 \u0627\u0644\u062a\u0648\u0642\u064a\u0639",
+   "mandatory_depends_on": "eval:doc.signature_type==\"\u0635\u0648\u0631\u0629\""
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-01-29 16:30:44.223094",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "SIgnature",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

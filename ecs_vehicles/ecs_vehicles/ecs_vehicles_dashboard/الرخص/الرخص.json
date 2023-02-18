@@ -1,0 +1,38 @@
+{
+ "cards": [
+  {
+   "card": "\u0639\u062f\u062f \u0627\u0644\u0631\u062e\u0635 \u0627\u0644\u0645\u0633\u062a\u062e\u0631\u062c\u0629"
+  },
+  {
+   "card": "\u0639\u062f\u062f \u0627\u0644\u0631\u062e\u0635 \u0627\u0644\u0633\u0627\u0631\u064a\u0629"
+  },
+  {
+   "card": "\u0639\u062f\u062f \u0627\u0644\u0631\u062e\u0635 \u0627\u0644\u0645\u0646\u062a\u0647\u064a\u0629"
+  },
+  {
+   "card": "\u0639\u062f\u062f \u0627\u0644\u0631\u062e\u0635 \u0627\u0644\u062a\u0627\u0644\u0641\u0629"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "\u0627\u0644\u0631\u062e\u0635 \u0627\u0644\u0645\u0633\u062a\u062e\u0631\u062c\u0629 \u0644\u0643\u0644 \u062c\u0647\u0629",
+   "width": "Full"
+  },
+  {
+   "chart": "\u0627\u0644\u0631\u062e\u0635 \u0627\u0644\u0645\u0633\u062a\u062e\u0631\u062c\u0629 \u0644\u0643\u0644 \u0645\u0633\u062a\u062e\u062f\u0645",
+   "width": "Full"
+  }
+ ],
+ "creation": "2023-01-29 18:38:49.868922",
+ "dashboard_name": "\u0627\u0644\u0631\u062e\u0635",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 1,
+ "is_standard": 1,
+ "modified": "2023-01-30 13:00:21.278724",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "\u0627\u0644\u0631\u062e\u0635",
+ "owner": "Administrator"
+}

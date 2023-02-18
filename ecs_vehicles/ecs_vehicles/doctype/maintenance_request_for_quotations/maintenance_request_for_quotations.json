@@ -1,0 +1,294 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-11-01 01:15:08.870492",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "create_presentation_note_out",
+  "naming_series",
+  "amended_from",
+  "section_break_3",
+  "fiscal_year",
+  "date",
+  "column_break_5",
+  "presentation_note_out",
+  "maintenance_order",
+  "maintenance_no",
+  "section_break_8",
+  "supplier",
+  "column_break_14",
+  "total",
+  "section_break_15",
+  "supplier_table",
+  "section_break_7",
+  "vehicles",
+  "vehicle_no",
+  "vehicle_brand",
+  "group_shape",
+  "column_break_27",
+  "vehicle_model",
+  "chassis_no",
+  "entity_name",
+  "possession_type",
+  "column_break_32",
+  "vehicle_shape",
+  "vehicle_style",
+  "maintenance_entity",
+  "fuel_type",
+  "processing_type",
+  "section_break_35",
+  "request_for_quotations_item"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "naming_series",
+   "options": "REQ-QU-",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Request for Quotations",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u062a\u0627\u0631\u064a\u062e"
+  },
+  {
+   "fieldname": "maintenance_order",
+   "fieldtype": "Link",
+   "label": "\u0623\u0630\u0646 \u0627\u0644\u0627\u0635\u0644\u0627\u062d",
+   "options": "Maintenance Order"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u0645\u0642\u0628\u0648\u0644",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "request_for_quotations_item",
+   "fieldtype": "Table",
+   "options": "Request for Quotations Item"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "\u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Request for Quotations",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0633\u0646\u0629 \u0627\u0644\u0645\u0627\u0644\u064a\u0629",
+   "options": "Fiscal Year"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.docstatus ==1 && !doc.presentation_note_out",
+   "fieldname": "create_presentation_note_out",
+   "fieldtype": "Button",
+   "label": "\u0627\u0646\u0634\u0627\u0621 \u0645\u0630\u0643\u0631\u0629 \u0639\u0631\u0636"
+  },
+  {
+   "fieldname": "presentation_note_out",
+   "fieldtype": "Link",
+   "label": "\u0645\u0630\u0643\u0631\u0647 \u0627\u0644\u0639\u0631\u0636",
+   "options": "Presentation Note Out",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "maintenance_order.vehicles",
+   "fieldname": "vehicles",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicles"
+  },
+  {
+   "fetch_from": "maintenance_order.vehicle_no",
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629"
+  },
+  {
+   "fetch_from": "maintenance_order.vehicle_brand",
+   "fieldname": "vehicle_brand",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "options": "Vehicle Brand"
+  },
+  {
+   "fetch_from": "maintenance_order.group_shape",
+   "fieldname": "group_shape",
+   "fieldtype": "Link",
+   "label": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0634\u0643\u0644",
+   "options": "Vehicle Group Shape"
+  },
+  {
+   "fieldname": "column_break_27",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "maintenance_order.vehicle_model",
+   "fieldname": "vehicle_model",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "options": "Vehicle Model"
+  },
+  {
+   "fetch_from": "maintenance_order.chassis_no",
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647"
+  },
+  {
+   "fetch_from": "maintenance_order.entity_name",
+   "fieldname": "entity_name",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u062c\u0647\u0647 \u0627\u0644\u062a\u0627\u0628\u0639 \u0644\u0647\u0627",
+   "options": "Entity"
+  },
+  {
+   "fetch_from": "maintenance_order.possession_type",
+   "fieldname": "possession_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "options": "Possession Type"
+  },
+  {
+   "fieldname": "column_break_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "maintenance_order.vehicle_shape",
+   "fieldname": "vehicle_shape",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0634\u0643\u0644",
+   "options": "Vehicle Shape"
+  },
+  {
+   "fetch_from": "maintenance_order.vehicle_style",
+   "fieldname": "vehicle_style",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "options": "Vehicle Style"
+  },
+  {
+   "fieldname": "section_break_35",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "maintenance_order.maintenance_entity",
+   "fieldname": "maintenance_entity",
+   "fieldtype": "Link",
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
+   "options": "Maintenance Entity"
+  },
+  {
+   "fetch_from": "maintenance_order.fuel_type",
+   "fieldname": "fuel_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "options": "Fuel Type"
+  },
+  {
+   "fetch_from": "maintenance_order.processing_type",
+   "fieldname": "processing_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "options": "Vehicle Processing Type"
+  },
+  {
+   "fieldname": "supplier_table",
+   "fieldtype": "Table",
+   "label": "\u062c\u062f\u0648\u0644 \u0627\u0644\u0645\u0648\u0631\u062f\u064a\u0646",
+   "options": "Request for Quotations Supplier Table"
+  },
+  {
+   "fetch_from": "maintenance_order.ezn_no",
+   "fieldname": "maintenance_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0625\u0630\u0646 \u0627\u0644\u0625\u0635\u0644\u0627\u062d",
+   "no_copy": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-13 18:19:39.349960",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Maintenance Request for Quotations",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

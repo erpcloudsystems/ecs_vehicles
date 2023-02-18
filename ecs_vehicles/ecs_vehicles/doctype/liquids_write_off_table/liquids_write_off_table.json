@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2022-09-29 18:02:33.030130",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "liquid_voucher",
+  "remaining_qty",
+  "uom"
+ ],
+ "fields": [
+  {
+   "columns": 6,
+   "fieldname": "liquid_voucher",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0633\u0627\u0626\u0644",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "remaining_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0645\u062a\u0628\u0642\u064a"
+  },
+  {
+   "columns": 2,
+   "default": "\u0628\u0648\u0646",
+   "fieldname": "uom",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0648\u062d\u062f\u0629",
+   "mandatory_depends_on": "eval:doc.docstatus == 0",
+   "options": "\n\u0628\u0648\u0646\n\u062f\u0641\u062a\u0631"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-09 15:58:51.334596",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Liquids Write Off Table",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

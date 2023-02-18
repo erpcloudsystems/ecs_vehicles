@@ -1,0 +1,124 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:entity_name",
+ "creation": "2022-06-08 15:53:33.404733",
+ "default_view": "Tree",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "entity_name",
+  "code",
+  "note",
+  "maintenance_entity",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_entity"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "entity_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u062c\u0647\u0629",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "code",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0643\u0648\u062f \u0627\u0644\u062c\u0647\u0629",
+   "no_copy": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "maintenance_entity",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
+   "options": "Maintenance Entity"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Entity"
+  },
+  {
+   "fieldname": "parent_entity",
+   "fieldtype": "Link",
+   "label": "Parent Entity",
+   "options": "Entity"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2023-02-07 12:07:05.958232",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Entity",
+ "naming_rule": "By fieldname",
+ "nsm_parent_field": "parent_entity",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "note",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "entity_name",
+ "track_changes": 1,
+ "track_seen": 1
+}

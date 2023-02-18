@@ -1,0 +1,302 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-10-17 15:18:22.537339",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "invoice_number",
+  "invoice_date",
+  "column_break_4",
+  "sales_info_payment",
+  "section_break_2",
+  "auction_info",
+  "column_break_3",
+  "auction_date",
+  "column_break_10",
+  "auction_entry_insurance",
+  "section_break_6",
+  "customer",
+  "customer_name",
+  "registration_id",
+  "tax_id",
+  "tax_code",
+  "column_break_12",
+  "customer_primary_address",
+  "primary_address",
+  "section_break_5",
+  "auction_sales_slips",
+  "section_break_11",
+  "total_price",
+  "indication",
+  "business_profits",
+  "tax_amount",
+  "column_break_20",
+  "total_amount",
+  "total_paid_amount",
+  "outstanding_amount",
+  "in_words",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "INV-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "\u0627\u0644\u062a\u0633\u0645\u064a\u0629 \u0627\u0644\u062a\u0633\u0644\u0633\u0644\u064a\u0629",
+   "options": "INV-"
+  },
+  {
+   "fieldname": "sales_info_payment",
+   "fieldtype": "Link",
+   "label": "\u0643\u0648\u062f \u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0628\u064a\u0639",
+   "options": "Sales Info Payment"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0632\u0627\u062f"
+  },
+  {
+   "fetch_from": "sales_info_payment.auction_info",
+   "fetch_if_empty": 1,
+   "fieldname": "auction_info",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0645\u0632\u0627\u062f",
+   "options": "Auction Info",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "auction_info.auction_date",
+   "fieldname": "auction_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0645\u0632\u0627\u062f",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fetch_from": "auction_info.auction_entry_insurance",
+   "fieldname": "auction_entry_insurance",
+   "fieldtype": "Currency",
+   "label": "\u062a\u0623\u0645\u064a\u0646 \u062f\u062e\u0648\u0644 \u0627\u0644\u0645\u0632\u0627\u062f",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0634\u062a\u0631\u064a"
+  },
+  {
+   "fetch_from": "sales_info_payment.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0645\u0634\u062a\u0631\u064a",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.registration_id",
+   "fieldname": "registration_id",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0633\u062c\u0644 \u0627\u0644\u062a\u062c\u0627\u0631\u064a",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.tax_id",
+   "fieldname": "tax_id",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0628\u0637\u0627\u0642\u0629 \u0627\u0644\u0636\u0631\u064a\u0628\u064a\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.tax_code",
+   "fieldname": "tax_code",
+   "fieldtype": "Data",
+   "label": "\u0643\u0648\u062f \u0645\u0623\u0645\u0648\u0631\u064a\u0629 \u0627\u0644\u0636\u0631\u0627\u0626\u0628",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer.customer_primary_address",
+   "fieldname": "customer_primary_address",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0639\u0646\u0648\u0627\u0646",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.primary_address",
+   "fieldname": "primary_address",
+   "fieldtype": "Text",
+   "label": "\u0627\u0644\u0639\u0646\u0648\u0627\u0646",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0644\u0648\u0637\u0627\u062a \u0627\u0644\u0645\u0628\u0627\u0639\u0629"
+  },
+  {
+   "fieldname": "auction_sales_slips",
+   "fieldtype": "Table",
+   "label": "\u0627\u0644\u0644\u0648\u0637\u0627\u062a \u0627\u0644\u0645\u0628\u0627\u0639\u0629",
+   "options": "Scrapped Vehicles Table"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0625\u062c\u0645\u0627\u0644\u064a\u0627\u062a"
+  },
+  {
+   "fetch_from": "sales_info_payment.total_price",
+   "fieldname": "total_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "\u0625\u062c\u0645\u0627\u0644\u064a \u0633\u0639\u0631 \u0627\u0644\u0628\u064a\u0639",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "sales_info_payment.total_paid_amount",
+   "fetch_if_empty": 1,
+   "fieldname": "total_paid_amount",
+   "fieldtype": "Currency",
+   "label": "\u0627\u0644\u0645\u0633\u062f\u062f",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "\u0645\u0639\u062f\u0644 \u0645\u0646",
+   "no_copy": 1,
+   "options": "Auction Invoice",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "indication",
+   "fieldtype": "Currency",
+   "label": "\u062f\u0644\u0627\u0644\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "business_profits",
+   "fieldtype": "Currency",
+   "label": "\u0623\u0631\u0628\u0627\u062d \u062a\u062c\u0627\u0631\u064a\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_amount",
+   "fieldtype": "Currency",
+   "label": "\u0636 \u0645\u0628\u064a\u0639\u0627\u062a",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "\u0625\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u062b\u0645\u0646",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "\u0627\u0644\u0645\u062a\u0628\u0642\u064a",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "in_words",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062a\u0641\u0642\u064a\u0637",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "invoice_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0641\u0627\u062a\u0648\u0631\u0629",
+   "no_copy": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "invoice_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0641\u0627\u062a\u0648\u0631\u0629",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0634\u062a\u0631\u064a",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-01-02 10:52:46.572570",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Auction Invoice",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "customer",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "customer_name",
+ "track_changes": 1,
+ "track_seen": 1
+}

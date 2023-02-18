@@ -1,0 +1,108 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"qJU-vxfikx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u062d\u0635\u0627\u0626\u064a\u0627\u062a\",\"col\":6}},{\"id\":\"FXlR3A89As\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0636\u0627\u0641\u0629 \u0644\u0627\u0646\u0634 \u062c\u062f\u064a\u062f\",\"col\":6}},{\"id\":\"TJhIqghUtQ\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629\",\"col\":6}},{\"id\":\"AvKjxM6XVB\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062d\u0631\u0643\u0627\u062a\",\"col\":6}}]",
+ "creation": "2022-07-04 16:49:00.821083",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "quality-3",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "\u0627\u0644\u0644\u0627\u0646\u0634\u0627\u062a",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0627\u0644\u062d\u0631\u0643\u0627\u062a",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0645\u062a\u0627\u0628\u0639\u0629 \u062a\u0646\u0642\u0644\u0627\u062a \u0645\u062d\u0631\u0643 \u0627\u0644\u0644\u0627\u0646\u0634",
+   "link_count": 0,
+   "link_to": "Boat Motor Transfer",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0645\u062a\u0627\u0628\u0639\u0629 \u062a\u062e\u0635\u064a\u0635 \u0627\u0644\u0644\u0627\u0646\u0634\u0627\u062a",
+   "link_count": 0,
+   "link_to": "Edit Boat",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0645\u062a\u0627\u0628\u0639\u0629 \u0628\u064a\u0627\u0646\u0627\u062a \u062a\u062e\u0631\u064a\u062f \u0627\u0644\u0644\u0627\u0646\u0634",
+   "link_count": 0,
+   "link_to": "Follow Scrap Boat Data",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0644\u0627\u0646\u0634\u0627\u062a",
+   "link_count": 0,
+   "link_to": "Boats",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u0642\u0627\u0626\u0645\u0629 \u0645\u062d\u0631\u0643\u0627\u062a \u0627\u0644\u0644\u0627\u0646\u0634",
+   "link_count": 0,
+   "link_to": "Boat Motor",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-02-18 11:06:10.724009",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "\u0627\u0644\u0644\u0627\u0646\u0634\u0627\u062a",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 3.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "\u0625\u062d\u0635\u0627\u0626\u064a\u0627\u062a",
+   "link_to": "\u0627\u0644\u0644\u0627\u0646\u0634\u0627\u062a",
+   "type": "Dashboard"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "New",
+   "label": "\u0625\u0636\u0627\u0641\u0629 \u0644\u0627\u0646\u0634 \u062c\u062f\u064a\u062f",
+   "link_to": "Boats",
+   "type": "DocType"
+  }
+ ],
+ "title": "\u0627\u0644\u0644\u0627\u0646\u0634\u0627\u062a"
+}

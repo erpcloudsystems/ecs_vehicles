@@ -1,0 +1,285 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: {code}{serial}",
+ "creation": "2022-10-05 19:30:08.006232",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "card_info_section",
+  "serial",
+  "code",
+  "group_no",
+  "column_break_3",
+  "license_status",
+  "vehicle_license",
+  "section_break_13",
+  "vehicle",
+  "letter",
+  "police_no",
+  "private_no",
+  "vehicle_type",
+  "entity",
+  "vehicle_shape",
+  "vehicle_brand",
+  "vehicle_style",
+  "vehicle_model",
+  "column_break_23",
+  "vehicle_color",
+  "motor_no",
+  "chassis_no",
+  "cylinder_count",
+  "litre_capacity",
+  "fuel_type",
+  "possession_date",
+  "processing_type",
+  "section_break_6",
+  "issue_status",
+  "renewal_type",
+  "license_duration",
+  "column_break_10",
+  "from_date",
+  "to_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "serial",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0633\u0644\u0633\u0644",
+   "read_only": 1
+  },
+  {
+   "fieldname": "code",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0643\u0648\u062f",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_license",
+   "fieldtype": "Data",
+   "label": "\u0645\u0633\u062a\u0646\u062f \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "license_status",
+   "fieldtype": "Data",
+   "label": "\u062d\u0627\u0644\u0629 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Tab Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u062a\u0631\u062e\u064a\u0635"
+  },
+  {
+   "fieldname": "issue_status",
+   "fieldtype": "Data",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0625\u0635\u062f\u0627\u0631",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "renewal_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.issue_status == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "license_duration",
+   "fieldtype": "Int",
+   "label": "\u0645\u062f\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "\u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Tab Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "letter",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062d\u0631\u0641",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "police_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629 \u0644\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "private_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a \u0644\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "entity",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_shape",
+   "fieldtype": "Data",
+   "label": "\u0634\u0643\u0644 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_brand",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_style",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_model",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_color",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0644\u0648\u0646",
+   "read_only": 1
+  },
+  {
+   "fieldname": "motor_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "read_only": 1
+  },
+  {
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cylinder_count",
+   "fieldtype": "Data",
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0633\u0644\u0646\u062f\u0631\u0627\u062a",
+   "read_only": 1
+  },
+  {
+   "fieldname": "litre_capacity",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0633\u0639\u0629 \u0627\u0644\u0644\u062a\u0631\u064a\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fuel_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "read_only": 1
+  },
+  {
+   "fieldname": "possession_date",
+   "fieldtype": "Data",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "processing_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "read_only": 1
+  },
+  {
+   "fieldname": "card_info_section",
+   "fieldtype": "Tab Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0643\u0627\u0631\u062a"
+  },
+  {
+   "fieldname": "group_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u062c\u0645\u0648\u0639\u0629",
+   "read_only": 1
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-01-16 14:21:29.015861",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "License Card",
+ "name_case": "UPPER CASE",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2022-10-16 16:15:51.821183",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "accident_code",
+  "accident_no",
+  "accident_type",
+  "column_break_4",
+  "accident_date",
+  "party_name",
+  "party_id"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "accident_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0648\u0627\u0642\u0639\u0629",
+   "options": "Accident"
+  },
+  {
+   "columns": 1,
+   "fieldname": "accident_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0648\u0627\u0642\u0639\u0629"
+  },
+  {
+   "columns": 2,
+   "fieldname": "accident_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0627\u0642\u0639\u0629"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 2,
+   "fieldname": "accident_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0648\u0627\u0642\u0639\u0629"
+  },
+  {
+   "columns": 3,
+   "fieldname": "party_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0637\u0631\u0641 \u0627\u0644\u0648\u0627\u0642\u0639\u0629"
+  },
+  {
+   "columns": 2,
+   "fieldname": "party_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0628\u0637\u0627\u0642\u0629"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-10-16 16:15:51.821183",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Accident Logs",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

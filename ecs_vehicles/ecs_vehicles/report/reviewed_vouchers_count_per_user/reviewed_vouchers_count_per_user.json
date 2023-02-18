@@ -1,0 +1,26 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2023-02-15 16:24:22.415409",
+ "disable_prepared_report": 1,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2023-02-15 16:24:22.415409",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Reviewed Vouchers Count Per User",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Voucher",
+ "report_name": "Reviewed Vouchers Count Per User",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

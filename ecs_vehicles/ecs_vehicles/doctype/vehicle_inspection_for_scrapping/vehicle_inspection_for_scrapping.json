@@ -1,0 +1,256 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-06-30 12:30:56.217076",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "amended_from",
+  "section_break_3",
+  "vehicle_no",
+  "vehicle_shape",
+  "entity_name",
+  "vehicle_brand",
+  "vehicle_style",
+  "vehicle_model",
+  "column_break_7",
+  "chassis_no",
+  "motor_no",
+  "fuel_type",
+  "processing_type",
+  "possession_type",
+  "owner_entity",
+  "owner_name",
+  "section_break_17",
+  "model_market_value",
+  "value_before_repair",
+  "percent_before_repair",
+  "column_break_21",
+  "repair_value",
+  "value_after_repair",
+  "percent_after_repair",
+  "section_break_25",
+  "required_repair_info",
+  "inspection_engineer",
+  "engineer_opinion"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "INSP-"
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicles",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "vehicle_no.motor_no",
+   "fieldname": "motor_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.vehicle_shape",
+   "fieldname": "vehicle_shape",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0634\u0643\u0644",
+   "options": "Vehicle Shape",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.entity_name",
+   "fieldname": "entity_name",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "options": "Entity",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.fuel_type",
+   "fieldname": "fuel_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "options": "Fuel Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "\u0645\u0639\u062f\u0644 \u0645\u0646",
+   "no_copy": 1,
+   "options": "Vehicle Inspection For Scrapping",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.vehicle_brand",
+   "fieldname": "vehicle_brand",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "options": "Vehicle Brand",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.vehicle_style",
+   "fieldname": "vehicle_style",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "options": "Vehicle Style",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.vehicle_model",
+   "fieldname": "vehicle_model",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "options": "Vehicle Model",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.chassis_no",
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.processing_type",
+   "fieldname": "processing_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "options": "Vehicle Processing Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.owner_entity",
+   "fieldname": "owner_entity",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u0645\u0627\u0644\u0643\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.owner_name",
+   "fieldname": "owner_name",
+   "fieldtype": "Link",
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u0645\u0627\u0644\u0643\u0629",
+   "options": "Entity",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.possession_type",
+   "fieldname": "possession_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "options": "Possession Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0623\u062e\u0631\u0649"
+  },
+  {
+   "fieldname": "model_market_value",
+   "fieldtype": "Currency",
+   "label": "\u0627\u0644\u0642\u064a\u0645\u0629 \u0627\u0644\u0633\u0648\u0642\u064a\u0629 \u0644\u0644\u0645\u0648\u062f\u064a\u0644"
+  },
+  {
+   "fieldname": "value_before_repair",
+   "fieldtype": "Currency",
+   "label": "\u0642\u064a\u0645\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629 \u0642\u0628\u0644 \u0627\u0644\u0625\u0635\u0644\u0627\u062d"
+  },
+  {
+   "fieldname": "percent_before_repair",
+   "fieldtype": "Percent",
+   "label": "\u0646\u0633\u0628\u0629 \u0627\u0644\u0635\u0644\u0627\u062d\u064a\u0629 \u0642\u0628\u0644 \u0627\u0644\u0625\u0635\u0644\u0627\u062d"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "repair_value",
+   "fieldtype": "Currency",
+   "label": "\u0642\u064a\u0645\u0629 \u0627\u0644\u0625\u0635\u0644\u0627\u062d"
+  },
+  {
+   "fieldname": "value_after_repair",
+   "fieldtype": "Currency",
+   "label": "\u0642\u064a\u0645\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629 \u0628\u0639\u062f \u0627\u0644\u0625\u0635\u0644\u0627\u062d"
+  },
+  {
+   "fieldname": "percent_after_repair",
+   "fieldtype": "Percent",
+   "label": "\u0646\u0633\u0628\u0629 \u0627\u0644\u0635\u0644\u0627\u062d\u064a\u0629 \u0628\u0639\u062f \u0627\u0644\u0625\u0635\u0644\u0627\u062d"
+  },
+  {
+   "fieldname": "section_break_25",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0642\u0631\u064a\u0631 \u0627\u0644\u0645\u0647\u0646\u062f\u0633 \u0627\u0644\u0645\u0639\u0627\u064a\u0646"
+  },
+  {
+   "fieldname": "required_repair_info",
+   "fieldtype": "Small Text",
+   "label": "\u0628\u064a\u0627\u0646 \u0627\u0644\u0625\u0635\u0644\u0627\u062d\u0627\u062a \u0627\u0644\u0645\u0637\u0644\u0648\u0628\u0629"
+  },
+  {
+   "fieldname": "inspection_engineer",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0647\u0646\u062f\u0633 \u0627\u0644\u0645\u0639\u0627\u064a\u0646 \u0644\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Inspection Engineer"
+  },
+  {
+   "fieldname": "engineer_opinion",
+   "fieldtype": "Text Editor",
+   "label": "\u0631\u0623\u0649 \u0627\u0644\u0645\u0647\u0646\u062f\u0633"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0631\u0643\u0628\u0629"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-07-01 16:47:58.863045",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Vehicle Inspection For Scrapping",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "vehicle_no",
+ "track_changes": 1
+}

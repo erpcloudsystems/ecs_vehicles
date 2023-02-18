@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-10-05 19:25:03.688610",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "date",
+  "card_code",
+  "group_no",
+  "column_break_4",
+  "from_serial",
+  "to_serial",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "\u0627\u0644\u062a\u0633\u0644\u0633\u0644",
+   "options": "CARD-"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062f\u0641\u0639\u0629"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "card_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0643\u0648\u062f"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "from_serial",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0645\u0646 \u0645\u0633\u0644\u0633\u0644"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "to_serial",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0625\u0644\u0649 \u0645\u0633\u0644\u0633\u0644"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "\u0645\u0639\u062f\u0644 \u0645\u0646",
+   "no_copy": 1,
+   "options": "Add License Cards",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "group_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u062c\u0645\u0648\u0639\u0629"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-01-16 14:19:31.913419",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Add License Cards",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,55 @@
+@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+
+.widget {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #24125D;
+}
+.navbar {
+    background: rgb(11,96,119);
+    background: linear-gradient(180deg, rgba(11,96,119,1) 0%, rgba(36,18,93,1) 50%, rgba(11,96,119,1) 100%, rgba(0,212,255,1) 100%);
+    border-bottom: 2px solid #0089FF;
+}
+#navbar-breadcrumbs {
+    color: white;
+}
+
+
+
+
+#navbar-breadcrumbs a {
+    color: white;
+}
+
+#navbar-breadcrumbs li.disabled a{
+  color: white;
+  text-decoration: none;
+}
+.form-grid {
+    border: 1px solid #24125D ;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+}
+.grid-heading-row {
+  border-bottom: 1px solid  #24125D;
+  color: white;
+  font-size: var(--text-md);
+  background: rgb(11,96,119);
+    background: linear-gradient(180deg, rgba(11,96,119,1) 0%, rgba(36,18,93,1) 50%, rgba(11,96,119,1) 100%, rgba(0,212,255,1) 100%);
+    border-bottom: 2px solid #0089FF;
+}
+.grid-row > .row .col, .form-section .grid-row > .section-body .col, .form-dashboard-section .grid-row > .section-body .col, .grid-row > .dialog-assignment-row .col {
+  padding-left: var(--padding-sm);
+  padding-right: var(--padding-sm);
+  border-right: 1px solid #24125D;
+}
+
+.grid-row {
+  padding: 0px var(--padding-md);
+  border-bottom: 1px solid #24125D;
+  transition: 0.2s;
+}
+#navbar-breadcrumbs a:before {
+  border-left: 2px solid rgb(255, 255, 255);
+  height: 20px;
+}

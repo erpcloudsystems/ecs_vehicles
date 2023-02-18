@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:traffic_entity",
+ "creation": "2022-11-29 12:50:06.552601",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code",
+  "traffic_entity"
+ ],
+ "fields": [
+  {
+   "fieldname": "code",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0643\u0648\u062f \u062c\u0647\u0629 \u0627\u0644\u0645\u0631\u0648\u0631",
+   "no_copy": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "traffic_entity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0645\u0631\u0648\u0631",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-11-29 12:50:06.552601",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Traffic Entity",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "traffic_entity",
+ "track_changes": 1,
+ "track_seen": 1
+}

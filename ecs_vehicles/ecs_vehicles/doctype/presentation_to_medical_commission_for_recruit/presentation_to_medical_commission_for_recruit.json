@@ -1,0 +1,161 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-02-18 12:43:39.978298",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "recruit",
+  "employee_name",
+  "employment_type",
+  "reason_of_injury",
+  "injury_date",
+  "reason_for_transferring_to_commission",
+  "column_break_5",
+  "presentation_date",
+  "presentation_place",
+  "the_committees_decision",
+  "the_committees_date",
+  "about_the_decision",
+  "presentation_case",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "MC-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "MC-"
+  },
+  {
+   "fieldname": "recruit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Recruit",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "recruit.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "recruit.employment_type",
+   "fieldname": "employment_type",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Employment Type",
+   "options": "Employment Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reason_of_injury",
+   "fieldtype": "Data",
+   "label": "Reason Of Injury"
+  },
+  {
+   "fieldname": "injury_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Injury Date"
+  },
+  {
+   "fieldname": "reason_for_transferring_to_commission",
+   "fieldtype": "Small Text",
+   "label": "Reason For Transferring To Commission"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "presentation_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Presentation Date"
+  },
+  {
+   "fieldname": "presentation_place",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Presentation Place",
+   "options": "Presentation Place"
+  },
+  {
+   "fieldname": "the_committees_decision",
+   "fieldtype": "Data",
+   "label": "The Committee's Decision"
+  },
+  {
+   "fieldname": "the_committees_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "The Committee's Date"
+  },
+  {
+   "fieldname": "about_the_decision",
+   "fieldtype": "Data",
+   "label": "About the Decision"
+  },
+  {
+   "fieldname": "presentation_case",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Presentation Case",
+   "options": "Presentation Case"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Presentation To Medical Commission For Recruit",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-18 12:43:39.978298",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Presentation To Medical Commission For Recruit",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}

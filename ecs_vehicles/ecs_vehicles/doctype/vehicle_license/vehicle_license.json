@@ -1,0 +1,1255 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-09-21 13:22:13.541720",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_break_1",
+  "section_break_2",
+  "vehicle",
+  "letter",
+  "police_no",
+  "private_no",
+  "vehicle_type",
+  "entity",
+  "column_break_6",
+  "issue_status",
+  "renewal_type",
+  "last_end_date",
+  "license_duration",
+  "from_date",
+  "to_date",
+  "section_break_29",
+  "license_no",
+  "column_break_17",
+  "license_status",
+  "remarks",
+  "section_break_15",
+  "motor_no",
+  "chassis_no",
+  "cylinder_count",
+  "litre_capacity",
+  "fuel_type",
+  "possession_date",
+  "column_break_22",
+  "vehicle_shape",
+  "vehicle_brand",
+  "vehicle_style",
+  "vehicle_model",
+  "vehicle_color",
+  "processing_type",
+  "vehicle_license_logs_section",
+  "vehicle_license_logs",
+  "tab_break_2",
+  "section_break_35",
+  "vehicle2",
+  "letter2",
+  "police_no2",
+  "private_no2",
+  "vehicle_type2",
+  "entity2",
+  "column_break_26",
+  "issue_status2",
+  "renewal_type2",
+  "last_end_date2",
+  "license_duration2",
+  "from_date2",
+  "to_date2",
+  "section_break_33",
+  "license_no2",
+  "column_break_35",
+  "license_status2",
+  "remarks2",
+  "section_break_53",
+  "motor_no2",
+  "chassis_no2",
+  "cylinder_count2",
+  "litre_capacity2",
+  "fuel_type2",
+  "possession_date2",
+  "column_break_60",
+  "vehicle_shape2",
+  "vehicle_brand2",
+  "vehicle_style2",
+  "vehicle_model2",
+  "vehicle_color2",
+  "processing_type2",
+  "vehicle_license_logs_section2",
+  "vehicle_license_logs2",
+  "tab_break_3",
+  "section_break_68",
+  "vehicle3",
+  "letter3",
+  "police_no3",
+  "private_no3",
+  "vehicle_type3",
+  "entity3",
+  "column_break_42",
+  "issue_status3",
+  "renewal_type3",
+  "last_end_date3",
+  "license_duration3",
+  "from_date3",
+  "to_date3",
+  "section_break_51",
+  "license_no3",
+  "column_break_53",
+  "license_status3",
+  "remarks3",
+  "section_break_86",
+  "motor_no3",
+  "chassis_no3",
+  "cylinder_count3",
+  "litre_capacity3",
+  "fuel_type3",
+  "possession_date3",
+  "column_break_93",
+  "vehicle_shape3",
+  "vehicle_brand3",
+  "vehicle_style3",
+  "vehicle_model3",
+  "vehicle_color3",
+  "processing_type3",
+  "vehicle_license_logs_section3",
+  "vehicle_license_logs3",
+  "tab_break_4",
+  "section_break_101",
+  "vehicle4",
+  "letter4",
+  "police_no4",
+  "private_no4",
+  "vehicle_type4",
+  "entity4",
+  "column_break_58",
+  "issue_status4",
+  "renewal_type4",
+  "last_end_date4",
+  "license_duration4",
+  "from_date4",
+  "to_date4",
+  "section_break_69",
+  "license_no4",
+  "column_break_71",
+  "license_status4",
+  "remarks4",
+  "section_break_119",
+  "motor_no4",
+  "chassis_no4",
+  "cylinder_count4",
+  "litre_capacity4",
+  "fuel_type4",
+  "possession_date4",
+  "column_break_126",
+  "vehicle_shape4",
+  "vehicle_brand4",
+  "vehicle_style4",
+  "vehicle_model4",
+  "vehicle_color4",
+  "processing_type4",
+  "vehicle_license_logs_section4",
+  "vehicle_license_logs4",
+  "tab_break_67",
+  "license_entry_summary",
+  "amended_from",
+  "naming_series"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "options": "Vehicles"
+  },
+  {
+   "fetch_from": "vehicle.vehicle_type",
+   "fieldname": "vehicle_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "issue_status",
+   "fieldtype": "Select",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0625\u0635\u062f\u0627\u0631",
+   "no_copy": 1,
+   "options": "\n\u062a\u0631\u062e\u064a\u0635 \u0623\u0648\u0644 \u0645\u0631\u0629\n\u062a\u062c\u062f\u064a\u062f",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "license_duration",
+   "fieldtype": "Select",
+   "label": "\u0645\u062f\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "options": "\n1\n3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "\u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "vehicle.private_no",
+   "fieldname": "private_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a \u0644\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "license_no",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
+   "no_copy": 1,
+   "options": "License Card"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "\u0633\u0644\u064a\u0645",
+   "depends_on": "eval:doc.license_no",
+   "fieldname": "license_status",
+   "fieldtype": "Select",
+   "label": "\u062d\u0627\u0644\u0629 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
+   "no_copy": 1,
+   "options": "\n\u0633\u0644\u064a\u0645\n\u062a\u0627\u0644\u0641"
+  },
+  {
+   "default": "\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629",
+   "depends_on": "eval:doc.issue_status == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "fieldname": "renewal_type",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.issue_status == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "no_copy": 1,
+   "options": "\n\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629\n\u0628\u062f\u0644 \u0641\u0627\u0642\u062f\n\u0628\u062f\u0644 \u062a\u0627\u0644\u0641\n\u0646\u0642\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629\n\u062a\u0639\u062f\u064a\u0644 \u0644\u0648\u0646\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a\n\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062d\u0630\u0641 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break",
+   "no_copy": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_no",
+   "fieldname": "police_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629 \u0644\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "\u0645\u0639\u062f\u0644 \u0645\u0646",
+   "no_copy": 1,
+   "options": "Vehicle License",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "\u0628",
+   "fieldname": "letter",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u062d\u0631\u0641",
+   "no_copy": 1,
+   "options": "License Letter"
+  },
+  {
+   "fetch_from": "vehicle.entity_name",
+   "fieldname": "entity",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.issue_status == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "fetch_from": "vehicle.license_to_date",
+   "fieldname": "last_end_date",
+   "fieldtype": "Date",
+   "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u062e\u0631 \u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_break_1",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629 (1)",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "vehicle2",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "options": "Vehicles"
+  },
+  {
+   "default": "\u0628",
+   "fieldname": "letter2",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u062d\u0631\u0641",
+   "no_copy": 1,
+   "options": "License Letter"
+  },
+  {
+   "fetch_from": "vehicle2.vehicle_no",
+   "fieldname": "police_no2",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629 \u0644\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.private_no",
+   "fieldname": "private_no2",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a \u0644\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.vehicle_type",
+   "fieldname": "vehicle_type2",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.entity_name",
+   "fieldname": "entity2",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "issue_status2",
+   "fieldtype": "Select",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0625\u0635\u062f\u0627\u0631",
+   "no_copy": 1,
+   "options": "\n\u062a\u0631\u062e\u064a\u0635 \u0623\u0648\u0644 \u0645\u0631\u0629\n\u062a\u062c\u062f\u064a\u062f",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629",
+   "depends_on": "eval:doc.issue_status2 == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "fieldname": "renewal_type2",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.issue_status2 == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "no_copy": 1,
+   "options": "\n\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629\n\u0628\u062f\u0644 \u0641\u0627\u0642\u062f\n\u0628\u062f\u0644 \u062a\u0627\u0644\u0641\n\u0646\u0642\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629\n\u062a\u0639\u062f\u064a\u0644 \u0644\u0648\u0646\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a\n\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062d\u0630\u0641 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break",
+   "no_copy": 1
+  },
+  {
+   "depends_on": "eval:doc.issue_status2 == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "fetch_from": "vehicle2.license_to_date",
+   "fieldname": "last_end_date2",
+   "fieldtype": "Date",
+   "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u062e\u0631 \u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "license_duration2",
+   "fieldtype": "Select",
+   "label": "\u0645\u062f\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "options": "\n1\n3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "from_date2",
+   "fieldtype": "Date",
+   "label": "\u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date2",
+   "fieldtype": "Date",
+   "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "license_no2",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
+   "no_copy": 1,
+   "options": "License Card"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "\u0633\u0644\u064a\u0645",
+   "depends_on": "eval:doc.license_no2",
+   "fieldname": "license_status2",
+   "fieldtype": "Select",
+   "label": "\u062d\u0627\u0644\u0629 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
+   "no_copy": 1,
+   "options": "\n\u0633\u0644\u064a\u0645\n\u062a\u0627\u0644\u0641"
+  },
+  {
+   "fieldname": "tab_break_2",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629 (2)",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "tab_break_3",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629 (3)",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "vehicle3",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "options": "Vehicles"
+  },
+  {
+   "default": "\u0628",
+   "fieldname": "letter3",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u062d\u0631\u0641",
+   "no_copy": 1,
+   "options": "License Letter"
+  },
+  {
+   "fetch_from": "vehicle3.vehicle_no",
+   "fieldname": "police_no3",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629 \u0644\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.private_no",
+   "fieldname": "private_no3",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a \u0644\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.vehicle_type",
+   "fieldname": "vehicle_type3",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.entity_name",
+   "fieldname": "entity3",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "issue_status3",
+   "fieldtype": "Select",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0625\u0635\u062f\u0627\u0631",
+   "no_copy": 1,
+   "options": "\n\u062a\u0631\u062e\u064a\u0635 \u0623\u0648\u0644 \u0645\u0631\u0629\n\u062a\u062c\u062f\u064a\u062f",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629",
+   "depends_on": "eval:doc.issue_status3 == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "fieldname": "renewal_type3",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.issue_status3 == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "no_copy": 1,
+   "options": "\n\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629\n\u0628\u062f\u0644 \u0641\u0627\u0642\u062f\n\u0628\u062f\u0644 \u062a\u0627\u0644\u0641\n\u0646\u0642\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629\n\u062a\u0639\u062f\u064a\u0644 \u0644\u0648\u0646\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a\n\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062d\u0630\u0641 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646"
+  },
+  {
+   "fieldname": "column_break_42",
+   "fieldtype": "Column Break",
+   "no_copy": 1
+  },
+  {
+   "depends_on": "eval:doc.issue_status == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "fetch_from": "vehicle3.license_to_date",
+   "fieldname": "last_end_date3",
+   "fieldtype": "Date",
+   "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u062e\u0631 \u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "license_duration3",
+   "fieldtype": "Select",
+   "label": "\u0645\u062f\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "options": "\n1\n3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "from_date3",
+   "fieldtype": "Date",
+   "label": "\u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date3",
+   "fieldtype": "Date",
+   "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "license_no3",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
+   "no_copy": 1,
+   "options": "License Card"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "\u0633\u0644\u064a\u0645",
+   "depends_on": "eval:doc.license_no3",
+   "fieldname": "license_status3",
+   "fieldtype": "Select",
+   "label": "\u062d\u0627\u0644\u0629 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
+   "no_copy": 1,
+   "options": "\n\u0633\u0644\u064a\u0645\n\u062a\u0627\u0644\u0641"
+  },
+  {
+   "fieldname": "tab_break_4",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629 (4)",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "vehicle4",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "options": "Vehicles"
+  },
+  {
+   "default": "\u0628",
+   "fieldname": "letter4",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u062d\u0631\u0641",
+   "no_copy": 1,
+   "options": "License Letter"
+  },
+  {
+   "fetch_from": "vehicle4.vehicle_no",
+   "fieldname": "police_no4",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629 \u0644\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.private_no",
+   "fieldname": "private_no4",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a \u0644\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.vehicle_type",
+   "fieldname": "vehicle_type4",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.entity_name",
+   "fieldname": "entity4",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "issue_status4",
+   "fieldtype": "Select",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0625\u0635\u062f\u0627\u0631",
+   "no_copy": 1,
+   "options": "\n\u062a\u0631\u062e\u064a\u0635 \u0623\u0648\u0644 \u0645\u0631\u0629\n\u062a\u062c\u062f\u064a\u062f",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629",
+   "depends_on": "eval:doc.issue_status4 == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "fieldname": "renewal_type4",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.issue_status4 == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "no_copy": 1,
+   "options": "\n\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629\n\u0628\u062f\u0644 \u0641\u0627\u0642\u062f\n\u0628\u062f\u0644 \u062a\u0627\u0644\u0641\n\u0646\u0642\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629\n\u062a\u0639\u062f\u064a\u0644 \u0644\u0648\u0646\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a\n\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062d\u0630\u0641 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646"
+  },
+  {
+   "fieldname": "column_break_58",
+   "fieldtype": "Column Break",
+   "no_copy": 1
+  },
+  {
+   "depends_on": "eval:doc.issue_status2 == \"\u062a\u062c\u062f\u064a\u062f\"",
+   "fetch_from": "vehicle4.license_to_date",
+   "fieldname": "last_end_date4",
+   "fieldtype": "Date",
+   "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u062e\u0631 \u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "license_duration4",
+   "fieldtype": "Select",
+   "label": "\u0645\u062f\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "options": "\n1\n3",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "from_date4",
+   "fieldtype": "Date",
+   "label": "\u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date4",
+   "fieldtype": "Date",
+   "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "license_no4",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
+   "no_copy": 1,
+   "options": "License Card"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "\u0633\u0644\u064a\u0645",
+   "depends_on": "eval:doc.license_no4",
+   "fieldname": "license_status4",
+   "fieldtype": "Select",
+   "label": "\u062d\u0627\u0644\u0629 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
+   "no_copy": 1,
+   "options": "\n\u0633\u0644\u064a\u0645\n\u062a\u0627\u0644\u0641"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "\u0627\u0644\u062a\u0633\u0644\u0633\u0644",
+   "no_copy": 1,
+   "options": "LICENSE-"
+  },
+  {
+   "fieldname": "tab_break_67",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0645\u0644\u062e\u0635"
+  },
+  {
+   "fieldname": "license_entry_summary",
+   "fieldtype": "Table",
+   "options": "License Entry Summary",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_33",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_51",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629"
+  },
+  {
+   "fieldname": "column_break_53",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_69",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629"
+  },
+  {
+   "fieldname": "column_break_71",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle.motor_no",
+   "fieldname": "motor_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.chassis_no",
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.cylinder_count",
+   "fieldname": "cylinder_count",
+   "fieldtype": "Data",
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0633\u0644\u0646\u062f\u0631\u0627\u062a",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.litre_capacity",
+   "fieldname": "litre_capacity",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0633\u0639\u0629 \u0627\u0644\u0644\u062a\u0631\u064a\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.fuel_type",
+   "fieldname": "fuel_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.possession_date",
+   "fieldname": "possession_date",
+   "fieldtype": "Data",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_shape",
+   "fieldname": "vehicle_shape",
+   "fieldtype": "Data",
+   "label": "\u0634\u0643\u0644 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_brand",
+   "fieldname": "vehicle_brand",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_style",
+   "fieldname": "vehicle_style",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_model",
+   "fieldname": "vehicle_model",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_color",
+   "fieldname": "vehicle_color",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0644\u0648\u0646",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.processing_type",
+   "fieldname": "processing_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_29",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u062a\u0631\u062e\u064a\u0635"
+  },
+  {
+   "fieldname": "section_break_35",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u062a\u0631\u062e\u064a\u0635"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_53",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fetch_from": "vehicle2.motor_no",
+   "fieldname": "motor_no2",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.chassis_no",
+   "fieldname": "chassis_no2",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.cylinder_count",
+   "fieldname": "cylinder_count2",
+   "fieldtype": "Data",
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0633\u0644\u0646\u062f\u0631\u0627\u062a",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.litre_capacity",
+   "fieldname": "litre_capacity2",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0633\u0639\u0629 \u0627\u0644\u0644\u062a\u0631\u064a\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.fuel_type",
+   "fieldname": "fuel_type2",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.possession_date",
+   "fieldname": "possession_date2",
+   "fieldtype": "Data",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_60",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle2.vehicle_shape",
+   "fieldname": "vehicle_shape2",
+   "fieldtype": "Data",
+   "label": "\u0634\u0643\u0644 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.vehicle_brand",
+   "fieldname": "vehicle_brand2",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.vehicle_style",
+   "fieldname": "vehicle_style2",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.vehicle_model",
+   "fieldname": "vehicle_model2",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.vehicle_color",
+   "fieldname": "vehicle_color2",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0644\u0648\u0646",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle2.processing_type",
+   "fieldname": "processing_type2",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_68",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u062a\u0631\u062e\u064a\u0635"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_86",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fetch_from": "vehicle3.motor_no",
+   "fieldname": "motor_no3",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.chassis_no",
+   "fieldname": "chassis_no3",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.cylinder_count",
+   "fieldname": "cylinder_count3",
+   "fieldtype": "Data",
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0633\u0644\u0646\u062f\u0631\u0627\u062a",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.litre_capacity",
+   "fieldname": "litre_capacity3",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0633\u0639\u0629 \u0627\u0644\u0644\u062a\u0631\u064a\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.fuel_type",
+   "fieldname": "fuel_type3",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.possession_date",
+   "fieldname": "possession_date3",
+   "fieldtype": "Data",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_93",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle3.vehicle_shape",
+   "fieldname": "vehicle_shape3",
+   "fieldtype": "Data",
+   "label": "\u0634\u0643\u0644 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.vehicle_brand",
+   "fieldname": "vehicle_brand3",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.vehicle_style",
+   "fieldname": "vehicle_style3",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.vehicle_model",
+   "fieldname": "vehicle_model3",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.vehicle_color",
+   "fieldname": "vehicle_color3",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0644\u0648\u0646",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle3.processing_type",
+   "fieldname": "processing_type3",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_101",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u062a\u0631\u062e\u064a\u0635"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_119",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fetch_from": "vehicle4.motor_no",
+   "fieldname": "motor_no4",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.chassis_no",
+   "fieldname": "chassis_no4",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.cylinder_count",
+   "fieldname": "cylinder_count4",
+   "fieldtype": "Data",
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0633\u0644\u0646\u062f\u0631\u0627\u062a",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.litre_capacity",
+   "fieldname": "litre_capacity4",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0633\u0639\u0629 \u0627\u0644\u0644\u062a\u0631\u064a\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.fuel_type",
+   "fieldname": "fuel_type4",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.possession_date",
+   "fieldname": "possession_date4",
+   "fieldtype": "Data",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_126",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle4.vehicle_shape",
+   "fieldname": "vehicle_shape4",
+   "fieldtype": "Data",
+   "label": "\u0634\u0643\u0644 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.vehicle_brand",
+   "fieldname": "vehicle_brand4",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.vehicle_style",
+   "fieldname": "vehicle_style4",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.vehicle_model",
+   "fieldname": "vehicle_model4",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.vehicle_color",
+   "fieldname": "vehicle_color4",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0644\u0648\u0646",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle4.processing_type",
+   "fieldname": "processing_type4",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.license_status4 == \"\u062a\u0627\u0644\u0641\"",
+   "fieldname": "remarks4",
+   "fieldtype": "Small Text",
+   "label": "\u0633\u0628\u0628 \u0627\u0644\u062a\u0644\u0641",
+   "mandatory_depends_on": "eval:doc.license_status4 == \"\u062a\u0627\u0644\u0641\""
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.license_status2 == \"\u062a\u0627\u0644\u0641\"",
+   "fieldname": "remarks2",
+   "fieldtype": "Small Text",
+   "label": "\u0633\u0628\u0628 \u0627\u0644\u062a\u0644\u0641",
+   "mandatory_depends_on": "eval:doc.license_status2 == \"\u062a\u0627\u0644\u0641\""
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.license_status3 == \"\u062a\u0627\u0644\u0641\"",
+   "fieldname": "remarks3",
+   "fieldtype": "Small Text",
+   "label": "\u0633\u0628\u0628 \u0627\u0644\u062a\u0644\u0641",
+   "mandatory_depends_on": "eval:doc.license_status3 == \"\u062a\u0627\u0644\u0641\""
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.license_status == \"\u062a\u0627\u0644\u0641\"",
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0633\u0628\u0628 \u0627\u0644\u062a\u0644\u0641",
+   "mandatory_depends_on": "eval:doc.license_status == \"\u062a\u0627\u0644\u0641\""
+  },
+  {
+   "fieldname": "vehicle_license_logs_section",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u062c\u062f\u064a\u062f \u0633\u0627\u0628\u0642\u0629 \u0644\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fieldname": "vehicle_license_logs",
+   "fieldtype": "Table",
+   "no_copy": 1,
+   "options": "Vehicle License Logs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_license_logs_section2",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u062c\u062f\u064a\u062f \u0633\u0627\u0628\u0642\u0629 \u0644\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fieldname": "vehicle_license_logs2",
+   "fieldtype": "Table",
+   "no_copy": 1,
+   "options": "Vehicle License Logs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_license_logs_section3",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u062c\u062f\u064a\u062f \u0633\u0627\u0628\u0642\u0629 \u0644\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fieldname": "vehicle_license_logs3",
+   "fieldtype": "Table",
+   "no_copy": 1,
+   "options": "Vehicle License Logs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_license_logs_section4",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u062c\u062f\u064a\u062f \u0633\u0627\u0628\u0642\u0629 \u0644\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fieldname": "vehicle_license_logs4",
+   "fieldtype": "Table",
+   "no_copy": 1,
+   "options": "Vehicle License Logs",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-09 12:12:00.132381",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Vehicle License",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

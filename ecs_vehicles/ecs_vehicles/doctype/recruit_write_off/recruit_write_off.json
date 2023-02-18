@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-02-18 12:47:27.019613",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "recruit",
+  "employee_name",
+  "recruit_degree",
+  "military_date",
+  "employment_type",
+  "write_off_date",
+  "column_break_4",
+  "absent_date",
+  "return_date",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "RW-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "RW-"
+  },
+  {
+   "fieldname": "recruit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Recruit",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "recruit.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "recruit.recruit_degree",
+   "fieldname": "recruit_degree",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Recruit Degree",
+   "options": "Recruit Degree",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "recruit.military_date",
+   "fieldname": "military_date",
+   "fieldtype": "Date",
+   "label": "Military Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "recruit.employment_type",
+   "fieldname": "employment_type",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Employment Type",
+   "options": "Employment Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "write_off_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Write Off Date"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "absent_date",
+   "fieldtype": "Date",
+   "label": "Recruit Absent Date"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "label": "Return Date"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Recruit Write Off",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-18 12:47:27.019613",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Recruit Write Off",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}

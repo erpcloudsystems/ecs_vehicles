@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2022-10-24 02:15:24.908604",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_group",
+  "maintenance_type",
+  "item_code",
+  "item_name",
+  "description",
+  "default_unit_of_measure",
+  "brand",
+  "qty",
+  "rate",
+  "amount",
+  "price2",
+  "price3",
+  "vehicles",
+  "entity"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0635\u0646\u0641",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "maintenance_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u0627\u0635\u0644\u0627\u062d",
+   "options": "\u062a\u0648\u0631\u064a\u062f \u0648 \u062a\u0631\u0643\u064a\u0628\n\u062a\u0648\u0631\u064a\u062f\n\u062a\u0631\u0643\u064a\u0628\n\u0645\u0635\u0646\u0639\u064a\u0627\u062a"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0642\u0637\u0639\u0629",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0642\u0637\u0639\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "\u0627\u0644\u0648\u0635\u0641"
+  },
+  {
+   "fetch_from": "item_code.stock_uom",
+   "fieldname": "default_unit_of_measure",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0648\u062d\u062f\u0647",
+   "options": "UOM"
+  },
+  {
+   "fetch_from": "item_code.brand",
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0628\u0644\u062f \u0627\u0644\u0645\u0646\u0634\u0623",
+   "options": "Brand"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0643\u0645\u064a\u0629"
+  },
+  {
+   "default": "0",
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": " \u0633\u0639\u0631 \u0627\u0644\u0648\u062d\u062f\u0629 \u0644\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u0627\u0648\u0644"
+  },
+  {
+   "default": "0",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a",
+   "read_only": 1
+  },
+  {
+   "fieldname": "price2",
+   "fieldtype": "Currency",
+   "label": " \u0633\u0639\u0631 \u0627\u0644\u0648\u062d\u062f\u0629 \u0644\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0646\u064a"
+  },
+  {
+   "fieldname": "price3",
+   "fieldtype": "Currency",
+   "label": " \u0633\u0639\u0631 \u0627\u0644\u0648\u062d\u062f\u0629 \u0644\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0644\u062b"
+  },
+  {
+   "fieldname": "vehicles",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicles"
+  },
+  {
+   "fieldname": "entity",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u062c\u0647\u0647",
+   "options": "Entity"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-10-24 02:24:21.708562",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Price Quote Note Item",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

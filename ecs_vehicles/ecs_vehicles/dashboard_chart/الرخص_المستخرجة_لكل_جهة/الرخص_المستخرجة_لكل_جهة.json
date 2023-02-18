@@ -1,0 +1,33 @@
+{
+ "chart_name": "\u0627\u0644\u0631\u062e\u0635 \u0627\u0644\u0645\u0633\u062a\u062e\u0631\u062c\u0629 \u0644\u0643\u0644 \u062c\u0647\u0629",
+ "chart_type": "Report",
+ "creation": "2023-01-29 18:58:59.495863",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "{}",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2023-01-30 10:50:46.967524",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "\u0627\u0644\u0631\u062e\u0635 \u0627\u0644\u0645\u0633\u062a\u062e\u0631\u062c\u0629 \u0644\u0643\u0644 \u062c\u0647\u0629",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Entity License Count Report",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "entity",
+ "y_axis": [
+  {
+   "color": "#00a118",
+   "y_field": "entity_count"
+  }
+ ]
+}

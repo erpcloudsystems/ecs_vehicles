@@ -1,0 +1,130 @@
+<style>
+* {
+		margin:0;
+		padding:0;
+		direction:rtl;
+	}
+	.print-format {
+
+		padding:0in;
+
+	}
+.header {
+    margin-top:20px;
+    display:flex; 
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.under-header {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+	align-items:center;
+}
+.esm-algeha {
+    margin-top:30px;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+table, th, td , th{
+    border:2px solid black;
+    border-collapse:collapse;
+    text-align:center;
+}
+.print-format th {
+    color:black;
+        text-align:center;
+        font-weight:bold;
+        background-color:lightgray;
+
+}
+.print-format td {
+	padding: 0px !important;
+}
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+  .column1 {
+	border-left: 2px solid black;
+  }
+.table1 {
+    margin-top:5px;
+    margin-right:20px;
+    margin-left:20px;
+    display:flex; 
+    flex-direction:column;
+
+}
+</style>
+
+<div class="under-header">
+<div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;">
+    <div>
+<img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
+</div>
+<div>
+    وزارة الداخلية
+</div>
+<div>
+الادارة العامه لمركبات الشرطه
+</div>
+<div>
+قسم الحاسب الالي</div>
+</div>
+<div>
+	<div style="display: flex; flex-direction: row; align-items: center;">
+		<div style="font-weight: bold;">تاريخ الطباعة  </div>
+		<div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
+			{%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
+		</div>
+	</div>
+
+</div>
+</div>
+
+<div style="display: flex; justify-content:center; margin: 1em auto;">
+  		<div style="border:2px solid black; background-color:lightgray;">
+				<h3 style="font-family:Cairo; margin: 0px 20px">{%= __("جرد خزينة الغاز") %}</h3>
+  		</div>
+</div>
+
+
+
+   <div class="table1">
+	<table style="font-family:Cairo" dir="rtl">
+		<thead>
+			<tr>
+				<th>{%= __("م") %}</th>
+				<th>{%= __("اسم البون") %}</th>
+				<th>{%= __("من مسلسل") %}</th>
+				<th>{%= __("إلى مسلسل") %}</th>
+				<th>{%= __("عدد البونات") %}</th>
+				<th>{%= __("عدد الدفاتر") %}</th>
+				<th>{%= __("الكمية بالمتر المكعب") %}</th>
+				<th>{%= __("سعر الوحدة") %}</th>
+				<th>{%= __("إجمالي السعر") %}</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			{% for(var i=0, l=data.length; i<l; i++) { %}
+			<tr>
+				<td>{%= i+1 %}</td>
+				<td>{%= data[i].voucher_type %}</td>
+				<td>{%= data[i].from_serial %}</td>
+				<td>{%= data[i].to_serial %}</td>
+				<td>{%= data[i].count_voucher %}</td>
+				<td>{%= data[i].count_notebook %}</td>
+				<td>{%= data[i].qty_litre %}</td>
+				<td>{%= data[i].unit_price %}</td>
+				<td>{%= data[i].total_price %}</td>
+
+			</tr>
+			{% } %}
+		</tbody>
+	</table>
+</div>
+

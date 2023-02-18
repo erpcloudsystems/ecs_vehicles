@@ -1,0 +1,1737 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-06-07 18:03:10.438665",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "master_data",
+  "naming_series",
+  "section_break_11",
+  "vehicle_no",
+  "check_police_no",
+  "police_id",
+  "vehicle_type",
+  "group_shape",
+  "vehicle_shape",
+  "vehicle_brand",
+  "vehicle_style",
+  "column_break_9",
+  "chassis_no",
+  "check_chassis_no",
+  "motor_no",
+  "vehicle_model",
+  "vehicle_country",
+  "vehicle_status",
+  "processing_type",
+  "column_bbreak",
+  "entity_name",
+  "exchange_allowance",
+  "possession_date",
+  "vehicle_color",
+  "issue_type",
+  "maintenance_entity",
+  "private_no",
+  "traffic_entity",
+  "plate_type",
+  "technical_data",
+  "litre_capacity",
+  "fuel_type",
+  "feeding_type",
+  "ignition_type",
+  "front_tires_count",
+  "back_tires_count",
+  "batteries_count",
+  "column_break_29",
+  "cylinder_count",
+  "wheel_drive_type",
+  "transmission",
+  "vehicle_life_span",
+  "engine_style",
+  "engine_strokes_count",
+  "front_tire_size",
+  "back_tire_size",
+  "battery_size",
+  "luxuries",
+  "cassette",
+  "front_air_conditioning",
+  "front_airbags",
+  "back_airbags",
+  "side_airbags",
+  "center_lock",
+  "glass_electricity",
+  "side_mirror_electricity",
+  "anti_skid",
+  "column_break_48",
+  "hydraulic_servo_steering",
+  "back_air_conditioning",
+  "back_hoods",
+  "four_wheel_drive_gear",
+  "turbo_charger",
+  "natural_gas",
+  "fanar",
+  "tetra",
+  "cameras",
+  "purchase_data",
+  "possession_type",
+  "owner_entity",
+  "owner_name",
+  "column_break_121",
+  "buying_price",
+  "buying_year",
+  "issuing_rule_tab",
+  "issuing_rule",
+  "fuel_voucher",
+  "litre_count",
+  "column_break_75",
+  "oil_issuing_rule",
+  "oil_type",
+  "oil_count",
+  "column_break_80",
+  "gas_issuing_rule",
+  "gas_voucher",
+  "gas_count",
+  "column_break_83",
+  "washing_issuing_rule",
+  "washing_voucher",
+  "washing_count",
+  "liquids_sec",
+  "liquid_table",
+  "license_tab",
+  "license_no",
+  "license_status",
+  "license_duration",
+  "column_break_139",
+  "license_from_date",
+  "license_to_date",
+  "licesne_section",
+  "vehicle_license_logs",
+  "accident_tab",
+  "accident_logs",
+  "edit_tab_tab",
+  "vehicle_no_section",
+  "edit_vehicle_no",
+  "new_vehicle_no",
+  "edit_vehicle_no_date",
+  "vehicle_no_remarks",
+  "column_break_21",
+  "vehicle_no_table",
+  "entity_section",
+  "edit_entity",
+  "new_entity",
+  "edit_entity_date",
+  "entity_remarks",
+  "column_break_23",
+  "entity_table",
+  "status_section",
+  "edit_status",
+  "new_status",
+  "edit_status_date",
+  "status_remarks",
+  "column_break_22",
+  "status_table",
+  "motor_section",
+  "edit_motor_no",
+  "new_motor_no",
+  "edit_motor_no_date",
+  "motor_no_remarks",
+  "column_break2",
+  "motor_table",
+  "processing_section",
+  "edit_processing_type",
+  "new_processing_type",
+  "edit_processing_type_date",
+  "processing_type_remarks",
+  "column_break3",
+  "processing_type_table",
+  "color_section",
+  "edit_color",
+  "new_color",
+  "edit_color_date",
+  "color_remarks",
+  "column_break_32",
+  "color_table",
+  "maintenance_section",
+  "edit_maintenance_entity",
+  "new_maintenance_entity",
+  "edit_maintenance_entity_date",
+  "maintenance_entity_remarks",
+  "column_break_31",
+  "maintenance_entity_table",
+  "private_no_section",
+  "edit_private_no",
+  "new_private_no",
+  "new_traffic_entity",
+  "new_plate_type",
+  "edit_private_no_date",
+  "private_no_remarks",
+  "column_break1",
+  "private_no_table",
+  "chassis_no_section",
+  "edit_chassis_no",
+  "new_chassis_no",
+  "edit_chassis_no_date",
+  "chassis_no_remarks",
+  "column_break_153",
+  "chassis_no_table",
+  "group_shape_section",
+  "edit_group_shape",
+  "new_group_shape",
+  "edit_group_shape_date",
+  "group_shape_remarks",
+  "column_break_160",
+  "group_shape_table",
+  "shape_section",
+  "edit_shape",
+  "new_shape",
+  "edit_shape_date",
+  "shape_remarks",
+  "column_break_167",
+  "shape_table",
+  "brand_section",
+  "edit_brand",
+  "new_brand",
+  "edit_brand_date",
+  "brand_remarks",
+  "column_break_174",
+  "brand_table",
+  "style_section",
+  "edit_style",
+  "new_style",
+  "edit_style_date",
+  "style_remarks",
+  "column_break_181",
+  "style_table",
+  "model_section",
+  "edit_model",
+  "new_model",
+  "edit_model_date",
+  "model_remarks",
+  "column_break_188",
+  "model_table",
+  "country_section",
+  "edit_country",
+  "new_country",
+  "edit_country_date",
+  "country_remarks",
+  "column_break_195",
+  "country_table",
+  "exchange_allowance_section",
+  "edit_exchange_allowance",
+  "new_exchange_allowance",
+  "edit_exchange_allowance_date",
+  "exchange_allowance_remarks",
+  "column_break_202",
+  "exchange_allowance_table"
+ ],
+ "fields": [
+  {
+   "fieldname": "master_data",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629"
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "no_copy": 1,
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "vehicle_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Vehicle Type",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "group_shape",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0634\u0643\u0644",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Vehicle Group Shape",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "vehicle_shape",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0634\u0643\u0644",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Vehicle Shape",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "vehicle_brand",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Vehicle Brand",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "vehicle_style",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Vehicle Style",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "vehicle_model",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Vehicle Model",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "\u0635\u0627\u0644\u062d\u0629",
+   "fieldname": "vehicle_status",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "no_copy": 1,
+   "options": "Vehicle Status",
+   "read_only_depends_on": "eval:!(doc.__islocal)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "possession_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)"
+  },
+  {
+   "fieldname": "issue_type",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "\u0645\u0645\u064a\u0632 \u0627\u0644\u0635\u0631\u0641",
+   "options": "\n\u0635\u0631\u0641 \u0645\u0646 \u0627\u0644\u0645\u062e\u0627\u0632\u0646\n\u0635\u0631\u0641 \u0645\u0646 \u062e\u0627\u0631\u062c \u0627\u0644\u0645\u062e\u0627\u0632\u0646"
+  },
+  {
+   "fieldname": "vehicle_country",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0628\u0644\u062f \u0627\u0644\u0635\u0646\u0639",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Vehicle Country",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "no_copy": 1,
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "motor_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "no_copy": 1,
+   "options": "Vehicle Motor",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "exchange_allowance",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0645\u062e\u0635\u0635 \u0627\u0644\u0635\u0631\u0641",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Exchange Allowance",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "technical_data",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0641\u0646\u064a\u0629"
+  },
+  {
+   "fieldname": "litre_capacity",
+   "fieldtype": "Float",
+   "label": "\u0627\u0644\u0633\u0639\u0629 \u0627\u0644\u0644\u062a\u0631\u064a\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)"
+  },
+  {
+   "fieldname": "feeding_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u063a\u0630\u064a\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Feeding Type"
+  },
+  {
+   "fieldname": "fuel_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Fuel Type"
+  },
+  {
+   "fieldname": "ignition_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0625\u0634\u0639\u0627\u0644",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Ignition Type"
+  },
+  {
+   "fieldname": "wheel_drive_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062f\u0641\u0639",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Wheel Drive Type"
+  },
+  {
+   "fieldname": "front_tires_count",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0625\u0637\u0627\u0631\u0627\u062a \u0627\u0644\u0623\u0645\u0627\u0645\u064a\u0629"
+  },
+  {
+   "fieldname": "back_tires_count",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0625\u0637\u0627\u0631\u0627\u062a \u0627\u0644\u062e\u0644\u0641\u064a\u0629"
+  },
+  {
+   "fieldname": "batteries_count",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0628\u0637\u0627\u0631\u064a\u0627\u062a"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transmission",
+   "fieldtype": "Link",
+   "label": "\u0646\u0642\u0644 \u0627\u0644\u062d\u0631\u0643\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Transmission"
+  },
+  {
+   "fieldname": "vehicle_color",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0644\u0648\u0646",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Vehicle Color",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "cylinder_count",
+   "fieldtype": "Link",
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0633\u0644\u0646\u062f\u0631\u0627\u062a",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Cylinder Count"
+  },
+  {
+   "fieldname": "vehicle_life_span",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "\u0646\u0633\u0628\u0629 \u0635\u0644\u0627\u062d\u064a\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fieldname": "processing_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Vehicle Processing Type",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "engine_style",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "\u0637\u0631\u0627\u0632 \u0627\u0644\u0645\u062d\u0631\u0643",
+   "options": "Engine Style"
+  },
+  {
+   "fieldname": "engine_strokes_count",
+   "fieldtype": "Int",
+   "label": "\u0639\u062f\u062f \u0623\u0634\u0648\u0627\u0637 \u0627\u0644\u0645\u062d\u0631\u0643",
+   "mandatory_depends_on": "eval:(doc.__islocal)"
+  },
+  {
+   "fieldname": "front_tire_size",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "\u0645\u0642\u0627\u0633 \u0627\u0644\u0625\u0637\u0627\u0631 \u0627\u0644\u0623\u0645\u0627\u0645\u064a"
+  },
+  {
+   "fieldname": "back_tire_size",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "\u0645\u0642\u0627\u0633 \u0627\u0644\u0625\u0637\u0627\u0631 \u0627\u0644\u062e\u0644\u0641\u064a"
+  },
+  {
+   "fieldname": "battery_size",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "\u0645\u0642\u0627\u0633 \u0627\u0644\u0628\u0637\u0627\u0631\u064a\u0629"
+  },
+  {
+   "fieldname": "luxuries",
+   "fieldtype": "Tab Break",
+   "label": "\u0643\u0645\u0627\u0644\u064a\u0627\u062a"
+  },
+  {
+   "default": "0",
+   "fieldname": "cassette",
+   "fieldtype": "Check",
+   "label": "\u0643\u0627\u0633\u064a\u062a"
+  },
+  {
+   "default": "0",
+   "fieldname": "front_air_conditioning",
+   "fieldtype": "Check",
+   "label": "\u062a\u0643\u064a\u064a\u0641 \u0623\u0645\u0627\u0645\u064a"
+  },
+  {
+   "default": "0",
+   "fieldname": "front_airbags",
+   "fieldtype": "Check",
+   "label": "\u0648\u0633\u0627\u0626\u062f \u0647\u0648\u0627\u0626\u064a\u0629 \u0623\u0645\u0627\u0645\u064a\u0629"
+  },
+  {
+   "default": "0",
+   "fieldname": "back_airbags",
+   "fieldtype": "Check",
+   "label": "\u0648\u0633\u0627\u0626\u062f \u0647\u0648\u0627\u0626\u064a\u0629 \u062e\u0644\u0641\u064a\u0629"
+  },
+  {
+   "default": "0",
+   "fieldname": "side_airbags",
+   "fieldtype": "Check",
+   "label": "\u0648\u0633\u0627\u0626\u062f \u0647\u0648\u0627\u0626\u064a\u0629 \u062c\u0627\u0646\u0628\u064a\u0629"
+  },
+  {
+   "default": "0",
+   "fieldname": "center_lock",
+   "fieldtype": "Check",
+   "label": "\u063a\u0644\u0642 \u0645\u0631\u0643\u0632\u064a \u0644\u0644\u0623\u0628\u0648\u0627\u0628"
+  },
+  {
+   "default": "0",
+   "fieldname": "glass_electricity",
+   "fieldtype": "Check",
+   "label": "\u062a\u0634\u063a\u064a\u0644 \u0627\u0644\u0632\u062c\u0627\u062c \u0643\u0647\u0631\u0628\u0627\u0626\u064a\u0627"
+  },
+  {
+   "default": "0",
+   "fieldname": "side_mirror_electricity",
+   "fieldtype": "Check",
+   "label": "\u062a\u0634\u063a\u064a\u0644 \u0645\u0631\u0627\u064a\u0627\u062a \u062c\u0627\u0646\u0628 \u0643\u0647\u0631\u0628\u0627\u0626\u064a\u0627"
+  },
+  {
+   "default": "0",
+   "fieldname": "anti_skid",
+   "fieldtype": "Check",
+   "label": "\u0645\u0627\u0646\u0639 \u062a\u0632\u062d\u0644\u0642"
+  },
+  {
+   "default": "0",
+   "fieldname": "hydraulic_servo_steering",
+   "fieldtype": "Check",
+   "label": "\u0646\u0638\u0627\u0645 \u062a\u0648\u062c\u064a\u0647 \u0628\u0645\u0624\u0627\u0632\u0631 \u0647\u064a\u062f\u0631\u0648\u0644\u064a\u0643\u064a"
+  },
+  {
+   "default": "0",
+   "fieldname": "back_air_conditioning",
+   "fieldtype": "Check",
+   "label": "\u062a\u0643\u064a\u064a\u0641 \u062e\u0644\u0641\u064a"
+  },
+  {
+   "default": "0",
+   "fieldname": "back_hoods",
+   "fieldtype": "Check",
+   "label": "\u0634\u0641\u0627\u0637\u0627\u062a \u062e\u0644\u0641\u064a\u0629"
+  },
+  {
+   "default": "0",
+   "fieldname": "four_wheel_drive_gear",
+   "fieldtype": "Check",
+   "label": "\u0641\u062a\u064a\u0633 \u062f\u0641\u0639 \u0631\u0628\u0627\u0639\u064a"
+  },
+  {
+   "default": "0",
+   "fieldname": "turbo_charger",
+   "fieldtype": "Check",
+   "label": "\u0634\u0627\u062d\u0646 \u062a\u0648\u0631\u0628\u064a\u0646\u064a"
+  },
+  {
+   "default": "0",
+   "fieldname": "natural_gas",
+   "fieldtype": "Check",
+   "label": "\u063a\u0627\u0632 \u0637\u0628\u064a\u0639\u064a"
+  },
+  {
+   "fieldname": "column_break_48",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "purchase_data",
+   "fieldtype": "Tab Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0634\u0631\u0627\u0621"
+  },
+  {
+   "fieldname": "possession_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Possession Type"
+  },
+  {
+   "depends_on": "eval:doc.owner_entity == \"\u062c\u0647\u0629 \u0623\u062e\u0631\u0649\"",
+   "fieldname": "owner_name",
+   "fieldtype": "Link",
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u0645\u0627\u0644\u0643\u0629",
+   "mandatory_depends_on": "eval:doc.owner_entity == \"\u062c\u0647\u0629 \u0623\u062e\u0631\u0649\"",
+   "options": "Entity"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "entity_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u062c\u0647\u0629"
+  },
+  {
+   "fieldname": "entity_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Entity",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "entity_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0627\u0644\u062c\u0647\u0629)",
+   "no_copy": 1,
+   "options": "Entity Logs",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "color_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0644\u0648\u0646"
+  },
+  {
+   "fieldname": "color_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0627\u0644\u0644\u0648\u0646)",
+   "no_copy": 1,
+   "options": "Color Logs",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "motor_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631"
+  },
+  {
+   "fieldname": "motor_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631)",
+   "no_copy": 1,
+   "options": "Motor Logs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "owner_entity",
+   "fieldtype": "Select",
+   "label": "\u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u0645\u0627\u0644\u0643\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "\n\u0648\u0632\u0627\u0631\u0629 \u0627\u0644\u062f\u0627\u062e\u0644\u064a\u0629\n\u062c\u0647\u0629 \u0623\u062e\u0631\u0649"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "maintenance_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u062c\u0647\u0629 \u0635\u064a\u0627\u0646\u0629"
+  },
+  {
+   "fetch_from": "entity_name.maintenance_entity",
+   "fetch_if_empty": 1,
+   "fieldname": "maintenance_entity",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
+   "options": "Entity",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "maintenance_entity_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u062c\u0647\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629)",
+   "no_copy": 1,
+   "options": "Maintenance Entity Logs",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u062d\u0627\u0644\u0629"
+  },
+  {
+   "fieldname": "status_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629)",
+   "no_copy": 1,
+   "options": "Vehicle Status Logs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issuing_rule_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0635\u0631\u0641\u064a\u0627\u062a"
+  },
+  {
+   "fieldname": "issuing_rule",
+   "fieldtype": "Link",
+   "label": " \u0631\u0642\u0645 \u0642\u0627\u0639\u062f\u0629 \u0635\u0631\u0641 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "no_copy": 1,
+   "options": "Issuing Rules",
+   "read_only": 1
+  },
+  {
+   "fieldname": "litre_count",
+   "fieldtype": "Float",
+   "label": "\u0645\u0642\u0631\u0631 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "fuel_voucher",
+   "fieldtype": "Link",
+   "label": "\u0628\u0648\u0646 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "no_copy": 1,
+   "options": "Fuel Voucher"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_color",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0644\u0648\u0646",
+   "no_copy": 1
+  },
+  {
+   "depends_on": "eval:doc.edit_color",
+   "fieldname": "new_color",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0644\u0648\u0646 \u0627\u0644\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.edit_color",
+   "options": "Vehicle Color"
+  },
+  {
+   "depends_on": "eval:doc.edit_color",
+   "fieldname": "edit_color_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_color"
+  },
+  {
+   "depends_on": "eval:doc.edit_color",
+   "fieldname": "color_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_color"
+  },
+  {
+   "fieldname": "column_break_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "VEH-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "\u0627\u0644\u062a\u0633\u0644\u0633\u0644",
+   "options": "VEH-"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_entity",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u062c\u0647\u0629",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.edit_entity",
+   "fieldname": "new_entity",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u062c\u062f\u064a\u062f\u0629",
+   "mandatory_depends_on": "eval:doc.edit_entity",
+   "options": "Entity"
+  },
+  {
+   "depends_on": "eval:doc.edit_entity",
+   "fieldname": "edit_entity_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_entity"
+  },
+  {
+   "depends_on": "eval:doc.edit_entity",
+   "fieldname": "entity_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_entity"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_maintenance_entity",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u062c\u0647\u0629 \u0635\u064a\u0627\u0646\u0629"
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.edit_maintenance_entity",
+   "fieldname": "new_maintenance_entity",
+   "fieldtype": "Link",
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629 \u0627\u0644\u062c\u062f\u064a\u062f\u0629",
+   "mandatory_depends_on": "eval:doc.edit_maintenance_entity",
+   "options": "Entity"
+  },
+  {
+   "depends_on": "eval:doc.edit_maintenance_entity",
+   "fieldname": "edit_maintenance_entity_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_maintenance_entity"
+  },
+  {
+   "depends_on": "eval:doc.edit_maintenance_entity",
+   "fieldname": "maintenance_entity_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_maintenance_entity"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_status",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u062d\u0627\u0644\u0629"
+  },
+  {
+   "depends_on": "eval:doc.edit_status",
+   "fieldname": "new_status",
+   "fieldtype": "Link",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629 \u0627\u0644\u062c\u062f\u064a\u062f\u0629",
+   "mandatory_depends_on": "eval:doc.edit_status",
+   "options": "Vehicle Status"
+  },
+  {
+   "depends_on": "eval:doc.edit_status",
+   "fieldname": "edit_status_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_status"
+  },
+  {
+   "depends_on": "eval:doc.edit_status",
+   "fieldname": "status_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_status"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "vehicle_no_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629"
+  },
+  {
+   "fieldname": "vehicle_no_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629)",
+   "no_copy": 1,
+   "options": "Police Plate Logs",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_vehicle_no",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629"
+  },
+  {
+   "depends_on": "eval:doc.edit_vehicle_no",
+   "fieldname": "new_vehicle_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629 \u0627\u0644\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.edit_vehicle_no"
+  },
+  {
+   "depends_on": "eval:doc.edit_vehicle_no",
+   "fieldname": "edit_vehicle_no_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_vehicle_no"
+  },
+  {
+   "depends_on": "eval:doc.edit_vehicle_no",
+   "fieldname": "vehicle_no_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_vehicle_no"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "private_no_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a"
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "private_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a",
+   "no_copy": 1,
+   "options": "Private Plate",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_private_no",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a"
+  },
+  {
+   "depends_on": "eval:doc.edit_private_no",
+   "fieldname": "new_private_no",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a \u0627\u0644\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.edit_private_no",
+   "options": "Private Plate"
+  },
+  {
+   "depends_on": "eval:doc.edit_private_no",
+   "fieldname": "edit_private_no_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_private_no"
+  },
+  {
+   "depends_on": "eval:doc.edit_private_no",
+   "fieldname": "private_no_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_private_no"
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "private_no_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a)",
+   "no_copy": 1,
+   "options": "Private Plate Logs",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_motor_no",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631"
+  },
+  {
+   "depends_on": "eval:doc.edit_motor_no",
+   "fieldname": "new_motor_no",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631 \u0627\u0644\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.edit_motor_no",
+   "options": "Vehicle Motor"
+  },
+  {
+   "depends_on": "eval:doc.edit_motor_no",
+   "fieldname": "edit_motor_no_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_motor_no"
+  },
+  {
+   "depends_on": "eval:doc.edit_motor_no",
+   "fieldname": "motor_no_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_motor_no"
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "processing_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_processing_type",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "no_copy": 1
+  },
+  {
+   "depends_on": "eval:doc.edit_processing_type",
+   "fieldname": "new_processing_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632 \u0627\u0644\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.edit_processing_type",
+   "options": "Vehicle Processing Type"
+  },
+  {
+   "depends_on": "eval:doc.edit_processing_type",
+   "fieldname": "edit_processing_type_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_processing_type"
+  },
+  {
+   "depends_on": "eval:doc.edit_processing_type",
+   "fieldname": "processing_type_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_processing_type"
+  },
+  {
+   "fieldname": "column_break3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "processing_type_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632)",
+   "no_copy": 1,
+   "options": "Processing Type Logs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "oil_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0632\u064a\u062a",
+   "no_copy": 1,
+   "options": "Oil Type"
+  },
+  {
+   "fieldname": "oil_count",
+   "fieldtype": "Float",
+   "label": "\u0645\u0642\u0631\u0631 \u0627\u0644\u0632\u064a\u062a",
+   "no_copy": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal) && doc.private_no ",
+   "fieldname": "traffic_entity",
+   "fieldtype": "Link",
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0645\u0631\u0648\u0631",
+   "no_copy": 1,
+   "options": "Traffic Entity",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal) && doc.private_no",
+   "fieldname": "plate_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0644\u0648\u062d\u0629",
+   "no_copy": 1,
+   "options": "Plate Type",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_121",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "buying_price",
+   "fieldtype": "Currency",
+   "label": "\u062b\u0645\u0646 \u0627\u0644\u0634\u0631\u0627\u0621"
+  },
+  {
+   "fieldname": "buying_year",
+   "fieldtype": "Data",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0648\u0631\u064a\u062f"
+  },
+  {
+   "depends_on": "eval:doc.edit_private_no",
+   "fieldname": "new_traffic_entity",
+   "fieldtype": "Link",
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0627\u0644\u062c\u062f\u064a\u062f\u0629",
+   "mandatory_depends_on": "eval:doc.edit_private_no",
+   "options": "Traffic Entity"
+  },
+  {
+   "depends_on": "eval:doc.edit_private_no",
+   "fieldname": "new_plate_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0644\u0648\u062d\u0629 \u0627\u0644\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.edit_private_no",
+   "options": "Plate Type"
+  },
+  {
+   "depends_on": "eval:doc.vehicle_status == \"\u0645\u062e\u0631\u062f\u0629\" || doc.vehicle_status == \"\u0628\u064a\u0639\u062a \u0628\u0627\u0644\u0645\u0632\u0627\u062f\"",
+   "fieldname": "police_id",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629 \u0642\u0628\u0644 \u0627\u0644\u062a\u062e\u0631\u064a\u062f",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "accident_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u062d\u0648\u0627\u062f\u062b"
+  },
+  {
+   "fieldname": "accident_logs",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0627\u0644\u062d\u0648\u0627\u062f\u062b)",
+   "no_copy": 1,
+   "options": "Accident Logs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "liquid_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0635\u0631\u0641\u064a\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629)",
+   "no_copy": 1,
+   "options": "Liquids Issuing Table",
+   "read_only": 1
+  },
+  {
+   "fieldname": "liquids_sec",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0635\u0631\u0641\u064a\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629)"
+  },
+  {
+   "fieldname": "license_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0631\u062e\u0635\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.license_no",
+   "fieldname": "license_status",
+   "fieldtype": "Data",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0631\u062e\u0635\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.license_no",
+   "fieldname": "license_duration",
+   "fieldtype": "Int",
+   "label": "\u0645\u062f\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_139",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.license_no",
+   "fieldname": "license_from_date",
+   "fieldtype": "Date",
+   "label": "\u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.license_no",
+   "fieldname": "license_to_date",
+   "fieldtype": "Date",
+   "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_license_logs",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u062a\u0631\u062e\u064a\u0635 \u0627\u0644\u0645\u0631\u0643\u0628\u0629)",
+   "no_copy": 1,
+   "options": "Vehicle License Logs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_bbreak",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "edit_tab_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "chassis_no_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_chassis_no",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647"
+  },
+  {
+   "depends_on": "eval:doc.edit_chassis_no",
+   "fieldname": "new_chassis_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647 \u0627\u0644\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.edit_chassis_no"
+  },
+  {
+   "depends_on": "eval:doc.edit_chassis_no",
+   "fieldname": "edit_chassis_no_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_chassis_no"
+  },
+  {
+   "depends_on": "eval:doc.edit_chassis_no",
+   "fieldname": "chassis_no_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_chassis_no"
+  },
+  {
+   "fieldname": "column_break_153",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "chassis_no_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647)",
+   "no_copy": 1,
+   "options": "Chassis No Logs",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "group_shape_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0634\u0643\u0644"
+  },
+  {
+   "depends_on": "eval:doc.edit_group_shape",
+   "fieldname": "edit_group_shape_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_group_shape"
+  },
+  {
+   "fieldname": "column_break_160",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "shape_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0634\u0643\u0644"
+  },
+  {
+   "depends_on": "eval:doc.edit_shape",
+   "fieldname": "edit_shape_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_shape"
+  },
+  {
+   "fieldname": "column_break_167",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "brand_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0645\u0627\u0631\u0643\u0629"
+  },
+  {
+   "depends_on": "eval:doc.edit_brand",
+   "fieldname": "edit_brand_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_brand"
+  },
+  {
+   "fieldname": "column_break_174",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "style_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0637\u0631\u0627\u0632"
+  },
+  {
+   "depends_on": "eval:doc.edit_style",
+   "fieldname": "edit_style_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_style"
+  },
+  {
+   "fieldname": "column_break_181",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "model_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0645\u0648\u062f\u064a\u0644"
+  },
+  {
+   "depends_on": "eval:doc.edit_model",
+   "fieldname": "edit_model_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_model"
+  },
+  {
+   "fieldname": "column_break_188",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "country_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0628\u0644\u062f \u0627\u0644\u0635\u0646\u0639"
+  },
+  {
+   "depends_on": "eval:doc.edit_country",
+   "fieldname": "edit_country_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_country"
+  },
+  {
+   "fieldname": "column_break_195",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "exchange_allowance_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0645\u062e\u0635\u0635 \u0627\u0644\u0635\u0631\u0641"
+  },
+  {
+   "depends_on": "eval:doc.edit_exchange_allowance",
+   "fieldname": "edit_exchange_allowance_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_exchange_allowance"
+  },
+  {
+   "fieldname": "column_break_202",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_exchange_allowance",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0645\u062e\u0635\u0635 \u0627\u0644\u0635\u0631\u0641"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_group_shape",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0634\u0643\u0644"
+  },
+  {
+   "depends_on": "eval:doc.edit_group_shape",
+   "fieldname": "new_group_shape",
+   "fieldtype": "Link",
+   "label": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0634\u0643\u0644 \u0627\u0644\u062c\u062f\u064a\u062f\u0629",
+   "mandatory_depends_on": "eval:doc.edit_group_shape",
+   "options": "Vehicle Group Shape"
+  },
+  {
+   "depends_on": "eval:doc.edit_group_shape",
+   "fieldname": "group_shape_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_group_shape"
+  },
+  {
+   "fieldname": "group_shape_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0634\u0643\u0644)",
+   "no_copy": 1,
+   "options": "Group Shape Logs",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_shape",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0634\u0643\u0644"
+  },
+  {
+   "depends_on": "eval:doc.edit_shape",
+   "fieldname": "new_shape",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0634\u0643\u0644 \u0627\u0644\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.edit_shape",
+   "options": "Vehicle Shape"
+  },
+  {
+   "depends_on": "eval:doc.edit_shape",
+   "fieldname": "shape_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_shape"
+  },
+  {
+   "fieldname": "shape_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0627\u0644\u0634\u0643\u0644)",
+   "no_copy": 1,
+   "options": "Shape No Logs",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_brand",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0645\u0627\u0631\u0643\u0629"
+  },
+  {
+   "depends_on": "eval:doc.edit_brand",
+   "fieldname": "new_brand",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629 \u0627\u0644\u062c\u062f\u064a\u062f\u0629",
+   "mandatory_depends_on": "eval:doc.edit_brand",
+   "options": "Vehicle Brand"
+  },
+  {
+   "depends_on": "eval:doc.edit_brand",
+   "fieldname": "brand_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_brand"
+  },
+  {
+   "fieldname": "brand_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0627\u0644\u0645\u0627\u0631\u0643\u0629)",
+   "no_copy": 1,
+   "options": "Brand No Logs",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_style",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0637\u0631\u0627\u0632"
+  },
+  {
+   "depends_on": "eval:doc.edit_style",
+   "fieldname": "new_style",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632 \u0627\u0644\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.edit_style",
+   "options": "Vehicle Style"
+  },
+  {
+   "depends_on": "eval:doc.edit_style",
+   "fieldname": "style_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_style"
+  },
+  {
+   "fieldname": "style_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0627\u0644\u0637\u0631\u0627\u0632)",
+   "no_copy": 1,
+   "options": "Style No Logs",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_model",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u0645\u0648\u062f\u064a\u0644"
+  },
+  {
+   "depends_on": "eval:doc.edit_model",
+   "fieldname": "new_model",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644 \u0627\u0644\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.edit_model",
+   "options": "Vehicle Model"
+  },
+  {
+   "depends_on": "eval:doc.edit_model",
+   "fieldname": "model_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_model"
+  },
+  {
+   "fieldname": "model_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0627\u0644\u0645\u0648\u062f\u064a\u0644)",
+   "no_copy": 1,
+   "options": "Model No Loge",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_country",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0628\u0644\u062f \u0627\u0644\u0635\u0646\u0639"
+  },
+  {
+   "depends_on": "eval:doc.edit_country",
+   "fieldname": "new_country",
+   "fieldtype": "Link",
+   "label": "\u0628\u0644\u062f \u0627\u0644\u0635\u0646\u0639 \u0627\u0644\u062c\u062f\u064a\u062f\u0629",
+   "mandatory_depends_on": "eval:doc.edit_country",
+   "options": "Vehicle Country"
+  },
+  {
+   "depends_on": "eval:doc.edit_country",
+   "fieldname": "country_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_country"
+  },
+  {
+   "fieldname": "country_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0628\u0644\u062f \u0627\u0644\u0635\u0646\u0639)",
+   "no_copy": 1,
+   "options": "Country No Logs",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.edit_exchange_allowance",
+   "fieldname": "new_exchange_allowance",
+   "fieldtype": "Link",
+   "label": "\u0645\u062e\u0635\u0635 \u0627\u0644\u0635\u0631\u0641 \u0627\u0644\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.edit_exchange_allowance",
+   "options": "Exchange Allowance"
+  },
+  {
+   "depends_on": "eval:doc.edit_exchange_allowance",
+   "fieldname": "exchange_allowance_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_exchange_allowance"
+  },
+  {
+   "fieldname": "exchange_allowance_table",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u0645\u062e\u0635\u0635 \u0627\u0644\u0635\u0631\u0641)",
+   "no_copy": 1,
+   "options": "Exchange Allowance Logs",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.vehicle_no && (doc.__islocal)",
+   "fieldname": "check_police_no",
+   "fieldtype": "Button",
+   "label": "<b> \u0627\u0644\u062a\u062d\u0642\u0642 \u0645\u0646 \u0625\u0645\u0643\u0627\u0646\u064a\u0629 \u0625\u0633\u062a\u062e\u062f\u0627\u0645 \u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629</b>"
+  },
+  {
+   "fieldname": "column_break_75",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.chassis_no && (doc.__islocal)",
+   "fieldname": "check_chassis_no",
+   "fieldtype": "Button",
+   "label": "<b>\u0627\u0644\u062a\u062d\u0642\u0642 \u0645\u0646 \u0625\u0645\u0643\u0627\u0646\u064a\u0629 \u0625\u0633\u062a\u062e\u062f\u0627\u0645 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647</b>"
+  },
+  {
+   "fieldname": "oil_issuing_rule",
+   "fieldtype": "Link",
+   "label": " \u0631\u0642\u0645 \u0642\u0627\u0639\u062f\u0629 \u0635\u0631\u0641 \u0627\u0644\u0632\u064a\u062a",
+   "no_copy": 1,
+   "options": "Issuing Rules",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_80",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gas_issuing_rule",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0642\u0627\u0639\u062f\u0629 \u0635\u0631\u0641 \u0627\u0644\u063a\u0627\u0632",
+   "no_copy": 1,
+   "options": "Issuing Rules",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gas_count",
+   "fieldtype": "Float",
+   "label": "\u0645\u0642\u0631\u0631 \u0627\u0644\u063a\u0627\u0632",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "column_break_83",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "washing_issuing_rule",
+   "fieldtype": "Link",
+   "label": " \u0631\u0642\u0645 \u0642\u0627\u0639\u062f\u0629 \u0635\u0631\u0641 \u0627\u0644\u063a\u0633\u064a\u0644",
+   "no_copy": 1,
+   "options": "Issuing Rules",
+   "read_only": 1
+  },
+  {
+   "fieldname": "washing_voucher",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u063a\u0633\u064a\u0644",
+   "no_copy": 1,
+   "options": "Washing Vouchers"
+  },
+  {
+   "fieldname": "washing_count",
+   "fieldtype": "Float",
+   "label": "\u0645\u0642\u0631\u0631 \u0627\u0644\u063a\u0633\u064a\u0644",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "license_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u062a\u0631\u0627\u062e\u064a\u0635"
+  },
+  {
+   "fieldname": "licesne_section",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u062a\u0631\u062e\u064a\u0635 \u0627\u0644\u0645\u0631\u0643\u0628\u0629)"
+  },
+  {
+   "default": "\u063a\u0627\u0632 \u0637\u0628\u064a\u0639\u064a \u0641\u0626\u0629 15 \u0645\u062a\u0631 \u0645\u0643\u0639\u0628",
+   "fieldname": "gas_voucher",
+   "fieldtype": "Link",
+   "label": "\u0628\u0648\u0646 \u0627\u0644\u063a\u0627\u0632",
+   "options": "Gas Voucher"
+  },
+  {
+   "default": "0",
+   "fieldname": "fanar",
+   "fieldtype": "Check",
+   "label": "\u0641\u0646\u0627\u0631"
+  },
+  {
+   "default": "0",
+   "fieldname": "tetra",
+   "fieldtype": "Check",
+   "label": "\u062a\u062a\u0631\u0627"
+  },
+  {
+   "default": "0",
+   "fieldname": "cameras",
+   "fieldtype": "Check",
+   "label": "\u0643\u0627\u0645\u064a\u0631\u0627\u062a"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-02-16 13:30:40.288488",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Vehicles",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "vehicle_no, police_id",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "vehicle_no",
+ "track_changes": 1,
+ "track_seen": 1
+}

@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-02-18 12:41:08.347730",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "recruit",
+  "employee_name",
+  "employment_type",
+  "penalty_date",
+  "recruit_penalty_type",
+  "reason",
+  "column_break_5",
+  "reporting_status",
+  "reporting_date",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "RP-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "RP-"
+  },
+  {
+   "fieldname": "recruit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Recruit",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "recruit.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "recruit.employment_type",
+   "fieldname": "employment_type",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Employment Type",
+   "options": "Employment Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "penalty_date",
+   "fieldtype": "Date",
+   "label": "Penalty Date"
+  },
+  {
+   "fieldname": "recruit_penalty_type",
+   "fieldtype": "Select",
+   "label": "Recruit Penalty Type",
+   "options": "\n\u0635\u063a\u0631\u064a\n\u0643\u0628\u0631\u064a"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "\u0627\u0644\u0645\u062e\u0627\u0644\u0641\u0629"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reporting_status",
+   "fieldtype": "Select",
+   "label": "Reporting Status",
+   "options": "\n\u0646\u0639\u0645\n\u0644\u0627"
+  },
+  {
+   "fieldname": "reporting_date",
+   "fieldtype": "Date",
+   "label": "Reporting Date"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Recruit Penalty",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-18 12:42:37.209124",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Recruit Penalty",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}

@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-10-24 02:05:16.887204",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "amended_from",
+  "section_break_3",
+  "date",
+  "column_break_5",
+  "note_number",
+  "section_break_7",
+  "supplier1",
+  "1_column",
+  "supplier2",
+  "2_column",
+  "supplier3",
+  "section_break_15",
+  "price_quote_note_item",
+  "total"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "naming_series",
+   "options": "P-N-",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Price Quote Note",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u062a\u0627\u0631\u064a\u062e"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "note_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0630\u0643\u0631\u0629"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "supplier1",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u0627\u0648\u0644",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "supplier2",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0646\u064a",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "supplier3",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0644\u062b",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "price_quote_note_item",
+   "fieldtype": "Table",
+   "options": "Price Quote Note Item"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "\u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a",
+   "read_only": 1
+  },
+  {
+   "fieldname": "1_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "2_column",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-10-24 02:21:54.723791",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Price Quote Note",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

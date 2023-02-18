@@ -1,0 +1,387 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-01-22 15:36:47.916805",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "section_break_3",
+  "series_no",
+  "form_type",
+  "supplier",
+  "number_of_attachments",
+  "assigned_author",
+  "column_break_5",
+  "date",
+  "year",
+  "bank_name",
+  "bank_account_no",
+  "include_imprints",
+  "data_filled",
+  "section_break_7",
+  "form_invoices",
+  "section_break_fwy07",
+  "section_break_2akee",
+  "total_invoices",
+  "total_technical_a_fine",
+  "tota_price_difference",
+  "column_break_gfeaz",
+  "total_a_fine",
+  "total_legal_a_fine",
+  "section_break_12",
+  "include_taxes",
+  "taxes",
+  "total_taxes",
+  "deduction_data",
+  "section_break_1cbvm",
+  "disabled",
+  "martyrs",
+  "column_break_cftpz",
+  "development",
+  "section_break_c57ex",
+  "normal_imprint",
+  "extra_imprint",
+  "column_break_xbxms",
+  "total_of_imprints",
+  "section_break_ztcrs",
+  "total_deductions",
+  "section_break_14",
+  "total",
+  "no_to_words",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "naming_series",
+   "options": "FIN-FORM-",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Finance Form",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "form_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0627\u0633\u062a\u0645\u0627\u0631\u0629",
+   "options": "\n\u0641\u0627\u062a\u0648\u0631\u0629\n\u0631\u062f \u062a\u0623\u0645\u064a\u0646\n\u0645\u0645\u0627\u0631\u0633\u0627\u062a",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0625\u0633\u062a\u0645\u0627\u0631\u0629",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.supplier",
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "form_invoices",
+   "fieldtype": "Table",
+   "label": "\u0627\u0644\u0641\u0648\u0627\u062a\u064a\u0631",
+   "options": "Form Invoices"
+  },
+  {
+   "fieldname": "total_invoices",
+   "fieldtype": "Currency",
+   "label": "\u0627\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u0641\u0648\u0627\u062a\u064a\u0631",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0627\u0633\u062a\u0642\u0637\u0627\u0639\u0627\u062a"
+  },
+  {
+   "depends_on": "eval:doc.include_taxes",
+   "fieldname": "taxes",
+   "fieldtype": "Table",
+   "label": "\u0627\u0644\u0636\u0631\u0627\u0626\u0628",
+   "options": "Taxes Table"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.include_taxes",
+   "fieldname": "total_taxes",
+   "fieldtype": "Currency",
+   "label": "\u0627\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u0636\u0631\u0627\u0626\u0628",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u0646\u0647\u0627\u0626\u064a",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Finance Form",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "series_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0625\u0633\u062a\u0645\u0627\u0631\u0629",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0633\u0646\u0629 \u0627\u0644\u0645\u0627\u0644\u064a\u0629",
+   "options": "Fiscal Year"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gfeaz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_a_fine",
+   "fieldtype": "Currency",
+   "label": "\u0625\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u063a\u0631\u0627\u0645\u0627\u062a",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_2akee",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_technical_a_fine",
+   "fieldtype": "Currency",
+   "label": "\u0625\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u062e\u0635\u0645 \u0627\u0644\u0641\u0646\u064a",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tota_price_difference",
+   "fieldtype": "Currency",
+   "label": "\u0625\u062c\u0645\u0627\u0644\u064a \u0641\u0631\u0642 \u0627\u0644\u0633\u0639\u0631",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_legal_a_fine",
+   "fieldtype": "Currency",
+   "label": "\u0625\u062c\u0645\u0627\u0644\u064a \u062e\u0635\u0645 \u0627\u0644\u0642\u0627\u0646\u0648\u0646\u064a",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "disabled",
+   "fieldtype": "Currency",
+   "label": "\u0645\u0639\u0627\u0642\u064a\u0646",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "development",
+   "fieldtype": "Currency",
+   "label": "\u062a\u0646\u0645\u064a\u0629",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "martyrs",
+   "fieldtype": "Currency",
+   "label": "\u0634\u0647\u062f\u0627\u0621",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0628\u0646\u0643",
+   "options": "Bank",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bank_account_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u062d\u0633\u0627\u0628",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_fwy07",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "deduction_data",
+   "fieldtype": "Table",
+   "options": "Deduction Data"
+  },
+  {
+   "fieldname": "column_break_cftpz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_1cbvm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_c57ex",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_deductions",
+   "fieldtype": "Currency",
+   "label": "\u0625\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u0623\u0633\u062a\u0642\u0637\u0627\u0639\u0627\u062a",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "include_taxes",
+   "fieldtype": "Check",
+   "label": "\u0636\u0631\u0627\u0626\u0628"
+  },
+  {
+   "default": "0",
+   "fieldname": "include_imprints",
+   "fieldtype": "Check",
+   "label": "\u0625\u0636\u0627\u0641\u0629 \u0627\u0644\u062f\u0645\u063a\u0627\u062a"
+  },
+  {
+   "depends_on": "eval:doc.include_imprints",
+   "fieldname": "normal_imprint",
+   "fieldtype": "Currency",
+   "label": "\u062f\u0645\u063a\u0629 \u0639\u0627\u062f\u064a\u0629",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.include_imprints",
+   "fieldname": "extra_imprint",
+   "fieldtype": "Currency",
+   "label": "\u062f\u0645\u063a\u0629 \u0625\u0636\u0627\u0641\u064a\u0629",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ztcrs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_xbxms",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.include_imprints",
+   "fieldname": "total_of_imprints",
+   "fieldtype": "Currency",
+   "label": "\u0625\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u062f\u0645\u063a\u0627\u062a",
+   "non_negative": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "no_to_words",
+   "fieldtype": "Data",
+   "label": "\u062a\u0641\u0642\u064a\u0637",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "number_of_attachments",
+   "fieldtype": "Int",
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0645\u0631\u0641\u0642\u0627\u062a",
+   "non_negative": 1
+  },
+  {
+   "default": "\u062d\u0633\u0627\u0628\u0627\u062a \u0627\u0644\u0634\u0631\u0637\u0629",
+   "fieldname": "assigned_author",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0643\u0627\u062a\u0628 \u0627\u0644\u0645\u0646\u0648\u0637",
+   "read_only": 1
+  },
+  {
+   "fieldname": "data_filled",
+   "fieldtype": "Data",
+   "label": "\u0628\u064a\u0640\u0640\u0640\u0640\u0627\u0646\u0640\u0640\u0640\u0640\u0640\u0627\u062a"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-18 12:17:26.777993",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Finance Form",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}

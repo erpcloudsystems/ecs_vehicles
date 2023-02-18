@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-09-20 15:34:44.997306",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "liquid",
+  "qty",
+  "in_words"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "fieldname": "liquid",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0633\u0627\u0626\u0644"
+  },
+  {
+   "columns": 2,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0643\u0645\u064a\u0629 \u0627\u0644\u0645\u0642\u0631\u0631\u0629"
+  },
+  {
+   "columns": 5,
+   "fieldname": "in_words",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u062a\u0641\u0642\u064a\u0637"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-09-20 16:17:49.301143",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Qty Per Liquid",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

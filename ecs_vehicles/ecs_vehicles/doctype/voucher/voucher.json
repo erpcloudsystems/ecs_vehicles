@@ -1,0 +1,380 @@
+{
+ "actions": [],
+ "autoname": "field:barcode",
+ "creation": "2022-10-03 16:38:46.118230",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_break_1",
+  "serial_no",
+  "notebook_no",
+  "barcode",
+  "barcode_no",
+  "duplicated",
+  "disabled",
+  "column_break_6",
+  "liquid_type",
+  "fuel_type",
+  "voucher_type",
+  "voucher_price",
+  "release_date",
+  "tab_break_11",
+  "receipt_no",
+  "receipt_date",
+  "tab_break_14",
+  "issue_no",
+  "issue_date",
+  "entity",
+  "review_tab",
+  "voucher_review",
+  "review_date",
+  "reviewed",
+  "username",
+  "column_break_22",
+  "company_name",
+  "batch_no",
+  "group_no",
+  "vehicle_info_tab",
+  "vehicle",
+  "police_no",
+  "entity_name",
+  "private_no",
+  "motor_no",
+  "chassis_no",
+  "vehicle_fuel_type",
+  "column_break_34",
+  "vehicle_shape",
+  "vehicle_brand",
+  "vehicle_style",
+  "vehicle_model",
+  "vehicle_color",
+  "processing_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0633\u0644\u0633\u0644",
+   "read_only": 1
+  },
+  {
+   "fieldname": "liquid_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0633\u0627\u0626\u0644",
+   "options": "\n\u0648\u0642\u0648\u062f\n\u0632\u064a\u062a\n\u063a\u0627\u0632\n\u063a\u0633\u064a\u0644",
+   "read_only": 1
+  },
+  {
+   "fieldname": "voucher_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0641\u0626\u0629 \u0627\u0644\u0628\u0648\u0646",
+   "read_only": 1
+  },
+  {
+   "fieldname": "release_date",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0625\u0635\u062f\u0627\u0631",
+   "options": "Release Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "entity",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "options": "Entity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "receipt_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0625\u0636\u0627\u0641\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0635\u0631\u0641",
+   "read_only": 1
+  },
+  {
+   "fieldname": "receipt_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0625\u0630\u0646 \u0627\u0644\u0625\u0636\u0627\u0641\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issue_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0625\u0630\u0646 \u0627\u0644\u0635\u0631\u0641",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "in_standard_filter": 1,
+   "label": "\u0645\u0639\u0637\u0644"
+  },
+  {
+   "fieldname": "barcode_no",
+   "fieldtype": "Barcode",
+   "label": "\u0627\u0644\u0628\u0627\u0631\u0643\u0648\u062f",
+   "read_only": 1
+  },
+  {
+   "fieldname": "barcode",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0628\u0627\u0631\u0643\u0648\u062f",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "depends_on": "eval:doc.liquid_type == \"\u0648\u0642\u0648\u062f\"",
+   "fieldname": "fuel_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_break_1",
+   "fieldtype": "Tab Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0628\u0648\u0646"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tab_break_11",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0625\u0636\u0627\u0641\u0629"
+  },
+  {
+   "fieldname": "tab_break_14",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0635\u0631\u0641"
+  },
+  {
+   "fieldname": "voucher_review",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0645\u0633\u062a\u0646\u062f \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "reviewed",
+   "fieldtype": "Check",
+   "label": "\u062a\u0645 \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "review_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u062f\u0641\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "group_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u062c\u0645\u0648\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0634\u0631\u0643\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "review_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629"
+  },
+  {
+   "fieldname": "vehicle_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicles"
+  },
+  {
+   "fetch_from": "vehicle.vehicle_no",
+   "fieldname": "police_no",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.entity_name",
+   "fieldname": "entity_name",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.private_no",
+   "fieldname": "private_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.motor_no",
+   "fieldname": "motor_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.chassis_no",
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.fuel_type",
+   "fieldname": "vehicle_fuel_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0648\u0642\u0648\u062f \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_34",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle.vehicle_shape",
+   "fieldname": "vehicle_shape",
+   "fieldtype": "Data",
+   "label": "\u0634\u0643\u0644 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_brand",
+   "fieldname": "vehicle_brand",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_style",
+   "fieldname": "vehicle_style",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_model",
+   "fieldname": "vehicle_model",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_color",
+   "fieldname": "vehicle_color",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0644\u0648\u0646",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.processing_type",
+   "fieldname": "processing_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "read_only": 1
+  },
+  {
+   "fieldname": "voucher_price",
+   "fieldtype": "Currency",
+   "label": "\u0633\u0639\u0631 \u0627\u0644\u0628\u0648\u0646",
+   "no_copy": 1,
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notebook_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u062f\u0641\u062a\u0631",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "duplicated",
+   "fieldtype": "Check",
+   "label": "\u0645\u0643\u0631\u0631",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "label": "\u0645\u0631\u0627\u062c\u0639\u0629 \u0628\u0648\u0627\u0633\u0637\u0629",
+   "read_only": 1
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-02-15 16:15:18.952856",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Voucher",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "serial_no, barcode_no",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "serial_no"
+}

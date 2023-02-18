@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-02-18 12:45:06.883683",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "recruit",
+  "employment_type",
+  "political_investigation_date",
+  "receipt_the_result_of_political_investigation_date",
+  "political_investigation_result",
+  "column_break_5",
+  "criminal_investigation_date",
+  "receipt_the_result_of_criminal_investigation_date",
+  "criminal_investigation_result",
+  "send_investigation_number",
+  "investigation_entry_number",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "CPI-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "CPI-"
+  },
+  {
+   "fieldname": "recruit",
+   "fieldtype": "Link",
+   "label": "Recruit",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "recruit.employment_type",
+   "fieldname": "employment_type",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Employment Type",
+   "options": "Employment Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "political_investigation_date",
+   "fieldtype": "Date",
+   "label": "Political Investigation Date"
+  },
+  {
+   "fieldname": "receipt_the_result_of_political_investigation_date",
+   "fieldtype": "Date",
+   "label": "Receipt The result Of Political Investigation Date"
+  },
+  {
+   "fieldname": "political_investigation_result",
+   "fieldtype": "Link",
+   "label": "Political Investigation Result",
+   "options": "Political Investigation Result"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "criminal_investigation_date",
+   "fieldtype": "Date",
+   "label": "Criminal Investigation Date"
+  },
+  {
+   "fieldname": "receipt_the_result_of_criminal_investigation_date",
+   "fieldtype": "Date",
+   "label": "Receipt The result Of Criminal Investigation Date"
+  },
+  {
+   "fieldname": "criminal_investigation_result",
+   "fieldtype": "Link",
+   "label": "Criminal Investigation Result",
+   "options": "Criminal Investigation Result"
+  },
+  {
+   "fieldname": "send_investigation_number",
+   "fieldtype": "Link",
+   "label": "Send Investigation Number",
+   "options": "Send Investigation Number"
+  },
+  {
+   "fieldname": "investigation_entry_number",
+   "fieldtype": "Link",
+   "label": "Investigation Entry Number",
+   "options": "Investigation Entry Number"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Criminal And Political Investigations",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-18 12:45:06.883683",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Criminal And Political Investigations",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1
+}

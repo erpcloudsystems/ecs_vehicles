@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:motor_no",
+ "creation": "2022-07-03 16:11:23.740988",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "motor_no",
+  "current_vehicle",
+  "vehicle_info_section",
+  "police_no",
+  "entity",
+  "chassis_no",
+  "fuel_type",
+  "processing_type",
+  "column_break_16",
+  "vehicle_shape",
+  "vehicle_brand",
+  "vehicle_style",
+  "vehicle_model",
+  "vehicle_color",
+  "section_break_3",
+  "motor_table"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "motor_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "current_vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629 \u0627\u0644\u062d\u0627\u0644\u064a\u0629",
+   "no_copy": 1,
+   "options": "Vehicles",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "motor_table",
+   "fieldtype": "Table",
+   "label": "\u0633\u062c\u0644 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "no_copy": 1,
+   "options": "Editing Table"
+  },
+  {
+   "depends_on": "eval:doc.current_vehicle",
+   "fieldname": "vehicle_info_section",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fetch_from": "current_vehicle.vehicle_no",
+   "fetch_if_empty": 1,
+   "fieldname": "police_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "current_vehicle.vehicle_shape",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_shape",
+   "fieldtype": "Data",
+   "label": "\u0634\u0643\u0644 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "current_vehicle.entity_name",
+   "fetch_if_empty": 1,
+   "fieldname": "entity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "current_vehicle.chassis_no",
+   "fetch_if_empty": 1,
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "current_vehicle.fuel_type",
+   "fetch_if_empty": 1,
+   "fieldname": "fuel_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "current_vehicle.vehicle_brand",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_brand",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "current_vehicle.vehicle_style",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_style",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "current_vehicle.vehicle_model",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_model",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "current_vehicle.vehicle_color",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_color",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0644\u0648\u0646",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "current_vehicle.processing_type",
+   "fetch_if_empty": 1,
+   "fieldname": "processing_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-01-12 12:27:41.881534",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Vehicle Motor",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "motor_no",
+ "track_changes": 1,
+ "track_seen": 1
+}

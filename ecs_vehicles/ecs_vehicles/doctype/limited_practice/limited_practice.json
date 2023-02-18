@@ -1,0 +1,247 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-02-14 17:30:56.606900",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "date",
+  "limited_practice_no",
+  "column_break_5fnl1",
+  "fiscal_year",
+  "estimated_value",
+  "document_name",
+  "section_break_lcmh5",
+  "terms_of_reference",
+  "offering_note",
+  "notify_companies_of_the_practice",
+  "determine_the_technical_opening_session",
+  "receive_the_technical_report",
+  "approval_of_the_competent",
+  "determining_the_session_for_opening_the_financial_envelopes",
+  "approval_the_competent_authority",
+  "submitting_letter_of_guarantee_the_contract",
+  "issuing_contract",
+  "column_break_frjnd",
+  "financial_allocation_request",
+  "the_approval_of_the_competent",
+  "selling_the_terms_of_reference",
+  "send_technical_offers_submitted",
+  "minutes_of_procedure_for_openings",
+  "announcement_of_technically",
+  "notify_the_accepted_companies_of_the_date_the_session",
+  "issuance_of_anchoring_notice",
+  "issuing_supply_order",
+  "exchange_procedures"
+ ],
+ "fields": [
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u062a\u0627\u0631\u064a\u062e"
+  },
+  {
+   "fieldname": "limited_practice_no",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0645\u0627\u0631\u0633\u0629 \u0627\u0644\u0645\u062d\u062f\u0648\u062f\u0629",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5fnl1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0633\u0646\u0629 \u0627\u0644\u0645\u0627\u0644\u064a\u0629",
+   "options": "Fiscal Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "estimated_value",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0642\u064a\u0645\u0629 \u0627\u0644\u062a\u0642\u062f\u064a\u0631\u064a\u0629",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_lcmh5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "terms_of_reference",
+   "fieldtype": "Table",
+   "label": "\u0643\u0631\u0627\u0633\u0629 \u0627\u0644\u0634\u0631\u0648\u0637 \u0648\u0627\u0644\u0645\u0648\u0635\u0641\u0627\u062a",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "column_break_frjnd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "financial_allocation_request",
+   "fieldtype": "Table",
+   "label": "\u0637\u0644\u0628 \u0627\u0644\u062a\u062e\u0635\u064a\u0635 \u0627\u0644\u0645\u0627\u0644\u064a",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "offering_note",
+   "fieldtype": "Table",
+   "label": "\u0645\u0630\u0643\u0631\u0629 \u0627\u0644\u0637\u0631\u062d \u0644\u0644\u0645\u0645\u0627\u0631\u0633\u0629 \u0627\u0644\u0645\u062d\u062f\u0648\u062f\u0629",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "the_approval_of_the_competent",
+   "fieldtype": "Table",
+   "label": "\u0645\u0648\u0627\u0641\u0642\u0629 \u0627\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0645\u062e\u062a\u0635\u0629",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "notify_companies_of_the_practice",
+   "fieldtype": "Table",
+   "label": "\u0627\u062e\u0637\u0627\u0631 \u0627\u0644\u0634\u0631\u0643\u0627\u062a \u0628\u0627\u0644\u0645\u0645\u0627\u0631\u0633\u0629",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "selling_the_terms_of_reference",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0639 \u0643\u0631\u0627\u0633\u0629 \u0627\u0644\u0634\u0631\u0648\u0637 \u0648\u0627\u0644\u0645\u0648\u0635\u0641\u0627\u062a",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "determine_the_technical_opening_session",
+   "fieldtype": "Table",
+   "label": "\u062a\u062d\u062f\u064a\u062f \u062c\u0644\u0633\u0629 \u0641\u0636 \u0627\u0644\u0645\u0638\u0627\u0631\u064a\u0641 \u0627\u0644\u0641\u0646\u064a\u0629",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "send_technical_offers_submitted",
+   "fieldtype": "Table",
+   "label": "\u0627\u0631\u0633\u0627\u0644 \u0627\u0644\u0639\u0631\u0648\u0636 \u0627\u0644\u0641\u0646\u064a\u0629 \u0627\u0644\u0645\u0642\u062f\u0645\u0629 \u0644\u0644\u0634\u0631\u0643\u0627\u062a",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "receive_the_technical_report",
+   "fieldtype": "Table",
+   "label": "\u0648\u0631\u0648\u062f \u0627\u0644\u062a\u0642\u0631\u064a\u0631 \u0627\u0644\u0641\u0646\u064a \u0627\u0644\u0645\u062a\u0636\u0645\u0646 \u0627\u0644\u062f\u0631\u0627\u0633\u0629 \u0627\u0644\u0641\u0646\u064a\u0629",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "minutes_of_procedure_for_openings",
+   "fieldtype": "Table",
+   "label": "\u0645\u062d\u0636\u0631 \u0627\u062c\u0631\u0627\u0621\u0627\u062a \u0641\u0636 \u0627\u0644\u0645\u0638\u0627\u0631\u064a\u0641 \u0627\u0644\u0641\u0646\u064a\u0629",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "approval_of_the_competent",
+   "fieldtype": "Table",
+   "label": "\u0645\u0648\u0627\u0641\u0642\u0629 \u0627\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0645\u062e\u062a\u0635\u0629 \u0639\u0644\u064a \u0645\u062d\u0636\u0631 \u0627\u062c\u0631\u0627\u0621\u0627\u062a \u0641\u0636 \u0627\u0644\u0645\u0638\u0627\u0631\u064a\u0641 \u0627\u0644\u0641\u0646\u064a\u0629",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "announcement_of_technically",
+   "fieldtype": "Table",
+   "label": "\u0627\u0639\u0644\u0627\u0646 \u0627\u0644\u0634\u0631\u0643\u0627\u062a \u0627\u0644\u0645\u0642\u0628\u0648\u0644\u0629 \u0641\u0646\u064a\u0627\u064b \u0628\u0644\u0648\u062d\u0627\u062a \u0627\u0644\u0627\u0639\u0644\u0627\u0646\u0627\u062a",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "determining_the_session_for_opening_the_financial_envelopes",
+   "fieldtype": "Table",
+   "label": "\u062a\u062d\u062f\u064a\u062f \u062c\u0644\u0633\u0629 \u0641\u0636 \u0627\u0644\u0645\u0638\u0627\u0631\u064a\u0641 \u0627\u0644\u0645\u0627\u0644\u064a\u0629 \u0644\u0644\u0634\u0631\u0643\u0627\u062a \u0627\u0644\u0645\u0642\u0628\u0648\u0644\u0629 \u0641\u0646\u064a\u0627",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "notify_the_accepted_companies_of_the_date_the_session",
+   "fieldtype": "Table",
+   "label": "\u0627\u062e\u0637\u0627\u0631 \u0627\u0644\u0634\u0631\u0643\u0627\u062a \u0627\u0644\u0645\u0642\u0628\u0648\u0644\u0629 \u0628\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062c\u0644\u0633\u0629",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "approval_the_competent_authority",
+   "fieldtype": "Table",
+   "label": "\u0645\u0648\u0627\u0641\u0642\u0629 \u0627\u0644\u0633\u0644\u0637\u0629 \u0627\u0644\u0645\u062e\u062a\u0635\u0629 \u0639\u0644\u064a \u0645\u062d\u0636\u0631 \u0627\u062c\u0631\u0627\u0621\u0627\u062a \u0627\u0644\u0641\u0636 \u0627\u0644\u0645\u0627\u0644\u064a",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "issuance_of_anchoring_notice",
+   "fieldtype": "Table",
+   "label": "\u0627\u0635\u062f\u0627\u0631 \u0627\u062e\u0637\u0627\u0631 \u0631\u0633\u0648",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "submitting_letter_of_guarantee_the_contract",
+   "fieldtype": "Table",
+   "label": "\u062a\u0642\u062f\u064a\u0645 \u062e\u0637\u0627\u0628 \u0627\u0644\u0636\u0645\u0627\u0646 \u0644\u0644\u062a\u0639\u0627\u0642\u062f",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "issuing_supply_order",
+   "fieldtype": "Table",
+   "label": "\u0627\u0635\u062f\u0627\u0631 \u0627\u0645\u0631 \u0627\u0644\u062a\u0648\u0631\u064a\u062f",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "issuing_contract",
+   "fieldtype": "Table",
+   "label": "\u0627\u0635\u062f\u0627\u0631 \u0639\u0642\u062f",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "exchange_procedures",
+   "fieldtype": "Table",
+   "label": "\u0627\u062c\u0631\u0627\u0621\u0627\u062a \u0627\u0644\u0635\u0631\u0641",
+   "options": "Attachments Table"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "LIMITED-"
+  },
+  {
+   "fieldname": "document_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u0646\u062f",
+   "no_copy": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-02-15 15:25:27.931387",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Limited Practice",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "limited_practice_no, fiscal_year",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "document_name"
+}

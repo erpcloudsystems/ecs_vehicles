@@ -1,0 +1,427 @@
+
+<style>
+    * {
+            margin:0;
+            padding:0;
+            direction:rtl;
+        }
+        .print-format {
+            padding:0in;
+            
+        }
+    .header {
+        margin-top:20px;
+        display:flex; 
+        flex-direction:column;
+        justify-content:center;
+    }
+    .under-header {
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+    }
+    .esm-algeha {
+        margin-top:30px;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+    table, th, td , th{
+        border:2px solid black;
+        border-collapse:collapse;
+        text-align:center;
+    }
+    .print-format th {
+        color:black;
+            text-align:center;
+            font-weight:bold;
+            background-color:lightgray;
+    
+    }
+    .print-format td {
+        padding: 0px !important;
+    }
+    .break {
+        flex-basis: 100%;
+        height: 0;
+      }
+      .column1 {
+        border-left: 2px solid black;
+      }
+    .table1 {
+        margin-top:5px;
+        margin-right:20px;
+        margin-left:20px;
+        display:flex; 
+        flex-direction:column;
+    
+    }
+    </style>
+    {% var pageNumber = 0 %}
+    {% var months = ["يناير", "فبراير", "مارس", "ابريل", "مايو", "يونيو", "يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر", "ديسمبر"]%}
+    {% var postingDate = frappe.datetime.str_to_user(filters.posting_date) %}
+    {% var cur_month = postingDate.split("/")[1] %}
+    {% var month_idx = parseInt(cur_month, 10) - 1 %}
+    {% var numbers = ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"] %}
+    {% var curYear = postingDate.split("/")[2] %}
+    {% var curYearList = curYear.split("") %}
+    {% var yearPrint = "" %}
+    {% for(var a=0, hh=curYearList.length; a<hh; a++) { 
+    yearPrint =  yearPrint  + numbers[curYearList[a]]
+    } %}
+    {%console.log(yearPrint)%}
+    {%console.log(curYearList)%}
+<div class="header">
+
+    <div class="under-header">
+    <div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;">
+        <div>
+    <img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
+    </div>
+    <div style="font-weight:bold;">
+        وزارة الداخلية
+    </div>
+    <div>
+    الادارة العامه لمركبات الشرطه
+    </div>
+    <div>
+    قسم الحاسب الالي</div>
+    </div>
+    <div>
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="font-weight: bold;">تاريخ الطباعة  </div>
+            <div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
+                {%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div style="display: flex; justify-content:center; margin: 1em auto;">
+                <div style="border:2px solid black; background-color:lightgray;">
+                    <h3 style="font-family:Cairo; margin: 0px 20px"> بيان عهدة {%= filters.entity %} من شهر {{months[month_idx]}} سنة  {{ yearPrint }}</h3>
+                </div>
+    </div>
+</div>
+
+{% var counter = 1 %}
+
+
+<div class="table1">
+        <table style="font-family:Cairo" dir="rtl">
+            <thead>
+                <tr>
+                    <th>{%= __("م") %}</th>
+                    <th>{%= __("رقم المركبة") %}</th>
+                    <th>{%= __("الشكل") %}</th>
+                    <th>{%= __("الماركة") %}</th>
+                    <th>{%= __("الطراز") %}</th>
+                    <th>متغيرات شهر {{months[month_idx]}}</th>
+                    <th>{%= __("الملحوظات") %}</th>
+    
+                </tr>
+            </thead>
+            <tbody>
+                {% for(var i=0, f=data.length; i<f; i++) { %}
+                    {% counter = counter + 1 %}
+                    {% if ( counter % 33 ==  0 ) { %}
+                    <tr>
+                    <td colspan="7">
+                    <div class="footer-end" style="margin-bottom: 3em;">
+                        <div style="display: flex; flex-direction: row; justify-content: center;">
+                                <div style="font-weight:bold;">
+                                    يعتمد
+                                </div>
+                                <div style="margin-right:3em; font-weight:bold;">
+                                    الإسم و التوقيع/
+                                    <span></span>
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; flex-direction: row; justify-content: center; margin-left:3em;">
+                                <div ><img style="height: 2em; width: 50px;" src="/files/circle.png"></div>
+                            </div>
+                        
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; margin: auto 20px; align-items: end;">
+                                <div style="font-weight: bold;">
+                                    اقر انا ضابط الحملة ان الأرقام صحيحة وكذلك من حيث الشكل 
+                                    <br>
+                                    و الماركة و الطراز و أنها تابعة للجهة و على مسئوليتي و ليس بها أي 
+                                    <br>
+                                    إختلاف في الصلاحية سوى المدون أمامه أعطال أو تحت التخريد
+                                </div>
+                                <div style="font-size:0.6em; ">
+                                    على مندوب الجهة إدراج العطل أمام الرقم الموجود بالكشف و كذلك الإصلاح و تحت 
+                                    <br>
+                                    التخريد و هذا الكشف يتم إعتماده من الجهة شهريا و يرفق مع الكشف الإقرار الشهري 
+                                    <br>
+                                    و كشف اعطال و إصلاح منفصل معتمد و يختم بشعار الجمهورية
+                                </div>
+                            </div>
+                            
+                        </div>
+                        {% pageNumber = pageNumber + 1 %}
+                        <div style="font-size: large; font-weight: bold;">
+                           ص
+                            <span>{{pageNumber}}</span>
+                        </div>
+                </td>
+                     </tr>
+                     {% } %}
+
+                {% if ( counter % 33 ==  0 ) { %}
+
+                    <tr>
+                        <td colspan="7">
+                            <br>
+                            
+                        </td>
+                    </tr>
+                    {% } %}
+                    {% if ( counter % 33 ==  0 ) { %}
+                    <thead>
+                    <tr>
+                        <td colspan="7">
+                        <div class="under-header">
+                                <div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;">
+                                    <div>
+                        <img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
+                        </div>
+                        <div>
+                            وزارة الداخلية
+                        </div>
+                        <div>
+                        الادارة العامه لمركبات الشرطه
+                        </div>
+                        <div>
+                        قسم الحاسب الالي</div>
+                        </div>
+                        <div>
+                            <div style="display: flex; flex-direction: row; align-items: center;">
+                                <div style="font-weight: bold;">تاريخ الطباعة  </div>
+                                <div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
+                                    {%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
+                                </div>
+                            </div>
+                    
+                        </div>
+                        </div>
+                        <div style="display: flex; justify-content:center; margin: 1em auto;">
+                                    <div style="border:2px solid black; background-color:lightgray;">
+                                        <h3 style="font-family:Cairo; margin: 0px 20px"> بيان عهدة {%= filters.entity %} من شهر {{months[month_idx]}} سنة  {{ yearPrint }}</h3>
+                                    </div>
+                        </div>
+                    </td>
+                    </tr>
+                </thead>
+                <thead>
+                    <tr>
+                        <th>{%= __("م") %}</th>
+                        <th>{%= __("رقم المركبة") %}</th>
+                        <th>{%= __("الشكل") %}</th>
+                        <th>{%= __("الماركة") %}</th>
+                        <th>{%= __("الطراز") %}</th>
+                        <th>متغيرات شهر {{months[month_idx]}}</th>
+                        <th>{%= __("الملحوظات") %}</th>
+        
+                    </tr>
+                </thead>
+                {% } %}
+    
+                <tr>
+                    <td>
+                        {%= i+1 %}
+                    </td>
+
+
+
+                    <td>
+                        {% if (data[i].vehicle_no){ %}
+                        {% var vehicle_no = "" %}
+                        {% var vehicle_noList = data[i].vehicle_no %}
+                        {% var vehicle_noListsplit = vehicle_noList.split("") %}
+                        {% console.log(vehicle_noListsplit)%}
+                        {% console.log(vehicle_noList)%}
+                        {% for(var j=0, len=vehicle_noListsplit.length; j<len; j++) { 
+                            vehicle_no =  vehicle_no  + numbers[vehicle_noListsplit[j]]
+                            } %}
+                        {{ vehicle_no }}
+                        {% console.log(vehicle_no)%}
+                            {% } %}
+                    </td>
+
+
+
+                    <td>{%= (data[i].vehicle_shape) %}</td>
+                    <td>{%= data[i].vehicle_brand %}</td>
+                    <td>{%= data[i].vehicle_style %}</td>
+                    <td>{%= data[i].vehicle_status %}</td>
+                    <td>{%= data[i].notes %}</td>
+                </tr>
+                {% } %}
+                {% len =  (33 - (counter % 33)) %}
+            {% for(var x=0, l=(33 - (counter % 33) ); x<l; x++) { %}
+                <tr>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><div style="width: 10em;"></div></td>
+                </tr>
+                {% } %}
+                
+                {% if ((33 - (counter % 33)) > 0 ) { %}
+                <tr>
+                    <td colspan="7">
+                    <div class="footer-end" style="margin-bottom: 3em;">
+                        <div style="display: flex; flex-direction: row; justify-content: center;">
+                        
+                                <div style="font-weight:bold;">
+                                    يعتمد
+                                </div>
+                                <div style="margin-right:3em;font-weight:bold;">
+                                    الإسم و التوقيع/
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: row; justify-content: center; margin-left:3em;">
+                                <div ><img style="height: 2em; width: 50px;" src="/files/circle.png"></div>
+                            </div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; margin: auto 20px; align-items: end;">
+                                <div style="font-weight: bold;">
+                                    اقر انا ضابط الحملة ان الأرقام صحيحة وكذلك من حيث الشكل 
+                                    <br>
+                                    و الماركة و الطراز و أنها تابعة للجهة و على مسئوليتي و ليس بها أي 
+                                    <br>
+                                    إختلاف في الصلاحية سوى المدون أمامه أعطال أو تحت التخريد
+                                </div>
+                                <div style="font-size:0.6em; ">
+                                    على مندوب الجهة إدراج العطل أمام الرقم الموجود بالكشف و كذلك الإصلاح و تحت 
+                                    <br>
+                                    التخريد و هذا الكشف يتم إعتماده من الجهة شهريا و يرفق مع الكشف الإقرار الشهري 
+                                    <br>
+                                    و كشف اعطال و إصلاح منفصل معتمد و يختم بشعار الجمهورية
+                                </div>
+                            </div>    
+                        </div>
+                        {% pageNumber = pageNumber + 1 %}
+                        <div style="font-size: large; font-weight: bold;">
+                            ص
+                            <span>{{pageNumber}}</span>
+                        </div>          
+                </td>
+                </tr>
+            {% } %}
+            {% for(var le=0, page_len=filters.page_length; le<page_len; le++) { %}
+            <tr>
+                <td colspan="7">
+                    <br>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                <div class="under-header">
+                        <div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;">
+                            <div>
+                <img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
+                </div>
+                <div>
+                    وزارة الداخلية
+                </div>
+                <div>
+                الادارة العامه لمركبات الشرطه
+                </div>
+                <div>
+                قسم الحاسب الالي</div>
+                </div>
+                <div>
+                    <div style="display: flex; flex-direction: row; align-items: center;">
+                        <div style="font-weight: bold;">تاريخ الطباعة  </div>
+                        <div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
+                            {%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
+                        </div>
+                    </div>
+            
+                </div>
+                </div>
+                <div style="display: flex; justify-content:center; margin: 1em auto;">
+                            <div style="border:2px solid black; background-color:lightgray;">
+                                <h3 style="font-family:Cairo; margin: 0px 20px"> بيان عهدة {%= filters.entity %} من شهر {{months[month_idx]}} سنة  {{ yearPrint }}</h3>
+                            </div>
+                </div>
+            </td>
+            </tr>
+            <thead>
+                <tr>
+                    <th>{%= __("م") %}</th>
+                    <th>{%= __("رقم المركبة") %}</th>
+                    <th>{%= __("الشكل") %}</th>
+                    <th>{%= __("الماركة") %}</th>
+                    <th>{%= __("الطراز") %}</th>
+                    <th>متغيرات شهر {{months[month_idx]}}</th>
+                    <th>{%= __("الملحوظات") %}</th>
+    
+                </tr>
+            </thead>
+                 {% for(var a=0, l=33; a<l; a++) { %}
+                <tr>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><br></td>
+                    <td><div style="width: 10em;"></div></td>
+                </tr>
+                {% } %}
+
+                <tr>
+                    <td colspan="7">
+                    <div class="footer-end" style="margin-bottom: 3em;">
+                        <div style="display: flex; flex-direction: row; justify-content: center;">
+                        
+                                <div style="font-weight:bold;">
+                                    يعتمد
+                                </div>
+                                <div style="margin-right:3em; font-weight:bold;">
+                                    الإسم و التوقيع/
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-direction: row; justify-content: center; margin-left:3em;">
+                                <div ><img style="height: 2em; width: 50px;" src="/files/circle.png"></div>
+                            </div>
+                            <div style="display: flex; flex-direction: row; justify-content: space-between; margin: auto 20px; align-items: end;">
+                                <div style="font-weight: bold;">
+                                    اقر انا ضابط الحملة ان الأرقام صحيحة وكذلك من حيث الشكل 
+                                    <br>
+                                    و الماركة و الطراز و أنها تابعة للجهة و على مسئوليتي و ليس بها أي 
+                                    <br>
+                                    إختلاف في الصلاحية سوى المدون أمامه أعطال أو تحت التخريد
+                                </div>
+                                <div style="font-size:0.6em; ">
+                                    على مندوب الجهة إدراج العطل أمام الرقم الموجود بالكشف و كذلك الإصلاح و تحت 
+                                    <br>
+                                    التخريد و هذا الكشف يتم إعتماده من الجهة شهريا و يرفق مع الكشف الإقرار الشهري 
+                                    <br>
+                                    و كشف اعطال و إصلاح منفصل معتمد و يختم بشعار الجمهورية
+                                </div>
+                            </div> 
+                        </div>
+                        {% pageNumber = pageNumber + 1 %}
+                        <div style="font-size: large; font-weight: bold;">
+                            ص
+                            <span>{{pageNumber}}</span>
+                        </div>             
+                </td>
+                     </tr>
+                     {% } %}
+
+                    
+            </tbody>
+        </table>
+    </div>

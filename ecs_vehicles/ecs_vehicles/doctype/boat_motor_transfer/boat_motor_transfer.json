@@ -1,0 +1,207 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2022-07-03 16:46:01.760890",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "engine_no",
+  "column_break_3",
+  "transfer_date",
+  "amended_from",
+  "engine_section",
+  "engine_brand",
+  "engine_style",
+  "engine_power",
+  "cylinder_count",
+  "column_break_5",
+  "feeding_type",
+  "fuel_type",
+  "entity",
+  "section_break_11",
+  "from_boat",
+  "column_break_16",
+  "to_boat",
+  "remarks_section",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "TRANSFER-"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "engine_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643",
+   "options": "Boat Motor",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "engine_no.engine_brand",
+   "fieldname": "engine_brand",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "options": "Vehicle Brand",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "engine_no.engine_style",
+   "fieldname": "engine_style",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "options": "Engine Style",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "engine_no.engine_power",
+   "fieldname": "engine_power",
+   "fieldtype": "Float",
+   "label": "\u0627\u0644\u0642\u062f\u0631\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "engine_no.cylinder_count",
+   "fieldname": "cylinder_count",
+   "fieldtype": "Int",
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0633\u0644\u0646\u062f\u0631\u0627\u062a",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "engine_no.feeding_type",
+   "fieldname": "feeding_type",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u063a\u0630\u064a\u0629",
+   "options": "Feeding Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "engine_no.fuel_type",
+   "fieldname": "fuel_type",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "options": "Fuel Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "engine_no.entity",
+   "fieldname": "entity",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "options": "Entity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "\u0645\u0639\u062f\u0644 \u0645\u0646",
+   "no_copy": 1,
+   "options": "Boat Motor Transfer",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0646\u0642\u0644"
+  },
+  {
+   "fetch_from": "engine_no.boat_no",
+   "fieldname": "from_boat",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0645\u0646 \u0644\u0627\u0646\u0634",
+   "options": "Boats",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.engine_no",
+   "fieldname": "to_boat",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0625\u0644\u0649 \u0644\u0627\u0646\u0634",
+   "mandatory_depends_on": "eval:doc.engine_no",
+   "options": "Boats"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "transfer_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0646\u0642\u0644"
+  },
+  {
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0644\u0627\u062d\u0638\u0627\u062a"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0627\u0644\u0645\u0644\u0627\u062d\u0638\u0627\u062a"
+  },
+  {
+   "fieldname": "engine_section",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u062d\u0631\u0643"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-07-04 10:25:05.945091",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Boat Motor Transfer",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "engine_no",
+ "track_changes": 1,
+ "track_seen": 1
+}

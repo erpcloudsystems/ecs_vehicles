@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include ecs_vehicles *.css
+recursive-include ecs_vehicles *.csv
+recursive-include ecs_vehicles *.html
+recursive-include ecs_vehicles *.ico
+recursive-include ecs_vehicles *.js
+recursive-include ecs_vehicles *.json
+recursive-include ecs_vehicles *.md
+recursive-include ecs_vehicles *.png
+recursive-include ecs_vehicles *.py
+recursive-include ecs_vehicles *.svg
+recursive-include ecs_vehicles *.txt
+recursive-exclude ecs_vehicles *.pyc

@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-01-22 15:34:10.115075",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "purchase_invoices",
+  "job_order",
+  "date",
+  "vehicle",
+  "vehicle_no",
+  "entity_name",
+  "total",
+  "late_fees",
+  "technical_fees",
+  "legal_fees",
+  "price_difference"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "default": "0",
+   "fetch_from": "purchase_invoices.total",
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "\u0645\u0628\u0644\u063a \u0627\u0644\u062a\u0639\u0627\u0642\u062f"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "purchase_invoices.jop_order",
+   "fieldname": "job_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0625\u062c\u0631\u0627\u0621 \u0627\u0644\u0634\u0631\u0627\u0621",
+   "options": "Job Order",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "purchase_invoices.date",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0625\u0630\u0646",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "purchase_invoices.vehicles",
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicles",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "purchase_invoices.vehicle_no",
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "purchase_invoices.entity_name",
+   "fieldname": "entity_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u062c\u0647\u0629"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "late_fees",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "\u063a\u0631\u0627\u0645\u0629 \u062a\u0623\u062e\u064a\u0631"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "technical_fees",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "\u062e\u0635\u0645 \u0641\u0646\u064a"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "legal_fees",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "\u062e\u0635\u0645 \u0642\u0627\u0646\u0648\u0646\u064a"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "price_difference",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "\u0641\u0631\u0642 \u0633\u0639\u0631"
+  },
+  {
+   "columns": 1,
+   "fieldname": "purchase_invoices",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0625\u0630\u0646 \u0627\u0644\u0627\u0636\u0627\u0641\u0629",
+   "options": "Purchase Invoices"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-02-15 15:43:04.747772",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Form Invoices",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
