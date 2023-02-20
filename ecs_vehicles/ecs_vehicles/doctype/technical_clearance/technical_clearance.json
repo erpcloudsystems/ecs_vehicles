@@ -1,0 +1,433 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-02-20 12:25:25.392463",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "buying_order",
+  "section_break_4",
+  "date",
+  "column_break_6",
+  "result_date",
+  "section_break_8",
+  "technical_clearance_sessions",
+  "section_break_10",
+  "supplier_count",
+  "section_supplier1",
+  "supplier1",
+  "table_supplier1",
+  "section_supplier2",
+  "supplier2",
+  "table_supplier2",
+  "section_supplier3",
+  "supplier3",
+  "table_supplier3",
+  "section_supplier4",
+  "supplier4",
+  "table_supplier4",
+  "section_supplier5",
+  "supplier5",
+  "table_supplier5",
+  "section_supplier6",
+  "supplier6",
+  "table_supplier6",
+  "section_supplier7",
+  "supplier7",
+  "table_supplier7",
+  "section_supplier8",
+  "supplier8",
+  "table_supplier8",
+  "section_supplier9",
+  "supplier9",
+  "table_supplier9",
+  "section_supplier10",
+  "supplier10",
+  "table_supplier10",
+  "section_supplier11",
+  "supplier11",
+  "table_supplier11",
+  "section_supplier12",
+  "supplier12",
+  "table_supplier12",
+  "section_supplier13",
+  "supplier13",
+  "table_supplier13",
+  "section_supplier14",
+  "supplier14",
+  "table_supplier14",
+  "section_supplier15",
+  "supplier15",
+  "table_supplier15",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "naming_series",
+   "options": "TECH-CL-",
+   "read_only": 1
+  },
+  {
+   "fieldname": "buying_order",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u062c\u0631\u0627\u0621 \u0627\u0644\u0634\u0631\u0627\u0621",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062c\u0644\u0633\u0629"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "result_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0639\u0644\u0627\u0646 \u0627\u0644\u0646\u062a\u064a\u062c\u0629"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "\u0644\u062c\u0646\u0629 \u0627\u0644\u0641\u0636 \u0627\u0644\u0641\u0646\u064a"
+  },
+  {
+   "fieldname": "technical_clearance_sessions",
+   "fieldtype": "Table",
+   "options": "Technical clearance sessions"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0641\u0627\u0635\u064a\u0644 \u0627\u0644\u0639\u0631\u0648\u0636"
+  },
+  {
+   "default": "0",
+   "fieldname": "supplier_count",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0645\u0648\u0631\u062f\u064a\u0646",
+   "options": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=1",
+   "fieldname": "section_supplier1",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u0627\u0648\u0644"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >= 1",
+   "fieldname": "supplier1",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=1",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier1",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=2",
+   "fieldname": "section_supplier2",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0646\u064a"
+  },
+  {
+   "fieldname": "supplier2",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=2",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier2",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=3",
+   "fieldname": "section_supplier3",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0644\u062b"
+  },
+  {
+   "fieldname": "supplier3",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=3",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier3",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=4",
+   "fieldname": "section_supplier4",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u0631\u0627\u0628\u0639 "
+  },
+  {
+   "fieldname": "supplier4",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=4",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier4",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=5",
+   "fieldname": "section_supplier5",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062e\u0627\u0645\u0633 "
+  },
+  {
+   "fieldname": "supplier5",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=5",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier5",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=6",
+   "fieldname": "section_supplier6",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u0633\u0627\u062f\u0633"
+  },
+  {
+   "fieldname": "supplier6",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=6",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier6",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=7",
+   "fieldname": "section_supplier7",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u0633\u0627\u0628\u0639 "
+  },
+  {
+   "fieldname": "supplier7",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=7",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier7",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=8",
+   "fieldname": "section_supplier8",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0645\u0646"
+  },
+  {
+   "fieldname": "supplier8",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=8",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier8",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=9",
+   "fieldname": "section_supplier9",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062a\u0627\u0633\u0639 "
+  },
+  {
+   "fieldname": "supplier9",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f ",
+   "mandatory_depends_on": "eval:doc.supplier_count >=9",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier9",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=10",
+   "fieldname": "section_supplier10",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u0639\u0627\u0634\u0631 "
+  },
+  {
+   "fieldname": "supplier10",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=10",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier10",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=11",
+   "fieldname": "section_supplier11",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062d\u0627\u062f\u064a \u0639\u0634\u0631 "
+  },
+  {
+   "fieldname": "supplier11",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=11",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier11",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=12",
+   "fieldname": "section_supplier12",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0646\u064a \u0639\u0634\u0631 "
+  },
+  {
+   "fieldname": "supplier12",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=12",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier12",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=13",
+   "fieldname": "section_supplier13",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0644\u062b \u0639\u0634\u0631 "
+  },
+  {
+   "fieldname": "supplier13",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f ",
+   "mandatory_depends_on": "eval:doc.supplier_count >=13",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier13",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=14",
+   "fieldname": "section_supplier14",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u0631\u0627\u0628\u0639 \u0639\u0634\u0631 "
+  },
+  {
+   "fieldname": "supplier14",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=14",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier14",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "depends_on": "eval:doc.supplier_count >=15",
+   "fieldname": "section_supplier15",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062e\u0627\u0645\u0633 \u0639\u0634\u0631 "
+  },
+  {
+   "fieldname": "supplier15",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "mandatory_depends_on": "eval:doc.supplier_count >=15",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "table_supplier15",
+   "fieldtype": "Table",
+   "options": "Supplier Item Table"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Technical Clearance",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-20 15:03:04.199933",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Technical Clearance",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
