@@ -61,7 +61,11 @@ class PresentationNote(Document):
 			d.amount = total
 			total2 += d.amount
 			doc.total = total2
-	
+
+	@frappe.whitelist()
+	def on_submit(doc, method=None):
+		if not doc.supplier:
+			frappe.throw(" برجاء تحديد المورد المقبول ")
 
 	@frappe.whitelist()
 	def add_po(doc, method=None):

@@ -18,3 +18,17 @@ frappe.ui.form.on('Received Vouchers', {
         });
     }
 });
+
+frappe.ui.form.on('Received Vouchers', {
+	fiscal_year: function(frm) {
+        frappe.call({
+            doc: frm.doc,
+            method: "get_max_batch",
+            callback: function(r) {
+                console.log(r);
+                frm.doc.batch_no = r.message;
+                frm.refresh();
+            }
+        });
+    }
+});

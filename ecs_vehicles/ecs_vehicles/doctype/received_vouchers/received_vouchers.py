@@ -5,6 +5,20 @@ import frappe
 from frappe.model.document import Document
 
 class ReceivedVouchers(Document):
+	def validate(self):
+		batch_list = frappe.db.sql(""" Select batch_no from `tabReceived Vouchers`
+		where fiscal_year = '{fiscal_year}' and name != '{name}' and docstatus = 1 """.format(name=self.name, fiscal_year=self.fiscal_year), as_dict=1)
+
+		for x in batch_list:
+			if self.batch_no == x.batch_no:
+				frappe.throw(
+					" لا يمكن إستخدام رقم الدفعة " + str(x.batch_no) + " أكثر من مرة لنفس السنة المالية ")
+
+		new_batch_no = self.batch_no
+		new_fiscal_year = self.fiscal_year
+		self.document_name = "دفعة " + "(" + str(new_batch_no) + ")" + " لسنة " + str(new_fiscal_year)
+
+
 	@frappe.whitelist()
 	def append_vouchers(self):
 		fuel_vouchers = frappe.db.get_all("Fuel Voucher")
@@ -32,3 +46,17 @@ class ReceivedVouchers(Document):
 			for w in washing_vouchers:
 				row = self.append("vouchers_count_table", {})
 				row.voucher_type = w.name
+
+
+	@frappe.whitelist()
+	def get_max_batch(self):
+		last_batch = frappe.db.sql(""" select max(batch_no) as max from `tabReceived Vouchers` 
+				where name != '{name}' and fiscal_year = '{fiscal_year}' and docstatus = 1
+				""".format(name=self.name, fiscal_year=self.fiscal_year), as_dict=1)
+		
+		for x in last_batch:
+			if not x.max:
+				batch_no = 1
+			else:
+				batch_no = int(x.max) + 1
+			return batch_no

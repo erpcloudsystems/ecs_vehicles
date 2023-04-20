@@ -352,13 +352,13 @@ class LiquidsIssuing(Document):
                         order by `tabVehicles`.fuel_type
                     """.format(entity=self.entity), as_dict=1)
 
-                golf_fuel_type_list = frappe.db.sql(
-                    """ Select distinct `tabVehicles`.fuel_type as fuel_type 
-                        from `tabVehicles`
-                        where `tabVehicles`.entity_name = '{entity}'
-                        and `tabVehicles`.vehicle_type = "جولف"
-                    """.format(entity=self.entity), as_dict=1)
-                fuel_type_list.extend(golf_fuel_type_list)
+                # golf_fuel_type_list = frappe.db.sql(
+                #     """ Select distinct `tabVehicles`.fuel_type as fuel_type 
+                #         from `tabVehicles`
+                #         where `tabVehicles`.entity_name = 'ا.ع لمكافحه المخدرات'
+                #         and `tabVehicles`.vehicle_type = "جولف"
+                #     """, as_dict=1)
+                # fuel_type_list.extend(golf_fuel_type_list)
 
                 for x in fuel_type_list:
                     vehicle_type_list = frappe.db.sql(

@@ -50,7 +50,7 @@ class FinanceForm(Document):
 	def get_taxes(self):
 		self.total_taxes = 0
 		if self.include_taxes and self.taxes:
-			self.total_taxes = self.taxes[0].tax_percent * 	self.total_invoices / 100
+			self.total_taxes = int(self.taxes[0].tax_percent) * 	self.total_invoices / 100
 	def calculate_imprints(self):
 		self.normal_imprint = 0
 		self.extra_imprint = 0
@@ -80,11 +80,9 @@ class FinanceForm(Document):
 			self.extra_imprint = self.normal_imprint * 3
 			self.total_of_imprints = self.normal_imprint + self.extra_imprint
 	def get_totals(self):
-
 		self.total_deductions = self.development + self.disabled + self.martyrs + self.total_taxes + self.total_a_fine + self.total_of_imprints
 		self.total = self.total_invoices - self.total_deductions 
 	def get_in_words(self):
-
 		self.no_to_words = in_words(self.total, "EGP")
 
 	def validate(self):

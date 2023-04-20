@@ -10,9 +10,12 @@
   "section_break_1",
   "naming_series",
   "company_name",
+  "batch_date",
+  "fiscal_year",
   "date",
   "counter",
   "column_break_3",
+  "received_voucher",
   "batch_no",
   "group_no",
   "group_count",
@@ -63,22 +66,24 @@
    "options": "REV-"
   },
   {
+   "fetch_from": "received_voucher.batch_no",
    "fieldname": "batch_no",
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u062f\u0641\u0639\u0629",
    "no_copy": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
+   "depends_on": "eval:doc.company_name",
    "fieldname": "group_no",
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u062c\u0645\u0648\u0639\u0629",
-   "no_copy": 1,
-   "reqd": 1
+   "mandatory_depends_on": "eval:doc.company_name",
+   "no_copy": 1
   },
   {
    "fieldname": "section_break_9",
@@ -112,12 +117,37 @@
    "options": "Vouchers Review",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.company_name",
+   "fieldname": "received_voucher",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u062f\u0641\u0639\u0629",
+   "mandatory_depends_on": "eval:doc.company_name",
+   "options": "Received Vouchers"
+  },
+  {
+   "fetch_from": "received_voucher.date",
+   "fieldname": "batch_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062f\u0641\u0639\u0629",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.received_voucher",
+   "fetch_from": "received_voucher.fiscal_year",
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0633\u0646\u0629 \u0627\u0644\u0645\u0627\u0644\u064a\u0629",
+   "options": "Fiscal Year",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-15 16:44:05.135788",
+ "modified": "2023-04-20 10:09:38.102811",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vouchers Review",

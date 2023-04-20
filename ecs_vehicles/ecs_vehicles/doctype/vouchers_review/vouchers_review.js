@@ -7,6 +7,18 @@ frappe.ui.form.on('Vouchers Review', {
     }
 });
 
+frappe.ui.form.on('Vouchers Review', {
+   setup: function(frm) {
+       frm.set_query("received_voucher", function() {
+           return {
+               filters: [
+                   ["Received Vouchers", "docstatus", "=", 1],
+                   ["Received Vouchers","company_name", "=", frm.doc.company_name]
+               ]
+           };
+       });
+   }
+});
 
 frappe.ui.form.on("Vouchers Review", "barcode", function(frm, cdt, cdn) {
     $.each(frm.doc.review_vouchers_table || [], function(i, d) {
