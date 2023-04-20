@@ -1,0 +1,228 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-02-20 13:41:39.713744",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "creation_date",
+  "column_break_4",
+  "number_1",
+  "column_break_6",
+  "buying_order",
+  "section_break_5",
+  "approval_type",
+  "column_break_10",
+  "first_or_end",
+  "column_break_12",
+  "first_approval",
+  "section_break_9",
+  "the_competent_authority",
+  "date_2",
+  "column_break_9",
+  "number_2",
+  "order_status",
+  "section_break_12",
+  "section_break_16",
+  "boost_number",
+  "buying_order_items",
+  "section_break_24",
+  "total_table",
+  "in_word",
+  "column_break_26",
+  "total_pay",
+  "section_break_kj9hm",
+  "text1",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "naming_series",
+   "options": "FIN-APP-",
+   "read_only": 1
+  },
+  {
+   "fieldname": "creation_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0635\u0627\u062f\u0631 \u0645\u0646 \u0627\u0644\u0645\u064a\u0632\u0627\u0646\u064a\u0647"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "number_1",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0635\u0627\u062f\u0631 \u0645\u0646 \u0627\u0644\u0645\u064a\u0632\u0627\u0646\u064a\u0647"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "buying_order",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0627\u062c\u0631\u0627\u0621 \u0627\u0644\u0634\u0631\u0627\u0621",
+   "options": "Buying Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "approval_type",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0627\u0639\u062a\u0645\u0627\u062f",
+   "options": "\n\u062c\u0627\u0631\u064a\n\u0627\u0633\u062a\u062b\u0645\u0627\u0631\u064a"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.approval_type ==\"\u0627\u0633\u062a\u062b\u0645\u0627\u0631\u064a\"",
+   "fieldname": "first_or_end",
+   "fieldtype": "Select",
+   "label": "\u0645\u0648\u0627\u0641\u0642\u0629 \u0645\u0628\u062f\u0626\u064a\u0629 / \u0646\u0647\u0627\u0626\u064a\u0629",
+   "mandatory_depends_on": "eval:doc.approval_type ==\"\u0627\u0633\u062a\u062b\u0645\u0627\u0631\u064a\"",
+   "options": "\n\u0645\u0648\u0627\u0641\u0642\u0629 \u0645\u0628\u062f\u0626\u064a\u0629\n\u0645\u0648\u0627\u0641\u0642\u0629 \u0646\u0647\u0627\u0626\u064a\u0629"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.approval_type ==\"\u0627\u0633\u062a\u062b\u0645\u0627\u0631\u064a\" &&doc.first_or_end==\"\u0645\u0648\u0627\u0641\u0642\u0629 \u0646\u0647\u0627\u0626\u064a\u0629\"",
+   "fieldname": "first_approval",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0627\u0644\u0645\u0628\u062f\u0626\u064a\u0629",
+   "mandatory_depends_on": "eval:doc.approval_type ==\"\u0627\u0633\u062a\u062b\u0645\u0627\u0631\u064a\" &&doc.first_or_end==\"\u0645\u0648\u0627\u0641\u0642\u0629 \u0646\u0647\u0627\u0626\u064a\u0629\"",
+   "options": "Financial Approval"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "the_competent_authority",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062c\u0647\u0647 \u0627\u0644\u0645\u062e\u062a\u0635\u0647"
+  },
+  {
+   "fieldname": "date_2",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0645\u0646 \u0627\u0644\u062c\u0647\u0647 \u0627\u0644\u0645\u062e\u062a\u0635\u0647"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "number_2",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u0627\u0641\u0642\u0629 \u0645\u0646 \u0627\u0644\u062c\u0647\u0647 \u0627\u0644\u0645\u062e\u062a\u0635\u0647"
+  },
+  {
+   "fieldname": "order_status",
+   "fieldtype": "Data",
+   "label": "\u062d\u0627\u0644\u0647 \u0627\u0644\u0637\u0644\u0628"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "boost_number",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u062a\u0639\u0632\u064a\u0632"
+  },
+  {
+   "fieldname": "buying_order_items",
+   "fieldtype": "Table",
+   "label": "\u0627\u0644\u0627\u0635\u0646\u0627\u0641",
+   "options": "Buying Order Items"
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_table",
+   "fieldtype": "Currency",
+   "label": "\u0627\u062c\u0645\u0627\u0644\u064a \u0627\u0644\u0645\u0628\u0644\u063a",
+   "read_only": 1
+  },
+  {
+   "fieldname": "in_word",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062a\u0641\u0642\u064a\u0637",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_pay",
+   "fieldtype": "Currency",
+   "label": "\u0645\u0628\u0644\u063a \u0627\u0644\u062a\u0639\u0632\u064a\u0632"
+  },
+  {
+   "fieldname": "section_break_kj9hm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "text1",
+   "fieldtype": "Text Editor",
+   "label": "\u0645\u062d\u062a\u0648\u064a \u0627\u0644\u062c\u0648\u0627\u0628"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Financial Approval",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-04-20 13:04:40.629016",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Financial Approval",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

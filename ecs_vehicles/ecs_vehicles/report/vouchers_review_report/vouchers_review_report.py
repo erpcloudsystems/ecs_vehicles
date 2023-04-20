@@ -139,6 +139,7 @@ def get_qty_per_liquids(filters):
         where voucher_review.docstatus = 1
         
         {conditions}
+        ORDER BY user
         """.format(conditions=conditions), as_dict=1)
     def item_results_map(parent, conditions):
         return frappe.db.sql("""
@@ -153,15 +154,23 @@ def get_qty_per_liquids(filters):
         GROUP BY voucher_type 
         """.format(parent=parent, conditions=conditions), as_dict=1)
 
-
+    user_printed = frappe.session.user
+    # frappe.msgprint(str(user_printed))
     result = []
+    users = []
+    users_dict = {}
     if item_results:
         for item_dict in item_results:
             result_map = item_results_map(item_dict.name, conditions)
+            cur_user = frappe.db.get_value("User", {"name":item_dict.user}, ["full_name"])
+            if not users_dict.get(cur_user):
+                users_dict[cur_user] = cur_user
+                users.append(cur_user)
+
             for row in result_map:
                 data = {
                 "name": item_dict.name,
-                "user": frappe.db.get_value("User", {"name":item_dict.user}, ["full_name"]),
+                "user": cur_user,
                 "company_name": item_dict.company_name,
                 'batch_no': item_dict.batch_no,
                 'batch_date': item_dict.batch_date,
@@ -169,6 +178,9 @@ def get_qty_per_liquids(filters):
                 'group_no': item_dict.group_no,
                 'voucher_type': row.voucher_type,
                 'total_count': row.voucher_type_count,
+                "cur_user":user_printed
+                
             }
                 result.append(data)
+        result[-1]["users"] = users
         return result

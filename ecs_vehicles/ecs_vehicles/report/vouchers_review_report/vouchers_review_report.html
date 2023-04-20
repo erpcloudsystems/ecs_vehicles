@@ -31,6 +31,7 @@
         border:2px solid black;
         border-collapse:collapse;
         text-align:center;
+        font-size: large;
     }
     .print-format th {
         color:black;
@@ -80,6 +81,7 @@
             <div style="font-weight: bold;">تاريخ الطباعة  </div>
             <div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
                 {%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
+                {{data[0].cur_user}}
             </div>
         </div>
 
@@ -90,31 +92,77 @@
                     <h3 style="font-family:Cairo; margin: 0px 20px">متابعة و تدقيق البيانات</h3>
                 </div>
     </div>
+    {% if (filters.company_name || filters.batch_from_date || filters.batch_to_date) { %}
+
     <div style="padding: 8px;  border: 2px solid black; margin: 20px 20px;">
-        <p style="font-size: 12pt; font-weight: bold; ">شركة : {%= filters.company_name %}  
+        <p style="font-size: 12pt; font-weight: bold; ">
+            {% if (filters.company_name ) { %}
+            شركة : {%= filters.company_name %}  
+            {%}%}
+            {% if ( filters.batch_from_date ) { %}
             وتاريخ الدفعة من {%= filters.batch_from_date %}  
+            {%}%}
+            {% if (filters.batch_to_date) { %}
             حتى {%= filters.batch_to_date %}  
+            {%}%}
         </p>
     </div>
+    {%}%}
 </div>
 <div class="table1">
-    <div style="text-align: right;">
-        <p style="font-size: 12pt; font-weight: bold; ">إسم المستخدم : احمد منسي</p>
-    </div>
-    <table style="font-family:Cairo" dir="rtl">
-        <thead>
-            <tr>
-                <th>{%= __("م") %}</th>
-                <th>{%= __("رقم المركبة") %}</th>
-                <th>{%= __("الشكل") %}</th>
-                <th>{%= __("الماركة") %}</th>
-                <th>{%= __("الطراز") %}</th>
-                <th>متغيرات شهر </th>
-                <th>{%= __("الملحوظات") %}</th>
+{% var counter = 1 %}
 
+{% data[data.length - 2 ].users.forEach( (item, idx, array)=> { %}
+   <div style="text-align: right;">
+    <p style="font-size: 12pt; font-weight: bold; ">إسم المستخدم : {{ item }} </p>
+</div>
+<table style="font-family:Cairo" dir="rtl">
+    <thead>
+        <tr>
+            <th>{%= __("م") %}</th>
+            <th>{%= __("رقم الدفعة") %}</th>
+            <th>{%= __("تاريخ الدفعة") %}</th>
+            <th>{%= __("فئة المجموعة") %}</th>
+            <th>{%= __("نوع البون") %}</th>
+            <th>العدد</th>
+        </tr>
+    </thead>
+    {% var total = 0 %}
+   {% data.forEach( (element, i, llist)=> { %}
+    {% if (element.user === item) { %}
+ 
+            <tr>
+                <td>{%= counter %}</td>
+                <td>{%= data[i].batch_no %}</td>
+                <td>{%= data[i].batch_date %}</td>
+                <td>{%= data[i].group_no %}</td>
+                <td>{%= data[i].voucher_type %}</td>
+                <td>{%= data[i].total_count %}</td>
             </tr>
-        </thead>
-    </table>    
+            {% counter = counter + 1 %}
+            {% total = total + data[i].total_count %}
+           
+            {% } %} 
+            {% }) %}
+            
+            <tr>
+                <td colspan="5" style="background-color: lightgray; font-weight: bold;">إجمالي مدخلات المستخدم</td>
+                <td style="background-color: lightgray; font-weight: bold;">{{total}}</td>
+            </tr>
+
+</table>    
+<div style="margin-top: 30px;"></div>
+{% }) %}
+
+<div style="padding: 8px;  border: 2px solid black; ">
+    <p style="font-size: 12pt; font-weight: bold; "> 
+        إجمالي عام للمدخلات 
+        <span style="margin-right: 50px;"></span>
+        {{ data[data.length -1].total_count }}
+
+    </p>
+</div>
+
 </div>
 
 
