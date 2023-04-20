@@ -1,0 +1,32 @@
+{
+ "custom_fields": [],
+ "custom_perms": [],
+ "doctype": "Scrapped Vehicle Certificate",
+ "links": [],
+ "property_setters": [
+  {
+   "_assign": null,
+   "_comments": null,
+   "_liked_by": null,
+   "_user_tags": null,
+   "creation": "2023-04-20 16:09:09.037145",
+   "default_value": null,
+   "doc_type": "Scrapped Vehicle Certificate",
+   "docstatus": 0,
+   "doctype_or_field": "DocType",
+   "field_name": null,
+   "idx": 0,
+   "is_system_generated": 0,
+   "modified": "2023-04-20 16:09:09.037145",
+   "modified_by": "Administrator",
+   "module": null,
+   "name": "Scrapped Vehicle Certificate-main-default_print_format",
+   "owner": "Administrator",
+   "property": "default_print_format",
+   "property_type": "Data",
+   "row_name": null,
+   "value": "\u0634\u0647\u0627\u062f\u0629 \u0628\u064a\u0627\u0646\u0627\u062a \u0645\u0631\u0643\u0628\u0629 \u0634\u0631\u0637\u0629 \u0645\u0644\u063a\u0627\u0621 \u0648 \u0645\u0628\u0627\u0639\u0629 \u0644\u0648\u0637"
+  }
+ ],
+ "sync_on_migrate": 1
+}

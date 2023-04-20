@@ -1,0 +1,205 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-20 13:29:40.631208",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle",
+  "vehicle_info_section",
+  "police_no",
+  "entity",
+  "private_no",
+  "motor_no",
+  "chassis_no",
+  "fuel_type",
+  "litre_capacity",
+  "owner_entity",
+  "column_break_16",
+  "vehicle_shape",
+  "vehicle_brand",
+  "vehicle_style",
+  "vehicle_model",
+  "vehicle_color",
+  "processing_type",
+  "cylinder_count",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicles",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.vehicle",
+   "fieldname": "vehicle_info_section",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fetch_from": "vehicle.police_id",
+   "fetch_if_empty": 1,
+   "fieldname": "police_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.entity_name",
+   "fetch_if_empty": 1,
+   "fieldname": "entity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.private_no",
+   "fetch_if_empty": 1,
+   "fieldname": "private_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.motor_no",
+   "fetch_if_empty": 1,
+   "fieldname": "motor_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.chassis_no",
+   "fetch_if_empty": 1,
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.fuel_type",
+   "fetch_if_empty": 1,
+   "fieldname": "fuel_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle.vehicle_shape",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_shape",
+   "fieldtype": "Data",
+   "label": "\u0634\u0643\u0644 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_brand",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_brand",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_style",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_style",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_model",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_model",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.vehicle_color",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_color",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0644\u0648\u0646",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.processing_type",
+   "fetch_if_empty": 1,
+   "fieldname": "processing_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Scrapped Vehicle Certificate",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.litre_capacity",
+   "fieldname": "litre_capacity",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0633\u0639\u0629 \u0627\u0644\u0644\u062a\u0631\u064a\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.owner_entity",
+   "fieldname": "owner_entity",
+   "fieldtype": "Data",
+   "label": "\u0645\u0627\u0644\u0643 \u0627\u0644\u0633\u064a\u0627\u0631\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle.cylinder_count",
+   "fieldname": "cylinder_count",
+   "fieldtype": "Data",
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0633\u0644\u0646\u062f\u0631\u0627\u062a",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-04-20 13:59:41.441892",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Scrapped Vehicle Certificate",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
