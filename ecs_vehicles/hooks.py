@@ -869,4 +869,4 @@ user_data_fields = [
 # auth_hooks = [
 # 	"ecs_vehicles.auth.validate"
 # ]
-fixtures = ["Print Format"]
+fixtures = ["Print Format", "Custom Field", "Translation"]
