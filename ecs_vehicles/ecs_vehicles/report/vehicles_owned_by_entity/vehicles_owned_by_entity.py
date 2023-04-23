@@ -135,6 +135,7 @@ def get_data(filters):
 							"vehicle_shape": to_date[0].shape,
 							"vehicle_brand": to_date[0].brand,
 							"vehicle_style": to_date[0].style,
+							"cur_user": frappe.session.user,
 							"vehicle_status": "{0}".format(current_status[0].value if current_status[0].value in ["عاطلة", "تحت التخريد"] else " "),
 							"notes": "{0}".format(to_date[0].exchange_allowance if to_date[0].exchange_allowance in ["لوحة فقط", "لوحة وخدمة كاملة فقط"] else " "),
 
@@ -148,6 +149,7 @@ def get_data(filters):
 						"vehicle_shape": idx[0].shape,
 						"vehicle_brand": idx[0].brand,
 						"vehicle_style": idx[0].style,
+						"cur_user": frappe.session.user,
 						"vehicle_status": "{0}".format(current_status[0].value if current_status[0].value in ["عاطلة", "تحت التخريد"] else " "),
 						"notes": "{0}".format(idx[0].exchange_allowance if idx[0].exchange_allowance in ["لوحة فقط", "لوحة وخدمة كاملة فقط"] else " "),
 

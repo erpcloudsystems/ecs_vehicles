@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2022-10-05 19:25:03.688610",
@@ -39,7 +40,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "\u0627\u0644\u0643\u0648\u062f"
+   "label": "card_code"
   },
   {
    "allow_in_quick_entry": 1,
@@ -52,7 +53,7 @@
    "fieldtype": "Int",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "\u0645\u0646 \u0645\u0633\u0644\u0633\u0644"
+   "label": "from_serial"
   },
   {
    "allow_in_quick_entry": 1,
@@ -60,7 +61,7 @@
    "fieldtype": "Int",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "\u0625\u0644\u0649 \u0645\u0633\u0644\u0633\u0644"
+   "label": "to_serial"
   },
   {
    "fieldname": "amended_from",
@@ -80,7 +81,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-01-16 14:19:31.913419",
+ "modified": "2023-04-23 10:59:22.599444",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Add License Cards",

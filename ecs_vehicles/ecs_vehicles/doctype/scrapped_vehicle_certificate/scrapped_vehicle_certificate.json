@@ -180,7 +180,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-04-20 13:59:41.441892",
+ "modified": "2023-04-22 10:54:04.386893",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Scrapped Vehicle Certificate",
@@ -199,7 +199,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "police_no"
 }

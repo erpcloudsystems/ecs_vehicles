@@ -79,6 +79,7 @@ table, th, td , th{
 		<div style="font-weight: bold;">تاريخ الطباعة  </div>
 		<div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
 			{%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
+			{{data[0].cur_user}}
 		</div>
 	</div>
 

@@ -121,5 +121,7 @@ def get_item_price_qty_data(filters):
                 data['unit_price'] = item_dict.unit_price
                 data['total_price'] = frappe.db.count("Voucher", filters=[
                     ['serial_no', 'between', [int(item_dict.min), int(item_dict.max)]], ['voucher_type', '=', x.voucher_type]]) * item_dict.qty_litre * item_dict.unit_price if int(item_dict.max) - int(item_dict.min) != 0 else 0
+                data["cur_user"] = frappe.session.user
+
             result.append(data)
     return result

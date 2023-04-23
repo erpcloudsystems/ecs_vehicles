@@ -18,28 +18,28 @@ class VehicleLicense(Document):
 
 				if frappe.db.exists("License Card", {'serial': serial_1}):
 					min_code1 = frappe.get_doc("License Card", {'serial': serial_1})
-					self.license_no = min_code1.name
+					# self.license_no = min_code1.name
 				else:
 					frappe.throw(" برجاء إضافة كروت جديدة ")
 
 
 				if frappe.db.exists("License Card", {'serial': serial_2}):
 					min_code2 = frappe.get_doc("License Card", {'serial': serial_2})
-					self.license_no2 = min_code2.name
+					# self.license_no2 = min_code2.name
 				else:
 					frappe.throw(" برجاء إضافة كروت جديدة ")
 
 
 				if frappe.db.exists("License Card", {'serial': serial_3}):
 					min_code3 = frappe.get_doc("License Card", {'serial': serial_3})
-					self.license_no3 = min_code3.name
+					# self.license_no3 = min_code3.name
 				else:
 					frappe.throw(" برجاء إضافة كروت جديدة ")
 
 
 				if frappe.db.exists("License Card", {'serial': serial_4}):
 					min_code4 = frappe.get_doc("License Card", {'serial': serial_4})
-					self.license_no4 = min_code4.name
+					# self.license_no4 = min_code4.name
 				else:
 					frappe.throw(" برجاء إضافة كروت جديدة ")
 

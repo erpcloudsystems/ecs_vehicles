@@ -109,6 +109,8 @@ def get_item_price_qty_data(filters):
             "vehicle_model": frappe.db.get_value("Vehicles", filters.get("name"), ["vehicle_model"]),
             "possession_date": frappe.db.get_value("Vehicles", filters.get("name"), ["possession_date"]),
             "total_qty": "",
+            "cur_user": frappe.session.user,
+
         }
         result.append(data)
 

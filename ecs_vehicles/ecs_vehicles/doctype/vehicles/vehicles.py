@@ -36,18 +36,21 @@ class Vehicles(Document):
 
         for x in chassis_list:
             if self.chassis_no == x.chassis_no and self.chassis_no:
-                frappe.throw(" لا يمكن إستخدام رقم الشاسيه " + x.chassis_no + " أكثر من مرة حيث أنه مستخدم في المركبة رقم " + x.vehicle_no)
+                pass
+            #frappe.throw(" لا يمكن إستخدام رقم الشاسيه " + x.chassis_no + " أكثر من مرة حيث أنه مستخدم في المركبة رقم " + x.vehicle_no)
                 
 
         vehicle_list = frappe.db.sql(""" Select name, vehicle_no, vehicle_type from `tabVehicles` where docstatus = 0""", as_dict=1)
 
         for x in vehicle_list:
             if self.vehicle_no == x.vehicle_no and self.vehicle_type == x.vehicle_type:
-                frappe.throw(" لا يمكن إستخدام رقم الشرطة " + x.vehicle_no + " أكثر من مرة حيث أنه مستخدم في المركبة رقم " + x.name)
+                pass
+                #frappe.throw(" لا يمكن إستخدام رقم الشرطة " + x.vehicle_no + " أكثر من مرة حيث أنه مستخدم في المركبة رقم " + x.name)
 
 
         if frappe.db.exists("Police Plate", {"plate_no": self.vehicle_no, "vehicle_type": self.vehicle_type, "status": "معدمة"}):
-            frappe.throw(" لا يمكن إستخدام لوحة الشرطة رقم " + self.vehicle_no + " حيث أن حالتها معدمة ")
+            pass
+            #frappe.throw(" لا يمكن إستخدام لوحة الشرطة رقم " + self.vehicle_no + " حيث أن حالتها معدمة ")
 
 
     def after_insert(self):
@@ -171,7 +174,6 @@ class Vehicles(Document):
 
         if self.group_shape:
             group_shape = self.append("group_shape_table", {})
-            group_shape.date = datetime.now()
             group_shape.value = self.group_shape
             group_shape.remarks = "مجموعة الشكل الأساسية التي تم إدخالها مع إنشاء المركبة"
             group_shape.edited_by = frappe.db.get_value("User", self.owner, "full_name")
@@ -179,7 +181,6 @@ class Vehicles(Document):
 
         if self.vehicle_shape:
             shape = self.append("shape_table", {})
-            shape.date = datetime.now()
             shape.value = self.vehicle_shape
             shape.remarks = "الشكل الأساسي الذي تم إدخاله مع إنشاء المركبة"
             shape.edited_by = frappe.db.get_value("User", self.owner, "full_name")
@@ -187,7 +188,6 @@ class Vehicles(Document):
 
         if self.vehicle_brand:
             brand = self.append("brand_table", {})
-            brand.date = datetime.now()
             brand.value = self.vehicle_brand
             brand.remarks = "الماركة الأساسية التي تم إدخالها مع إنشاء المركبة"
             brand.edited_by = frappe.db.get_value("User", self.owner, "full_name")
@@ -195,7 +195,6 @@ class Vehicles(Document):
 
         if self.vehicle_style:
             style = self.append("style_table", {})
-            style.date = datetime.now()
             style.value = self.vehicle_style
             style.remarks = "الطراز الأساسي الذي تم إدخاله مع إنشاء المركبة"
             style.edited_by = frappe.db.get_value("User", self.owner, "full_name")
@@ -203,7 +202,6 @@ class Vehicles(Document):
 
         if self.vehicle_model:
             model = self.append("model_table", {})
-            model.date = datetime.now()
             model.value = self.vehicle_model
             model.remarks = "الموديل الأساسي الذي تم إدخاله مع إنشاء المركبة"
             model.edited_by = frappe.db.get_value("User", self.owner, "full_name")
@@ -211,7 +209,6 @@ class Vehicles(Document):
 
         if self.vehicle_country:
             country = self.append("country_table", {})
-            country.date = datetime.now()
             country.value = self.vehicle_country
             country.remarks = "بلد الصنع الأساسي الذي تم إدخاله مع إنشاء المركبة"
             country.edited_by = frappe.db.get_value("User", self.owner, "full_name")
@@ -219,27 +216,26 @@ class Vehicles(Document):
 
         if self.exchange_allowance:
             exchange_allowance = self.append("exchange_allowance_table", {})
-            exchange_allowance.date = datetime.now()
             exchange_allowance.value = self.exchange_allowance
             exchange_allowance.remarks = "مخصص الصرف الأساسي الذي تم إدخاله مع إنشاء المركبة"
             exchange_allowance.edited_by = frappe.db.get_value("User", self.owner, "full_name")
             self.save()
 
-        if self.maintenance_entity:
-            maintenance_entity = self.append("maintenance_entity_table", {})
-            maintenance_entity.date = datetime.now()
-            maintenance_entity.value = self.maintenance_entity
-            maintenance_entity.remarks = "جهة الصيانة الأساسية التي تم إدخالها مع إنشاء المركبة"
-            maintenance_entity.edited_by = frappe.db.get_value("User", self.owner, "full_name")
-            self.save()
+        # if self.maintenance_entity:
+        #     maintenance_entity = self.append("maintenance_entity_table", {})
+        #     maintenance_entity.date = datetime.now()
+        #     maintenance_entity.value = self.maintenance_entity
+        #     maintenance_entity.remarks = "جهة الصيانة الأساسية التي تم إدخالها مع إنشاء المركبة"
+        #     maintenance_entity.edited_by = frappe.db.get_value("User", self.owner, "full_name")
+        #     self.save()
 
-        if self.vehicle_status:
-            status = self.append("status_table", {})
-            status.date = datetime.now()
-            status.value = self.vehicle_status
-            status.remarks = "حالة المركبة الأساسية التي تم إدخالها مع إنشاء المركبة"
-            status.edited_by = frappe.db.get_value("User", self.owner, "full_name")
-            self.save()
+        # if self.vehicle_status:
+        #     status = self.append("status_table", {})
+        #     status.date = datetime.now()
+        #     status.value = self.vehicle_status
+        #     status.remarks = "حالة المركبة الأساسية التي تم إدخالها مع إنشاء المركبة"
+        #     status.edited_by = frappe.db.get_value("User", self.owner, "full_name")
+        #     self.save()
 
     def validate(self):
         chassis_list = frappe.db.sql(""" Select chassis_no, vehicle_no from `tabVehicles` 

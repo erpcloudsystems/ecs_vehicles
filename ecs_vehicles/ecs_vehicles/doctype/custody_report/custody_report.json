@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2022-10-25 11:05:55.095299",
@@ -273,7 +274,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-11 14:46:00.342582",
+ "modified": "2023-04-23 17:59:29.973835",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Custody Report",
