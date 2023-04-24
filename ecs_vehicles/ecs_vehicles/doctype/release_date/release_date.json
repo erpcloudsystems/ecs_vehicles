@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format: {month} {year}",
  "creation": "2022-09-28 13:57:01.888556",
@@ -68,7 +69,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-12 14:33:26.736301",
+ "modified": "2023-04-24 13:14:25.888710",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Release Date",

@@ -25,8 +25,12 @@ frappe.ui.form.on('Presentation Note', {
    frappe.ui.form.on('Presentation Note', {
 	add_po: function(frm) {
 			   frappe.call({
-				   doc: frm.doc,
-				   method: "add_po",
+				   method: "ecs_vehicles.ecs_vehicles.doctype.presentation_note.presentation_note.add_po_f",
+				   args: {
+					"name":frm.doc.name,
+					"supplier":frm.doc.supplier,
+					"request_for_quotations":frm.doc.request_for_quotations,
+				   },
 				   callback: function(r) {
 					   frm.save();
 					   frm.refresh_fields();
