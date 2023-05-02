@@ -9,6 +9,14 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
+  "pri_key",
+  "ezn_key",
+  "vic_serial",
+  "column_break_x9biq",
+  "total_parts_price",
+  "total_fix_value",
+  "last_template",
+  "notes",
   "data_section",
   "date",
   "car_in_date",
@@ -49,7 +57,7 @@
    "fieldtype": "Select",
    "hidden": 1,
    "label": "naming_series",
-   "options": "M-Order-",
+   "options": "MO.YYYY-",
    "read_only": 1
   },
   {
@@ -104,6 +112,7 @@
   {
    "fieldname": "maintenance_method",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "\u0637\u0631\u064a\u0642\u0629 \u0627\u0644\u0627\u0635\u0644\u0627\u062d",
    "options": "\u0646\u0645\u0648\u0630\u062c \u0635\u0631\u0641 \u0648 \u0627\u0631\u062a\u062c\u0627\u0639\n\u062d\u0627\u0641\u0638\u0629 \u0645\u0634\u062a\u0631\u0648\u0627\u062a\n\u0627\u0635\u0644\u0627\u062d \u062e\u0627\u0631\u062c\u064a\n\u0634\u0647\u0627\u062f\u0629 \u0627\u0633\u062a\u0628\u062f\u0627\u0644\n\u0634\u0647\u0627\u062f\u0647 \u0627\u0631\u062a\u062c\u0627\u0639"
   },
@@ -124,8 +133,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
-   "options": "Vehicles",
-   "reqd": 1
+   "options": "Vehicles"
   },
   {
    "fetch_from": "vehicles.vehicle_no",
@@ -285,12 +293,65 @@
    "fieldtype": "Data",
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
    "read_only": 1
+  },
+  {
+   "fieldname": "pri_key",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "pri_key",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ezn_key",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "ezn_key",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_x9biq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_parts_price",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "total_parts_price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_fix_value",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "total_fix_value",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "\u0627\u0644\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vic_serial",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "vic_serial",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_template",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "\u0627\u062e\u0631 \u0646\u0645\u0648\u0630\u062c",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-01-29 17:41:21.041542",
+ "modified": "2023-05-01 23:15:38.243800",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Maintenance Order",
@@ -311,9 +372,11 @@
    "write": 1
   }
  ],
+ "search_fields": "ezn_no",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "track_changes": 1,
- "track_seen": 1
+ "title_field": "ezn_no",
+ "track_changes": 1
 }

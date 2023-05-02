@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "autoname": "naming_series:",
  "creation": "2022-11-01 00:34:11.126180",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -121,11 +121,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-03-18 15:17:04.700503",
+ "modified": "2023-04-26 04:31:05.787788",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Presentation Note",
- "naming_rule": "Autoincrement",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

@@ -15,7 +15,8 @@
   "brand",
   "qty",
   "rate",
-  "amount"
+  "amount",
+  "last_issue_detail"
  ],
  "fields": [
   {
@@ -93,12 +94,17 @@
    "in_standard_filter": 1,
    "label": "\u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a",
    "read_only": 1
+  },
+  {
+   "fieldname": "last_issue_detail",
+   "fieldtype": "Data",
+   "label": "\u0627\u062e\u0631 \u0635\u0631\u0641"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-01-09 16:11:05.993652",
+ "modified": "2023-05-01 22:10:59.106901",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Job Order Item",

@@ -53,6 +53,7 @@
    "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635"
   },
   {
+   "allow_on_submit": 1,
    "columns": 1,
    "fieldname": "license_no",
    "fieldtype": "Data",
@@ -90,7 +91,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-01-30 10:21:05.418022",
+ "modified": "2023-04-29 14:04:43.762033",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "License Entry Summary",

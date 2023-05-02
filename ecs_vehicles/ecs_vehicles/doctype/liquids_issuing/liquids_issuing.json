@@ -80,6 +80,7 @@
    "reqd": 1
   },
   {
+   "default": "\u0648\u0642\u0648\u062f",
    "fieldname": "issue_type",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -136,6 +137,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "allow_on_submit": 1,
    "depends_on": "eval:!(doc.__islocal) && doc.issue_to == \"\u062c\u0647\u0629\"",
    "fieldname": "liquid_per_vehicle_type_table",
    "fieldtype": "Table",
@@ -434,7 +436,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-04-24 15:06:21.716030",
+ "modified": "2023-05-01 11:20:10.377331",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Liquids Issuing",

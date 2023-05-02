@@ -10,6 +10,7 @@
  "field_order": [
   "master_data",
   "naming_series",
+  "vic_serial",
   "section_break_11",
   "vehicle_no",
   "check_police_no",
@@ -29,6 +30,7 @@
   "processing_type",
   "column_bbreak",
   "entity_name",
+  "attached_entity",
   "exchange_allowance",
   "possession_date",
   "vehicle_color",
@@ -126,6 +128,13 @@
   "entity_remarks",
   "column_break_23",
   "entity_table",
+  "attached_entity_section",
+  "edit_attached_entity",
+  "new_attached_entity",
+  "edit_attached_entity_date",
+  "attached_entity_remarks",
+  "column_break_ee8m0",
+  "attached_entity_logs",
   "status_section",
   "edit_status",
   "new_status",
@@ -239,6 +248,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "no_copy": 1,
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -248,6 +258,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Vehicle Type",
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -256,6 +267,7 @@
    "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0634\u0643\u0644",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Vehicle Group Shape",
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -264,6 +276,7 @@
    "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "\u0627\u0644\u0634\u0643\u0644",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Vehicle Shape",
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -273,6 +286,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Vehicle Brand",
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -281,8 +295,7 @@
    "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
-   "options": "Vehicle Style",
-   "read_only_depends_on": "eval:!(doc.__islocal)"
+   "options": "Vehicle Style"
   },
   {
    "fieldname": "vehicle_model",
@@ -290,6 +303,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Vehicle Model",
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -304,14 +318,17 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "no_copy": 1,
    "options": "Vehicle Status",
-   "read_only_depends_on": "eval:!(doc.__islocal)"
+   "read_only_depends_on": "eval:!(doc.__islocal)",
+   "reqd": 1
   },
   {
    "fieldname": "possession_date",
    "fieldtype": "Date",
-   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629"
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)"
   },
   {
    "fieldname": "issue_type",
@@ -325,6 +342,7 @@
    "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "\u0628\u0644\u062f \u0627\u0644\u0635\u0646\u0639",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Vehicle Country",
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -334,6 +352,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "no_copy": 1,
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -343,8 +362,10 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "no_copy": 1,
    "options": "Vehicle Motor",
+   "read_only": 1,
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
   {
@@ -352,6 +373,7 @@
    "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "\u0645\u062e\u0635\u0635 \u0627\u0644\u0635\u0631\u0641",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Exchange Allowance",
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -363,30 +385,35 @@
   {
    "fieldname": "litre_capacity",
    "fieldtype": "Float",
-   "label": "\u0627\u0644\u0633\u0639\u0629 \u0627\u0644\u0644\u062a\u0631\u064a\u0629"
+   "label": "\u0627\u0644\u0633\u0639\u0629 \u0627\u0644\u0644\u062a\u0631\u064a\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)"
   },
   {
    "fieldname": "feeding_type",
    "fieldtype": "Link",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u063a\u0630\u064a\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Feeding Type"
   },
   {
    "fieldname": "fuel_type",
    "fieldtype": "Link",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Fuel Type"
   },
   {
    "fieldname": "ignition_type",
    "fieldtype": "Link",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0625\u0634\u0639\u0627\u0644",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Ignition Type"
   },
   {
    "fieldname": "wheel_drive_type",
    "fieldtype": "Link",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062f\u0641\u0639",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Wheel Drive Type"
   },
   {
@@ -415,12 +442,14 @@
    "fieldname": "transmission",
    "fieldtype": "Link",
    "label": "\u0646\u0642\u0644 \u0627\u0644\u062d\u0631\u0643\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Transmission"
   },
   {
    "fieldname": "vehicle_color",
    "fieldtype": "Link",
    "label": "\u0627\u0644\u0644\u0648\u0646",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Vehicle Color",
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -428,6 +457,7 @@
    "fieldname": "cylinder_count",
    "fieldtype": "Link",
    "label": "\u0639\u062f\u062f \u0627\u0644\u0633\u0644\u0646\u062f\u0631\u0627\u062a",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Cylinder Count"
   },
   {
@@ -440,6 +470,7 @@
    "fieldname": "processing_type",
    "fieldtype": "Link",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Vehicle Processing Type",
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -453,7 +484,8 @@
   {
    "fieldname": "engine_strokes_count",
    "fieldtype": "Int",
-   "label": "\u0639\u062f\u062f \u0623\u0634\u0648\u0627\u0637 \u0627\u0644\u0645\u062d\u0631\u0643"
+   "label": "\u0639\u062f\u062f \u0623\u0634\u0648\u0627\u0637 \u0627\u0644\u0645\u062d\u0631\u0643",
+   "mandatory_depends_on": "eval:(doc.__islocal)"
   },
   {
    "fieldname": "front_tire_size",
@@ -581,6 +613,7 @@
    "fieldname": "possession_type",
    "fieldtype": "Link",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Possession Type"
   },
   {
@@ -588,6 +621,7 @@
    "fieldname": "owner_name",
    "fieldtype": "Link",
    "label": "\u0627\u0633\u0645 \u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u0645\u0627\u0644\u0643\u0629",
+   "mandatory_depends_on": "eval:doc.owner_entity == \"\u062c\u0647\u0629 \u0623\u062e\u0631\u0649\"",
    "options": "Entity"
   },
   {
@@ -602,6 +636,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0627\u0644\u062c\u0647\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Entity",
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -645,6 +680,7 @@
    "fieldname": "owner_entity",
    "fieldtype": "Select",
    "label": "\u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u0645\u0627\u0644\u0643\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "\n\u0648\u0632\u0627\u0631\u0629 \u0627\u0644\u062f\u0627\u062e\u0644\u064a\u0629\n\u062c\u0647\u0629 \u0623\u062e\u0631\u0649"
   },
   {
@@ -660,6 +696,7 @@
    "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "\u062c\u0647\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
+   "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Entity",
    "read_only_depends_on": "eval:!(doc.__islocal)"
   },
@@ -696,20 +733,23 @@
    "label": " \u0631\u0642\u0645 \u0642\u0627\u0639\u062f\u0629 \u0635\u0631\u0641 \u0627\u0644\u0648\u0642\u0648\u062f",
    "no_copy": 1,
    "options": "Issuing Rules",
+   "permlevel": 1,
    "read_only": 1
   },
   {
    "fieldname": "litre_count",
    "fieldtype": "Float",
    "label": "\u0645\u0642\u0631\u0631 \u0627\u0644\u0648\u0642\u0648\u062f",
-   "no_copy": 1
+   "no_copy": 1,
+   "permlevel": 1
   },
   {
    "fieldname": "fuel_voucher",
    "fieldtype": "Link",
    "label": "\u0628\u0648\u0646 \u0627\u0644\u0648\u0642\u0648\u062f",
    "no_copy": 1,
-   "options": "Fuel Voucher"
+   "options": "Fuel Voucher",
+   "permlevel": 1
   },
   {
    "default": "0",
@@ -878,7 +918,8 @@
    "depends_on": "eval:doc.edit_vehicle_no",
    "fieldname": "new_vehicle_no",
    "fieldtype": "Data",
-   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629 \u0627\u0644\u062c\u062f\u064a\u062f"
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629 \u0627\u0644\u062c\u062f\u064a\u062f",
+   "mandatory_depends_on": "eval:doc.edit_vehicle_no"
   },
   {
    "depends_on": "eval:doc.edit_vehicle_no",
@@ -1042,13 +1083,15 @@
    "fieldtype": "Link",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0632\u064a\u062a",
    "no_copy": 1,
-   "options": "Oil Type"
+   "options": "Oil Type",
+   "permlevel": 1
   },
   {
    "fieldname": "oil_count",
    "fieldtype": "Float",
    "label": "\u0645\u0642\u0631\u0631 \u0627\u0644\u0632\u064a\u062a",
-   "no_copy": 1
+   "no_copy": 1,
+   "permlevel": 1
   },
   {
    "depends_on": "eval:!(doc.__islocal) && doc.private_no ",
@@ -1576,7 +1619,7 @@
    "depends_on": "eval:doc.vehicle_no && (doc.__islocal)",
    "fieldname": "check_police_no",
    "fieldtype": "Button",
-   "label": "<b> \u0627\u0644\u062a\u062d\u0642\u0642 \u0645\u0646 \u0625\u0645\u0643\u0627\u0646\u064a\u0629 \u0625\u0633\u062a\u062e\u062f\u0627\u0645 \u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629</b>"
+   "label": " \u0627\u0644\u062a\u062d\u0642\u0642 \u0645\u0646 \u0625\u0645\u0643\u0627\u0646\u064a\u0629 \u0625\u0633\u062a\u062e\u062f\u0627\u0645 \u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629"
   },
   {
    "fieldname": "column_break_75",
@@ -1586,7 +1629,7 @@
    "depends_on": "eval:doc.chassis_no && (doc.__islocal)",
    "fieldname": "check_chassis_no",
    "fieldtype": "Button",
-   "label": "<b>\u0627\u0644\u062a\u062d\u0642\u0642 \u0645\u0646 \u0625\u0645\u0643\u0627\u0646\u064a\u0629 \u0625\u0633\u062a\u062e\u062f\u0627\u0645 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647</b>"
+   "label": "\u0627\u0644\u062a\u062d\u0642\u0642 \u0645\u0646 \u0625\u0645\u0643\u0627\u0646\u064a\u0629 \u0625\u0633\u062a\u062e\u062f\u0627\u0645 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647"
   },
   {
    "fieldname": "oil_issuing_rule",
@@ -1594,6 +1637,7 @@
    "label": " \u0631\u0642\u0645 \u0642\u0627\u0639\u062f\u0629 \u0635\u0631\u0641 \u0627\u0644\u0632\u064a\u062a",
    "no_copy": 1,
    "options": "Issuing Rules",
+   "permlevel": 1,
    "read_only": 1
   },
   {
@@ -1606,13 +1650,15 @@
    "label": "\u0631\u0642\u0645 \u0642\u0627\u0639\u062f\u0629 \u0635\u0631\u0641 \u0627\u0644\u063a\u0627\u0632",
    "no_copy": 1,
    "options": "Issuing Rules",
+   "permlevel": 1,
    "read_only": 1
   },
   {
    "fieldname": "gas_count",
    "fieldtype": "Float",
    "label": "\u0645\u0642\u0631\u0631 \u0627\u0644\u063a\u0627\u0632",
-   "no_copy": 1
+   "no_copy": 1,
+   "permlevel": 1
   },
   {
    "fieldname": "column_break_83",
@@ -1624,6 +1670,7 @@
    "label": " \u0631\u0642\u0645 \u0642\u0627\u0639\u062f\u0629 \u0635\u0631\u0641 \u0627\u0644\u063a\u0633\u064a\u0644",
    "no_copy": 1,
    "options": "Issuing Rules",
+   "permlevel": 1,
    "read_only": 1
   },
   {
@@ -1631,13 +1678,15 @@
    "fieldtype": "Link",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u063a\u0633\u064a\u0644",
    "no_copy": 1,
-   "options": "Washing Vouchers"
+   "options": "Washing Vouchers",
+   "permlevel": 1
   },
   {
    "fieldname": "washing_count",
    "fieldtype": "Float",
    "label": "\u0645\u0642\u0631\u0631 \u0627\u0644\u063a\u0633\u064a\u0644",
-   "no_copy": 1
+   "no_copy": 1,
+   "permlevel": 1
   },
   {
    "fieldname": "license_tab",
@@ -1654,7 +1703,8 @@
    "fieldname": "gas_voucher",
    "fieldtype": "Link",
    "label": "\u0628\u0648\u0646 \u0627\u0644\u063a\u0627\u0632",
-   "options": "Gas Voucher"
+   "options": "Gas Voucher",
+   "permlevel": 1
   },
   {
    "default": "0",
@@ -1673,11 +1723,74 @@
    "fieldname": "cameras",
    "fieldtype": "Check",
    "label": "\u0643\u0627\u0645\u064a\u0631\u0627\u062a"
+  },
+  {
+   "fieldname": "attached_entity",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0625\u0644\u062d\u0627\u0642",
+   "options": "Entity",
+   "read_only_depends_on": "eval:!(doc.__islocal)"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "attached_entity_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u062c\u0647\u0629 \u0627\u0644\u0627\u0644\u062d\u0627\u0642"
+  },
+  {
+   "default": "0",
+   "fieldname": "edit_attached_entity",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u062c\u0647\u0629 \u0627\u0644\u0627\u0644\u062d\u0627\u0642"
+  },
+  {
+   "depends_on": "eval:doc.edit_attached_entity",
+   "fieldname": "new_attached_entity",
+   "fieldtype": "Link",
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0627\u0644\u062d\u0627\u0642 \u0627\u0644\u062c\u062f\u064a\u062f\u0629",
+   "mandatory_depends_on": "eval:doc.edit_attached_entity",
+   "options": "Attached Entity Logs"
+  },
+  {
+   "depends_on": "eval:doc.edit_attached_entity",
+   "fieldname": "edit_attached_entity_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0639\u062f\u064a\u0644",
+   "mandatory_depends_on": "eval:doc.edit_attached_entity"
+  },
+  {
+   "depends_on": "eval:doc.edit_attached_entity",
+   "fieldname": "attached_entity_remarks",
+   "fieldtype": "Small Text",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
+   "mandatory_depends_on": "eval:doc.edit_attached_entity"
+  },
+  {
+   "fieldname": "column_break_ee8m0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attached_entity_logs",
+   "fieldtype": "Table",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u062a\u0627\u0631\u064a\u062e\u064a\u0629 (\u062c\u0647\u0629 \u0627\u0644\u0625\u0644\u062d\u0627\u0642)",
+   "no_copy": 1,
+   "options": "Attached Entity Logs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vic_serial",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-22 22:06:21.635153",
+ "modified": "2023-05-01 01:47:13.256113",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vehicles",
@@ -1698,7 +1811,7 @@
   }
  ],
  "search_fields": "vehicle_no, police_id",
- "sort_field": "modified",
+ "sort_field": "name",
  "sort_order": "DESC",
  "states": [],
  "title_field": "vehicle_no",

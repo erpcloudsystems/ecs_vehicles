@@ -61,7 +61,10 @@
     {% var pageNumber = 0 %}
     {% var months = ["يناير", "فبراير", "مارس", "ابريل", "مايو", "يونيو", "يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر", "ديسمبر"]%}
     {% var postingDate = frappe.datetime.str_to_user(filters.posting_date) %}
+    {%  console.log(postingDate) %}
     {% var cur_month = postingDate.split("/")[1] %}
+    {%  console.log(cur_month) %}
+
     {% var month_idx = parseInt(cur_month, 10) - 1 %}
     {% var numbers = ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"] %}
     {% var curYear = postingDate.split("/")[2] %}

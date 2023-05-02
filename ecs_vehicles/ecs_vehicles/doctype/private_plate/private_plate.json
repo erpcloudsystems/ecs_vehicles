@@ -41,7 +41,6 @@
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0644\u0648\u062d\u0629",
    "no_copy": 1,
-   "read_only": 1,
    "unique": 1
   },
   {
@@ -72,8 +71,7 @@
    "fieldtype": "Table",
    "label": "\u0633\u062c\u0644 \u0627\u0644\u0644\u0648\u062d\u0629",
    "no_copy": 1,
-   "options": "Editing Table",
-   "read_only": 1
+   "options": "Editing Table"
   },
   {
    "fieldname": "column_break_4",
@@ -164,7 +162,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-22 17:03:49.168966",
+ "modified": "2023-04-29 11:38:47.137786",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Private Plate",
@@ -184,7 +182,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

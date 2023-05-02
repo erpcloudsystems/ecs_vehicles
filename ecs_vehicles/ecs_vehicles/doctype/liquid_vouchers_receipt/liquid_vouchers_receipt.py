@@ -105,10 +105,8 @@ class LiquidVouchersReceipt(Document):
                 if self.liquid_type == "زيت":
                     voucher_type = self.oil_type
                     fuel_type = self.oil_type
-                    barcode_no = str(frappe.db.get_value("Release Date", self.release_date, "code")) + "-" + str(
-                        frappe.db.get_value("Oil Type", self.oil_type, "code")) + "-" + str(no)
-                    barcode = str(frappe.db.get_value("Release Date", self.release_date, "code")) + "-" + str(
-                        frappe.db.get_value("Oil Type", self.oil_type, "code")) + "-" + str(no)
+                    barcode_no = str(frappe.db.get_value("Oil Type", self.oil_type, "code")) + "-" + str(no)
+                    barcode = str(frappe.db.get_value("Oil Type", self.oil_type, "code")) + "-" + str(no)
                     price = frappe.db.get_value("Oil Type", self.oil_type, "rate")
                     
 
@@ -125,10 +123,8 @@ class LiquidVouchersReceipt(Document):
                 if self.liquid_type == "غسيل":
                     voucher_type = self.washing_voucher
                     fuel_type = self.washing_voucher
-                    barcode_no = str(frappe.db.get_value("Release Date", self.release_date, "code")) + "-" + str(
-                        frappe.db.get_value("Washing Vouchers", self.washing_voucher, "code")) + "-" + str(no)
-                    barcode = str(frappe.db.get_value("Release Date", self.release_date, "code")) + "-" + str(
-                        frappe.db.get_value("Washing Vouchers", self.washing_voucher, "code")) + "-" + str(no)
+                    barcode_no = str(frappe.db.get_value("Washing Vouchers", self.washing_voucher, "code")) + "-" + str(no)
+                    barcode = str(frappe.db.get_value("Washing Vouchers", self.washing_voucher, "code")) + "-" + str(no)
                     price = frappe.db.get_value("Washing Vouchers", self.washing_voucher, "rate") 
                     
 

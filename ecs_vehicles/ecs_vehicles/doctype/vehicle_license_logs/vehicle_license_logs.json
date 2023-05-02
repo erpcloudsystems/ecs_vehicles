@@ -14,7 +14,9 @@
   "license_from_date",
   "license_to_date",
   "license_status",
-  "user"
+  "user",
+  "entity",
+  "license_doc"
  ],
  "fields": [
   {
@@ -76,12 +78,23 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "\u0628\u0648\u0627\u0633\u0637\u0629"
+  },
+  {
+   "fieldname": "entity",
+   "fieldtype": "Data",
+   "label": "entity"
+  },
+  {
+   "fieldname": "license_doc",
+   "fieldtype": "Link",
+   "label": "License Doc",
+   "options": "Vehicle License"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-01-16 14:16:48.105143",
+ "modified": "2023-04-29 16:49:06.275048",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vehicle License Logs",

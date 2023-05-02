@@ -1,6 +1,6 @@
 {
  "actions": [],
- "autoname": "autoincrement",
+ "autoname": "naming_series:",
  "creation": "2022-10-29 01:54:32.133717",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -217,11 +217,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-01-29 18:43:09.406090",
+ "modified": "2023-04-26 04:57:38.403510",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Purchase Invoices",
- "naming_rule": "Autoincrement",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

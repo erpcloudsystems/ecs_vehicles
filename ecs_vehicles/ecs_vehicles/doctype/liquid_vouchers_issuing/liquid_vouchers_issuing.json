@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2022-09-29 09:00:42.477510",
@@ -116,7 +117,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-01-18 18:20:52.278459",
+ "modified": "2023-04-25 00:57:38.543483",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Liquid Vouchers Issuing",

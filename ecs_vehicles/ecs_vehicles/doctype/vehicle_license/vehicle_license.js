@@ -5,13 +5,13 @@
 ///// Vehicle 1 /////
 frappe.ui.form.on('Vehicle License',"vehicle", function(frm) {
 var license_duration = 0
-license_duration = 365 * cur_frm.doc.license_duration;
+license_duration = 365 * cur_frm.doc.license_duration +1;
 cur_frm.set_value("to_date", frappe.datetime.add_days(frm.doc.from_date, license_duration));
 });
 
 frappe.ui.form.on('Vehicle License',"license_duration", function(frm) {
 var license_duration = 0
-license_duration = 365 * cur_frm.doc.license_duration;
+license_duration = 365 * cur_frm.doc.license_duration +1;
 cur_frm.set_value("to_date", frappe.datetime.add_days(frm.doc.from_date, license_duration));
 });
 
@@ -74,13 +74,13 @@ frappe.ui.form.on('Vehicle License', 'vehicle', function(frm) {
 ///// Vehicle 2 /////
 frappe.ui.form.on('Vehicle License',"vehicle2", function(frm) {
 var license_duration = 0
-license_duration = 365 * cur_frm.doc.license_duration2;
+license_duration = 365 * cur_frm.doc.license_duration2+1;
 cur_frm.set_value("to_date2", frappe.datetime.add_days(frm.doc.from_date2, license_duration));
 });
 
 frappe.ui.form.on('Vehicle License',"license_duration2", function(frm) {
 var license_duration = 0
-license_duration = 365 * cur_frm.doc.license_duration2;
+license_duration = 365 * cur_frm.doc.license_duration2 +1;
 cur_frm.set_value("to_date2", frappe.datetime.add_days(frm.doc.from_date2, license_duration));
 });
 
@@ -143,13 +143,13 @@ frappe.ui.form.on('Vehicle License', 'vehicle2', function(frm) {
 ///// Vehicle 3 /////
 frappe.ui.form.on('Vehicle License',"vehicle3", function(frm) {
 var license_duration = 0
-license_duration = 365 * cur_frm.doc.license_duration3;
+license_duration = 365 * cur_frm.doc.license_duration3 +1;
 cur_frm.set_value("to_date3", frappe.datetime.add_days(frm.doc.from_date3, license_duration));
 });
 
 frappe.ui.form.on('Vehicle License',"license_duration3", function(frm) {
 var license_duration = 0
-license_duration = 365 * cur_frm.doc.license_duration3;
+license_duration = 365 * cur_frm.doc.license_duration3 +1;
 cur_frm.set_value("to_date3", frappe.datetime.add_days(frm.doc.from_date3, license_duration));
 });
 
@@ -212,13 +212,13 @@ frappe.ui.form.on('Vehicle License', 'vehicle3', function(frm) {
 ///// Vehicle 4 /////
 frappe.ui.form.on('Vehicle License',"vehicle4", function(frm) {
 var license_duration = 0
-license_duration = 365 * cur_frm.doc.license_duration4;
+license_duration = 365 * cur_frm.doc.license_duration4 +1;
 cur_frm.set_value("to_date4", frappe.datetime.add_days(frm.doc.from_date4, license_duration));
 });
 
 frappe.ui.form.on('Vehicle License',"license_duration4", function(frm) {
 var license_duration = 0
-license_duration = 365 * cur_frm.doc.license_duration4;
+license_duration = 365 * cur_frm.doc.license_duration4 +1; 
 cur_frm.set_value("to_date4", frappe.datetime.add_days(frm.doc.from_date4, license_duration));
 });
 

@@ -91,3 +91,6 @@ frappe.ui.form.on('Liquids Issuing', {
     }
  });
 
+// frappe.ui.form.on("Liquids Issuing", "validate", function(frm) {
+//     frappe.show_progress('جاري تجهيز الصرفية..', '70 %', '100 %', 'برجاء الإنتظار يا حاج سعيد');
+// });

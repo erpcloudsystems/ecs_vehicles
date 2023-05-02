@@ -7,7 +7,7 @@ from frappe.model.document import Document
 class MaintenanceOrder(Document):
 	def validate(self):
 		maintenance_order_list = frappe.db.sql(""" Select ezn_no, name from `tabMaintenance Order` 
-		where docstatus = 1 and name != '{name}' """.format(name=self.name), as_dict=1)
+		where docstatus = 1 and fis_year = '{fis_year}' and name != '{name}' """.format(name=self.name, fis_year=self.fis_year), as_dict=1)
 
 		for x in maintenance_order_list:
 			if self.ezn_no == x.ezn_no:

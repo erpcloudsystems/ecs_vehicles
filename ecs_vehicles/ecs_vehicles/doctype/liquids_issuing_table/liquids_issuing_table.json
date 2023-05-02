@@ -1,7 +1,8 @@
 {
  "actions": [],
  "autoname": "prompt",
- "creation": "2022-09-14 08:44:37.263645",
+ "creation": "2023-04-25 19:45:28.766961",
+ "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -20,12 +21,47 @@
  ],
  "fields": [
   {
+   "columns": 2,
+   "fieldname": "issue_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0635\u0631\u0641\u064a\u0629",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0635\u0631\u0641\u064a\u0629",
+   "read_only": 1
+  },
+  {
    "columns": 1,
    "fieldname": "issue_type",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0635\u0631\u0641\u064a\u0629",
    "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "voucher",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0625\u0633\u0645 \u0627\u0644\u0628\u0648\u0646",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0645\u0642\u0631\u0631",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
   },
   {
    "columns": 2,
@@ -44,18 +80,15 @@
    "read_only": 1
   },
   {
-   "columns": 2,
-   "fieldname": "issue_no",
+   "fieldname": "entity",
    "fieldtype": "Data",
-   "label": "\u0631\u0642\u0645 \u0627\u0644\u0635\u0631\u0641\u064a\u0629",
+   "label": "\u0627\u0644\u062c\u0647\u0629",
    "read_only": 1
   },
   {
-   "columns": 2,
-   "fieldname": "issue_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0635\u0631\u0641\u064a\u0629",
+   "fieldname": "vehicle_status",
+   "fieldtype": "Data",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
    "read_only": 1
   },
   {
@@ -64,44 +97,12 @@
    "fieldtype": "Data",
    "label": "\u0628\u0648\u0627\u0633\u0637\u0629",
    "read_only": 1
-  },
-  {
-   "fieldname": "column_break_4",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "entity",
-   "fieldtype": "Data",
-   "label": "\u0627\u0644\u062c\u0647\u0629",
-   "read_only": 1
-  },
-  {
-   "columns": 1,
-   "fieldname": "qty",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "\u0627\u0644\u0645\u0642\u0631\u0631",
-   "read_only": 1
-  },
-  {
-   "columns": 2,
-   "fieldname": "voucher",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "\u0625\u0633\u0645 \u0627\u0644\u0628\u0648\u0646",
-   "read_only": 1
-  },
-  {
-   "fieldname": "vehicle_status",
-   "fieldtype": "Data",
-   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
-   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-01-19 16:54:50.796989",
+ "modified": "2023-04-25 19:45:28.766961",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Liquids Issuing Table",

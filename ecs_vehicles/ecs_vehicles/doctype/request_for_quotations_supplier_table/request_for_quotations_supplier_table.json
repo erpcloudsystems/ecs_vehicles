@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "supplier",
+  "folder_no",
   "total"
  ],
  "fields": [
@@ -22,12 +23,18 @@
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Total"
+  },
+  {
+   "fieldname": "folder_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u062d\u0627\u0641\u0638\u0629"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-02-11 10:58:37.706472",
+ "modified": "2023-05-02 02:16:31.939676",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Request for Quotations Supplier Table",

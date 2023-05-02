@@ -51,31 +51,31 @@ frappe.ui.form.on('Vehicles', {
 //    }
 //});
 
-frappe.ui.form.on('Vehicles', {
-    setup: function(frm) {
-        frm.set_query("private_no", function() {
-            return {
-                filters: [
-                    ["Private Plate","current_vehicle", "=", ""],
-                    ["Private Plate","status", "=", "صالحة"]
-                ]
-            };
-        });
-    }
-});
+// frappe.ui.form.on('Vehicles', {
+//     setup: function(frm) {
+//         frm.set_query("private_no", function() {
+//             return {
+//                 filters: [
+//                     ["Private Plate","current_vehicle", "=", ""],
+//                     ["Private Plate","status", "=", "صالحة"]
+//                 ]
+//             };
+//         });
+//     }
+// });
 
-frappe.ui.form.on('Vehicles', {
-    setup: function(frm) {
-        frm.set_query("new_private_no", function() {
-            return {
-                filters: [
-                    ["Private Plate","current_vehicle", "=", ""],
-                    ["Private Plate","status", "=", "صالحة"]
-                ]
-            };
-        });
-    }
-});
+// frappe.ui.form.on('Vehicles', {
+//     setup: function(frm) {
+//         frm.set_query("new_private_no", function() {
+//             return {
+//                 filters: [
+//                     ["Private Plate","current_vehicle", "=", ""],
+//                     ["Private Plate","status", "=", "صالحة"]
+//                 ]
+//             };
+//         });
+//     }
+// });
 
 
 frappe.ui.form.on('Vehicles', {

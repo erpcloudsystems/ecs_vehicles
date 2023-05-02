@@ -8,7 +8,7 @@ frappe.query_reports["Car Card"] = {
 			fieldname: "name",
 			label: __("رقم الشرطة"),
 			fieldtype: "Data",
-			
+			reqd:1,
 
 		},
 		{

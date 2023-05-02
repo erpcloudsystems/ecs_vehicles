@@ -1,0 +1,302 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:vehicle",
+ "creation": "2023-05-01 05:30:36.481334",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_no",
+  "section_break_a0e3i",
+  "vehicle",
+  "current_status",
+  "entity",
+  "\u062c\u0647\u0629_\u0627\u0644\u0635\u064a\u0627\u0646\u0629",
+  "privet_no",
+  "\u062c\u0647\u0629_\u0627\u0644\u0645\u0631\u0648\u0631",
+  "\u0646\u0648\u0639_\u0627\u0644\u0644\u0648\u062d\u0629",
+  "column_break_11",
+  "group_shape",
+  "vehicle_shape",
+  "vehicle_brand",
+  "vehicle_style",
+  "vehicle_model",
+  "\u0627\u0644\u0644\u0648\u0646",
+  "column_break_cair1",
+  "chassis_no",
+  "motor_no",
+  "vehicle_country",
+  "processing_type",
+  "exchange_allowance",
+  "possession_date",
+  "section_break_m6iyi",
+  "litre_capacity",
+  "fuel_type",
+  "feeding_type",
+  "ignition_type",
+  "column_break_jmlrb",
+  "cylinder_count",
+  "wheel_drive_type",
+  "four_wheel_drive_gear",
+  "transmission",
+  "engine_strokes_count"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0627\u062e\u062a\u0631 \u0627\u0644\u0645\u0631\u0643\u0628\u0629 \u0627\u0644\u0645\u0637\u0644\u0648\u0628 \u0627\u0644\u0625\u0633\u062a\u0639\u0644\u0627\u0645 \u0639\u0646\u0647\u0627",
+   "options": "Vehicles",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_a0e3i",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle_no.vehicle_no",
+   "fieldname": "vehicle",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.vehicle_status",
+   "fieldname": "current_status",
+   "fieldtype": "Data",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.entity_name",
+   "fieldname": "entity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.maintenance_entity",
+   "fieldname": "\u062c\u0647\u0629_\u0627\u0644\u0635\u064a\u0627\u0646\u0629",
+   "fieldtype": "Data",
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.private_no",
+   "fieldname": "privet_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.traffic_entity",
+   "fieldname": "\u062c\u0647\u0629_\u0627\u0644\u0645\u0631\u0648\u0631",
+   "fieldtype": "Data",
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0645\u0631\u0648\u0631",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.plate_type",
+   "fieldname": "\u0646\u0648\u0639_\u0627\u0644\u0644\u0648\u062d\u0629",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0644\u0648\u062d\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle_no.group_shape",
+   "fieldname": "group_shape",
+   "fieldtype": "Data",
+   "label": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0634\u0643\u0644",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.vehicle_shape",
+   "fieldname": "vehicle_shape",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0634\u0643\u0644",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.vehicle_brand",
+   "fieldname": "vehicle_brand",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.vehicle_style",
+   "fieldname": "vehicle_style",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.vehicle_model",
+   "fieldname": "vehicle_model",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.vehicle_color",
+   "fieldname": "\u0627\u0644\u0644\u0648\u0646",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0644\u0648\u0646 ",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_cair1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle_no.chassis_no",
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.motor_no",
+   "fieldname": "motor_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.vehicle_country",
+   "fieldname": "vehicle_country",
+   "fieldtype": "Data",
+   "label": "\u0628\u0644\u062f \u0627\u0644\u0635\u0646\u0639",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.processing_type",
+   "fieldname": "processing_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.exchange_allowance",
+   "fieldname": "exchange_allowance",
+   "fieldtype": "Data",
+   "label": "\u0645\u062e\u0635\u0635 \u0627\u0644\u0635\u0631\u0641",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.possession_date",
+   "fieldname": "possession_date",
+   "fieldtype": "Data",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_m6iyi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "vehicle_no.litre_capacity",
+   "fieldname": "litre_capacity",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0633\u0639\u0629 \u0627\u0644\u0644\u062a\u0631\u064a\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.fuel_type",
+   "fieldname": "fuel_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.feeding_type",
+   "fieldname": "feeding_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u063a\u0630\u064a\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.ignition_type",
+   "fieldname": "ignition_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0625\u0634\u0639\u0627\u0644",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jmlrb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicle_no.cylinder_count",
+   "fieldname": "cylinder_count",
+   "fieldtype": "Data",
+   "label": "\u0639\u062f\u062f \u0627\u0644\u0633\u0644\u0646\u062f\u0631\u0627\u062a",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.wheel_drive_type",
+   "fieldname": "wheel_drive_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062f\u0641\u0639",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:(doc.__islocal)",
+   "fetch_from": "vehicle_no.four_wheel_drive_gear",
+   "fieldname": "four_wheel_drive_gear",
+   "fieldtype": "Data",
+   "label": "\u0641\u062a\u064a\u0633 \u062f\u0641\u0639 \u0631\u0628\u0627\u0639\u064a",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.transmission",
+   "fieldname": "transmission",
+   "fieldtype": "Data",
+   "label": "\u0646\u0642\u0644 \u0627\u0644\u062d\u0631\u0643\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicle_no.engine_strokes_count",
+   "fieldname": "engine_strokes_count",
+   "fieldtype": "Data",
+   "label": "\u0639\u062f\u062f \u0623\u0634\u0648\u0627\u0637 \u0627\u0644\u0645\u062d\u0631\u0643",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-05-01 16:38:39.907816",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Vehicles Inquiry",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "vehicle",
+ "track_changes": 1,
+ "track_seen": 1
+}

@@ -15,15 +15,16 @@ frappe.query_reports["Vehicles Owned by Entity"] = {
 			fieldname: "posting_date",
 			label: __("التاريخ"),
 			fieldtype: "Date",
-			options: "Entity",
-			reqd:1
+			default:frappe.datetime.nowdate(),
+			reqd:1,
+			hidden:0
 			
 		},
 		{
 			fieldname: "page_length",
 			label: __("عدد الصفحات الفارغة "),
 			fieldtype: "Int",
-			default:1,
+			default:0,
 		},
 
 	]

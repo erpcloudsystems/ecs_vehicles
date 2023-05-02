@@ -348,7 +348,6 @@ class LiquidsIssuing(Document):
                         where `tabVehicles`.entity_name = '{entity}'
                         and `tabVehicles`.vehicle_type != "لانش"
                         and `tabVehicles`.fuel_type != "بدون وقود"
-                        and `tabVehicles`.litre_count != 0
                         order by `tabVehicles`.fuel_type
                     """.format(entity=self.entity), as_dict=1)
 
@@ -375,6 +374,7 @@ class LiquidsIssuing(Document):
                                 Where `tabVehicles`.fuel_type = '{fuel_type}'
                                 and `tabVehicles`.vehicle_type = '{vehicle_type}'
                                 and `tabVehicles`.entity_name = '{entity}'
+                                order by `tabVehicles`.cylinder_count
                             """.format(fuel_type=x.fuel_type, vehicle_type=y.vehicle_type,
                                        entity=self.entity), as_dict=1)
 
@@ -386,6 +386,7 @@ class LiquidsIssuing(Document):
                                     and `tabVehicles`.vehicle_type = '{vehicle_type}'
                                     and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                     and `tabVehicles`.entity_name = '{entity}'
+                                    order by `tabVehicles`.litre_count
                                 """.format(fuel_type=x.fuel_type, vehicle_type=y.vehicle_type,
                                            cylinder_count=z.cylinder_count, entity=self.entity), as_dict=1)
 
@@ -400,7 +401,9 @@ class LiquidsIssuing(Document):
                                         and `tabVehicles`.vehicle_type = '{vehicle_type}'
                                         and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                         and `tabVehicles`.litre_count = '{litre_count}'
-                                        and `tabVehicles`.entity_name = '{entity}'
+                                        and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                                         or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
+                                        and `tabVehicles`.vehicle_status not in ("مخردة","مسروقة","محترقة","بيعت بالمزاد","تحت البيع بالمزاد")
                                     """.format(litre_count=v.litre_count, fuel_type=x.fuel_type,
                                                vehicle_type=y.vehicle_type, cylinder_count=z.cylinder_count,
                                                entity=self.entity), as_dict=1)
@@ -417,7 +420,8 @@ class LiquidsIssuing(Document):
                                          and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                          and `tabVehicles`.litre_count = '{litre_count}'
                                          and `tabVehicles`.vehicle_status = "صالحة"
-                                         and `tabVehicles`.entity_name = '{entity}'
+                                         and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                                         or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
                                          and `tabVehicles`.exchange_allowance not in ("لوحة فقط", "لوحة وخدمة كاملة فقط")
                                          and `tabVehicles`.name not in (select `tabLiquids Issuing Table`.parent 
                                               from `tabLiquids Issuing Table`
@@ -441,7 +445,8 @@ class LiquidsIssuing(Document):
                                          and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                          and `tabVehicles`.litre_count = '{litre_count}'
                                          and `tabVehicles`.vehicle_status = "صالحة"
-                                         and `tabVehicles`.entity_name = '{entity}'
+                                         and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                                         or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
                                          and `tabVehicles`.exchange_allowance not in ("لوحة فقط", "لوحة وخدمة كاملة فقط")
                                          and `tabVehicles`.name in (select `tabLiquids Issuing Table`.parent 
                                               from `tabLiquids Issuing Table`
@@ -464,8 +469,9 @@ class LiquidsIssuing(Document):
                                          and `tabVehicles`.vehicle_type = '{vehicle_type}'
                                          and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                          and `tabVehicles`.litre_count = '{litre_count}'
-                                         and `tabVehicles`.vehicle_status = "صالحة"
-                                         and `tabVehicles`.entity_name = '{entity}'
+                                         and `tabVehicles`.vehicle_status in ("صالحة","عاطلة","تحت التخريد")
+                                         and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                                         or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
                                          and `tabVehicles`.exchange_allowance in ("لوحة فقط", "لوحة وخدمة كاملة فقط")                                         
                                     """.format(litre_count=v.litre_count, fuel_type=x.fuel_type,
                                                vehicle_type=y.vehicle_type, cylinder_count=z.cylinder_count,
@@ -482,17 +488,18 @@ class LiquidsIssuing(Document):
                                     plate_count = u.valid_count
 
                                 for w in total_vehicle_list:
-                                    row = self.append("liquid_per_vehicle_type_table", {})
-                                    row.fuel_type = x.fuel_type
-                                    row.vehicle_type = y.vehicle_type
-                                    row.cylinder_count = z.cylinder_count
-                                    row.liquid_qty = v.litre_count
-                                    row.total_count = w.total_count
-                                    row.valid_count = valid_count
-                                    row.previously_issued = previous_count
-                                    row.plate_count = plate_count
-                                    row.invalid_count = w.total_count - valid_count - previous_count - plate_count
-                                    row.total_qty = self.month_count * v.litre_count * valid_count
+                                    if w.total_count > 0:
+                                        row = self.append("liquid_per_vehicle_type_table", {})
+                                        row.fuel_type = x.fuel_type
+                                        row.vehicle_type = y.vehicle_type
+                                        row.cylinder_count = z.cylinder_count
+                                        row.liquid_qty = v.litre_count
+                                        row.total_count = w.total_count
+                                        row.valid_count = valid_count
+                                        row.previously_issued = previous_count
+                                        row.plate_count = plate_count
+                                        row.invalid_count = w.total_count - valid_count - previous_count - plate_count
+                                        row.total_qty = self.month_count * v.litre_count * valid_count
 
                 valid_vehicle_list_2 = frappe.db.sql(
                     """ Select `tabVehicles`.name as vehicle,
@@ -576,7 +583,7 @@ class LiquidsIssuing(Document):
                                     and `tabBoats`.entity_name = '{entity}'
                                     and `tabBoats`.qty = '{litre_count}'
                                     and `tabBoats`.fuel_type != "بدون وقود"
-                                    and `tabBoats`.qty != 0
+                                    and `tabBoats`.boat_validity not in ("مخردة","مسروقة","محترقة","بيعت بالمزاد","تحت البيع بالمزاد","تحت التخريد")
                                 """.format(litre_count=v.litre_count, fuel_type=x.fuel_type,
                                            cylinder_count=z.cylinder_count, entity=self.entity), as_dict=1)
 
@@ -633,17 +640,18 @@ class LiquidsIssuing(Document):
                                 previous_count = p.valid_count
 
                             for w in total_vehicle_list_2:
-                                row = self.append("liquid_per_vehicle_type_table", {})
-                                row.fuel_type = x.fuel_type
-                                row.vehicle_type = "لانش"
-                                row.cylinder_count = z.cylinder_count
-                                row.liquid_qty = v.litre_count
-                                row.total_count = w.total_count
-                                row.valid_count = valid_count
-                                row.previously_issued = previous_count
-                                row.plate_count = 0
-                                row.invalid_count = w.total_count - valid_count
-                                row.total_qty = self.month_count * v.litre_count * valid_count
+                                if w.total_count > 0:
+                                    row = self.append("liquid_per_vehicle_type_table", {})
+                                    row.fuel_type = x.fuel_type
+                                    row.vehicle_type = "لانش"
+                                    row.cylinder_count = z.cylinder_count
+                                    row.liquid_qty = v.litre_count
+                                    row.total_count = w.total_count
+                                    row.valid_count = valid_count
+                                    row.previously_issued = previous_count
+                                    row.plate_count = 0
+                                    row.invalid_count = w.total_count - valid_count
+                                    row.total_qty = self.month_count * v.litre_count * valid_count
 
                 valid_vehicle_list_3 = frappe.db.sql(
                     """ Select `tabBoats`.name as vehicle,
@@ -716,15 +724,18 @@ class LiquidsIssuing(Document):
                         previous_count = 0
                         plate_count = 0
 
+                        
                         for v in gas_count_list:
                             gas_total_vehicle_list = frappe.db.sql(
                                 """ Select count(`tabVehicles`.name) as total_count from `tabVehicles` 
                                     Where `tabVehicles`.vehicle_type = '{vehicle_type}'
                                     and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                     and `tabVehicles`.gas_count = '{gas_count}'
-                                    and `tabVehicles`.entity_name = '{entity}'
                                     and `tabVehicles`.vehicle_type != "لانش"
                                     and `tabVehicles`.gas_count != 0
+                                    and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                                    or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
+                                    and `tabVehicles`.vehicle_status not in ("مخردة","مسروقة","محترقة","بيعت بالمزاد","تحت البيع بالمزاد","تحت التخريد")
                                 """.format(gas_count=v.gas_count, vehicle_type=y.vehicle_type,
                                            cylinder_count=z.cylinder_count, entity=self.entity), as_dict=1)
 
@@ -739,7 +750,9 @@ class LiquidsIssuing(Document):
                                     and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                     and `tabVehicles`.gas_count = '{gas_count}'
                                     and `tabVehicles`.vehicle_status = "صالحة"
-                                    and `tabVehicles`.entity_name = '{entity}'
+                                    and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                                    or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
+                                    and `tabVehicles`.vehicle_status not in ("مخردة","مسروقة","محترقة","بيعت بالمزاد","تحت البيع بالمزاد","تحت التخريد")
                                     and `tabVehicles`.exchange_allowance not in ("لوحة فقط", "لوحة وخدمة كاملة فقط")
                                     and `tabVehicles`.vehicle_type != "لانش"
                                     and `tabVehicles`.gas_count != 0
@@ -764,15 +777,17 @@ class LiquidsIssuing(Document):
                                      and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                      and `tabVehicles`.gas_count = '{gas_count}'
                                      and `tabVehicles`.vehicle_status = "صالحة"
-                                     and `tabVehicles`.entity_name = '{entity}'
+                                     and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                                        or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
+                                        and `tabVehicles`.vehicle_status not in ("مخردة","مسروقة","محترقة","بيعت بالمزاد","تحت البيع بالمزاد","تحت التخريد")
                                      and `tabVehicles`.exchange_allowance not in ("لوحة فقط", "لوحة وخدمة كاملة فقط")
                                      and `tabVehicles`.vehicle_type != "لانش"
                                      and `tabVehicles`.gas_count != 0
                                      and `tabVehicles`.name in (select `tabLiquids Issuing Table`.parent 
-                                           from `tabLiquids Issuing Table`
-                                           where `tabLiquids Issuing Table`.issue_type = '{issue_type}'
-                                           and `tabLiquids Issuing Table`.from_date >= '{from_date}'
-                                           and `tabLiquids Issuing Table`.to_date <= '{to_date}')
+                                        from `tabLiquids Issuing Table`
+                                        where `tabLiquids Issuing Table`.issue_type = '{issue_type}'
+                                        and `tabLiquids Issuing Table`.from_date >= '{from_date}'
+                                        and `tabLiquids Issuing Table`.to_date <= '{to_date}')
                                 """.format(gas_count=v.gas_count, vehicle_type=y.vehicle_type,
                                            cylinder_count=z.cylinder_count, entity=self.entity,
                                            from_date=self.from_date, to_date=self.to_date,
@@ -788,8 +803,9 @@ class LiquidsIssuing(Document):
                                      Where `tabVehicles`.vehicle_type = '{vehicle_type}'
                                      and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                      and `tabVehicles`.gas_count = '{gas_count}'
-                                     and `tabVehicles`.vehicle_status = "صالحة"
-                                     and `tabVehicles`.entity_name = '{entity}'
+                                     and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                                         or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
+                                    and `tabVehicles`.vehicle_status in ("صالحة","عاطلة","تحت التخريد")
                                      and `tabVehicles`.exchange_allowance in ("لوحة فقط", "لوحة وخدمة كاملة فقط")
                                      and `tabVehicles`.vehicle_type != "لانش"
                                      and `tabVehicles`.gas_count != 0
@@ -908,7 +924,9 @@ class LiquidsIssuing(Document):
                                         and `tabVehicles`.vehicle_type = '{vehicle_type}'
                                         and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                         and `tabVehicles`.oil_count = '{oil_count}'
-                                        and `tabVehicles`.entity_name = '{entity}'
+                                        and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                                         or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
+                                        and `tabVehicles`.vehicle_status not in ("مخردة","مسروقة","محترقة","بيعت بالمزاد","تحت البيع بالمزاد","تحت التخريد")
                                     """.format(oil_count=v.oil_count, oil_type=x.oil_type, vehicle_type=y.vehicle_type,
                                                cylinder_count=z.cylinder_count, entity=self.entity), as_dict=1)
 
@@ -924,8 +942,9 @@ class LiquidsIssuing(Document):
                                         and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                         and `tabVehicles`.oil_count = '{oil_count}'
                                         and `tabVehicles`.vehicle_status = "صالحة"
-                                        and `tabVehicles`.entity_name = '{entity}'
-                                        and `tabVehicles`.exchange_allowance not in ("لوحة فقط", "لوحة وخدمة كاملة فقط")
+                                        and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                                         or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
+                                         and `tabVehicles`.exchange_allowance not in ("لوحة فقط", "لوحة وخدمة كاملة فقط")
                                         and `tabVehicles`.name not in (select `tabLiquids Issuing Table`.parent 
                                               from `tabLiquids Issuing Table`
                                               where `tabLiquids Issuing Table`.issue_type = '{issue_type}'
@@ -948,7 +967,8 @@ class LiquidsIssuing(Document):
                                          and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                          and `tabVehicles`.oil_count = '{oil_count}'
                                          and `tabVehicles`.vehicle_status = "صالحة"
-                                         and `tabVehicles`.entity_name = '{entity}'
+                                         and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                                         or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
                                          and `tabVehicles`.exchange_allowance not in ("لوحة فقط", "لوحة وخدمة كاملة فقط")
                                          and `tabVehicles`.name in (select `tabLiquids Issuing Table`.parent 
                                                from `tabLiquids Issuing Table`
@@ -971,9 +991,10 @@ class LiquidsIssuing(Document):
                                          and `tabVehicles`.vehicle_type = '{vehicle_type}'
                                          and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                          and `tabVehicles`.oil_count = '{oil_count}'
-                                         and `tabVehicles`.vehicle_status = "صالحة"
-                                         and `tabVehicles`.entity_name = '{entity}'
+                                         and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                                         or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
                                          and `tabVehicles`.exchange_allowance in ("لوحة فقط", "لوحة وخدمة كاملة فقط")
+                                         and `tabVehicles`.vehicle_status in ("صالحة","عاطلة","تحت التخريد")
                                     """.format(oil_count=v.oil_count, oil_type=x.oil_type,
                                                vehicle_type=y.vehicle_type, cylinder_count=z.cylinder_count,
                                                entity=self.entity, from_date=self.from_date,
@@ -989,17 +1010,18 @@ class LiquidsIssuing(Document):
                                     plate_count = u.valid_count
 
                                 for w in total_vehicle_list:
-                                    row = self.append("liquid_per_vehicle_type_table", {})
-                                    row.fuel_type = x.oil_type
-                                    row.vehicle_type = y.vehicle_type
-                                    row.cylinder_count = z.cylinder_count
-                                    row.liquid_qty = v.oil_count
-                                    row.total_count = w.total_count
-                                    row.valid_count = valid_count
-                                    row.previously_issued = previous_count
-                                    row.plate_count = plate_count
-                                    row.invalid_count = w.total_count - valid_count - previous_count - plate_count
-                                    row.total_qty = self.month_count * v.oil_count * valid_count
+                                    if w.total_count > 0:
+                                        row = self.append("liquid_per_vehicle_type_table", {})
+                                        row.fuel_type = x.oil_type
+                                        row.vehicle_type = y.vehicle_type
+                                        row.cylinder_count = z.cylinder_count
+                                        row.liquid_qty = v.oil_count
+                                        row.total_count = w.total_count
+                                        row.valid_count = valid_count
+                                        row.previously_issued = previous_count
+                                        row.plate_count = plate_count
+                                        row.invalid_count = w.total_count - valid_count - previous_count - plate_count
+                                        row.total_qty = self.month_count * v.oil_count * valid_count
 
                 valid_vehicle_list_2 = frappe.db.sql(
                     """ Select `tabVehicles`.name as vehicle,
@@ -1009,8 +1031,8 @@ class LiquidsIssuing(Document):
                         `tabVehicles`.oil_count as oil_count
                         from `tabVehicles` 
                         Where `tabVehicles`.vehicle_status = "صالحة"
-                        and `tabVehicles`.entity_name = '{entity}'
-                        and `tabVehicles`.oil_count != 0
+                        and ((`tabVehicles`.entity_name = '{entity}' and `tabVehicles`.attached_entity is null)
+                        or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
                         and `tabVehicles`.exchange_allowance not in ("لوحة فقط", "لوحة وخدمة كاملة فقط")
                         and `tabVehicles`.vehicle_type != "لانش"
                         and `tabVehicles`.name not in (select `tabLiquids Issuing Table`.parent 
@@ -1138,8 +1160,8 @@ class LiquidsIssuing(Document):
                                      Where `tabVehicles`.vehicle_type = '{vehicle_type}'
                                      and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                      and `tabVehicles`.gas_count = '{gas_count}'
-                                     and `tabVehicles`.vehicle_status = "صالحة"
-                                     and `tabVehicles`.entity_name = '{entity}'
+                                    and `tabVehicles`.vehicle_status in ("صالحة","عاطلة","تحت التخريد")                                     
+                                    and `tabVehicles`.entity_name = '{entity}'
                                      and `tabVehicles`.exchange_allowance in ("لوحة فقط", "لوحة وخدمة كاملة فقط")
                                 """.format(gas_count=v.gas_count, vehicle_type=y.vehicle_type,
                                            cylinder_count=z.cylinder_count, entity=self.entity,
@@ -1324,7 +1346,7 @@ class LiquidsIssuing(Document):
                                          and `tabVehicles`.vehicle_type = '{vehicle_type}'
                                          and `tabVehicles`.cylinder_count = '{cylinder_count}'
                                          and `tabVehicles`.washing_count = '{washing_count}'
-                                         and `tabVehicles`.vehicle_status = "صالحة"
+                                         and `tabVehicles`.vehicle_status in ("صالحة","عاطلة","تحت التخريد")
                                          and `tabVehicles`.entity_name = '{entity}'
                                          and `tabVehicles`.exchange_allowance in ("لوحة فقط", "لوحة وخدمة كاملة فقط")
                                     """.format(washing_count=v.washing_count, washing_voucher=x.washing_voucher,
@@ -1517,6 +1539,9 @@ class LiquidsIssuing(Document):
                 rows.qty = sum_qty[0][0]
                 rows.in_words = in_words(sum_qty[0][0])
 
+        
+
+
     def on_submit(self):
         self.issue_state = "جاري تحضير الصرفية ومراجعتها"
         if self.issue_to == "جهة":
@@ -1548,7 +1573,13 @@ class LiquidsIssuing(Document):
                         "Vehicles", t.vehicle, "washing_voucher") else "لا يوجد"
                     voucher1 = "لا يوجد"
 
-                record_name = self.name + str(t.idx)
+                record_name = 1
+                max_id = frappe.db.sql("""
+                    SELECT MAX(name) as max_name
+                    FROM `tabLiquids Issuing Table`
+                    """, as_dict=1)
+                if frappe.db.exists("Liquids Issuing Table", 1):
+                    record_name = int(max_id[0]["max_name"]) + 1
 
                 if t.vehicle_boat == "Vehicles":
                     frappe.db.sql(""" INSERT INTO `tabLiquids Issuing Table`
@@ -1592,7 +1623,13 @@ class LiquidsIssuing(Document):
                         """.format(cur_entity=self.entity, current_vehicles=tuple(current_vehicles)), as_dict=1)
 
             for z in not_in_vehicle_table:
-                record_name = self.name + str(z.name)
+                record_name = 1
+                max_id = frappe.db.sql("""
+                    SELECT MAX(name) as max_name
+                    FROM `tabLiquids Issuing Table`
+                    """, as_dict=1)
+                if frappe.db.exists("Liquids Issuing Table", 1):
+                    record_name = int(max_id[0]["max_name"]) + 1
                 voucher = ""
                 if self.issue_type == "وقود":
                     voucher = frappe.db.get_value("Vehicles", z.name, "fuel_voucher") if frappe.db.get_value("Vehicles",
@@ -1622,7 +1659,13 @@ class LiquidsIssuing(Document):
                                                          record_name=record_name))
 
             for w in not_in_boat_table:
-                record_name = self.name + str(w.name)
+                record_name = 1
+                max_id = frappe.db.sql("""
+                    SELECT MAX(name) as max_name
+                    FROM `tabLiquids Issuing Table`
+                    """, as_dict=1)
+                if frappe.db.exists("Liquids Issuing Table", 1):
+                    record_name = int(max_id[0]["max_name"]) + 1
                 voucher = ""
                 if self.issue_type == "وقود":
                     voucher = frappe.db.get_value("Boats", w.name, "fuel_voucher") if frappe.db.get_value("Boats",
@@ -1650,17 +1693,18 @@ class LiquidsIssuing(Document):
 
         if self.issue_to == "مركبة أو مجموعة مركبات":
             for t in self.specified_vehicles_issuing_table:
-                if getdate(t.last_issue_from_date) >= getdate(self.from_date) and getdate(
-                        t.last_issue_from_date) <= getdate(self.to_date):
-                    frappe.throw(" الصف # " + str(t.idx) + " : لا يمكن صرف " + self.issue_type + " إلى المركبة " + str(
-                        t.vehicle_no) + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة " + str(
-                        t.entity_name))
+                if t.last_issue_from_date or t.last_issue_to_date:
+                    if getdate(t.last_issue_from_date) >= getdate(self.from_date) and getdate(
+                            t.last_issue_from_date) <= getdate(self.to_date):
+                        frappe.throw(" الصف # " + str(t.idx) + " : لا يمكن صرف " + self.issue_type + " إلى المركبة " + str(
+                            t.vehicle_no) + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة " + str(
+                            t.entity_name))
 
-                if getdate(t.last_issue_to_date) >= getdate(self.from_date) and getdate(
-                        t.last_issue_to_date) <= getdate(self.to_date):
-                    frappe.throw(" الصف # " + str(t.idx) + " : لا يمكن صرف " + self.issue_type + " إلى المركبة " + str(
-                        t.vehicle_no) + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة " + str(
-                        t.entity_name))
+                    if getdate(t.last_issue_to_date) >= getdate(self.from_date) and getdate(
+                            t.last_issue_to_date) <= getdate(self.to_date):
+                        frappe.throw(" الصف # " + str(t.idx) + " : لا يمكن صرف " + self.issue_type + " إلى المركبة " + str(
+                            t.vehicle_no) + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة " + str(
+                            t.entity_name))
 
                 vehicle_status = frappe.db.get_value("Vehicles", t.vehicle, "vehicle_status")
                 voucher = ""
@@ -1675,7 +1719,13 @@ class LiquidsIssuing(Document):
                 if self.issue_type == "غسيل":
                     voucher = frappe.db.get_value("Vehicles", t.vehicle, "washing_voucher")
 
-                record_name = self.name + str(t.idx)
+                record_name = 1
+                max_id = frappe.db.sql("""
+                    SELECT MAX(name) as max_name
+                    FROM `tabLiquids Issuing Table`
+                    """, as_dict=1)
+                if frappe.db.exists("Liquids Issuing Table", 1):
+                    record_name = int(max_id[0]["max_name"]) + 1
                 frappe.db.sql(""" INSERT INTO `tabLiquids Issuing Table`
                                                         (issue_date, issue_type, vehicle_status, voucher, from_date, to_date, entity, qty, created_by, issue_no, parent, parentfield, parenttype, name)
                                                 VALUES ('{issue_date}', '{issue_type}', '{vehicle_status}', '{voucher}', '{from_date}', '{to_date}', '{entity}', '{qty}', '{created_by}', '{issue_no}','{parent}', '{parentfield}', '{parenttype}', '{record_name}')

@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format: {code}{serial}",
  "creation": "2022-10-05 19:30:08.006232",
@@ -258,7 +259,7 @@
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-16 14:21:29.015861",
+ "modified": "2023-04-25 14:11:42.359055",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "License Card",
