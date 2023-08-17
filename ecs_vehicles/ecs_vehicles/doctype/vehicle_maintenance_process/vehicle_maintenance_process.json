@@ -1,0 +1,1962 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-05-10 15:25:21.452228",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_tab",
+  "naming_series",
+  "crno",
+  "mono",
+  "mrfqno",
+  "pnono",
+  "jono",
+  "section_break_3jn8l",
+  "maintenance_print_logs",
+  "custody_report_section",
+  "section_break_2a8xn",
+  "edit_ezn",
+  "renew_ezn",
+  "html_11",
+  "column_break_lu9lp",
+  "old_ezn_no",
+  "html_12",
+  "column_break_kablm",
+  "old_ezn_date",
+  "column_break_sd3ae",
+  "old_fiscal_year",
+  "html_13",
+  "column_break_kvmr5",
+  "vehicle_maintenance_status",
+  "html_14",
+  "column_break_347jb",
+  "karta",
+  "ezn_section",
+  "ezn_no",
+  "vehicles",
+  "column_break_bupyx",
+  "fiscal_year",
+  "ezn_date",
+  "column_break_9htpx",
+  "car_in_date",
+  "car_out_date",
+  "column_break_q5r7u",
+  "driver",
+  "notes",
+  "vehicle_section",
+  "vehicle_no",
+  "entity_name",
+  "processing_type",
+  "column_break_9",
+  "vehicle_type",
+  "group_shape",
+  "vehicle_shape",
+  "column_break_bo3gd",
+  "vehicle_brand",
+  "vehicle_style",
+  "vehicle_model",
+  "column_break_23",
+  "chassis_no",
+  "motor_no",
+  "fuel_type",
+  "column_break_k6i6q",
+  "maintenance_entity",
+  "possession_type",
+  "possession_date",
+  "section_break_14",
+  "select_type",
+  "group_type",
+  "bundle",
+  "cul",
+  "select_all_maintenance_method",
+  "column_break_g0on9",
+  "select_all_maintenance_type",
+  "column_break_rcbsk",
+  "select_all_disc_percent",
+  "column_break_ecrlw",
+  "select_all_maintenance_order",
+  "section_break_24",
+  "kashf_ohda_item",
+  "section_break_2i7fa",
+  "pass_order",
+  "enable_print",
+  "html1",
+  "column_break_smqft",
+  "html2",
+  "column_break_68hrk",
+  "html3",
+  "column_break_k5blj",
+  "print_templete1",
+  "column_break_hr4ls",
+  "preview_internal_ezn",
+  "print_internal_ezn",
+  "print_internal_ezn_count",
+  "last_print_internal_ezn_date",
+  "section_break_qcnbx",
+  "action_date",
+  "section_break_britk",
+  "ezn_egraa_item",
+  "section_break_cffdy",
+  "print_templete2",
+  "column_break_dex6g",
+  "preview_external_ezn",
+  "print_external_ezn",
+  "print_external_ezn_count",
+  "last_print_external_ezn_date",
+  "column_break_f3ej4",
+  "preview_purchase_wallet",
+  "print_purchase_wallet",
+  "print_purchase_wallet_count",
+  "last_print_purchase_wallet_date",
+  "column_break_i64n6",
+  "preview_issue_return",
+  "print_issue_return",
+  "print_issue_return_count",
+  "last_print_issue_return_date",
+  "section_break_gbkwy",
+  "html50",
+  "column_break_vqs7f",
+  "preview_certificate",
+  "print_certificate",
+  "print_certificate_count",
+  "last_print_certificate_date",
+  "column_break_z0wqe",
+  "preview_exchange_certificate",
+  "print_exchange_certificate",
+  "column_break_wyc5f",
+  "preview_external_ezn_on_entity",
+  "print_external_ezn_on_entity",
+  "print_external_ezn_on_entity_count",
+  "last_print_external_ezn_on_entity_date",
+  "section_break_ns4am",
+  "add_maintenance_rfq",
+  "column_break_eucgm",
+  "create_purchase_order_request",
+  "talb_tab",
+  "talb_date",
+  "fix_type",
+  "column_break_14",
+  "fix_description",
+  "section_break_15",
+  "supplier_table",
+  "section_break_6nuzs",
+  "accepted_supplier",
+  "column_break_9hsa8",
+  "talb_total_amount",
+  "talab_total_in_words",
+  "edit_in_words",
+  "section_break_7",
+  "talb_oroud_asaar_item",
+  "section_break_5lx6u",
+  "add_presentation_note_out",
+  "column_break_wostl",
+  "print_maintenance_rfq",
+  "print_maintenance_rfq_count",
+  "last_print_maintenance_rfq_date",
+  "mozakira_tab",
+  "mozakira_date",
+  "mozakira_no",
+  "column_break_qc4j4",
+  "contract_date",
+  "contract_term",
+  "column_break_5",
+  "supplier",
+  "fix_period",
+  "column_break_evzy9",
+  "pay_method",
+  "check_byname",
+  "section_break_cqfc7",
+  "mozakira_item",
+  "mozakira_total_amount",
+  "total_in_words",
+  "edit_in_words2",
+  "section_break_vcjhu",
+  "add_job_order",
+  "column_break_zofzn",
+  "print_mozakira",
+  "print_mozakira_count",
+  "last_print_mozakira_date",
+  "job_order_tab",
+  "job_order_date",
+  "job_order_no",
+  "column_break_c9v5o",
+  "work_end_date",
+  "fix_perod",
+  "column_break_0q11b",
+  "veh_rec_date",
+  "rec_name",
+  "column_break_1enl8",
+  "supplier2",
+  "aamr_shoghl_status",
+  "vehicle_maintenance_process",
+  "section_break_",
+  "aamr_shoghl_item",
+  "aamr_shoghl_total_amount",
+  "aamr_shoghl_total_in_words",
+  "edit_in_words3",
+  "section_break_ejb1c",
+  "add_maintenance_invoice",
+  "column_break_rdsqk",
+  "purchase_invoices",
+  "invoice_no",
+  "column_break_f4czh",
+  "print_job_order",
+  "print_job_order_count",
+  "last_print_job_order_date",
+  "column_break_sjdrj",
+  "cancel_ezn",
+  "cancellation_reason",
+  "inv_tab",
+  "inv_date",
+  "column_break_4czsx",
+  "inv_no",
+  "column_break_5gfad",
+  "check_date",
+  "section_break_smhsm",
+  "ldr_name",
+  "column_break_yba3j",
+  "member1_name",
+  "column_break_p5dk0",
+  "member2_name",
+  "section_break_lqtlp",
+  "add_date",
+  "column_break_zbwlw",
+  "warehouse",
+  "column_break_nww5w",
+  "supplier3",
+  "section_break_23",
+  "maintenance_invoice_item",
+  "total_inv_amount",
+  "add_invoice_item",
+  "section_break_oafm3",
+  "print_mahdar_fahs",
+  "column_break_z1kwx",
+  "print_ezn_sarf",
+  "column_break_ioy6t",
+  "print_ezn_ertgaa",
+  "order_request",
+  "mister",
+  "section_break_cyhdy",
+  "order_request_items",
+  "section_break_pge5z",
+  "print_request_for_quotations",
+  "column_break_svokl",
+  "create_mozakira_purchase",
+  "direct_order",
+  "date",
+  "purchase_mozakira_no",
+  "column_break_yueng",
+  "accepted_supplier1",
+  "section_break_wedxr",
+  "request_for_quotations",
+  "column_break_rwcug",
+  "accepted_supplier2",
+  "column_break_ch94c",
+  "accepted_supplier3",
+  "section_break_y5iug",
+  "presentation_note",
+  "total",
+  "purchase_inwords",
+  "section_break_nflfu",
+  "print_mozakira_purchase",
+  "column_break_gkgqa",
+  "create_purchase_import_order",
+  "export_order",
+  "company_name",
+  "section_break_x1wmn",
+  "section_break_mardm",
+  "export_order_items",
+  "section_break_j56yk",
+  "export_order_terms",
+  "section_break_igzwv",
+  "print_purchase_order"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "VMP-.YYYY.-"
+  },
+  {
+   "fieldname": "custody_report_section",
+   "fieldtype": "Tab Break",
+   "label": "\u0643\u0634\u0641 \u0627\u0644\u0639\u0647\u062f\u0629 \u0648\u0627\u0644\u0625\u062c\u0631\u0627\u0621"
+  },
+  {
+   "default": "Today",
+   "fieldname": "ezn_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0625\u0630\u0646",
+   "read_only_depends_on": "eval:!(doc.__islocal)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0633\u0646\u0629 \u0627\u0644\u0645\u0627\u0644\u064a\u0629",
+   "options": "Fiscal Year",
+   "read_only_depends_on": "eval:!(doc.__islocal) && doc.edit_ezn == 0",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ezn_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0627\u0630\u0646",
+   "read_only_depends_on": "eval:!(doc.__islocal) && doc.edit_ezn == 0",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_bupyx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "car_in_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u062f\u062e\u0648\u0644 \u0627\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fieldname": "car_out_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u062e\u0631\u0648\u062c \u0627\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fieldname": "ezn_section",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0625\u0630\u0646"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0633\u0627\u0626\u0642"
+  },
+  {
+   "fieldname": "vehicle_section",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0645\u0631\u0643\u0628\u0629"
+  },
+  {
+   "fieldname": "vehicles",
+   "fieldtype": "Link",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicles",
+   "read_only_depends_on": "eval:!(doc.__islocal) && doc.edit_ezn == 0",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "vehicles.vehicle_no",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicles.vehicle_type",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicles.group_shape",
+   "fetch_if_empty": 1,
+   "fieldname": "group_shape",
+   "fieldtype": "Data",
+   "label": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0634\u0643\u0644",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicles.vehicle_shape",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_shape",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0634\u0643\u0644",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicles.vehicle_brand",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_brand",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicles.motor_no",
+   "fetch_if_empty": 1,
+   "fieldname": "motor_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicles.vehicle_style",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_style",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicles.vehicle_model",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_model",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicles.fuel_type",
+   "fetch_if_empty": 1,
+   "fieldname": "fuel_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicles.entity_name",
+   "fetch_if_empty": 1,
+   "fieldname": "entity_name",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "vehicles.maintenance_entity",
+   "fetch_if_empty": 1,
+   "fieldname": "maintenance_entity",
+   "fieldtype": "Data",
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fetch_from": "vehicles.possession_date",
+   "fetch_if_empty": 1,
+   "fieldname": "possession_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicles.chassis_no",
+   "fetch_if_empty": 1,
+   "fieldname": "chassis_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicles.possession_type",
+   "fetch_if_empty": 1,
+   "fieldname": "possession_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicles.processing_type",
+   "fetch_if_empty": 1,
+   "fieldname": "processing_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "\u0642\u0637\u0639 \u0627\u0644\u063a\u064a\u0627\u0631"
+  },
+  {
+   "fieldname": "select_type",
+   "fieldtype": "Select",
+   "label": "\u0645\u062e\u0635\u0635 \u0625\u062e\u062a\u064a\u0627\u0631 \u0642\u0637\u0639 \u0627\u0644\u063a\u064a\u0627\u0631",
+   "options": "\n\u0645\u062c\u0645\u0648\u0639\u0627\u062a \u0645\u062a\u0648\u0627\u0641\u0642\u0629\n\u0645\u062c\u0645\u0648\u0639\u0627\u062a \u0641\u0631\u0639\u064a\u0629"
+  },
+  {
+   "depends_on": "eval:doc.select_type ==\"\u0645\u062c\u0645\u0648\u0639\u0627\u062a \u0641\u0631\u0639\u064a\u0629\"",
+   "fieldname": "group_type",
+   "fieldtype": "Select",
+   "label": "\u0625\u0637\u0627\u0631\u0627\u062a - \u0628\u0637\u0627\u0631\u064a\u0627\u062a",
+   "options": "\n\u0627\u0644\u0628\u0637\u0627\u0631\u064a\u0627\u062a\n\u0627\u0637\u0627\u0631\u0627\u062a \u062f\u0627\u062e\u0644\u064a\u0629 \u0648 \u062e\u0627\u0631\u062c\u064a\u0629"
+  },
+  {
+   "depends_on": "eval:doc.select_type ==\"\u0645\u062c\u0645\u0648\u0639\u0627\u062a \u0645\u062a\u0648\u0627\u0641\u0642\u0629\"",
+   "fieldname": "bundle",
+   "fieldtype": "Link",
+   "label": "\u0645\u062c\u0645\u0648\u0639\u0627\u062a \u0645\u062a\u0648\u0627\u0641\u0642\u0629",
+   "options": "Product Bundle"
+  },
+  {
+   "fieldname": "cul",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Data",
+   "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a"
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "1",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_templete1",
+   "fieldtype": "Int",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0646\u0645\u0648\u0630\u062c \u0644\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_internal_ezn",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0640\u0640\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0625\u0630\u0646 \u0625\u0635\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0644\u0627\u062d \u062f\u0627\u062e\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0644\u0640\u0640\u064a"
+  },
+  {
+   "fieldname": "kashf_ohda_item",
+   "fieldtype": "Table",
+   "options": "Kashf Ohda Item"
+  },
+  {
+   "fieldname": "ezn_egraa_item",
+   "fieldtype": "Table",
+   "options": "Ezn Egraa Item",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_templete2",
+   "fieldtype": "Int",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0646\u0645\u0648\u0630\u062c \u0644\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "section_break_cffdy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_external_ezn",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0625\u0635\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0644\u0627\u062d \u062e\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0631\u062c\u0640\u0640\u0640\u0640\u0640\u064a"
+  },
+  {
+   "fieldname": "column_break_f3ej4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_purchase_wallet",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u062d\u0627\u0641\u0638\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0645\u0634\u062a\u0631\u064a\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u062a"
+  },
+  {
+   "fieldname": "column_break_i64n6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_issue_return",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0639\u0629 \u0635\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0631\u0641 \u0648\u0625\u0631\u062a\u062c\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0639"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_certificate",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0634\u0647\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u062f\u0629 \u0625\u062f\u0627\u0631\u064a\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629",
+   "permlevel": 9
+  },
+  {
+   "fieldname": "section_break_britk",
+   "fieldtype": "Section Break",
+   "label": "\u0625\u062c\u0631\u0627\u0621 \u0627\u0644\u0625\u0635\u0644\u0627\u062d"
+  },
+  {
+   "fieldname": "section_break_qcnbx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "action_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0625\u062c\u0631\u0627\u0621"
+  },
+  {
+   "fieldname": "talb_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0637\u0644\u0628 \u0639\u0631\u0648\u0636 \u0623\u0633\u0639\u0627\u0631",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "talb_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0637\u0644\u0628",
+   "permlevel": 1
+  },
+  {
+   "default": "\u0623\u0635\u0644\u064a",
+   "fieldname": "fix_type",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639\u064a\u0629 \u0646\u0645\u0648\u0630\u062c \u0627\u0644\u0625\u0635\u0644\u0627\u062d",
+   "options": "\n\u0623\u0635\u0644\u064a\n\u062a\u0643\u0645\u064a\u0644\u064a",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "fix_description",
+   "fieldtype": "Small Text",
+   "label": "\u0628\u064a\u0627\u0646 \u0627\u0644\u0625\u0635\u0644\u0627\u062d",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "talb_total_amount",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "\u0627\u0644\u0625\u062c\u0645\u0627\u0644\u064a",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "accepted_supplier",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u0645\u0642\u0628\u0648\u0644",
+   "options": "Supplier",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f\u064a\u0646",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "supplier_table",
+   "fieldtype": "Table",
+   "options": "Mowardeen Table",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "label": "\u0642\u0637\u0639 \u0627\u0644\u063a\u064a\u0627\u0631",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "talb_oroud_asaar_item",
+   "fieldtype": "Table",
+   "options": "Talb Oroud Asaar Item",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "mozakira_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0645\u0630\u0643\u0631\u0629 \u0627\u0644\u0639\u0631\u0636",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "mozakira_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0645\u0630\u0643\u0631\u0629",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "mozakira_no",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0630\u0643\u0631\u0629",
+   "no_copy": 1,
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u0645\u0642\u0628\u0648\u0644",
+   "options": "Supplier",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "contract_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0639\u0642\u062f",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "contract_term",
+   "fieldtype": "Data",
+   "label": "\u0645\u062f\u0629 \u0627\u0644\u0639\u0642\u062f",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "pay_method",
+   "fieldtype": "Data",
+   "label": "\u0637\u0631\u064a\u0642\u0629 \u0627\u0644\u0633\u062f\u0627\u062f",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "check_byname",
+   "fieldtype": "Data",
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062f\u062f",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "mozakira_item",
+   "fieldtype": "Table",
+   "options": "Mozakira Item",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "mozakira_total_amount",
+   "fieldtype": "Currency",
+   "label": "\u0627\u0644\u0625\u062c\u0645\u0627\u0644\u064a",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "job_order_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0623\u0645\u0631 \u0627\u0644\u0634\u063a\u0644",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "job_order_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0623\u0645\u0631 \u0627\u0644\u0634\u063a\u0644",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "job_order_no",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0623\u0645\u0631 \u0627\u0644\u0634\u063a\u0644",
+   "no_copy": 1,
+   "permlevel": 1
+  },
+  {
+   "fieldname": "veh_rec_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0633\u062a\u0644\u0627\u0645 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "rec_name",
+   "fieldtype": "Data",
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u0644\u0645",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "work_end_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u0634\u063a\u0644",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "fix_perod",
+   "fieldtype": "Data",
+   "label": "\u0645\u062f\u0629 \u0627\u0644\u0625\u0635\u0644\u0627\u062d",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "supplier2",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "options": "Supplier",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_",
+   "fieldtype": "Section Break",
+   "label": "\u0642\u0637\u0639 \u0627\u0644\u063a\u064a\u0627\u0631",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "aamr_shoghl_item",
+   "fieldtype": "Table",
+   "options": "Aamr Job Item",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "inv_tab",
+   "fieldtype": "Tab Break",
+   "hidden": 1,
+   "label": "\u0641\u0627\u062a\u0648\u0631\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "inv_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0641\u0627\u062a\u0648\u0631\u0629",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "inv_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0641\u0627\u062a\u0648\u0631\u0629",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "check_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0645\u0631\u0627\u062c\u0639\u0629 \u0627\u0644\u0641\u0627\u062a\u0648\u0631\u0629",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_smhsm",
+   "fieldtype": "Section Break",
+   "label": "\u0623\u0639\u0636\u0627\u0621 \u0644\u062c\u0646\u0629 \u0627\u0644\u0641\u062d\u0635",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "ldr_name",
+   "fieldtype": "Data",
+   "label": "\u0631\u0626\u064a\u0633 \u0627\u0644\u0644\u062c\u0646\u0629",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_yba3j",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "member1_name",
+   "fieldtype": "Data",
+   "label": " \u0639\u0636\u0648 \u0623\u0648\u0644",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_p5dk0",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "member2_name",
+   "fieldtype": "Data",
+   "label": " \u0639\u0636\u0648 \u062b\u0627\u0646",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_lqtlp",
+   "fieldtype": "Section Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "add_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0625\u0636\u0627\u0641\u0629",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u062e\u0632\u0646",
+   "options": "Warehouse",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_nww5w",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "supplier3",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f",
+   "options": "Supplier",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_23",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0648\u0631\u064a\u062f\u0627\u062a \u0627\u0644\u0641\u0627\u062a\u0648\u0631\u0629",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "maintenance_invoice_item",
+   "fieldtype": "Table",
+   "options": "Maintenance Invoice Item",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "total_inv_amount",
+   "fieldtype": "Currency",
+   "label": "\u0627\u0644\u0625\u062c\u0645\u0627\u0644\u064a",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "add_invoice_item",
+   "fieldtype": "Table",
+   "options": "Add Invoice Item",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_cqfc7",
+   "fieldtype": "Section Break",
+   "label": "\u0642\u0637\u0639 \u0627\u0644\u063a\u064a\u0627\u0631",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "fix_period",
+   "fieldtype": "Int",
+   "label": "\u0645\u062f\u0629 \u0627\u0644\u0627\u0635\u0644\u0627\u062d",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_0q11b",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_dex6g",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html1",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "column_break_smqft",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html2",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "column_break_68hrk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html3",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "column_break_k5blj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_2i7fa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_bo3gd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_k6i6q",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_9htpx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "select_all_maintenance_method",
+   "fieldtype": "Select",
+   "label": "\u062a\u062d\u062f\u064a\u062f \u0637\u0631\u064a\u0642\u0629 \u0627\u0644\u0625\u0635\u0644\u0627\u062d \u0644\u0644\u0643\u0644",
+   "options": "\n\u0625\u0630\u0646 \u0635\u0631\u0641 \u0648\u0625\u0631\u062a\u062c\u0627\u0639\n\u062d\u0627\u0641\u0638\u0629 \u0645\u0634\u062a\u0631\u064a\u0627\u062a\n\u0625\u0635\u0644\u0627\u062d \u062e\u0627\u0631\u062c\u064a\n\u0625\u0635\u0644\u0627\u062d \u062e\u0627\u0631\u062c\u064a \u0639\u0644\u0649 \u0627\u0644\u062c\u0647\u0629\n\u0634\u0647\u0627\u062f\u0629 \u0625\u0633\u062a\u0628\u062f\u0627\u0644\n\u0634\u0647\u0627\u062f\u0629 \u0625\u0631\u062a\u062c\u0627\u0639\n\u0625\u0630\u0646 \u0635\u0631\u0641\n\u0625\u0635\u0644\u0627\u062d \u062f\u0627\u062e\u0644\u064a"
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "select_all_maintenance_type",
+   "fieldtype": "Select",
+   "label": "\u062a\u062d\u062f\u064a\u062f \u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u0625\u0635\u0644\u0627\u062d \u0644\u0644\u0643\u0644",
+   "options": "\n\u062a\u0648\u0631\u064a\u062f \u0648\u062a\u0631\u0643\u064a\u0628\n\u062a\u0631\u0643\u064a\u0628 \u0641\u0642\u0637\n\u0645\u0635\u0646\u0639\u064a\u0627\u062a\n\u062a\u0648\u0631\u064a\u062f \u0641\u0642\u0637"
+  },
+  {
+   "fieldname": "column_break_g0on9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "add_maintenance_rfq",
+   "fieldtype": "Button",
+   "label": "\u0625\u0646\u0634\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0621 \u0637\u0640\u0644\u0640\u0628 \u0639\u0640\u0640\u0640\u0640\u0640\u0631\u0648\u0636 \u0623\u0633\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0631",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_9hsa8",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_qc4j4",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_evzy9",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_rcbsk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "select_all_maintenance_order",
+   "fieldtype": "Select",
+   "label": "\u062a\u062d\u062f\u064a\u062f \u0625\u062c\u0631\u0627\u0621 \u0625\u0635\u0644\u0627\u062d \u0644\u0644\u0643\u0644",
+   "options": "\n\u0625\u0646\u0634\u0627\u0621 \u0625\u062c\u0631\u0627\u0621 \u0625\u0635\u0644\u0627\u062d \u0644\u0644\u0643\u0644\n\u0625\u0644\u063a\u0627\u0621 \u0625\u062c\u0631\u0627\u0621 \u0625\u0635\u0644\u0627\u062d \u0644\u0644\u0643\u0644"
+  },
+  {
+   "fieldname": "column_break_ecrlw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "select_all_disc_percent",
+   "fieldtype": "Percent",
+   "label": "\u062a\u062d\u062f\u064a\u062f \u0646\u0633\u0628\u0629 \u0627\u0644\u062e\u0635\u0645 \u0644\u0644\u0643\u0644"
+  },
+  {
+   "default": "0",
+   "fieldname": "pass_order",
+   "fieldtype": "Check",
+   "label": "\u062a\u062e\u0637\u064a \u0623\u0645\u0631 \u0627\u0644\u0634\u063a\u0644 \u0627\u0644\u063a\u064a\u0631 \u0645\u0633\u062f\u062f",
+   "permlevel": 2
+  },
+  {
+   "fieldname": "section_break_5lx6u",
+   "fieldtype": "Section Break",
+   "permlevel": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "add_presentation_note_out",
+   "fieldtype": "Button",
+   "label": "\u0625\u0646\u0634\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0621 \u0645\u0630\u0643\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0631\u0629 \u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0631\u0636",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_wostl",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_mozakira",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0645\u0630\u0643\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0631\u0629 \u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0631\u0636",
+   "permlevel": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_maintenance_rfq",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0637\u0640\u0644\u0640\u0628 \u0639\u0640\u0640\u0640\u0640\u0640\u0631\u0648\u0636 \u0623\u0633\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0631",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_vcjhu",
+   "fieldtype": "Section Break",
+   "permlevel": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "add_job_order",
+   "fieldtype": "Button",
+   "label": "\u0625\u0646\u0634\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0621 \u0623\u0645\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0631 \u0634\u063a\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0644 \u0645\u0628\u0627\u0634\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0631",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_zofzn",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_c9v5o",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_1enl8",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_ejb1c",
+   "fieldtype": "Section Break",
+   "permlevel": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "add_maintenance_invoice",
+   "fieldtype": "Button",
+   "label": "\u0625\u0646\u0634\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0621 \u0641\u0627\u062a\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0648\u0631\u0629 \u0635\u064a\u0627\u0646\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_f4czh",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_job_order",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0623\u0645\u0640\u0640\u0640\u0640\u0640\u0631 \u0627\u0644\u0634\u063a\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0644",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "section_break_oafm3",
+   "fieldtype": "Section Break",
+   "permlevel": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_mahdar_fahs",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0645\u062d\u0636\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0631 \u0641\u062d\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0635",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_z1kwx",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_ezn_sarf",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0625\u0630\u0646 \u0635\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0631\u0641",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_ioy6t",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_ezn_ertgaa",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0625\u0630\u0646 \u0625\u0631\u062a\u062c\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0639",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_4czsx",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_5gfad",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_zbwlw",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "crno",
+   "fieldtype": "Link",
+   "label": "crno",
+   "no_copy": 1,
+   "options": "Custody Report",
+   "permlevel": 3,
+   "read_only": 1
+  },
+  {
+   "fieldname": "mono",
+   "fieldtype": "Link",
+   "label": "mono",
+   "no_copy": 1,
+   "options": "Maintenance Order",
+   "permlevel": 3,
+   "read_only": 1
+  },
+  {
+   "fieldname": "mrfqno",
+   "fieldtype": "Link",
+   "label": "mrfqno",
+   "no_copy": 1,
+   "options": "Maintenance Request for Quotations",
+   "permlevel": 3,
+   "read_only": 1
+  },
+  {
+   "fieldname": "pnono",
+   "fieldtype": "Link",
+   "label": "pnono",
+   "no_copy": 1,
+   "options": "Presentation Note Out",
+   "permlevel": 3,
+   "read_only": 1
+  },
+  {
+   "fieldname": "jono",
+   "fieldtype": "Link",
+   "label": "jono",
+   "no_copy": 1,
+   "options": "Job Order",
+   "permlevel": 3,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "reference_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0645\u0631\u062c\u0639"
+  },
+  {
+   "fieldname": "column_break_q5r7u",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rdsqk",
+   "fieldtype": "Column Break",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "purchase_invoices",
+   "fieldtype": "Link",
+   "label": "\u0641\u0627\u062a\u0648\u0631\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
+   "options": "Purchase Invoices",
+   "permlevel": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "aamr_shoghl_total_amount",
+   "fieldtype": "Currency",
+   "label": "\u0627\u0644\u0625\u062c\u0645\u0627\u0644\u064a",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "column_break_wyc5f",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_external_ezn_on_entity",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0625\u0635\u0640\u0644\u0627\u062d \u062e\u0627\u0631\u062c\u0640\u064a \u0639\u0644\u0649 \u0627\u0644\u062c\u0647\u0629"
+  },
+  {
+   "fieldname": "section_break_2a8xn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:doc.vehicles",
+   "fieldname": "karta",
+   "fieldtype": "Button",
+   "label": "\u0643\u0627\u0631\u062a\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0633\u0627\u0628\u0642\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0635\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0631\u0641 \u0627\u0644\u0645\u0631\u0643\u0628\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629"
+  },
+  {
+   "fieldname": "html_11",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "column_break_lu9lp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html_12",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "column_break_sd3ae",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html_13",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "column_break_kvmr5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html_14",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "column_break_347jb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_in_words",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062a\u0641\u0642\u064a\u0637",
+   "read_only_depends_on": "eval:!doc.edit_in_words2"
+  },
+  {
+   "fieldname": "column_break_hr4ls",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_internal_ezn_count",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "\u0639\u062f\u062f \u0645\u0631\u0627\u062a \u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "last_print_internal_ezn_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u062e\u0631 \u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_external_ezn_count",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "\u0639\u062f\u062f \u0645\u0631\u0627\u062a \u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "last_print_external_ezn_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u062e\u0631 \u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_purchase_wallet_count",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "\u0639\u062f\u062f \u0645\u0631\u0627\u062a \u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "last_print_purchase_wallet_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u062e\u0631 \u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_issue_return_count",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "\u0639\u062f\u062f \u0645\u0631\u0627\u062a \u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "last_print_issue_return_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u062e\u0631 \u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_certificate_count",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "\u0639\u062f\u062f \u0645\u0631\u0627\u062a \u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "last_print_certificate_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u062e\u0631 \u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_external_ezn_on_entity_count",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "\u0639\u062f\u062f \u0645\u0631\u0627\u062a \u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "last_print_external_ezn_on_entity_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u062e\u0631 \u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ns4am",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_eucgm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "create_purchase_order_request",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "\u0625\u0646\u0634\u0627\u0621 \u0637\u0644\u0628 \u0639\u0631\u0636 \u0623\u0633\u0639\u0627\u0631 \u0645\u0634\u062a\u0631\u064a\u0627\u062a",
+   "permlevel": 4
+  },
+  {
+   "fieldname": "talab_total_in_words",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "\u0627\u0644\u062a\u0641\u0642\u064a\u0637",
+   "read_only_depends_on": "eval:!doc.edit_in_words"
+  },
+  {
+   "fieldname": "aamr_shoghl_total_in_words",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062a\u0641\u0642\u064a\u0637",
+   "read_only_depends_on": "eval:!doc.edit_in_words3"
+  },
+  {
+   "fieldname": "column_break_sjdrj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "order_request",
+   "fieldtype": "Tab Break",
+   "hidden": 1,
+   "label": "\u0637\u0644\u0628 \u0639\u0631\u0636 \u0623\u0633\u0639\u0627\u0631 \u0645\u0634\u062a\u0631\u064a\u0627\u062a"
+  },
+  {
+   "fieldname": "mister",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0633\u064a\u062f",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "section_break_cyhdy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "order_request_items",
+   "fieldtype": "Table",
+   "label": "\u0627\u0644\u0623\u0635\u0646\u0627\u0641",
+   "options": "Order Request Items"
+  },
+  {
+   "fieldname": "section_break_pge5z",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "print_request_for_quotations",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0629 \u0637\u0644\u0628 \u0639\u0631\u0636 \u0623\u0633\u0639\u0627\u0631 \u0645\u0634\u062a\u0631\u064a\u0627\u062a",
+   "permlevel": 4
+  },
+  {
+   "fieldname": "column_break_svokl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "create_mozakira_purchase",
+   "fieldtype": "Button",
+   "label": "\u0625\u0646\u0634\u0627\u0621 \u0645\u0630\u0643\u0631\u0629 \u0639\u0631\u0636 \u0645\u0634\u062a\u0631\u064a\u0627\u062a",
+   "permlevel": 4
+  },
+  {
+   "fieldname": "direct_order",
+   "fieldtype": "Tab Break",
+   "hidden": 1,
+   "label": "\u0645\u0630\u0643\u0631\u0629 \u0639\u0631\u0636 \u0645\u0634\u062a\u0631\u064a\u0627\u062a"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "\u0627\u0644\u062a\u0627\u0631\u064a\u062e"
+  },
+  {
+   "fieldname": "purchase_mozakira_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0630\u0643\u0631\u0629"
+  },
+  {
+   "fieldname": "column_break_yueng",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "accepted_supplier1",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u0645\u0642\u0628\u0648\u0644",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "section_break_wedxr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "request_for_quotations",
+   "fieldtype": "Link",
+   "label": "\u0639\u0631\u0636 \u0627\u0644\u0627\u0633\u0639\u0627\u0631",
+   "options": "Request for Quotations"
+  },
+  {
+   "fieldname": "column_break_rwcug",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "accepted_supplier2",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0646\u064a",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "column_break_ch94c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "accepted_supplier3",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0644\u062b",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "section_break_y5iug",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "presentation_note",
+   "fieldtype": "Table",
+   "options": "Presentation Note Items"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "\u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a"
+  },
+  {
+   "fieldname": "purchase_inwords",
+   "fieldtype": "Data",
+   "label": "\u062a\u0641\u0642\u064a\u0637"
+  },
+  {
+   "fieldname": "section_break_nflfu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "print_mozakira_purchase",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0629 \u0645\u0630\u0643\u0631\u0629 \u0639\u0631\u0636 \u0645\u0634\u062a\u0631\u064a\u0627\u062a",
+   "permlevel": 4
+  },
+  {
+   "fieldname": "column_break_gkgqa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "create_purchase_import_order",
+   "fieldtype": "Button",
+   "label": "\u0625\u0646\u0634\u0627\u0621 \u0623\u0645\u0631 \u062a\u0648\u0631\u064a\u062f \u0645\u0634\u062a\u0631\u064a\u0627\u062a",
+   "permlevel": 4
+  },
+  {
+   "fieldname": "export_order",
+   "fieldtype": "Tab Break",
+   "hidden": 1,
+   "label": "\u0623\u0645\u0631 \u062a\u0648\u0631\u064a\u062f \u0645\u0634\u062a\u0631\u064a\u0627\u062a"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "\u0634\u0631\u0643\u0629"
+  },
+  {
+   "fieldname": "section_break_x1wmn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_mardm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "export_order_items",
+   "fieldtype": "Table",
+   "label": "\u0627\u0644\u0623\u0635\u0646\u0627\u0641",
+   "options": "Export Order Items"
+  },
+  {
+   "fieldname": "section_break_j56yk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "export_order_terms",
+   "fieldtype": "Table",
+   "label": "\u0648\u0630\u0644\u0643 \u0628\u0627\u0644\u0634\u0631\u0648\u0637 \u0627\u0644\u0627\u062a\u064a\u0647",
+   "options": "Export Order Terms"
+  },
+  {
+   "fieldname": "section_break_igzwv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "print_purchase_order",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0629 \u0623\u0645\u0631 \u062a\u0648\u0631\u064a\u062f \u0645\u0634\u062a\u0631\u064a\u0627\u062a"
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_maintenance_rfq_count",
+   "fieldtype": "Int",
+   "label": "\u0639\u062f\u062f \u0645\u0631\u0627\u062a \u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "last_print_maintenance_rfq_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u062e\u0631 \u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_mozakira_count",
+   "fieldtype": "Int",
+   "label": "\u0639\u062f\u062f \u0645\u0631\u0627\u062a \u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "last_print_mozakira_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u062e\u0631 \u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_job_order_count",
+   "fieldtype": "Int",
+   "label": "\u0639\u062f\u062f \u0645\u0631\u0627\u062a \u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "last_print_job_order_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u062e\u0631 \u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_6nuzs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "edit_ezn",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644",
+   "no_copy": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "renew_ezn",
+   "fieldtype": "Check",
+   "label": "\u062a\u062c\u062f\u064a\u062f \u0627\u0644\u0625\u0630\u0646",
+   "no_copy": 1
+  },
+  {
+   "depends_on": "eval:doc.renew_ezn",
+   "fieldname": "old_ezn_no",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0625\u0630\u0646 \u0627\u0644\u0642\u062f\u064a\u0645",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.renew_ezn",
+   "fieldname": "old_fiscal_year",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0633\u0646\u0629 \u0627\u0644\u0645\u0627\u0644\u064a\u0629 \u0627\u0644\u0642\u062f\u064a\u0645\u0629",
+   "no_copy": 1,
+   "options": "Fiscal Year",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "preview_internal_ezn",
+   "fieldtype": "Button",
+   "label": "\u0645\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u064a\u0646\u0629 \u0627\u0644\u0637\u0628\u0640\u0640\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629"
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "fieldname": "enable_print",
+   "fieldtype": "Check",
+   "label": "\u0627\u0644\u0633\u0645\u0627\u062d \u0628\u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "permlevel": 5
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "preview_external_ezn",
+   "fieldtype": "Button",
+   "label": "\u0645\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u064a\u0646\u0629 \u0627\u0644\u0637\u0628\u0640\u0640\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629"
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "preview_purchase_wallet",
+   "fieldtype": "Button",
+   "label": "\u0645\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u064a\u0646\u0629 \u0627\u0644\u0637\u0628\u0640\u0640\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "preview_issue_return",
+   "fieldtype": "Button",
+   "label": "\u0645\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u064a\u0646\u0629 \u0627\u0644\u0637\u0628\u0640\u0640\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "preview_certificate",
+   "fieldtype": "Button",
+   "label": "\u0645\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u064a\u0646\u0629 \u0627\u0644\u0637\u0628\u0640\u0640\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629",
+   "permlevel": 9
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "preview_external_ezn_on_entity",
+   "fieldtype": "Button",
+   "label": "\u0645\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u064a\u0646\u0629 \u0627\u0644\u0637\u0628\u0640\u0640\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629"
+  },
+  {
+   "fieldname": "section_break_3jn8l",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "maintenance_print_logs",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "no_copy": 1,
+   "options": "Maintenance Print Logs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "aamr_shoghl_status",
+   "fieldtype": "Data",
+   "label": "\u062d\u0627\u0644\u0629 \u0623\u0645\u0631 \u0627\u0644\u0634\u063a\u0644",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_maintenance_process",
+   "fieldtype": "Link",
+   "label": "\u0645\u0633\u062a\u0646\u062f \u0623\u0645\u0631 \u0627\u0644\u0634\u063a\u0644",
+   "options": "Vehicle Maintenance Process",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "vehicle_maintenance_status",
+   "fieldtype": "Data",
+   "label": "<span style=\"color: blue; font-weight: bold; font-size: 15pt;\">\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0633\u062a\u0646\u062f</span>",
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print_exchange_certificate",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0634\u0647\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u062f\u0629 \u0625\u0633\u062a\u0628\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u062f\u0627\u0644"
+  },
+  {
+   "fieldname": "section_break_gbkwy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_z0wqe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "preview_exchange_certificate",
+   "fieldtype": "Button",
+   "label": "\u0645\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u064a\u0646\u0629 \u0627\u0644\u0637\u0628\u0640\u0640\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629"
+  },
+  {
+   "fieldname": "column_break_vqs7f",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html50",
+   "fieldtype": "HTML"
+  },
+  {
+   "default": "0",
+   "fieldname": "edit_in_words",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u062a\u0641\u0642\u064a\u0637"
+  },
+  {
+   "default": "0",
+   "fieldname": "edit_in_words2",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u062a\u0641\u0642\u064a\u0637"
+  },
+  {
+   "default": "0",
+   "fieldname": "edit_in_words3",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u062a\u0641\u0642\u064a\u0637"
+  },
+  {
+   "fieldname": "column_break_kablm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.renew_ezn",
+   "fieldname": "old_ezn_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0625\u0630\u0646 \u0627\u0644\u0642\u062f\u064a\u0645",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "purchase_invoices.inv_no",
+   "fieldname": "invoice_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0641\u0627\u062a\u0648\u0631\u0647"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:!(doc.__islocal) && !doc.purchase_invoices",
+   "fieldname": "cancel_ezn",
+   "fieldtype": "Check",
+   "label": "\u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u0625\u0630\u0646",
+   "no_copy": 1
+  },
+  {
+   "depends_on": "eval:doc.cancel_ezn",
+   "fieldname": "cancellation_reason",
+   "fieldtype": "Small Text",
+   "label": "\u0633\u0628\u0628 \u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u0625\u0630\u0646",
+   "mandatory_depends_on": "eval:doc.cancel_ezn",
+   "no_copy": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2023-07-26 12:20:54.798558",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Vehicle Maintenance Process",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "ezn_no,fiscal_year",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "ezn_no",
+ "track_changes": 1,
+ "track_seen": 1
+}

@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-15 17:00:07.438712",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "cheqmemono",
+  "action_type",
+  "net_dec_50",
+  "net_disc",
+  "dec_50_value",
+  "decs_no",
+  "acttype",
+  "reciver",
+  "suppcode",
+  "dec_50_date",
+  "itemsdata",
+  "paytype",
+  "toadderss",
+  "accmemono",
+  "kasimano",
+  "suppname",
+  "memoflag",
+  "accounttype",
+  "umachine",
+  "actionyear"
+ ],
+ "fields": [
+  {
+   "fieldname": "cheqmemono",
+   "fieldtype": "Data",
+   "label": "CHEQMEMONO"
+  },
+  {
+   "fieldname": "action_type",
+   "fieldtype": "Data",
+   "label": "ACTION_TYPE"
+  },
+  {
+   "fieldname": "net_dec_50",
+   "fieldtype": "Data",
+   "label": "NET_DEC_50"
+  },
+  {
+   "fieldname": "net_disc",
+   "fieldtype": "Data",
+   "label": "NET_DISC"
+  },
+  {
+   "fieldname": "dec_50_value",
+   "fieldtype": "Data",
+   "label": "DEC_50_VALUE"
+  },
+  {
+   "fieldname": "decs_no",
+   "fieldtype": "Data",
+   "label": "DECS_NO"
+  },
+  {
+   "fieldname": "acttype",
+   "fieldtype": "Data",
+   "label": "ACTTYPE"
+  },
+  {
+   "fieldname": "reciver",
+   "fieldtype": "Data",
+   "label": "RECIVER"
+  },
+  {
+   "fieldname": "suppcode",
+   "fieldtype": "Data",
+   "label": "SUPPCODE"
+  },
+  {
+   "fieldname": "dec_50_date",
+   "fieldtype": "Data",
+   "label": "DEC_50_DATE"
+  },
+  {
+   "fieldname": "itemsdata",
+   "fieldtype": "Data",
+   "label": "ITEMSDATA"
+  },
+  {
+   "fieldname": "paytype",
+   "fieldtype": "Data",
+   "label": "PAYTYPE"
+  },
+  {
+   "fieldname": "toadderss",
+   "fieldtype": "Data",
+   "label": "TOADDERSS"
+  },
+  {
+   "fieldname": "accmemono",
+   "fieldtype": "Data",
+   "label": "ACCMEMONO"
+  },
+  {
+   "fieldname": "kasimano",
+   "fieldtype": "Data",
+   "label": "KASIMANO"
+  },
+  {
+   "fieldname": "suppname",
+   "fieldtype": "Data",
+   "label": "SUPPNAME"
+  },
+  {
+   "fieldname": "memoflag",
+   "fieldtype": "Data",
+   "label": "MEMOFLAG"
+  },
+  {
+   "fieldname": "accounttype",
+   "fieldtype": "Data",
+   "label": "ACCOUNTTYPE"
+  },
+  {
+   "fieldname": "umachine",
+   "fieldtype": "Data",
+   "label": "UMACHINE"
+  },
+  {
+   "fieldname": "actionyear",
+   "fieldtype": "Data",
+   "label": "ACTIONYEAR"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-05-15 17:00:07.438712",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "dec_50_header",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

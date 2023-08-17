@@ -7,13 +7,25 @@
  "engine": "InnoDB",
  "field_order": [
   "liquid",
+  "vehicles_count",
   "qty",
   "in_words",
-  "column_break_4",
   "voucher_qty",
+  "column_break_4",
   "notebook_count",
   "from_serial",
-  "to_serial"
+  "to_serial",
+  "section_break_oykby",
+  "print_num",
+  "taswia",
+  "detail_id",
+  "act_qty",
+  "column_break_icq8s",
+  "act_date",
+  "udate",
+  "bon_code",
+  "bon_version",
+  "voucher_flag"
  ],
  "fields": [
   {
@@ -21,8 +33,7 @@
    "fieldname": "liquid",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "\u0627\u0644\u0633\u0627\u0626\u0644",
-   "read_only": 1
+   "label": "\u0627\u0644\u0633\u0627\u0626\u0644"
   },
   {
    "columns": 1,
@@ -35,6 +46,7 @@
   {
    "fieldname": "in_words",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "\u0627\u0644\u062a\u0641\u0642\u064a\u0637",
    "read_only": 1
   },
@@ -43,7 +55,8 @@
    "fieldname": "notebook_count",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "\u0639\u062f\u062f \u0627\u0644\u062f\u0641\u0627\u062a\u0631"
+   "label": "\u0627\u0644\u062f\u0641\u0627\u062a\u0631",
+   "reqd": 1
   },
   {
    "columns": 2,
@@ -66,17 +79,81 @@
    "fieldtype": "Column Break"
   },
   {
+   "columns": 1,
    "fieldname": "voucher_qty",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "\u0627\u0644\u0643\u0645\u064a\u0629 \u0627\u0644\u0645\u0646\u0635\u0631\u0641\u0629",
-   "reqd": 1
+   "label": "\u0627\u0644\u0643\u0645\u064a\u0629"
+  },
+  {
+   "fieldname": "bon_code",
+   "fieldtype": "Data",
+   "label": "BON_CODE"
+  },
+  {
+   "fieldname": "print_num",
+   "fieldtype": "Data",
+   "label": "PRINT_NUM"
+  },
+  {
+   "fieldname": "taswia",
+   "fieldtype": "Data",
+   "label": "TASWIA"
+  },
+  {
+   "fieldname": "detail_id",
+   "fieldtype": "Data",
+   "label": "DETAIL_ID"
+  },
+  {
+   "fieldname": "act_qty",
+   "fieldtype": "Data",
+   "label": "ACT_QTY"
+  },
+  {
+   "fieldname": "act_date",
+   "fieldtype": "Data",
+   "label": "ACT_DATE"
+  },
+  {
+   "fieldname": "udate",
+   "fieldtype": "Data",
+   "label": "UDATE"
+  },
+  {
+   "fieldname": "bon_version",
+   "fieldtype": "Data",
+   "label": "BON_VERSION"
+  },
+  {
+   "fieldname": "section_break_oykby",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_icq8s",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "vehicles_count",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0627\u062a",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "voucher_flag",
+   "fieldtype": "Check",
+   "label": "voucher_flag",
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-02-15 12:19:29.000332",
+ "modified": "2023-07-27 08:48:04.805677",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vouchers Issued Per Liquid",

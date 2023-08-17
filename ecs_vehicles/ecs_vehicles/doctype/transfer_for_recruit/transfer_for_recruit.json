@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2023-02-18 12:49:26.992895",
+ "creation": "2023-01-12 15:30:00.319627",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -64,10 +64,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "column_break_6",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "transfer_date",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -101,14 +97,18 @@
    "options": "Transfer For Recruit",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-18 12:49:26.992895",
+ "modified": "2023-01-22 15:25:02.023956",
  "modified_by": "Administrator",
- "module": "Ecs Vehicles",
+ "module": "Ecs Supply",
  "name": "Transfer For Recruit",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
@@ -128,6 +128,5 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "track_changes": 1
+ "states": []
 }

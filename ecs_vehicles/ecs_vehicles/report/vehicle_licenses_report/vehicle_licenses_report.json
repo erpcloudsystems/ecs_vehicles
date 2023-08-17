@@ -9,8 +9,7 @@
  "filters": [],
  "idx": 1,
  "is_standard": "Yes",
- "letter_head": "T",
- "modified": "2022-11-03 14:41:33.579127",
+ "modified": "2023-07-15 15:30:15.728411",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vehicle Licenses Report",
@@ -22,6 +21,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Licenses"
   }
  ]
 }

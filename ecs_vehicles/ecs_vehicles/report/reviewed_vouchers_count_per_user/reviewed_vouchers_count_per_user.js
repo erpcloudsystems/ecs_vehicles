@@ -8,7 +8,7 @@ frappe.query_reports["Reviewed Vouchers Count Per User"] = {
 			fieldname: "from_date",
 			label: __("من تاريخ"),
 			fieldtype: "Date",
-			default: frappe.datetime.add_months(frappe.datetime.get_today(), -1),
+			default: frappe.datetime.get_today(),
 		},
 		{
 			fieldname:"to_date",

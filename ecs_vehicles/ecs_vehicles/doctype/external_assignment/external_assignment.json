@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2023-02-18 12:51:17.388055",
+ "creation": "2023-01-12 15:07:19.937572",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -92,6 +92,7 @@
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Amended From",
    "no_copy": 1,
    "options": "External Assignment",
@@ -102,9 +103,9 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-18 12:51:17.388055",
+ "modified": "2023-01-22 15:27:19.173584",
  "modified_by": "Administrator",
- "module": "Ecs Vehicles",
+ "module": "Ecs Supply",
  "name": "External Assignment",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
@@ -124,6 +125,5 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "track_changes": 1
+ "states": []
 }

@@ -12,6 +12,7 @@
   "barcode",
   "barcode_no",
   "duplicated",
+  "lost",
   "disabled",
   "column_break_6",
   "liquid_type",
@@ -20,11 +21,17 @@
   "voucher_price",
   "release_date",
   "tab_break_11",
+  "receipt_id",
   "receipt_no",
+  "receipt_group",
   "receipt_date",
+  "column_break_axmu0",
+  "po_no",
+  "po_date",
   "tab_break_14",
   "issue_no",
   "issue_date",
+  "column_break_jp9vj",
   "entity",
   "review_tab",
   "voucher_review",
@@ -33,6 +40,7 @@
   "username",
   "column_break_22",
   "company_name",
+  "fiscal_year",
   "batch_no",
   "group_no",
   "vehicle_info_tab",
@@ -49,7 +57,13 @@
   "vehicle_style",
   "vehicle_model",
   "vehicle_color",
-  "processing_type"
+  "processing_type",
+  "tab_break_ie4we",
+  "bon_serial",
+  "bon_code",
+  "bon_version",
+  "sarfia_no",
+  "i_date"
  ],
  "fields": [
   {
@@ -58,7 +72,9 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0633\u0644\u0633\u0644",
-   "read_only": 1
+   "length": 20,
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "liquid_type",
@@ -66,7 +82,8 @@
    "in_standard_filter": 1,
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0633\u0627\u0626\u0644",
    "options": "\n\u0648\u0642\u0648\u062f\n\u0632\u064a\u062a\n\u063a\u0627\u0632\n\u063a\u0633\u064a\u0644",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "voucher_type",
@@ -74,7 +91,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0641\u0626\u0629 \u0627\u0644\u0628\u0648\u0646",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "release_date",
@@ -83,7 +101,8 @@
    "in_standard_filter": 1,
    "label": "\u0625\u0635\u062f\u0627\u0631",
    "options": "Release Date",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "entity",
@@ -92,38 +111,45 @@
    "in_standard_filter": 1,
    "label": "\u0627\u0644\u062c\u0647\u0629",
    "options": "Entity",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "receipt_date",
    "fieldtype": "Date",
-   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0625\u0636\u0627\u0641\u0629",
-   "read_only": 1
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0625\u0636\u0627\u0641\u0629 \u0627\u0644\u0628\u0648\u0646",
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "issue_date",
    "fieldtype": "Date",
-   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0635\u0631\u0641",
-   "read_only": 1
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0635\u0631\u0641 \u0627\u0644\u0628\u0648\u0646",
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "receipt_no",
    "fieldtype": "Data",
    "label": "\u0631\u0642\u0645 \u0625\u0630\u0646 \u0627\u0644\u0625\u0636\u0627\u0641\u0629",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "issue_no",
    "fieldtype": "Data",
    "label": "\u0631\u0642\u0645 \u0625\u0630\u0646 \u0627\u0644\u0635\u0631\u0641",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "default": "0",
    "fieldname": "disabled",
    "fieldtype": "Check",
    "in_standard_filter": 1,
-   "label": "\u0645\u0639\u0637\u0644"
+   "label": "\u0645\u0639\u0637\u0644",
+   "permlevel": 1,
+   "search_index": 1
   },
   {
    "fieldname": "barcode_no",
@@ -141,11 +167,11 @@
    "unique": 1
   },
   {
-   "depends_on": "eval:doc.liquid_type == \"\u0648\u0642\u0648\u062f\"",
    "fieldname": "fuel_type",
    "fieldtype": "Data",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "tab_break_1",
@@ -170,24 +196,27 @@
    "fieldname": "voucher_review",
    "fieldtype": "Data",
    "in_standard_filter": 1,
-   "label": "\u0631\u0642\u0645 \u0645\u0633\u062a\u0646\u062f \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629",
+   "label": "\u0631\u0642\u0645 \u0645\u0633\u062a\u0646\u062f \u0627\u0644\u062a\u0633\u0648\u064a\u0629",
    "no_copy": 1,
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "default": "0",
    "fieldname": "reviewed",
    "fieldtype": "Check",
-   "label": "\u062a\u0645 \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629",
+   "label": "\u062a\u0645 \u0627\u0644\u062a\u0633\u0648\u064a\u0629",
    "no_copy": 1,
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "review_date",
    "fieldtype": "Date",
-   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062a\u0633\u0648\u064a\u0629",
    "no_copy": 1,
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "column_break_22",
@@ -198,26 +227,29 @@
    "fieldtype": "Data",
    "label": "\u0631\u0642\u0645 \u0627\u0644\u062f\u0641\u0639\u0629",
    "no_copy": 1,
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "group_no",
    "fieldtype": "Data",
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u062c\u0645\u0648\u0639\u0629",
    "no_copy": 1,
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "company_name",
    "fieldtype": "Data",
    "label": "\u0627\u0633\u0645 \u0627\u0644\u0634\u0631\u0643\u0629",
    "no_copy": 1,
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "review_tab",
    "fieldtype": "Tab Break",
-   "label": "\u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629"
+   "label": "\u0627\u0644\u062a\u0633\u0648\u064a\u0629"
   },
   {
    "fieldname": "vehicle_info_tab",
@@ -325,14 +357,16 @@
    "label": "\u0633\u0639\u0631 \u0627\u0644\u0628\u0648\u0646",
    "no_copy": 1,
    "precision": "2",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "notebook_no",
    "fieldtype": "Data",
    "label": "\u0631\u0642\u0645 \u0627\u0644\u062f\u0641\u062a\u0631",
    "no_copy": 1,
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "default": "0",
@@ -340,38 +374,106 @@
    "fieldtype": "Check",
    "label": "\u0645\u0643\u0631\u0631",
    "no_copy": 1,
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "username",
    "fieldtype": "Data",
-   "label": "\u0645\u0631\u0627\u062c\u0639\u0629 \u0628\u0648\u0627\u0633\u0637\u0629",
-   "read_only": 1
+   "label": "\u0627\u0644\u062a\u0633\u0648\u064a\u0629 \u0628\u0648\u0627\u0633\u0637\u0629",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "bon_serial",
+   "fieldtype": "Data",
+   "label": "BON_SERIAL"
+  },
+  {
+   "fieldname": "bon_code",
+   "fieldtype": "Data",
+   "label": "BON_CODE"
+  },
+  {
+   "fieldname": "bon_version",
+   "fieldtype": "Data",
+   "label": "BON_VERSION"
+  },
+  {
+   "fieldname": "sarfia_no",
+   "fieldtype": "Data",
+   "label": "SARFIA_NO"
+  },
+  {
+   "fieldname": "i_date",
+   "fieldtype": "Data",
+   "label": "I_DATE"
+  },
+  {
+   "fieldname": "receipt_id",
+   "fieldtype": "Data",
+   "label": "\u0645\u0633\u062a\u0646\u062f \u0627\u0644\u0625\u0636\u0627\u0641\u0629",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "receipt_group",
+   "fieldtype": "Data",
+   "label": "\u0645\u062c\u0645\u0648\u0639\u0629",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_axmu0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "po_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0623\u0645\u0631 \u0627\u0644\u062a\u0648\u0631\u064a\u062f",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "po_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0623\u0645\u0631 \u0627\u0644\u062a\u0648\u0631\u064a\u062f",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "tab_break_ie4we",
+   "fieldtype": "Tab Break",
+   "label": "\u0627\u0644\u0645\u0631\u062c\u0639"
+  },
+  {
+   "default": "0",
+   "fieldname": "lost",
+   "fieldtype": "Check",
+   "label": "\u0645\u0641\u0642\u0648\u062f",
+   "search_index": 1
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0633\u0646\u0629 \u0627\u0644\u0645\u0627\u0644\u064a\u0629",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_jp9vj",
+   "fieldtype": "Column Break"
   }
  ],
- "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-26 00:02:54.913973",
+ "modified": "2023-07-17 12:58:11.690366",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Voucher",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "search_fields": "serial_no, barcode_no",
  "sort_field": "modified",
  "sort_order": "DESC",

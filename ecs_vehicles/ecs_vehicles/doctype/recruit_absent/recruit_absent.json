@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2023-02-18 12:53:06.421515",
+ "creation": "2023-01-16 10:37:16.170073",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -91,9 +91,9 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-18 12:53:06.421515",
+ "modified": "2023-01-19 16:27:59.542595",
  "modified_by": "Administrator",
- "module": "Ecs Vehicles",
+ "module": "Ecs Supply",
  "name": "Recruit Absent",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
@@ -113,6 +113,5 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "track_changes": 1
+ "states": []
 }

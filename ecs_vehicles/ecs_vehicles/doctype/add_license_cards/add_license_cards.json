@@ -14,6 +14,7 @@
   "group_no",
   "column_break_4",
   "from_serial",
+  "counter",
   "to_serial",
   "amended_from",
   "default"
@@ -79,16 +80,24 @@
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u062c\u0645\u0648\u0639\u0629"
   },
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "default",
    "fieldtype": "Check",
    "label": "\u0627\u0641\u062a\u0631\u0627\u0636\u064a"
+  },
+  {
+   "default": "1",
+   "fieldname": "counter",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "\u0627\u0644\u0639\u062f\u0627\u062f"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-04-29 18:32:09.674902",
+ "modified": "2023-05-28 11:47:13.637287",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Add License Cards",

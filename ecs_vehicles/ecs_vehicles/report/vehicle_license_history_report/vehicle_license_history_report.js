@@ -7,8 +7,7 @@ frappe.query_reports["Vehicle License History Report"] = {
 		{
             fieldname: "name",
             label: __("المركبة"),
-            fieldtype: "Link",
-            options: "Vehicles",
+            fieldtype: "Data",
         },
         {
             label: __("رقم الرخصة"),

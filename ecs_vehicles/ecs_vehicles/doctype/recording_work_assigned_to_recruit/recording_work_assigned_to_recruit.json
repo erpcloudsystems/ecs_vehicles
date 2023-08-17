@@ -2,8 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2023-02-18 12:45:54.769190",
- "default_view": "List",
+ "creation": "2022-09-19 13:27:33.728222",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -20,14 +19,6 @@
  ],
  "fields": [
   {
-   "default": "RWR-",
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "hidden": 1,
-   "label": "Naming Series",
-   "options": "RWR-"
-  },
-  {
    "fieldname": "recruit",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -36,13 +27,30 @@
    "options": "Employee"
   },
   {
-   "fetch_from": "recruit.employee_name",
-   "fieldname": "employee_name",
-   "fieldtype": "Data",
+   "fieldname": "assigned_date",
+   "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Employee Name",
+   "label": "Assigned Date"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Recording Work Assigned To Recruit",
+   "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
   },
   {
    "fetch_from": "recruit.employment_type",
@@ -54,11 +62,12 @@
    "read_only": 1
   },
   {
-   "fieldname": "assigned_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Assigned Date"
+   "default": "RWR-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "RWR-"
   },
   {
    "fieldname": "work_assigned",
@@ -69,30 +78,21 @@
    "options": "Designation"
   },
   {
-   "fieldname": "column_break_4",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "notes",
-   "fieldtype": "Small Text",
-   "label": "Notes"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Recording Work Assigned To Recruit",
-   "print_hide": 1,
+   "fetch_from": "recruit.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-18 12:45:54.769190",
+ "modified": "2023-01-16 11:29:39.183019",
  "modified_by": "Administrator",
- "module": "Ecs Vehicles",
+ "module": "Ecs Supply",
  "name": "Recording Work Assigned To Recruit",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",

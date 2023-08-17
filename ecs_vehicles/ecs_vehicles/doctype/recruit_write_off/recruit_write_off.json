@@ -2,8 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2023-02-18 12:47:27.019613",
- "default_view": "List",
+ "creation": "2022-09-19 14:28:29.473138",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -23,14 +22,6 @@
  ],
  "fields": [
   {
-   "default": "RW-",
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "hidden": 1,
-   "label": "Naming Series",
-   "options": "RW-"
-  },
-  {
    "fieldname": "recruit",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -39,11 +30,47 @@
    "options": "Employee"
   },
   {
-   "fetch_from": "recruit.employee_name",
-   "fieldname": "employee_name",
-   "fieldtype": "Data",
-   "label": "Employee Name",
+   "fieldname": "write_off_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Write Off Date"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Recruit Write Off",
+   "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "recruit.employment_type",
+   "fieldname": "employment_type",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Employment Type",
+   "options": "Employment Type",
+   "read_only": 1
+  },
+  {
+   "default": "RW-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "RW-"
   },
   {
    "fetch_from": "recruit.recruit_degree",
@@ -56,6 +83,19 @@
    "read_only": 1
   },
   {
+   "allow_on_submit": 1,
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "label": "Return Date"
+  },
+  {
+   "fetch_from": "recruit.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
    "fetch_from": "recruit.military_date",
    "fieldname": "military_date",
    "fieldtype": "Date",
@@ -63,57 +103,17 @@
    "read_only": 1
   },
   {
-   "fetch_from": "recruit.employment_type",
-   "fieldname": "employment_type",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Employment Type",
-   "options": "Employment Type",
-   "read_only": 1
-  },
-  {
-   "fieldname": "write_off_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Write Off Date"
-  },
-  {
-   "fieldname": "column_break_4",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "absent_date",
    "fieldtype": "Date",
    "label": "Recruit Absent Date"
-  },
-  {
-   "allow_on_submit": 1,
-   "fieldname": "return_date",
-   "fieldtype": "Date",
-   "label": "Return Date"
-  },
-  {
-   "fieldname": "notes",
-   "fieldtype": "Small Text",
-   "label": "Notes"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Recruit Write Off",
-   "print_hide": 1,
-   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-18 12:47:27.019613",
+ "modified": "2023-01-22 12:46:44.228761",
  "modified_by": "Administrator",
- "module": "Ecs Vehicles",
+ "module": "Ecs Supply",
  "name": "Recruit Write Off",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",

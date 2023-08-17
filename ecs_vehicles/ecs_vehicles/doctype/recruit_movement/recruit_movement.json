@@ -10,6 +10,7 @@
  "field_order": [
   "naming_series",
   "recruit",
+  "employee_name",
   "employment_type",
   "movement_date",
   "movement_type",
@@ -19,14 +20,6 @@
  ],
  "fields": [
   {
-   "default": "RM-",
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "hidden": 1,
-   "label": "Naming Series",
-   "options": "RM-"
-  },
-  {
    "fieldname": "recruit",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -35,28 +28,19 @@
    "options": "Employee"
   },
   {
-   "fetch_from": "recruit.employment_type",
-   "fieldname": "employment_type",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Employment Type",
-   "options": "Employment Type",
-   "read_only": 1
-  },
-  {
    "fieldname": "movement_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Movement Date"
   },
   {
    "fieldname": "movement_type",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Movement Type",
    "options": "Movement Type"
-  },
-  {
-   "fieldname": "column_break_4",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "notes",
@@ -71,12 +55,43 @@
    "options": "Recruit Movement",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "recruit.employment_type",
+   "fieldname": "employment_type",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_standard_filter": 1,
+   "label": "Employment Type",
+   "options": "Employment Type",
+   "read_only": 1
+  },
+  {
+   "default": "RM-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "RM-"
+  },
+  {
+   "fetch_from": "recruit.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-18 12:45:29.495034",
+ "modified": "2023-07-13 13:48:03.428281",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Recruit Movement",

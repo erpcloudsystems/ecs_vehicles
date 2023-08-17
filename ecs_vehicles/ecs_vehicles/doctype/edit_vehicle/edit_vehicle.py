@@ -26,3 +26,11 @@ class EditVehicle(Document):
 		
 
 
+@frappe.whitelist()
+def edit_vehicle(vehicle_no):
+    return frappe.db.sql("""
+    SELECT value, date, edited_by, remarks, old_transaction_no
+    FROM `tabVehicle Status Logs` logs
+    WHERE parent = "{vehicle_no}"
+    ORDER BY date 
+    """.format(vehicle_no=vehicle_no), as_dict=1)

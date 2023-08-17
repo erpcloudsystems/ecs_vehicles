@@ -9,6 +9,7 @@
  "engine": "InnoDB",
  "field_order": [
   "tab_break_1",
+  "validation",
   "section_break_2",
   "vehicle",
   "letter",
@@ -24,6 +25,7 @@
   "from_date",
   "to_date",
   "section_break_29",
+  "card_code",
   "license_no",
   "column_break_17",
   "license_status",
@@ -45,6 +47,7 @@
   "vehicle_license_logs_section",
   "vehicle_license_logs",
   "tab_break_2",
+  "validation2",
   "section_break_35",
   "vehicle2",
   "letter2",
@@ -60,6 +63,7 @@
   "from_date2",
   "to_date2",
   "section_break_33",
+  "card_code2",
   "license_no2",
   "column_break_35",
   "license_status2",
@@ -81,6 +85,7 @@
   "vehicle_license_logs_section2",
   "vehicle_license_logs2",
   "tab_break_3",
+  "validation3",
   "section_break_68",
   "vehicle3",
   "letter3",
@@ -96,6 +101,7 @@
   "from_date3",
   "to_date3",
   "section_break_51",
+  "card_code3",
   "license_no3",
   "column_break_53",
   "license_status3",
@@ -117,6 +123,7 @@
   "vehicle_license_logs_section3",
   "vehicle_license_logs3",
   "tab_break_4",
+  "validation4",
   "section_break_101",
   "vehicle4",
   "letter4",
@@ -132,6 +139,7 @@
   "from_date4",
   "to_date4",
   "section_break_69",
+  "card_code4",
   "license_no4",
   "column_break_71",
   "license_status4",
@@ -153,10 +161,15 @@
   "vehicle_license_logs_section4",
   "vehicle_license_logs4",
   "tab_break_67",
+  "card_print",
+  "section_break_fmmzt",
+  "card_front",
+  "column_break_cedhx",
+  "card_back",
+  "section_break_ivd7p",
   "license_entry_summary",
   "amended_from",
-  "naming_series",
-  "added"
+  "naming_series"
  ],
  "fields": [
   {
@@ -186,11 +199,12 @@
   {
    "allow_on_submit": 1,
    "default": "1",
+   "depends_on": "eval:!doc.validation",
    "fieldname": "license_duration",
    "fieldtype": "Data",
    "label": "\u0645\u062f\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
    "no_copy": 1,
-   "read_only": 1
+   "permlevel": 1
   },
   {
    "default": "Today",
@@ -202,7 +216,7 @@
   },
   {
    "fieldname": "to_date",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
    "no_copy": 1,
    "read_only": 1,
@@ -218,12 +232,12 @@
   },
   {
    "allow_on_submit": 1,
-   "depends_on": "eval:!(doc.__islocal)",
    "fieldname": "license_no",
    "fieldtype": "Data",
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
-   "no_copy": 1
+   "no_copy": 1,
+   "reqd": 1
   },
   {
    "allow_on_submit": 1,
@@ -243,7 +257,7 @@
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u062f\u064a\u062f",
    "mandatory_depends_on": "eval:doc.issue_status == \"\u062a\u062c\u062f\u064a\u062f\"",
    "no_copy": 1,
-   "options": "\n\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629\n\u0628\u062f\u0644 \u0641\u0627\u0642\u062f\n\u0628\u062f\u0644 \u062a\u0627\u0644\u0641\n\u0646\u0642\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629\n\u062a\u0639\u062f\u064a\u0644 \u0644\u0648\u0646\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a\n\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062d\u0630\u0641 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646"
+   "options": "\n\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629\n\u0628\u062f\u0644 \u0641\u0627\u0642\u062f\n\u0628\u062f\u0644 \u062a\u0627\u0644\u0641\n\u0646\u0642\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629\n\u062a\u0639\u062f\u064a\u0644 \u0644\u0648\u0646\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a\n\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062d\u0630\u0641 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646\n\u0645\u0624\u062a\u0645\u0631"
   },
   {
    "fieldname": "column_break_6",
@@ -287,7 +301,6 @@
   },
   {
    "depends_on": "eval:doc.issue_status == \"\u062a\u062c\u062f\u064a\u062f\"",
-   "fetch_from": "vehicle.license_to_date",
    "fieldname": "last_end_date",
    "fieldtype": "Date",
    "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u062e\u0631 \u062a\u0631\u062e\u064a\u0635",
@@ -366,7 +379,7 @@
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u062f\u064a\u062f",
    "mandatory_depends_on": "eval:doc.issue_status2 == \"\u062a\u062c\u062f\u064a\u062f\"",
    "no_copy": 1,
-   "options": "\n\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629\n\u0628\u062f\u0644 \u0641\u0627\u0642\u062f\n\u0628\u062f\u0644 \u062a\u0627\u0644\u0641\n\u0646\u0642\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629\n\u062a\u0639\u062f\u064a\u0644 \u0644\u0648\u0646\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a\n\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062d\u0630\u0641 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646"
+   "options": "\n\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629\n\u0628\u062f\u0644 \u0641\u0627\u0642\u062f\n\u0628\u062f\u0644 \u062a\u0627\u0644\u0641\n\u0646\u0642\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629\n\u062a\u0639\u062f\u064a\u0644 \u0644\u0648\u0646\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a\n\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062d\u0630\u0641 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646\n\u0645\u0624\u062a\u0645\u0631"
   },
   {
    "fieldname": "column_break_26",
@@ -375,7 +388,6 @@
   },
   {
    "depends_on": "eval:doc.issue_status2 == \"\u062a\u062c\u062f\u064a\u062f\"",
-   "fetch_from": "vehicle2.license_to_date",
    "fieldname": "last_end_date2",
    "fieldtype": "Date",
    "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u062e\u0631 \u062a\u0631\u062e\u064a\u0635",
@@ -385,11 +397,12 @@
   {
    "allow_on_submit": 1,
    "default": "1",
+   "depends_on": "eval:!doc.validation2",
    "fieldname": "license_duration2",
    "fieldtype": "Data",
    "label": "\u0645\u062f\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
    "no_copy": 1,
-   "read_only": 1
+   "permlevel": 1
   },
   {
    "default": "Today",
@@ -401,7 +414,7 @@
   },
   {
    "fieldname": "to_date2",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
    "no_copy": 1,
    "read_only": 1,
@@ -409,12 +422,12 @@
   },
   {
    "allow_on_submit": 1,
-   "depends_on": "eval:!(doc.__islocal)",
    "fieldname": "license_no2",
    "fieldtype": "Data",
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
-   "no_copy": 1
+   "no_copy": 1,
+   "reqd": 1
   },
   {
    "allow_on_submit": 1,
@@ -504,7 +517,7 @@
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u062f\u064a\u062f",
    "mandatory_depends_on": "eval:doc.issue_status3 == \"\u062a\u062c\u062f\u064a\u062f\"",
    "no_copy": 1,
-   "options": "\n\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629\n\u0628\u062f\u0644 \u0641\u0627\u0642\u062f\n\u0628\u062f\u0644 \u062a\u0627\u0644\u0641\n\u0646\u0642\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629\n\u062a\u0639\u062f\u064a\u0644 \u0644\u0648\u0646\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a\n\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062d\u0630\u0641 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646"
+   "options": "\n\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629\n\u0628\u062f\u0644 \u0641\u0627\u0642\u062f\n\u0628\u062f\u0644 \u062a\u0627\u0644\u0641\n\u0646\u0642\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629\n\u062a\u0639\u062f\u064a\u0644 \u0644\u0648\u0646\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a\n\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062d\u0630\u0641 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646\n\u0645\u0624\u062a\u0645\u0631"
   },
   {
    "fieldname": "column_break_42",
@@ -513,7 +526,6 @@
   },
   {
    "depends_on": "eval:doc.issue_status == \"\u062a\u062c\u062f\u064a\u062f\"",
-   "fetch_from": "vehicle3.license_to_date",
    "fieldname": "last_end_date3",
    "fieldtype": "Date",
    "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u062e\u0631 \u062a\u0631\u062e\u064a\u0635",
@@ -523,11 +535,12 @@
   {
    "allow_on_submit": 1,
    "default": "1",
+   "depends_on": "eval:!doc.validation3",
    "fieldname": "license_duration3",
    "fieldtype": "Data",
    "label": "\u0645\u062f\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
    "no_copy": 1,
-   "read_only": 1
+   "permlevel": 1
   },
   {
    "default": "Today",
@@ -539,7 +552,7 @@
   },
   {
    "fieldname": "to_date3",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
    "no_copy": 1,
    "read_only": 1,
@@ -547,12 +560,12 @@
   },
   {
    "allow_on_submit": 1,
-   "depends_on": "eval:!(doc.__islocal)",
    "fieldname": "license_no3",
    "fieldtype": "Data",
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
-   "no_copy": 1
+   "no_copy": 1,
+   "reqd": 1
   },
   {
    "allow_on_submit": 1,
@@ -636,7 +649,7 @@
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u062f\u064a\u062f",
    "mandatory_depends_on": "eval:doc.issue_status4 == \"\u062a\u062c\u062f\u064a\u062f\"",
    "no_copy": 1,
-   "options": "\n\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629\n\u0628\u062f\u0644 \u0641\u0627\u0642\u062f\n\u0628\u062f\u0644 \u062a\u0627\u0644\u0641\n\u0646\u0642\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629\n\u062a\u0639\u062f\u064a\u0644 \u0644\u0648\u0646\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a\n\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062d\u0630\u0641 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646"
+   "options": "\n\u0625\u0646\u062a\u0647\u0627\u0621 \u0645\u062f\u0629\n\u0628\u062f\u0644 \u0641\u0627\u0642\u062f\n\u0628\u062f\u0644 \u062a\u0627\u0644\u0641\n\u0646\u0642\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629\n\u062a\u0639\u062f\u064a\u0644 \u0644\u0648\u0646\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643\n\u062a\u0639\u062f\u064a\u0644 \u0631\u0642\u0645 \u0627\u0644\u0645\u0644\u0627\u0643\u064a\n\u0625\u0636\u0627\u0641\u0629 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062d\u0630\u0641 \u0631\u0642\u0645 \u0645\u0644\u0627\u0643\u064a\n\u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646\n\u0645\u0624\u062a\u0645\u0631"
   },
   {
    "fieldname": "column_break_58",
@@ -645,7 +658,6 @@
   },
   {
    "depends_on": "eval:doc.issue_status2 == \"\u062a\u062c\u062f\u064a\u062f\"",
-   "fetch_from": "vehicle4.license_to_date",
    "fieldname": "last_end_date4",
    "fieldtype": "Date",
    "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u062e\u0631 \u062a\u0631\u062e\u064a\u0635",
@@ -655,11 +667,12 @@
   {
    "allow_on_submit": 1,
    "default": "1",
+   "depends_on": "eval:!doc.validation4",
    "fieldname": "license_duration4",
    "fieldtype": "Data",
    "label": "\u0645\u062f\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
    "no_copy": 1,
-   "read_only": 1
+   "permlevel": 1
   },
   {
    "default": "Today",
@@ -671,7 +684,7 @@
   },
   {
    "fieldname": "to_date4",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
    "no_copy": 1,
    "read_only": 1,
@@ -679,12 +692,12 @@
   },
   {
    "allow_on_submit": 1,
-   "depends_on": "eval:!(doc.__islocal)",
    "fieldname": "license_no4",
    "fieldtype": "Data",
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
-   "no_copy": 1
+   "no_copy": 1,
+   "reqd": 1
   },
   {
    "allow_on_submit": 1,
@@ -707,13 +720,14 @@
   {
    "fieldname": "tab_break_67",
    "fieldtype": "Tab Break",
-   "label": "\u0627\u0644\u0645\u0644\u062e\u0635"
+   "label": "\u0627\u0644\u0645\u0644\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u062e\u0635 \u0648 \u0627\u0644\u0637\u0628\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629"
   },
   {
    "allow_on_submit": 1,
    "fieldname": "license_entry_summary",
    "fieldtype": "Table",
-   "options": "License Entry Summary"
+   "options": "License Entry Summary",
+   "read_only": 1
   },
   {
    "collapsible": 1,
@@ -1189,7 +1203,8 @@
    "fieldname": "vehicle_license_logs",
    "fieldtype": "Table",
    "no_copy": 1,
-   "options": "Vehicle License Logs"
+   "options": "Vehicle License Logs",
+   "read_only": 1
   },
   {
    "fieldname": "vehicle_license_logs_section2",
@@ -1201,7 +1216,8 @@
    "fieldname": "vehicle_license_logs2",
    "fieldtype": "Table",
    "no_copy": 1,
-   "options": "Vehicle License Logs"
+   "options": "Vehicle License Logs",
+   "read_only": 1
   },
   {
    "fieldname": "vehicle_license_logs_section3",
@@ -1228,16 +1244,98 @@
    "read_only": 1
   },
   {
+   "allow_on_submit": 1,
+   "fieldname": "card_code",
+   "fieldtype": "Data",
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0643\u0627\u0631\u062a"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "card_code2",
+   "fieldtype": "Data",
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0643\u0627\u0631\u062a"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "card_code3",
+   "fieldtype": "Data",
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0643\u0627\u0631\u062a"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "card_code4",
+   "fieldtype": "Data",
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0643\u0627\u0631\u062a"
+  },
+  {
+   "bold": 1,
+   "default": "\u0631\u062e\u0635\u0629",
+   "fieldname": "card_print",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "\u0637\u0628\u0627\u0639\u0629 \u0627\u0644\u0643\u0627\u0631\u062a",
+   "options": "\u0631\u062e\u0635\u0629\n\u062a\u0635\u0631\u064a\u062d"
+  },
+  {
+   "depends_on": "eval:doc.docstatus==1",
+   "fieldname": "section_break_fmmzt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "card_front",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0627\u0644\u0648\u062c\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0647 \u0627\u0644\u0623\u0645\u0627\u0645\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u064a"
+  },
+  {
+   "bold": 1,
+   "fieldname": "card_back",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0627\u0644\u0648\u062c\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0647 \u0627\u0644\u062e\u0644\u0641\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u064a"
+  },
+  {
+   "fieldname": "column_break_cedhx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ivd7p",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
    "default": "0",
-   "fieldname": "added",
+   "fieldname": "validation",
    "fieldtype": "Check",
-   "label": "added"
+   "label": "\u062a\u0635\u0631\u064a\u062d",
+   "no_copy": 1
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "fieldname": "validation2",
+   "fieldtype": "Check",
+   "label": "\u062a\u0635\u0631\u064a\u062d"
+  },
+  {
+   "default": "0",
+   "fieldname": "validation3",
+   "fieldtype": "Check",
+   "label": "\u062a\u0635\u0631\u064a\u062d",
+   "no_copy": 1
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "fieldname": "validation4",
+   "fieldtype": "Check",
+   "label": "\u062a\u0635\u0631\u064a\u062d",
+   "no_copy": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-02 02:32:23.071954",
+ "modified": "2023-08-15 12:26:42.320150",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vehicle License",

@@ -18,7 +18,7 @@ def get_columns(filters):
         {
             "label": _("الرخصة"),
             "fieldname": "name",
-            "options": "License Card",
+            "options": "Vehicle License Entries",
             "fieldtype": "Link",
             "width": 140,
         },
@@ -198,8 +198,8 @@ def get_query(conditions):
         """
         SELECT
              license_summary.name AS name,
-            license_summary.serial AS serial,
-            license_summary.code AS code,
+            license_summary.license_no AS serial,
+            license_summary.card_code AS code,
             license_summary.vehicle_license AS vehicle_license,
             license_summary.vehicle AS vehicle,
             license_summary.license_status AS license_status,
@@ -213,11 +213,11 @@ def get_query(conditions):
             license_summary.police_no AS police_no,
             license_summary.owner AS owner,
             license_summary.modified_by AS modified_by
-        FROM `tabLicense Card` license_summary
+        FROM `tabVehicle License Entries` license_summary
         WHERE license_summary.docstatus =  0
         AND license_summary.license_status = "تالف"
         {conditions}
-		ORDER BY license_summary.name DESC
+		ORDER BY license_summary.license_no DESC
 
 		""".format(
             conditions=conditions

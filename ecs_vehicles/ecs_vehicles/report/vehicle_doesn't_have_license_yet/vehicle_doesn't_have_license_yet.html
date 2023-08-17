@@ -1,0 +1,183 @@
+
+<style>
+    * {
+            margin:0;
+            padding:0;
+            direction:rtl;
+        }
+        .print-format {
+            padding:0in;
+            
+        }
+    .header {
+        margin-top:20px;
+        display:flex; 
+        flex-direction:column;
+        justify-content:center;
+    }
+    .under-header {
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+    }
+    .esm-algeha {
+        margin-top:30px;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+    table, th, td , th{
+        border:2px solid black;
+        border-collapse:collapse;
+        text-align:center;
+        white-space: nowrap;
+
+    }
+    .print-format th {
+        color:black;
+            text-align:center;
+            font-weight:bold;
+            background-color:lightgray;
+            white-space: nowrap;
+
+    
+    }
+    .print-format td {
+        padding: 0px !important;
+        white-space: nowrap;
+    }
+    .break {
+        flex-basis: 100%;
+        height: 0;
+      }
+      .column1 {
+        border-left: 2px solid black;
+      }
+    .table1 {
+        margin-top:5px;
+        margin-right:20px;
+        margin-left:20px;
+        display:flex; 
+        flex-direction:column;
+    
+    }
+    </style>
+    {% var numbers = ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"] %}
+
+    {% var pageNumber = 0 %}
+    {% var months = ["يناير", "فبراير", "مارس", "ابريل", "مايو", "يونيو", "يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر", "ديسمبر"]%}
+    
+<div class="header">
+
+    <div class="under-header">
+    <div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;">
+        <div>
+    <img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
+    </div>
+    <div style="font-weight:bold;">
+        وزارة الداخلية
+    </div>
+    <div>
+    الادارة العامه لمركبات الشرطه
+    </div>
+    <div>
+    </div>
+    </div>
+
+                    
+                        
+    <div style="font-weight: bold;
+    font-size: 12pt;
+    text-decoration: underline;">
+        تقرير بمركبات لم تستخرج رخص من قبل 
+    </div>
+    <div>
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="font-weight: bold;">تاريخ الطباعة  </div>
+            <div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
+                {%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
+                {{data[0].cur_user}}
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+</div>
+
+
+{% var counter = 1 %}
+
+
+<div class="table1">
+        <table style="font-family:Cairo" dir="rtl">
+            <thead>
+                <tr>
+                    <th>{%= __("م") %}</th>
+                    <th>{%= __("رقم المركبة") %}</th>
+                    <th>{%= __("الشكل") %}</th>
+                    <th>{%= __("إانتهاء الرخصة") %}</th>
+                    <th>{%= __("التسجيل بالحاسب") %}</th>
+                    <th> {%= __("الجهة") %}</th>
+                    <th>{%= __("رقم الرخصة") %}</th>
+                    <th>{%= __("مخصص صرف") %}</th>
+                    <th>{%= __("رقم الشاسية") %}</th>
+                    <th>{%= __("نوع الإصدار") %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for(var i=0, f=data.length -1; i<f; i++) { %}
+
+                <tr>
+                    <td>
+                        {%= i+1 %}
+                    </td>
+
+                    {% var vehicle_no = [] %}
+                        {% var vehicle_noListsplit =  data[i].police_no.split("") %}
+
+                    {% for(var j=0, len=vehicle_noListsplit.length; j<len; j++) { %}
+                       {% vehicle_no.push(numbers[vehicle_noListsplit[j]]) %}
+                    {%    } %}
+
+                    <td>{%= vehicle_no.join("") %}</td>
+                    <td>{%= data[i].vehicle_type %}</td>
+                    {% var to_date = [] %}
+                        {% var to_dateListsplit =  data[i].license_to_date.split("") %}
+
+                    {% for(var j=0, len=to_dateListsplit.length; j<len; j++) { %}
+                    {% if (to_dateListsplit[j] == "-") { %}
+                    {% to_date.push("-") %}
+                        {%  } %}
+
+                        {% to_date.push(numbers[to_dateListsplit[j]]) %}
+
+                      {%  } %}
+                      <td>{%= to_date.join("").split("-")[2] %} / {%= to_date.join("").split("-")[1] %} / {%= to_date.join("").split("-")[0] %}</td>
+                    {% var from_date = [] %}
+                        {% var from_dateListsplit =  data[i].license_from_date.split("") %}
+
+                    {% for(var j=0, len=from_dateListsplit.length; j<len; j++) { %}
+                        {% if (from_dateListsplit[j] == "-") { %}
+                        {% from_date.push("-") %}
+                        {%  } %}
+
+                        {% from_date.push(numbers[from_dateListsplit[j]]) %}
+
+                      {%  } %}
+                        
+                      <td>{%= from_date.join("").split("-")[2] %} / {%= from_date.join("").split("-")[1] %} / {%= from_date.join("").split("-")[0] %}</td>
+                      <td>{%= data[i].entity %}</td>
+                    
+                    <td>{%= data[i].card_code %} {%= data[i].license_no %}</td>
+                    <td>{%= data[i].exchange_allowance %}</td>
+                    <td>{%= data[i].chassis_no %}</td>
+                    <td>{%= data[i].renewal_type %}</td>
+
+                </tr>
+                {% } %}
+
+            </tbody>
+        </table>
+    </div>

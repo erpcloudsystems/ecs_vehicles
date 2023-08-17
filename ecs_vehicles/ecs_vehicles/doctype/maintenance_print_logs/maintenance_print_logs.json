@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-29 15:07:27.798656",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "format_name",
+  "format_no",
+  "print_date",
+  "printed_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "format_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0646\u0645\u0648\u0630\u062c \u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "format_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0646\u0645\u0648\u0630\u062c",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "printed_by",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0637\u0628\u0627\u0639\u0629 \u0628\u0648\u0627\u0633\u0637\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "print_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-05-29 15:14:58.708061",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Maintenance Print Logs",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

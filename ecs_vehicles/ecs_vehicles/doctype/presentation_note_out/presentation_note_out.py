@@ -29,7 +29,7 @@ class PresentationNoteOut(Document):
 		"maintenance_entity" : doc.maintenance_entity,
 		"maintenance_order" : doc.maintenance_order,
         	                })
-		for x in doc.job_order_item:
+		for x in doc.presentation_note_out_item:
 			table = new_doc.append("job_order_item", {})
 			table.item_group = x.item_group
 			table.maintenance_type = x.maintenance_type
@@ -45,4 +45,16 @@ class PresentationNoteOut(Document):
 		new_doc.insert(ignore_permissions=True)
 		doc.job_order = new_doc.name
 		#frappe.msgprint(new_doc.name + " تم إنشاء امر شغل رقم ")
-	
+
+	@frappe.whitelist()
+	def validate(self):
+		if self.jop_number:
+			mozakira_no_list = frappe.db.sql(""" Select jop_number, name from `tabPresentation Note Out`
+			where docstatus != 2 and fiscal_year = '{fiscal_year}' and name != '{name}' """.format(name=self.name, fiscal_year=self.fiscal_year), as_dict=1)
+
+			for x in mozakira_no_list:
+				if self.jop_number == x.jop_number:
+					frappe.throw(
+						" لا يمكن تكرار رقم المذكرة " + str(x.jop_number) + " أكثر من مرة قي نفس السنة المالية حيث أنه مستخدم في المذكرة " + x.name)
+
+		

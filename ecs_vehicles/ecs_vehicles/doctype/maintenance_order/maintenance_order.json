@@ -8,26 +8,43 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "section_break_wxmsj",
   "naming_series",
   "pri_key",
   "ezn_key",
   "vic_serial",
+  "driver_name",
+  "external_fix",
   "column_break_x9biq",
   "total_parts_price",
   "total_fix_value",
+  "mark_teraz_code",
+  "mokaysa_num",
+  "mahdar_no",
   "last_template",
-  "notes",
+  "print_times",
+  "last_action",
+  "total_parts_cost",
+  "total_work_cost",
+  "section_break_bxhhg",
+  "html",
+  "column_break_jrezd",
+  "print_templete_no",
   "data_section",
   "date",
-  "car_in_date",
   "ezn_no",
+  "custody_report",
   "column_break_4",
   "fis_year",
+  "driver",
+  "notes",
+  "column_break_ivred",
+  "car_in_date",
   "car_out_date",
-  "custody_report",
   "vehicle_section",
   "vehicles",
   "vehicle_no",
+  "vehicle_type",
   "vehicle_brand",
   "group_shape",
   "column_break_9",
@@ -45,9 +62,11 @@
   "possession_date",
   "section_break_12",
   "maintenance_method",
-  "column_break_24",
-  "driver",
+  "select_all_maintenance_method",
+  "select_all_maintenance_col",
+  "select_all_maintenance_type",
   "section_break_14",
+  "pass_order",
   "maintenance_order_item",
   "amended_from"
  ],
@@ -57,7 +76,7 @@
    "fieldtype": "Select",
    "hidden": 1,
    "label": "naming_series",
-   "options": "MO.YYYY-",
+   "options": "MO-.YYYY.-",
    "read_only": 1
   },
   {
@@ -83,13 +102,11 @@
    "read_only": 1
   },
   {
-   "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0627\u0630\u0646",
-   "options": "Today"
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0627\u0630\u0646"
   },
   {
    "fieldname": "column_break_4",
@@ -121,6 +138,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "allow_bulk_edit": 1,
    "allow_on_submit": 1,
    "fieldname": "maintenance_order_item",
    "fieldtype": "Table",
@@ -130,9 +148,7 @@
   {
    "fieldname": "vehicles",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
    "options": "Vehicles"
   },
   {
@@ -191,6 +207,7 @@
    "read_only": 1
   },
   {
+   "allow_on_submit": 1,
    "fetch_from": "vehicles.maintenance_entity",
    "fetch_if_empty": 1,
    "fieldname": "maintenance_entity",
@@ -229,9 +246,8 @@
    "fetch_from": "vehicles.fuel_type",
    "fetch_if_empty": 1,
    "fieldname": "fuel_type",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
-   "options": "Fuel Type",
    "read_only": 1
   },
   {
@@ -246,12 +262,10 @@
   {
    "fieldname": "fis_year",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "\u0627\u0644\u0633\u0646\u0629 \u0627\u0644\u0645\u0627\u0644\u064a\u0629",
    "options": "Fiscal Year"
-  },
-  {
-   "fieldname": "column_break_24",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "car_in_date",
@@ -305,8 +319,7 @@
    "fieldname": "ezn_key",
    "fieldtype": "Data",
    "hidden": 1,
-   "label": "ezn_key",
-   "read_only": 1
+   "label": "ezn_key"
   },
   {
    "fieldname": "column_break_x9biq",
@@ -329,29 +342,155 @@
   {
    "fieldname": "notes",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "\u0627\u0644\u0645\u0644\u0627\u062d\u0638\u0627\u062a",
-   "read_only": 1
+   "label": "\u0627\u0644\u0645\u0644\u0627\u062d\u0638\u0627\u062a"
   },
   {
    "fieldname": "vic_serial",
    "fieldtype": "Data",
    "hidden": 1,
-   "label": "vic_serial",
-   "read_only": 1
+   "label": "vic_serial"
   },
   {
    "fieldname": "last_template",
    "fieldtype": "Data",
    "hidden": 1,
-   "label": "\u0627\u062e\u0631 \u0646\u0645\u0648\u0630\u062c",
+   "label": "NAMOZAG_NO",
    "read_only": 1
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "DRIVER_NAME"
+  },
+  {
+   "fieldname": "external_fix",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "EXTERNAL_FIX"
+  },
+  {
+   "fieldname": "mark_teraz_code",
+   "fieldtype": "Data",
+   "label": "MARK_TERAZ_CODE"
+  },
+  {
+   "fieldname": "mokaysa_num",
+   "fieldtype": "Data",
+   "label": "MOKAYSA_NUM"
+  },
+  {
+   "fieldname": "mahdar_no",
+   "fieldtype": "Data",
+   "label": "MAHDAR_NO"
+  },
+  {
+   "fieldname": "print_times",
+   "fieldtype": "Data",
+   "label": "PRINT_TIMES"
+  },
+  {
+   "fieldname": "last_action",
+   "fieldtype": "Data",
+   "label": "LAST_ACTION"
+  },
+  {
+   "fieldname": "total_parts_cost",
+   "fieldtype": "Data",
+   "label": "TOTAL_PARTS_COST"
+  },
+  {
+   "fieldname": "total_work_cost",
+   "fieldtype": "Data",
+   "label": "TOTAL_WORK_COST"
+  },
+  {
+   "fieldname": "column_break_ivred",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "vehicles.vehicle_type",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicle Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wxmsj",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "select_all_maintenance_type",
+   "fieldtype": "Select",
+   "label": "\u062a\u062d\u062f\u064a\u062f \u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u0625\u0635\u0644\u0627\u062d \u0644\u0644\u0643\u0644",
+   "options": "\n\u062a\u0648\u0631\u064a\u062f \u0648\u062a\u0631\u0643\u064a\u0628\n\u062a\u0631\u0643\u064a\u0628 \u0641\u0642\u0637\n\u0645\u0635\u0646\u0639\u064a\u0627\u062a\n\u062a\u0648\u0631\u064a\u062f \u0641\u0642\u0637"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "1",
+   "fieldname": "print_templete_no",
+   "fieldtype": "Int",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0646\u0645\u0648\u0630\u062c \u0644\u0644\u0637\u0628\u0627\u0639\u0629"
+  },
+  {
+   "fieldname": "section_break_bxhhg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jrezd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html",
+   "fieldtype": "HTML",
+   "hidden": 1,
+   "label": "html"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "pass_order",
+   "fieldtype": "Check",
+   "label": "\u062a\u062e\u0637\u064a \u0627\u0644\u0625\u0630\u0646 \u0627\u0644\u0645\u0643\u0631\u0631",
+   "permlevel": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "select_all_maintenance_method",
+   "fieldtype": "Select",
+   "label": "\u062a\u062d\u062f\u064a\u062f \u0637\u0631\u064a\u0642\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629 \u0644\u0644\u0643\u0644",
+   "options": "\n\u0625\u0630\u0646 \u0635\u0631\u0641 \u0648\u0625\u0631\u062a\u062c\u0627\u0639\n\u062d\u0627\u0641\u0638\u0629 \u0645\u0634\u062a\u0631\u064a\u0627\u062a\n\u0625\u0635\u0644\u0627\u062d \u062e\u0627\u0631\u062c\u064a\n\u0625\u0635\u0644\u0627\u062d \u062e\u0627\u0631\u062c\u064a \u0639\u0644\u0649 \u0627\u0644\u062c\u0647\u0629\n\u0634\u0647\u0627\u062f\u0629 \u0625\u0633\u062a\u0628\u062f\u0627\u0644\n\u0634\u0647\u0627\u062f\u0629 \u0625\u0631\u062a\u062c\u0627\u0639\n\u0625\u0630\u0646 \u0635\u0631\u0641\n\u0625\u0635\u0644\u0627\u062d \u062f\u0627\u062e\u0644\u064a"
+  },
+  {
+   "fieldname": "select_all_maintenance_col",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2023-05-01 23:15:38.243800",
+ "links": [
+  {
+   "link_doctype": "Maintenance Request for Quotations",
+   "link_fieldname": "maintenance_order"
+  },
+  {
+   "link_doctype": "Presentation Note Out",
+   "link_fieldname": "maintenance_order"
+  },
+  {
+   "link_doctype": "Job Order",
+   "link_fieldname": "maintenance_order"
+  },
+  {
+   "link_doctype": "Purchase Invoices",
+   "link_fieldname": "maintenance_order"
+  }
+ ],
+ "modified": "2023-06-22 11:28:08.876851",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Maintenance Order",

@@ -21,7 +21,22 @@
   "vehicle_style",
   "vehicle_color",
   "chassis_no",
-  "motor_no"
+  "motor_no",
+  "id",
+  "location_code",
+  "estimated_price",
+  "vic_place",
+  "saled",
+  "refuse_reason",
+  "customer_code",
+  "downpayment_payed",
+  "pay_date",
+  "customs_location",
+  "custom_release_type",
+  "customs_date",
+  "customs_value",
+  "group_no",
+  "sale_price"
  ],
  "fields": [
   {
@@ -156,12 +171,87 @@
    "hidden": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0644\u0648\u0637",
    "read_only": 1
+  },
+  {
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "label": "id"
+  },
+  {
+   "fieldname": "location_code",
+   "fieldtype": "Data",
+   "label": "LOCATION_CODE"
+  },
+  {
+   "fieldname": "estimated_price",
+   "fieldtype": "Data",
+   "label": "ESTIMATED_PRICE"
+  },
+  {
+   "fieldname": "vic_place",
+   "fieldtype": "Data",
+   "label": "VIC_PLACE"
+  },
+  {
+   "fieldname": "saled",
+   "fieldtype": "Data",
+   "label": "SALED"
+  },
+  {
+   "fieldname": "refuse_reason",
+   "fieldtype": "Data",
+   "label": "REFUSE_REASON"
+  },
+  {
+   "fieldname": "customer_code",
+   "fieldtype": "Data",
+   "label": "CUSTOMER_CODE"
+  },
+  {
+   "fieldname": "downpayment_payed",
+   "fieldtype": "Data",
+   "label": "DOWNPAYMENT_PAYED"
+  },
+  {
+   "fieldname": "pay_date",
+   "fieldtype": "Data",
+   "label": "PAY_DATE"
+  },
+  {
+   "fieldname": "customs_location",
+   "fieldtype": "Data",
+   "label": "CUSTOMS_LOCATION"
+  },
+  {
+   "fieldname": "custom_release_type",
+   "fieldtype": "Data",
+   "label": "CUSTOM_RELEASE_TYPE"
+  },
+  {
+   "fieldname": "customs_date",
+   "fieldtype": "Data",
+   "label": "CUSTOMS_DATE"
+  },
+  {
+   "fieldname": "customs_value",
+   "fieldtype": "Data",
+   "label": "CUSTOMS_VALUE"
+  },
+  {
+   "fieldname": "group_no",
+   "fieldtype": "Data",
+   "label": "GROUP_NO"
+  },
+  {
+   "fieldname": "sale_price",
+   "fieldtype": "Data",
+   "label": "SALE_PRICE"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-02-09 16:08:01.698305",
+ "modified": "2023-05-24 13:05:33.878678",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Auction Sales Slips",

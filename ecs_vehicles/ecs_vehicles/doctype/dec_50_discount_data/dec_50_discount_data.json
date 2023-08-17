@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-15 17:14:48.797131",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "discountser",
+  "disc_code",
+  "disc_name",
+  "disc_type",
+  "disc_value",
+  "udate",
+  "taxper"
+ ],
+ "fields": [
+  {
+   "fieldname": "discountser",
+   "fieldtype": "Data",
+   "label": "DISCOUNTSER"
+  },
+  {
+   "fieldname": "disc_code",
+   "fieldtype": "Data",
+   "label": "DISC_CODE"
+  },
+  {
+   "fieldname": "disc_name",
+   "fieldtype": "Data",
+   "label": "DISC_NAME"
+  },
+  {
+   "fieldname": "disc_type",
+   "fieldtype": "Data",
+   "label": "DISC_TYPE"
+  },
+  {
+   "fieldname": "disc_value",
+   "fieldtype": "Data",
+   "label": "DISC_VALUE"
+  },
+  {
+   "fieldname": "udate",
+   "fieldtype": "Data",
+   "label": "UDATE"
+  },
+  {
+   "fieldname": "taxper",
+   "fieldtype": "Data",
+   "label": "TAXPER"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-05-15 17:14:48.797131",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "dec_50_discount_data",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

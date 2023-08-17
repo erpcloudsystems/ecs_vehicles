@@ -32,13 +32,13 @@ def execute(filters=None):
 def get_columns():
     return [
         {
-            "label": _("تاريخ المراجعة"),
+            "label": _("تاريخ التسوية"),
             "fieldname": "revision_date",
             "fieldtype": "Data",
             "width": 120
         },
         {
-            "label": _("مستند المراجعة"),
+            "label": _("مستند التسوية"),
             "fieldname": "name",
             "fieldtype": "Link",
             "options": "Vouchers Review",
@@ -60,7 +60,7 @@ def get_columns():
         {
             "label": _("رقم الدفعة"),
             "fieldname": "batch_no",
-            "fieldtype": "Data",
+            "fieldtype": "Integer",
             "width": 100
         },
         {
@@ -136,10 +136,9 @@ def get_qty_per_liquids(filters):
                 voucher_review.group_no,
                 voucher_review.counter
         from `tabVouchers Review` voucher_review
-        where voucher_review.docstatus = 1
-        
+        where voucher_review.docstatus = 1        
         {conditions}
-        ORDER BY user
+        ORDER BY user, batch_no, CONVERT(voucher_review.group_no, SIGNED)
         """.format(conditions=conditions), as_dict=1)
     def item_results_map(parent, conditions):
         return frappe.db.sql("""
@@ -175,7 +174,7 @@ def get_qty_per_liquids(filters):
                 'batch_no': item_dict.batch_no,
                 'batch_date': item_dict.batch_date,
                 'revision_date': item_dict.revision_date,
-                'group_no': item_dict.group_no,
+                'group_no': int(item_dict.group_no),
                 'voucher_type': row.voucher_type,
                 'total_count': row.voucher_type_count,
                 "cur_user":user_printed

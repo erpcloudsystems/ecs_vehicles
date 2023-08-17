@@ -12,7 +12,7 @@ frappe.ui.form.on('Maintenance Request for Quotations', {
 				   doc: frm.doc,
 				   method: "get_data",
 				   callback: function(r) {
-					   frm.save();
+					   //frm.save();
 					   frm.refresh_fields();
 					   frm.refresh();
 				   }
@@ -48,3 +48,16 @@ frappe.ui.form.on('Maintenance Request for Quotations', {
 // 	}
 // 	});
 
+
+frappe.ui.form.on('Maintenance Request for Quotations', {
+    setup: function(frm) {
+        frm.set_query("maintenance_order", function() {
+			return {
+				filters: [
+					["Maintenance Order", "fis_year", "=", frm.doc.fiscal_year],
+					["Maintenance Order", "docstatus", "=", 1]
+				]
+			};
+        });
+    }
+});

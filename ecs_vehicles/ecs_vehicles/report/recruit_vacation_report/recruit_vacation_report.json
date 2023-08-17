@@ -1,0 +1,35 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-01-15 11:28:55.985938",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2023-01-15 11:28:55.985938",
+ "modified_by": "Administrator",
+ "module": "Ecs Supply",
+ "name": "Recruit Vacation Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Recruit Vacation",
+ "report_name": "Recruit Vacation Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "HR Manager"
+  },
+  {
+   "role": "Officers HR"
+  },
+  {
+   "role": "Recruit"
+  }
+ ]
+}

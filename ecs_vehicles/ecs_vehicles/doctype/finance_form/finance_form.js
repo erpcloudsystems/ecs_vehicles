@@ -9,7 +9,7 @@ frappe.ui.form.on('Finance Form',{
                 filters:[
                     ["name", "not in", added_invoices],
                     ["Purchase Invoices","supplier", "=", frm.doc.supplier],
-                    ["Purchase Invoices","docstatus", "=", 1]
+                    //["Purchase Invoices","docstatus", "=", 1]
                 ],
 			};
 		});
@@ -44,7 +44,7 @@ frappe.ui.form.on('Finance Form',{
             return status
           }
         console.log(frm.doc.creation)
-        cur_frm.clear_table("form_invoices");
+        // cur_frm.clear_table("form_invoices");
         frm.refresh_field('form_invoices');           
 
         if (frm.doc.creation === undefined) {
@@ -87,4 +87,18 @@ frappe.ui.form.on('Finance Form',{
         }
 
 	},
+});
+
+
+
+frappe.ui.form.on("Finance Form", "print_format1", function(frm){
+	var myWin = window.open('/printview?doctype=Finance%20Form&name='+ cur_frm.doc.name +'&trigger_print=1&format=%D8%A7%D8%B3%D8%AA%D9%85%D8%A7%D8%B1%D9%87%20%D8%B5%D8%B1%D9%81&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');	
+});
+
+frappe.ui.form.on("Finance Form", "print_format2", function(frm){
+	var myWin = window.open('/printview?doctype=Finance%20Form&name='+ cur_frm.doc.name +'&trigger_print=1&format=%D8%A8%D9%8A%D8%A7%D9%86%20%D8%A8%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D9%85%D9%84%D8%A7%D8%AA%20%D9%85%D8%B9%20%D9%85%D9%85%D9%88%D9%84%D9%8A%20%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%AE%D8%A7%D8%B5%20%D9%88%20%D9%82%D8%B7%D8%A7%D8%B9%20%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');	
+});
+
+frappe.ui.form.on("Finance Form", "print_format3", function(frm){
+	var myWin = window.open('/printview?doctype=Finance%20Form&name='+ cur_frm.doc.name +'&trigger_print=1&format=%D8%A5%D8%B3%D8%AA%D9%85%D8%A7%D8%B1%D8%A9&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');	
 });

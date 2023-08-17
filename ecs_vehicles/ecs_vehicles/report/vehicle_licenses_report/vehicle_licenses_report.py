@@ -15,31 +15,36 @@ def execute(filters=None):
 
 def get_columns(filters):
     columns = [
-        {
-            "label": _("مستند الترخيص"),
-            "fieldname": "name",
-            "options": "Vehicle License",
-            "fieldtype": "Link",
-            "width": 140,
-        },
-        {
-            "label": _("كود المركبة"),
-            "fieldname": "vehicle_code",
-            "options": "Vehicles",
-            "fieldtype": "Link",
-            "width": 120,
-        },
+
         {
             "label": _("رقم الشرطة"),
             "fieldname": "police_no",
             "fieldtype": "Data",
+            "width": 90,
+        },
+                {
+            "label": _("رقم الرخصة"),
+            "fieldname": "license_no",
+            "fieldtype": "Data",
             "width": 100,
+        },
+        {
+            "label": _("كود الكارت"),
+            "fieldname": "card_code",
+            "fieldtype": "Data",
+            "width": 60,
+        },
+        {
+            "label": _("حالة الكارت"),
+            "fieldname": "license_status",
+            "fieldtype": "Data",
+            "width": 65,
         },
         {
             "label": _("نوع المركبة"),
             "fieldname": "vehicle_type",
             "fieldtype": "Data",
-            "width": 100,
+            "width": 80,
         },
         {
             "label": _("الجهة"),
@@ -66,18 +71,8 @@ def get_columns(filters):
             "fieldtype": "Date",
             "width": 110,
         },
-        {
-            "label": _("رقم الرخصة"),
-            "fieldname": "license_no",
-            "fieldtype": "Data",
-            "width": 120,
-        },
-        {
-            "label": _("حالة الإصدار"),
-            "fieldname": "issue_status",
-            "fieldtype": "Data",
-            "width": 120,
-        },
+
+
         {
             "label": _("نوع التجديد"),
             "fieldname": "renewal_type",
@@ -88,7 +83,7 @@ def get_columns(filters):
             "label": _("بواسطة"),
             "fieldname": "user",
             "fieldtype": "Data",
-            "width": 200,
+            "width": 100,
         },
     ]
     return columns
@@ -146,7 +141,7 @@ def get_data(filters):
         # fetch material records linked to the purchase order item
         # mr_record = mr_records.get(records.material_request_item, [{}])[0]
         row_detail = {
-            "name": license_details_query.get(record.name),
+            "name": record.name,
             "vehicle_code": record.vehicle_code,
             "police_no": record.police_no,
             "vehicle_type": record.vehicle_type,
@@ -155,9 +150,11 @@ def get_data(filters):
             "from_date": record.from_date,
             "to_date": record.to_date,
             "license_no": record.license_no,
+            "license_status": record.license_status,
             "issue_status": record.issue_status,
             "renewal_type": record.renewal_type,
             "user": record.user,
+            "card_code": record.card_code,
             # "delivery_note_name": delivery_note_entry.get(record.sales_order),
             # "delivery_grand_total": flt(
             #     frappe.db.get_value(
@@ -177,6 +174,11 @@ def get_data(filters):
             # "note": "note",
         }
         ingaze_row.append(row_detail)
+    try:
+
+        ingaze_row[0]["cur_user"] = frappe.db.get_value("User", frappe.session.user, ["full_name"])
+    except:
+        pass
     return ingaze_row
 
 
@@ -184,7 +186,7 @@ def get_query(conditions):
     return frappe.db.sql(
         """
         SELECT 
-            vehicle_license.name AS name,
+            license_summary.name AS name,
             license_summary.vehicle AS vehicle_code,
             license_summary.police_no AS police_no,
             license_summary.private_no AS private_no,
@@ -193,15 +195,16 @@ def get_query(conditions):
             license_summary.from_date AS from_date,
             license_summary.to_date AS to_date,
             license_summary.license_no AS license_no,
+            license_summary.license_status AS license_status,
             license_summary.issue_status AS issue_status,
             license_summary.renewal_type AS renewal_type,
-            license_summary.user AS user
+            license_summary.user AS user,
+            license_summary.card_code AS card_code
 
-        FROM `tabLicense Entry Summary` license_summary
-        JOIN `tabVehicle License` vehicle_license ON vehicle_license.name = license_summary.parent
-        WHERE vehicle_license.docstatus =  1
+        FROM `tabVehicle License Entries` license_summary
+        WHERE 1 =  1
         {conditions}
-        ORDER BY vehicle_license.name DESC
+        ORDER BY license_summary.license_no, card_code DESC
 
         """.format(
             conditions=conditions

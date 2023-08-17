@@ -619,7 +619,7 @@ doctype_js = {
 	"Purchase Invoice" : "ecs_vehicles/doctype_triggers/accounting/purchase_invoice/purchase_invoice.js",
 	"Sales Invoice" : "ecs_vehicles/doctype_triggers/accounting/sales_invoice/sales_invoice.js",
 	"Material Request" : "ecs_vehicles/doctype_triggers/buying/material_request/material_request.js",
-	"Purchase Oder" : "ecs_vehicles/doctype_triggers/buying/purchase_order/purchase_order.js",
+	"Purchase Oder" : "doctype_triggers/buying/purchase_order/purchase_order.js",
 	"Request For Quotation" : "ecs_vehicles/doctype_triggers/buying/request_for_quotation/request_for_quotation.js",
 	"Supplier" : "ecs_vehicles/doctype_triggers/buying/supplier/supplier.js",
 	"Supplier Group" : "ecs_vehicles/doctype_triggers/buying/supplier_group/supplier_group.js",

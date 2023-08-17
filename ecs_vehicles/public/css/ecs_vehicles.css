@@ -53,3 +53,95 @@
   border-left: 2px solid rgb(255, 255, 255);
   height: 20px;
 }
+.form-control {
+  /* border: 3px solid #0e5975; */
+  outline-style: outset;
+  font-weight: bold;
+  outline-color: #0e5975;
+  outline-width: 3px;
+}
+.list-row-container {
+  border-bottom: 2px solid #105273;
+}
+.control-label {
+  font-weight: bold;
+  font-size: medium;
+}
+.control-value {
+  /* border: 3px solid #0e5975; */
+  outline-style: outset;
+  outline-color: #0e5975;
+  outline-width:3px;
+  font-weight: bold;
+}
+.ellipsis {
+  font-weight: bold;
+}
+.form-tabs-list {
+  font-weight: bold;
+}
+/* ::selection{
+  background-color: #0f2e46;
+} */   
+:root, [data-theme=light]{
+  --gray-50: #f9fcff;
+  --gray-900: #002544;
+    /* --gray-800: #012f58; */
+    --gray-700: #0a3e1d;
+    --gray-600: #0f7acd;
+    --gray-500: #08090a;
+    --gray-400: #4fa0f1;
+    --gray-300: #76c4ff;
+    --gray-200: #d6ebf3;
+    /* --gray-100: #d3e9ff; */
+    --fg-color: #fffbf3;
+    --text-base:16px;
+}
+.dt-row {
+  font-weight: bold;
+}
+.dt-cell__content {
+  font-weight: bold;
+}
+
+.form-section .section-head, .form-dashboard-section .section-head {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: #004c8d;
+  text-decoration: underline;
+}
+
+
+.form-section.card-section, .form-dashboard-section {
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--padding-xs);
+  outline-style: outset;
+  outline-color: #0e5975;
+  outline-width: 1px;
+}
+
+/* .btn.btn-default, div#driver-popover-item .driver-popover-footer button.btn-default {
+  background-color: #2490ef;
+  color: #ffffff;
+  outline-color: #0e5975;
+  outline-width: 3px;
+} */
+
+/* .btn.btn-primary, div#driver-popover-item .driver-popover-footer button.btn-primary, div#driver-popover-item .driver-popover-footer button.driver-next-btn {
+  background-color: #005891;
+  outline-style: outset;
+  outline-color: #0e5975;
+  outline-width: 3px;
+  color: var(--white);
+  white-space: nowrap;
+  --icon-stroke: currentColor;
+  --icon-fill-bg: var(--primary);
+}
+
+.text-muted, div#driver-popover-item .driver-popover-footer button.driver-close-btn {
+  color: #000000 !important;
+  outline-style: outset;
+  outline-color: #0e5975;
+  background: lightsteelblue;
+  outline-width: 3px;
+}  */

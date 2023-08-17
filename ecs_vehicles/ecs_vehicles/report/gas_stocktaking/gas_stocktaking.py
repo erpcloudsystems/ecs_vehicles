@@ -49,7 +49,7 @@ def get_columns():
         {
             "label": _("الكمية بالمتر المكعب"),
             "fieldname": "qty_litre",
-            "fieldtype": "Float",
+            "fieldtype": "Integer",
             "width": 150
         },
         {

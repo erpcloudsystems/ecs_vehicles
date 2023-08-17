@@ -12,6 +12,7 @@
   "column_break_4",
   "entity",
   "release_date",
+  "reviewed",
   "section_break_mzpmr",
   "vehicle",
   "police_no",
@@ -42,7 +43,7 @@
    "label": "\u0645\u0633\u0644\u0633\u0644 \u0627\u0644\u0628\u0648\u0646"
   },
   {
-   "columns": 2,
+   "columns": 3,
    "fieldname": "entity",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -71,19 +72,15 @@
    "fieldtype": "Section Break"
   },
   {
-   "columns": 1,
    "fieldname": "vehicle",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
    "options": "Vehicles"
   },
   {
-   "columns": 1,
    "fetch_from": "vehicle.vehicle_no",
    "fieldname": "police_no",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629",
    "read_only": 1
   },
@@ -167,12 +164,22 @@
    "fieldtype": "Data",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
    "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "columns": 1,
+   "default": "0",
+   "fieldname": "reviewed",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u0645\u0631\u0627\u062c\u0639\u0629",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-02-15 16:42:19.613255",
+ "modified": "2023-06-15 14:23:33.592112",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Review Vouchers Table",

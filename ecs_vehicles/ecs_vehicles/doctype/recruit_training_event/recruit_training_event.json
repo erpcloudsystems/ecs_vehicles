@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "naming_series:",
- "creation": "2023-02-18 12:40:36.794769",
+ "creation": "2023-01-10 16:41:31.931022",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -19,7 +19,6 @@
   "start_date",
   "end_date",
   "training_result",
-  "amended_from",
   "amended_from"
  ],
  "fields": [
@@ -58,14 +57,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "recruit_course_type",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Recruit Course Type",
-   "options": "Recruit Course Type"
-  },
-  {
    "fieldname": "location",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -76,12 +67,6 @@
   {
    "fieldname": "column_break_7",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "training_name",
-   "fieldtype": "Link",
-   "label": "Training Name",
-   "options": "Training Name"
   },
   {
    "fieldname": "start_date",
@@ -105,13 +90,18 @@
    "options": "\n\u0646\u0639\u0645\n\u0644\u0627"
   },
   {
-   "fieldname": "amended_from",
+   "fieldname": "recruit_course_type",
    "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Recruit Training Event",
-   "print_hide": 1,
-   "read_only": 1
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Recruit Course Type",
+   "options": "Recruit Course Type"
+  },
+  {
+   "fieldname": "training_name",
+   "fieldtype": "Link",
+   "label": "Training Name",
+   "options": "Training Name"
   },
   {
    "fieldname": "amended_from",
@@ -126,9 +116,9 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-18 12:40:36.794769",
+ "modified": "2023-01-12 16:07:36.181053",
  "modified_by": "Administrator",
- "module": "Ecs Vehicles",
+ "module": "Ecs Supply",
  "name": "Recruit Training Event",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",

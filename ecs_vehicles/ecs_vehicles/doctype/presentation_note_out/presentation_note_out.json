@@ -12,18 +12,20 @@
   "naming_series",
   "section_break_3",
   "date",
+  "fiscal_year",
   "job_order",
   "maintenance_request_for_quotations",
   "maintenance_order",
-  "contract_term",
-  "fix_term",
-  "contract_date",
-  "pay_method",
-  "check_byname",
-  "column_break_5",
+  "ezn_no",
   "pre_no_type",
   "jop_number",
+  "column_break_5",
   "supplier",
+  "contract_date",
+  "contract_term",
+  "fix_term",
+  "pay_method",
+  "check_byname",
   "vehicle_section_section",
   "vehicles",
   "vehicle_no",
@@ -39,8 +41,9 @@
   "vehicle_style",
   "maintenance_entity",
   "section_break_23",
-  "job_order_item",
-  "total"
+  "presentation_note_out_item",
+  "total",
+  "action_id"
  ],
  "fields": [
   {
@@ -48,7 +51,7 @@
    "fieldtype": "Select",
    "hidden": 1,
    "label": "naming_series",
-   "options": "J-O-",
+   "options": "PNO-",
    "read_only": 1
   },
   {
@@ -93,8 +96,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0630\u0643\u0631\u0629",
-   "no_copy": 1,
-   "unique": 1
+   "no_copy": 1
   },
   {
    "fieldname": "supplier",
@@ -208,11 +210,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "job_order_item",
-   "fieldtype": "Table",
-   "options": "Job Order Item"
-  },
-  {
    "fieldname": "total",
    "fieldtype": "Currency",
    "label": "\u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a"
@@ -242,6 +239,8 @@
   {
    "fieldname": "job_order",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0645\u0631 \u0627\u0644\u0634\u063a\u0644",
    "options": "Job Order",
    "read_only": 1
@@ -254,8 +253,8 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "\u0627\u0635\u0644\u064a - \u062a\u0643\u0645\u064a\u0644\u064a",
-   "options": "\u0627\u0635\u0644\u064a\n\u062a\u0643\u0645\u064a\u0644\u064a"
+   "label": "\u0646\u0648\u0639\u064a\u0629 \u0646\u0645\u0648\u0630\u062c \u0627\u0644\u0625\u0635\u0644\u0627\u062d",
+   "options": "\u0623\u0635\u0644\u064a\n\u062a\u0643\u0645\u064a\u0644\u064a"
   },
   {
    "fieldname": "contract_term",
@@ -269,7 +268,7 @@
   },
   {
    "fieldname": "contract_date",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0639\u0642\u062f"
   },
   {
@@ -281,12 +280,41 @@
    "fieldname": "check_byname",
    "fieldtype": "Data",
    "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062f\u062f"
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0633\u0646\u0647 \u0627\u0644\u0645\u0627\u0644\u064a\u0629",
+   "options": "Fiscal Year"
+  },
+  {
+   "fieldname": "action_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "action_id"
+  },
+  {
+   "fetch_from": "maintenance_order.ezn_no",
+   "fetch_if_empty": 1,
+   "fieldname": "ezn_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0625\u0630\u0646",
+   "read_only": 1
+  },
+  {
+   "fieldname": "presentation_note_out_item",
+   "fieldtype": "Table",
+   "options": "Presentation Note Out Item"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-01 22:39:35.451342",
+ "modified": "2023-05-14 09:55:27.278968",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Presentation Note Out",

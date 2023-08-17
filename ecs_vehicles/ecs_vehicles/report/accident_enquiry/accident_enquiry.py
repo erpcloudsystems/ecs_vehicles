@@ -16,7 +16,7 @@ def execute(filters=None):
 def get_columns():
     return [
         {
-            "label": _("رقم المركبة"),
+            "label": _("رقم الشرطة"),
             "fieldname": "police_no",
             "fieldtype": "Data",
             "width": 100
@@ -26,6 +26,12 @@ def get_columns():
 			"fieldname": "entity",
 			"fieldtype": "Data",
 			"width": 200
+		},
+        {
+            "label": _("السنة المالية"),
+			"fieldname": "fiscal_year",
+			"fieldtype": "Data",
+			"width": 100,
 		},
         {
             "label": _("رقم الواقعة"),
@@ -51,12 +57,6 @@ def get_columns():
             "fieldname": "accident_type",
             "fieldtype": "Data",
             "width": 200
-        },
-        {
-            "label": _("رقم الملاكي"),
-            "fieldname": "private_no",
-            "fieldtype": "Data",
-            "width": 100
         },
         {
             "label": _("رقم الموتور"),
@@ -131,6 +131,8 @@ def get_item_price_qty_data(filters):
         conditions += " and accident_date >= %(from_date)s"
     if filters.get("to_date"):
         conditions += " and accident_date <= %(to_date)s"
+    if filters.get("fiscal_year"):
+        conditions += "and fiscal_year = %(fiscal_year)s"
     if filters.get("accident_type"):
         conditions += "and accident_type = %(accident_type)s"
     if filters.get("accident_no"):
@@ -141,7 +143,7 @@ def get_item_price_qty_data(filters):
     result = []
     item_results = frappe.db.sql("""
         select
-            name, police_no, accident_no, accident_date, accident_type, entity, private_no, motor_no, chassis_no, 
+            name, police_no, fiscal_year, accident_no, accident_date, accident_type, entity, motor_no, chassis_no, 
             fuel_type, vehicle_shape, vehicle_brand, vehicle_style, vehicle_model, vehicle_color, processing_type
         from
             `tabAccident`
@@ -155,10 +157,10 @@ def get_item_price_qty_data(filters):
             'police_no': item_dict.police_no,
             'entity': item_dict.entity,
             'name': item_dict.name,
+            'fiscal_year': item_dict.fiscal_year,
             'accident_no': item_dict.accident_no,
             'accident_date': item_dict.accident_date,
             'accident_type': item_dict.accident_type,
-            'private_no': item_dict.private_no,
             'motor_no': item_dict.motor_no,
             'chassis_no': item_dict.chassis_no,
             'vehicle_shape': item_dict.vehicle_shape,

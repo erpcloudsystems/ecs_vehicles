@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-13 14:58:18.078972",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "year",
+  "order_no",
+  "inv_no",
+  "item_code",
+  "item_name",
+  "part_universal_code",
+  "work_type",
+  "fix_type",
+  "erad_no",
+  "group_no",
+  "serl_no",
+  "dscunt_rat",
+  "dscunt_cause",
+  "qty_dscunt",
+  "qty_price",
+  "fix_flag",
+  "doc_no",
+  "store_code",
+  "unit_code",
+  "action_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "year",
+   "fieldtype": "Link",
+   "label": "YEAR",
+   "options": "Fiscal Year"
+  },
+  {
+   "fieldname": "order_no",
+   "fieldtype": "Data",
+   "label": "ORDER_NO"
+  },
+  {
+   "fieldname": "inv_no",
+   "fieldtype": "Data",
+   "label": "INV_NO"
+  },
+  {
+   "columns": 1,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "ITEM_CODE",
+   "options": "Item"
+  },
+  {
+   "columns": 2,
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "ITEM_NAME"
+  },
+  {
+   "columns": 2,
+   "fieldname": "part_universal_code",
+   "fieldtype": "Data",
+   "label": "PART_UNIVERSAL_CODE"
+  },
+  {
+   "fieldname": "work_type",
+   "fieldtype": "Select",
+   "label": "WORK_TYPE"
+  },
+  {
+   "fieldname": "fix_type",
+   "fieldtype": "Select",
+   "label": "FIX_TYPE"
+  },
+  {
+   "fieldname": "erad_no",
+   "fieldtype": "Data",
+   "label": "ERAD_NO"
+  },
+  {
+   "fieldname": "group_no",
+   "fieldtype": "Data",
+   "label": "GROUP_NO"
+  },
+  {
+   "fieldname": "serl_no",
+   "fieldtype": "Data",
+   "label": "SERL_NO"
+  },
+  {
+   "fieldname": "dscunt_rat",
+   "fieldtype": "Percent",
+   "label": "DSCUNT_RAT"
+  },
+  {
+   "fieldname": "dscunt_cause",
+   "fieldtype": "Data",
+   "label": "DSCUNT_CAUSE"
+  },
+  {
+   "fieldname": "qty_dscunt",
+   "fieldtype": "Float",
+   "label": "QTY_DSCUNT"
+  },
+  {
+   "fieldname": "qty_price",
+   "fieldtype": "Currency",
+   "label": "QTY_PRICE"
+  },
+  {
+   "fieldname": "fix_flag",
+   "fieldtype": "Data",
+   "label": "FIX_FLAG"
+  },
+  {
+   "fieldname": "doc_no",
+   "fieldtype": "Data",
+   "label": "DOC_NO"
+  },
+  {
+   "fieldname": "store_code",
+   "fieldtype": "Link",
+   "label": "STORE_CODE",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "unit_code",
+   "fieldtype": "Data",
+   "label": "UNIT_CODE"
+  },
+  {
+   "fieldname": "action_id",
+   "fieldtype": "Data",
+   "label": "ACTION_ID"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-05-13 14:58:18.078972",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Add Invoice Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

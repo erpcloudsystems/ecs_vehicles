@@ -8,7 +8,7 @@ frappe.query_reports["Liquids Issuing Report"] = {
 			"fieldname": "entity",
 			"label": __("الجهة"),
 			"fieldtype": "Link",
-			"options":"Entity",
+			"options": "Entity",
 			"reqd": 1,
 		},
 		{
@@ -26,7 +26,7 @@ frappe.query_reports["Liquids Issuing Report"] = {
 			"fieldtype": "Link",
 			"options": "Liquids Issuing",
 			"depends_on": "issue_type",
-			"get_query": function() {
+			"get_query": function () {
 				var entity = frappe.query_report.get_filter_value('entity');
 				var issue_type = frappe.query_report.get_filter_value('issue_type');
 				return {
@@ -35,9 +35,9 @@ frappe.query_reports["Liquids Issuing Report"] = {
 					"filters": {
 						"entity": entity,
 						"issue_type": issue_type,
-						"docstatus":1,
+						"submitted": 1,
 					},
-					"order_by":"name",
+					"order_by": ["issue_date asc"],
 				}
 			},
 			"reqd": 1,

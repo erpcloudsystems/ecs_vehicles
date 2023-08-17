@@ -1,0 +1,29 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2023-06-18 13:27:27.763093",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2023-06-18 16:14:43.600418",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Total Count Of Reviewed Vouchers",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Voucher",
+ "report_name": "Total Count Of Reviewed Vouchers",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Liquid Reconciliation"
+  }
+ ]
+}

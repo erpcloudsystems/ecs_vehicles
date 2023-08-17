@@ -29,8 +29,14 @@ frappe.query_reports["Accident Party Enquiry"] = {
 		},
         {
 			fieldname: "police_no",
-			label: __("رقم المركبة"),
+			label: __("رقم الشرطة"),
 			fieldtype: "Data",
+		},
+		{
+			fieldname: "fiscal_year",
+			label: __("السنة المالية"),
+			fieldtype: "Link",
+			options: "Fiscal Year",
 		},
 		{
 			fieldname: "accident_no",

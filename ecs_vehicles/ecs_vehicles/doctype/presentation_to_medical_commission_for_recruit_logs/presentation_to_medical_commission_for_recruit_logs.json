@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-07-12 13:48:03.437350",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reason_of_injury",
+  "injury_date",
+  "presentation_case",
+  "the_committees_decision",
+  "the_committees_date",
+  "presentation_date",
+  "transaction_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "reason_of_injury",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reason Of Injury",
+   "read_only": 1
+  },
+  {
+   "fieldname": "injury_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Injury Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "presentation_case",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Presentation Case",
+   "read_only": 1
+  },
+  {
+   "fieldname": "the_committees_decision",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "The Committee's Decision",
+   "read_only": 1
+  },
+  {
+   "fieldname": "the_committees_date",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "The Committee's Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "presentation_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Presentation Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transaction_no",
+   "fieldtype": "Data",
+   "label": "Transaction No"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-07-12 15:04:20.207813",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Presentation To Medical Commission For Recruit Logs",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

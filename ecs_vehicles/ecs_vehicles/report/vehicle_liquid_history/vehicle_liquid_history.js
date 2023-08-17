@@ -7,8 +7,20 @@ frappe.query_reports["Vehicle Liquid History"] = {
         {
 			fieldname: "name",
 			label: __("رقم المركبة"),
+			fieldtype: "Data",
+			reqd: 1
+		},
+		{
+			fieldname: "entity",
+			label: __("الجهة"),
 			fieldtype: "Link",
-			options: "Vehicles"
+			options: "Entity"
+		},
+		{
+			fieldname: "vehicle_type",
+			label: __("نوع المركبة"),
+			fieldtype: "Link",
+			options: "Vehicle Type"
 		},
 		{
 			fieldname: "issue_type",

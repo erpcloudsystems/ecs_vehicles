@@ -72,7 +72,7 @@ def get_columns(filters):
 def get_conditions(filters):
     conditions = ""
     if filters.get("name"):
-        conditions += " AND vehicle.name=%s" % frappe.db.escape(filters.get("name"))
+        conditions += " AND license_summary.police_no=%s" % frappe.db.escape(filters.get("name"))
     if filters.get("license_no"):
         conditions += " AND license_summary.license_no=%s" % frappe.db.escape(
             filters.get("license_no")
@@ -95,12 +95,12 @@ def get_conditions(filters):
         )
 
     if filters.get("from_date"):
-        conditions += " AND license_summary.license_from_date>='%s'" % filters.get(
+        conditions += " AND license_summary.from_date>='%s'" % filters.get(
             "from_date"
         )
 
     if filters.get("to_date"):
-        conditions += " AND license_summary.license_from_date<='%s'" % filters.get(
+        conditions += " AND license_summary.from_date<='%s'" % filters.get(
             "to_date"
         )
 
@@ -134,20 +134,19 @@ def get_query(conditions):
     return frappe.db.sql(
         """
         SELECT 
-             vehicle.name AS name,
+             license_summary.name AS name,
             license_summary.license_no AS license_no,
             license_summary.issue_status AS issue_status,
             license_summary.renewal_type AS renewal_type,
             license_summary.license_duration AS license_duration,
-            license_summary.license_from_date AS license_from_date,
-            license_summary.license_to_date AS license_to_date,
+            license_summary.from_date AS license_from_date,
+            license_summary.to_date AS license_to_date,
             license_summary.license_status AS license_status
 
-        FROM `tabVehicle License Logs` license_summary
-        JOIN `tabVehicles` vehicle ON vehicle.name = license_summary.parent
-        WHERE vehicle.docstatus =  0
+        FROM `tabVehicle License Entries` license_summary
+        WHERE license_summary.is_current = 1
         {conditions}
-        ORDER BY vehicle.name DESC
+        ORDER BY license_summary.from_date DESC
 
         """.format(
             conditions=conditions

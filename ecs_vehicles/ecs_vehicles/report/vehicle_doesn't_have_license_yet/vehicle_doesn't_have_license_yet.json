@@ -1,0 +1,54 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2023-06-06 17:28:59.289148",
+ "disable_prepared_report": 1,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2023-06-06 17:28:59.289148",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Vehicle Doesn't Have License Yet",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Vehicle License Entries",
+ "report_name": "Vehicle Doesn't Have License Yet",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {},
+  {
+   "role": "Maintenance"
+  },
+  {
+   "role": "Liquid Preparing"
+  },
+  {
+   "role": "Vehicles Data"
+  },
+  {
+   "role": "Engagements"
+  },
+  {
+   "role": "Licenses"
+  },
+  {
+   "role": "Accident"
+  },
+  {
+   "role": "Balance And Accounts"
+  },
+  {
+   "role": "Vehicles Inquiry"
+  },
+  {
+   "role": "Scrapped Vehicle Certificate"
+  }
+ ]
+}

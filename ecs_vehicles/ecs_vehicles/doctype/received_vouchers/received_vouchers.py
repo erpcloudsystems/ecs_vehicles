@@ -17,6 +17,9 @@ class ReceivedVouchers(Document):
 		new_batch_no = self.batch_no
 		new_fiscal_year = self.fiscal_year
 		self.document_name = "دفعة " + "(" + str(new_batch_no) + ")" + " لسنة " + str(new_fiscal_year)
+		if (not frappe.db.exists("Received Vouchers", self.document_name)) and (self.document_name != self.name):
+			frappe.db.sql(""" update `tabReceived Vouchers` set name = '{document_name}' where name = '{old_name}'
+				""".format(document_name=self.document_name, old_name=self.name))
 
 
 	@frappe.whitelist()

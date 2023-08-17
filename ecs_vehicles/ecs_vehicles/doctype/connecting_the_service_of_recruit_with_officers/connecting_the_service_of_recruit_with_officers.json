@@ -10,6 +10,7 @@
  "field_order": [
   "naming_series",
   "recruit",
+  "employee_name",
   "employment_type",
   "dependency_date",
   "the_goal_of_recruiting",
@@ -29,6 +30,7 @@
   {
    "fieldname": "recruit",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Recruit",
    "options": "Employee"
   },
@@ -37,6 +39,7 @@
    "fieldname": "employment_type",
    "fieldtype": "Link",
    "hidden": 1,
+   "in_standard_filter": 1,
    "label": "Employment Type",
    "options": "Employment Type",
    "read_only": 1
@@ -44,11 +47,13 @@
   {
    "fieldname": "dependency_date",
    "fieldtype": "Date",
+   "in_standard_filter": 1,
    "label": "Dependency Date"
   },
   {
    "fieldname": "the_goal_of_recruiting",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "The Goal Of Recruiting",
    "options": "The Goal Of Recruiting"
   },
@@ -69,12 +74,21 @@
    "options": "Connecting the service of Recruit with Officers",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fetch_from": "recruit.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Employee Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-18 12:46:23.539778",
+ "modified": "2023-07-13 13:35:54.763408",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Connecting the service of Recruit with Officers",

@@ -68,6 +68,3 @@ def get_item_price_qty_data(filters):
                 data['vouchers_count'] = item_dict.vouchers_count
             result.append(data)
     return result
-
-
-

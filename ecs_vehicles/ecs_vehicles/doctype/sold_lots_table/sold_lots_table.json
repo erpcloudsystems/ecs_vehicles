@@ -24,7 +24,16 @@
   "motor_no",
   "section_break_15",
   "estimated_price",
-  "selling_price"
+  "selling_price",
+  "pri_key",
+  "inv_code",
+  "customer_code",
+  "umachine",
+  "uaction",
+  "udate",
+  "tax_percent",
+  "tax_amount",
+  "username"
  ],
  "fields": [
   {
@@ -173,12 +182,57 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "\u0633\u0639\u0631 \u0627\u0644\u0628\u064a\u0639"
+  },
+  {
+   "fieldname": "pri_key",
+   "fieldtype": "Data",
+   "label": "PRI_KEY"
+  },
+  {
+   "fieldname": "inv_code",
+   "fieldtype": "Data",
+   "label": "INV_CODE"
+  },
+  {
+   "fieldname": "customer_code",
+   "fieldtype": "Data",
+   "label": "CUSTOMER_CODE"
+  },
+  {
+   "fieldname": "umachine",
+   "fieldtype": "Data",
+   "label": "UMACHINE"
+  },
+  {
+   "fieldname": "uaction",
+   "fieldtype": "Data",
+   "label": "UACTION"
+  },
+  {
+   "fieldname": "udate",
+   "fieldtype": "Data",
+   "label": "UDATE"
+  },
+  {
+   "fieldname": "tax_percent",
+   "fieldtype": "Int",
+   "label": "TAX_PERCENT"
+  },
+  {
+   "fieldname": "tax_amount",
+   "fieldtype": "Int",
+   "label": "TAX_AMOUNT"
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "label": "USERNAME"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-02-09 16:13:45.765871",
+ "modified": "2023-07-30 11:52:25.949377",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Sold Lots Table",

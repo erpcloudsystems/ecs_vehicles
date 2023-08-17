@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-07-06 14:22:55.092506",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "transaction_date",
+  "entity_name",
+  "vehicle_no",
+  "get_vehicle",
+  "column_break_lgoxt",
+  "vehicle_type2",
+  "vehicle_type",
+  "motor_no",
+  "chassie_no",
+  "section_break_bcdtu",
+  "status_table",
+  "section_break_ipaqn",
+  "vehicles_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "EDIT-STATUS-"
+  },
+  {
+   "fieldname": "entity_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "options": "Entity",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.entity_name",
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629"
+  },
+  {
+   "fieldname": "vehicles_status",
+   "fieldtype": "Table",
+   "options": "Edit Vehicle Status Table"
+  },
+  {
+   "bold": 1,
+   "fieldname": "get_vehicle",
+   "fieldtype": "Button",
+   "label": "\u0628\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u062d\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u062b"
+  },
+  {
+   "fieldname": "column_break_lgoxt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "motor_no",
+   "fieldtype": "Text",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "read_only": 1
+  },
+  {
+   "fieldname": "chassie_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status_table",
+   "fieldtype": "Table",
+   "options": "Vehicle Status Logs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ipaqn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_bcdtu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "vehicle_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicle Type",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "transaction_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u062a\u0627\u0631\u064a\u062e"
+  },
+  {
+   "fieldname": "vehicle_type2",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicle Type"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-27 14:16:02.428068",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Edit Vehicle Status",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_views": 1
+}

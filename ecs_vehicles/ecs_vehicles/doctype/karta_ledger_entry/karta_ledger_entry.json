@@ -1,0 +1,288 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-05-07 16:34:36.178147",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "trans_serial",
+  "ord_serial",
+  "detail_serial",
+  "vic_serial",
+  "part_universal_code",
+  "action_type",
+  "action_date",
+  "part_unit",
+  "part_status_ratio",
+  "part_country",
+  "workshop_type",
+  "workshop_name",
+  "ezn_no",
+  "ezn_date",
+  "doc_type",
+  "doc_no",
+  "doc_date",
+  "store_code",
+  "geha_code",
+  "action_gehat",
+  "action_geha",
+  "year",
+  "trans_type",
+  "part_qty",
+  "file_no",
+  "item_number",
+  "unit_price",
+  "location_no",
+  "factory_serial",
+  "x",
+  "sarf",
+  "del_flag",
+  "maintenance_method"
+ ],
+ "fields": [
+  {
+   "fieldname": "trans_serial",
+   "fieldtype": "Data",
+   "label": "TRANS_SERIAL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ord_serial",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "ORD_SERIAL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "detail_serial",
+   "fieldtype": "Data",
+   "label": "DETAIL_SERIAL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vic_serial",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "VIC_SERIAL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "part_universal_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "PART_UNIVERSAL_CODE",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "action_type",
+   "fieldtype": "Data",
+   "label": "ACTION_TYPE",
+   "read_only": 1
+  },
+  {
+   "fieldname": "action_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "ACTION_DATE",
+   "read_only": 1
+  },
+  {
+   "fieldname": "part_unit",
+   "fieldtype": "Data",
+   "label": "PART_UNIT",
+   "read_only": 1
+  },
+  {
+   "fieldname": "part_status_ratio",
+   "fieldtype": "Data",
+   "label": "PART_STATUS_RATIO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "part_country",
+   "fieldtype": "Data",
+   "label": "PART_COUNTRY",
+   "read_only": 1
+  },
+  {
+   "fieldname": "workshop_type",
+   "fieldtype": "Data",
+   "label": "WORKSHOP_TYPE",
+   "read_only": 1
+  },
+  {
+   "fieldname": "workshop_name",
+   "fieldtype": "Data",
+   "label": "WORKSHOP_NAME",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ezn_no",
+   "fieldtype": "Data",
+   "label": "EZN_NO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ezn_date",
+   "fieldtype": "Date",
+   "label": "EZN_DATE",
+   "read_only": 1
+  },
+  {
+   "fieldname": "doc_type",
+   "fieldtype": "Data",
+   "label": "DOC_TYPE",
+   "read_only": 1
+  },
+  {
+   "fieldname": "doc_no",
+   "fieldtype": "Data",
+   "label": "DOC_NO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "doc_date",
+   "fieldtype": "Date",
+   "label": "DOC_DATE",
+   "read_only": 1
+  },
+  {
+   "fieldname": "store_code",
+   "fieldtype": "Data",
+   "label": "STORE_CODE"
+  },
+  {
+   "fieldname": "geha_code",
+   "fieldtype": "Data",
+   "label": "GEHA_CODE",
+   "read_only": 1
+  },
+  {
+   "fieldname": "action_gehat",
+   "fieldtype": "Data",
+   "label": "ACTION_GEHAT",
+   "read_only": 1
+  },
+  {
+   "fieldname": "action_geha",
+   "fieldtype": "Data",
+   "label": "ACTION_GEHA",
+   "read_only": 1
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Data",
+   "label": "YEAR",
+   "read_only": 1
+  },
+  {
+   "fieldname": "trans_type",
+   "fieldtype": "Data",
+   "label": "TRANS_TYPE",
+   "read_only": 1
+  },
+  {
+   "fieldname": "part_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "PART_QTY",
+   "read_only": 1
+  },
+  {
+   "fieldname": "file_no",
+   "fieldtype": "Data",
+   "label": "FILE_NO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_number",
+   "fieldtype": "Data",
+   "label": "ITEM_NUMBER",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unit_price",
+   "fieldtype": "Data",
+   "label": "UNIT_PRICE",
+   "read_only": 1
+  },
+  {
+   "fieldname": "location_no",
+   "fieldtype": "Data",
+   "label": "LOCATION_NO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "factory_serial",
+   "fieldtype": "Data",
+   "label": "FACTORY_SERIAL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "x",
+   "fieldtype": "Data",
+   "label": "X",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sarf",
+   "fieldtype": "Data",
+   "label": "SARF",
+   "read_only": 1
+  },
+  {
+   "fieldname": "del_flag",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "DEL_FLAG",
+   "read_only": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "NAMING SERIES",
+   "options": "KLE-",
+   "read_only": 1
+  },
+  {
+   "fieldname": "maintenance_method",
+   "fieldtype": "Data",
+   "label": "MAINTENANCE_METHOD"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-05-21 16:14:03.498933",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Karta Ledger Entry",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -17,7 +17,8 @@
   "to_date",
   "entity",
   "vehicle_status",
-  "created_by"
+  "created_by",
+  "car_num"
  ],
  "fields": [
   {
@@ -25,7 +26,8 @@
    "fieldname": "issue_no",
    "fieldtype": "Data",
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0635\u0631\u0641\u064a\u0629",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "columns": 2,
@@ -33,7 +35,8 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0635\u0631\u0641\u064a\u0629",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "columns": 1,
@@ -41,7 +44,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0635\u0631\u0641\u064a\u0629",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "columns": 2,
@@ -49,7 +53,9 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "\u0625\u0633\u0645 \u0627\u0644\u0628\u0648\u0646",
-   "read_only": 1
+   "length": 255,
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "columns": 1,
@@ -57,7 +63,9 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "\u0627\u0644\u0645\u0642\u0631\u0631",
-   "read_only": 1
+   "length": 255,
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "column_break_4",
@@ -69,7 +77,8 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "label": "\u0645\u0646 \u062a\u0627\u0631\u064a\u062e",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "columns": 2,
@@ -77,32 +86,41 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "label": "\u0625\u0644\u0649 \u062a\u0627\u0631\u064a\u062e",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "entity",
    "fieldtype": "Data",
    "label": "\u0627\u0644\u062c\u0647\u0629",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "vehicle_status",
    "fieldtype": "Data",
    "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "columns": 2,
    "fieldname": "created_by",
    "fieldtype": "Data",
    "label": "\u0628\u0648\u0627\u0633\u0637\u0629",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "car_num",
+   "fieldtype": "Data",
+   "label": "CAR_NUM"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-04-25 19:45:28.766961",
+ "modified": "2023-07-13 17:10:41.072842",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Liquids Issuing Table",

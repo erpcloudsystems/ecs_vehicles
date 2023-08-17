@@ -1,0 +1,149 @@
+
+<style>
+    * {
+            margin:0;
+            padding:0;
+            direction:rtl;
+        }
+        .print-format {
+            padding:0in;
+            
+        }
+    .header {
+        margin-top:20px;
+        display:flex; 
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+    .under-header {
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+    }
+    .esm-algeha {
+        margin-top:30px;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+    table, th, td , th{
+        border:2px solid black;
+        border-collapse:collapse;
+        text-align:center;
+    }
+    .print-format th {
+        color:black;
+            text-align:center;
+            font-weight:bold;
+            background-color:lightgray;
+    
+    }
+    .print-format td {
+        padding: 0px !important;
+    }
+    .break {
+        flex-basis: 100%;
+        height: 0;
+      }
+      .column1 {
+        border-left: 2px solid black;
+      }
+    .table1 {
+        margin-top:5px;
+        margin-right:20px;
+        margin-left:20px;
+        display:flex; 
+        flex-direction:column;
+    
+    }
+    </style>
+    
+    <div class="under-header">
+    <div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;">
+        <div>
+    <img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
+    </div>
+    <div>
+        وزارة الداخلية
+    </div>
+    <div>
+        الادارة العامه لمركبات الشرطه
+    </div>
+    <div>
+        إدارة صيانة المركبات
+    </div>
+    <div>
+      </div>
+    </div>
+    
+    <div>
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="font-weight: bold;">تاريخ الطباعة  </div>
+            <div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
+                {%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
+                {{data[0].cur_user}}
+    
+            </div>
+        </div>
+    
+    </div>
+    </div>
+    
+    <div style="display: flex; justify-content:center; margin: 1em auto;">
+        <div style=" display: flex;flex-direction: column; justify-content:center; align-items: center;margin-top:-5em">
+            <div>
+                <h2 style="border:2px solid black; background-color:lightgray;font-family:Cairo; margin: 0px 20px">بيان إصلاحات محددة</h2>
+            </div>
+            <br>
+            <div>
+                <h2 style="border:2px solid black; background-color:lightgray;font-family:Cairo; margin: 0px 20px">أمر مباشر إصلاح</h2>
+            </div>
+            {% if filters.from_date && filters.to_date %}
+                <br>
+                <div>
+                    <h3 style="border:2px solid black; background-color:lightgray;font-family:Cairo; margin: 0px 20px">{%= __(" من تاريخ ") %} {{ filters.from_date }} {%= __(" حتى ") %} {{ filters.to_date }}</h3>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <div style="display:flex;flex-direction:row;  align-items:center;" >
+
+       <div class="table1">
+        <table style="font-family:Cairo" dir="rtl">
+            <thead>
+                <tr>
+                    <th>{%= __("م") %}</th>
+                    <th>{%= __("رقم المركبة") %}</th>
+                    <th>{%= __("ماركة / طراز") %}</th>
+                    <th>{%= __("موديل") %}</th>
+                    <th>{%= __("الجهة") %}</th>
+                    <th>{%= __("المتعهد") %}</th>
+                    <th>{%= __("أمر الشغل") %}</th>
+                    <th>{%= __("تاريخه") %}</th>
+                    <th>{%= __("قيمته") %}</th>
+                    <th>{%= __("الفحص") %}</th>
+    
+                </tr>
+            </thead>
+            <tbody>
+                {% for(var i=0, l=data.length; i<l; i++) { %}
+                <tr>
+                    <td>{%= i+1 %}</td>
+                    <td>{%= data[i].vehicle_no %}</td>
+                    <td>{%= data[i].brand_style %}</td>
+                    <td>{%= data[i].vehicle_model %}</td>
+                    <td>{%= data[i].entity_name %}</td>
+                    <td>{%= data[i].supplier %}</td>
+                    <td>{%= data[i].job_order_no %}</td>
+                    <td>{%= data[i].job_order_date %}</td>
+                    <td>{%= data[i].job_order_amount %}</td>
+                    <td>{%= data[i].checkup %}</td>
+    
+                </tr>
+                {% } %}
+            </tbody>
+        </table>
+    </div>

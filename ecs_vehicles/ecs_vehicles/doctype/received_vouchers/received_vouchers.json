@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:",
+ "autoname": "format: \u062f\u0641\u0639\u0629 ({batch_no}) \u0644\u0633\u0646\u0629 {fiscal_year}",
  "creation": "2022-10-26 13:16:32.053192",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -19,7 +19,12 @@
   "section_break_8",
   "vouchers_count_table",
   "document_name",
-  "amended_from"
+  "amended_from",
+  "section_break_fnv9b",
+  "locked_invoice",
+  "udate",
+  "ukey",
+  "pri_id"
  ],
  "fields": [
   {
@@ -41,10 +46,8 @@
   {
    "fieldname": "receiver_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u0644\u0645",
-   "reqd": 1
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u0644\u0645"
   },
   {
    "fieldname": "column_break_4",
@@ -100,12 +103,14 @@
    "fieldname": "liquid_type",
    "fieldtype": "Select",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0633\u0627\u0626\u0644",
-   "options": "\n\u0648\u0642\u0648\u062f\n\u0632\u064a\u062a\n\u063a\u0627\u0632\n\u063a\u0633\u064a\u0644",
+   "options": "\n\u0648\u0642\u0648\u062f\n\u0632\u064a\u062a\n\u063a\u0633\u064a\u0644",
    "reqd": 1
   },
   {
    "fieldname": "fiscal_year",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "\u0627\u0644\u0633\u0646\u0629 \u0627\u0644\u0645\u0627\u0644\u064a\u0629",
    "options": "Fiscal Year",
    "reqd": 1
@@ -116,16 +121,41 @@
    "hidden": 1,
    "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u0646\u062f",
    "read_only": 1
+  },
+  {
+   "fieldname": "locked_invoice",
+   "fieldtype": "Data",
+   "label": "LOCKED_INVOICE"
+  },
+  {
+   "fieldname": "udate",
+   "fieldtype": "Data",
+   "label": "UDATE"
+  },
+  {
+   "fieldname": "ukey",
+   "fieldtype": "Data",
+   "label": "UKEY"
+  },
+  {
+   "fieldname": "section_break_fnv9b",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "pri_id",
+   "fieldtype": "Data",
+   "label": "PRI_ID"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-04-20 10:39:57.986132",
+ "modified": "2023-06-18 16:19:32.940336",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Received Vouchers",
- "naming_rule": "By \"Naming Series\" field",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -141,9 +171,9 @@
    "write": 1
   }
  ],
- "search_fields": "batch_no, fiscal_year",
- "sort_field": "modified",
+ "search_fields": "batch_no",
+ "sort_field": "date",
  "sort_order": "DESC",
  "states": [],
- "title_field": "document_name"
+ "title_field": "batch_no"
 }

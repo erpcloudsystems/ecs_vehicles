@@ -70,8 +70,11 @@ def get_data(filters, columns):
 def get_item_price_qty_data(filters):
     voucher_type_list = frappe.db.sql("""
         select distinct `tabVoucher`.voucher_type as voucher_type
-        from `tabVoucher` where `tabVoucher`.liquid_type = "زيت" 
+        from `tabVoucher` join `tabOil Type`
+        on `tabVoucher`.voucher_type = `tabOil Type`.name
+        where `tabVoucher`.liquid_type = "زيت" 
         group by `tabVoucher`.voucher_type
+        order by `tabOil Type`.litre_count, `tabVoucher`.voucher_type
         """, as_dict=1)
 
     result = []

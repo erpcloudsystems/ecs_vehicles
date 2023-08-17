@@ -1,0 +1,242 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-05-02 16:44:14.093690",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle",
+  "police_no",
+  "private_no",
+  "issue_status",
+  "renewal_type",
+  "license_duration",
+  "license_state",
+  "is_current",
+  "validation",
+  "column_break_5",
+  "entity",
+  "from_date",
+  "to_date",
+  "card_code",
+  "license_no",
+  "license_status",
+  "reason",
+  "letter",
+  "vehicle_type",
+  "user",
+  "naming_series",
+  "vehicle_license"
+ ],
+ "fields": [
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicles",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "police_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "private_no",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0631\u0642\u0645 \u0627\u0644\u0633\u0631\u064a",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "issue_status",
+   "fieldtype": "Data",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0625\u0635\u062f\u0627\u0631",
+   "search_index": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "renewal_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u062f\u064a\u062f",
+   "search_index": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "license_duration",
+   "fieldtype": "Data",
+   "label": "\u0645\u062f\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "entity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0627\u0644\u062c\u0647\u0629",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "\u0628\u062f\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "\u0646\u0647\u0627\u064a\u0629 \u0627\u0644\u062a\u0631\u062e\u064a\u0635",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "license_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0631\u0642\u0645 \u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629",
+   "search_index": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "license_status",
+   "fieldtype": "Select",
+   "label": "\u0627\u0644\u062d\u0627\u0644\u0629",
+   "options": "\u0633\u0644\u064a\u0645\n\u062a\u0627\u0644\u0641",
+   "search_index": 1
+  },
+  {
+   "fieldname": "letter",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u062d\u0631\u0641",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "vehicle_type",
+   "fieldtype": "Data",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "user",
+   "fieldtype": "Data",
+   "label": "\u0628\u0648\u0627\u0633\u0637\u0629",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "ENTRY-",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_license",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "\u0643\u0627\u0631\u062a \u0627\u0644\u0631\u062e\u0635\u0629 \u0627\u0644\u0645\u0637\u0628\u0648\u0639",
+   "options": "Vehicle License",
+   "read_only": 1
+  },
+  {
+   "fieldname": "card_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0643\u0627\u0631\u062a",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Text",
+   "label": "\u0633\u0628\u0628 \u0627\u0644\u062a\u0644\u0641",
+   "read_only_depends_on": "eval:doc.license_status != \"\u062a\u0627\u0644\u0641\""
+  },
+  {
+   "fieldname": "license_state",
+   "fieldtype": "Data",
+   "label": "\u062d\u0627\u0644\u0629 \u0627\u0644\u0631\u062e\u0635\u0629",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "is_current",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0631\u062e\u0635\u0629 \u0627\u0644\u062d\u0627\u0644\u064a\u0629",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "fieldname": "validation",
+   "fieldtype": "Check",
+   "in_standard_filter": 1,
+   "label": "\u062a\u0635\u0631\u064a\u062d",
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-07-13 17:21:03.720192",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Vehicle License Entries",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Licenses",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

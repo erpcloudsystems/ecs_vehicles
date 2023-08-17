@@ -8,11 +8,13 @@ frappe.query_reports["Reviewed Vouchers Count Report"] = {
 			"fieldname": "from_date",
 			"label": __("من تاريخ"),
 			"fieldtype": "Date",
+			"default": frappe.datetime.get_today(),
 		},
 		{
 			"fieldname": "to_date",
 			"label": __("إلى تاريخ"),
 			"fieldtype": "Date",
+			"default": frappe.datetime.get_today(),
 		},
 		{
 			"fieldname": "fuel",

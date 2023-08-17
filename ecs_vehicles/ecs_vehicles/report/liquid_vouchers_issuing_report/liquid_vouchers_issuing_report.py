@@ -71,8 +71,8 @@ def get_qty_per_liquids(filters):
 
     if filters.get("to_date"):
         conditions += " AND liquid_voucher_issuing.issue_date <='%s'" % filters.get("to_date")
-    if filters.get("liquids_issuing"):
-        conditions += " AND liquid_voucher_issuing.name ='%s'" % filters.get("liquids_issuing")
+    # if filters.get("liquids_issuing"):
+    #     conditions += " AND liquid_voucher_issuing.name ='%s'" % filters.get("liquids_issuing")
     item_results = frappe.db.sql("""
         Select
             vouchers_issued_per_liquid.liquid as liquid,
@@ -81,7 +81,8 @@ def get_qty_per_liquids(filters):
         from `tabLiquid Vouchers Issuing` liquid_voucher_issuing join `tabVouchers Issued Per Liquid` vouchers_issued_per_liquid
         on vouchers_issued_per_liquid.parent = liquid_voucher_issuing.name
         where liquid_voucher_issuing.docstatus = 1
-        AND qty != 0
+        and vouchers_issued_per_liquid.docstatus = 1
+        AND (vouchers_issued_per_liquid.voucher_qty > 0 or vouchers_issued_per_liquid.voucher_qty is not null)
         {conditions}
         GROUP BY vouchers_issued_per_liquid.liquid
         ORDER BY liquid 

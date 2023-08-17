@@ -24,73 +24,61 @@
  ],
  "fields": [
   {
-   "default": "CPI-",
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "hidden": 1,
-   "label": "Naming Series",
-   "options": "CPI-"
-  },
-  {
    "fieldname": "recruit",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Recruit",
    "options": "Employee"
   },
   {
-   "fetch_from": "recruit.employment_type",
-   "fieldname": "employment_type",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Employment Type",
-   "options": "Employment Type",
-   "read_only": 1
-  },
-  {
    "fieldname": "political_investigation_date",
    "fieldtype": "Date",
+   "in_standard_filter": 1,
    "label": "Political Investigation Date"
   },
   {
    "fieldname": "receipt_the_result_of_political_investigation_date",
    "fieldtype": "Date",
+   "in_standard_filter": 1,
    "label": "Receipt The result Of Political Investigation Date"
   },
   {
    "fieldname": "political_investigation_result",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Political Investigation Result",
    "options": "Political Investigation Result"
   },
   {
-   "fieldname": "column_break_5",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "criminal_investigation_date",
    "fieldtype": "Date",
+   "in_standard_filter": 1,
    "label": "Criminal Investigation Date"
   },
   {
    "fieldname": "receipt_the_result_of_criminal_investigation_date",
    "fieldtype": "Date",
+   "in_standard_filter": 1,
    "label": "Receipt The result Of Criminal Investigation Date"
   },
   {
    "fieldname": "criminal_investigation_result",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Criminal Investigation Result",
    "options": "Criminal Investigation Result"
   },
   {
    "fieldname": "send_investigation_number",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Send Investigation Number",
    "options": "Send Investigation Number"
   },
   {
    "fieldname": "investigation_entry_number",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "Investigation Entry Number",
    "options": "Investigation Entry Number"
   },
@@ -102,12 +90,34 @@
    "options": "Criminal And Political Investigations",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "recruit.employment_type",
+   "fieldname": "employment_type",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "in_standard_filter": 1,
+   "label": "Employment Type",
+   "options": "Employment Type",
+   "read_only": 1
+  },
+  {
+   "default": "CPI-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "options": "CPI-"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-18 12:45:06.883683",
+ "modified": "2023-07-13 13:32:53.081200",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Criminal And Political Investigations",

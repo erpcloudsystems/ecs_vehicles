@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-07-12 13:55:23.849334",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "movement_type",
+  "notes",
+  "movement_date",
+  "transaction_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "movement_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Movement Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Notes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "movement_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Movement Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transaction_no",
+   "fieldtype": "Data",
+   "label": "Transaction No"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-07-12 15:06:02.629154",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Recruit Movement Logs",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

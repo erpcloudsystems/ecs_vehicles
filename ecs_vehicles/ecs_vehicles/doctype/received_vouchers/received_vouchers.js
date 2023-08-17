@@ -1,6 +1,11 @@
 // Copyright (c) 2022, erpcloud.systems and contributors
 // For license information, please see license.txt
 
+
+frappe.ui.form.on('Received Vouchers', "validate", function(frm){
+    frappe.set_route('app/received-vouchers/' + frm.doc.name);
+});
+
 frappe.ui.form.on('Received Vouchers', {
     refresh:function(frm){
         frm.set_df_property("vouchers_count_table", "cannot_add_rows", true);

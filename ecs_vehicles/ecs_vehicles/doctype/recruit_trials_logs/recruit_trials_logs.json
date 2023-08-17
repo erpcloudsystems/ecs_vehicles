@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-07-12 14:03:25.784002",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "violation_description",
+  "trial_type",
+  "trial_date",
+  "transaction_no"
+ ],
+ "fields": [
+  {
+   "fieldname": "violation_description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Violation Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "trial_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Trial Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transaction_no",
+   "fieldtype": "Data",
+   "label": "Transaction No"
+  },
+  {
+   "fieldname": "trial_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Trial Type",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-07-12 16:05:25.693325",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Recruit Trials Logs",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

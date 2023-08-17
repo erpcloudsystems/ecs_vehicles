@@ -9,17 +9,19 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
-  "type",
+  "issue_date",
+  "issue_type",
   "entity",
   "liquids_issuing",
-  "issue_type",
   "column_break_5",
-  "issue_date",
+  "type",
   "from_date",
   "to_date",
   "amended_from",
+  "print",
   "section_break_10",
-  "qty_per_liquid"
+  "qty_per_liquid",
+  "voucher_flag"
  ],
  "fields": [
   {
@@ -48,9 +50,9 @@
    "reqd": 1
   },
   {
+   "depends_on": "eval:doc.issue_type && doc.entity",
    "fieldname": "liquids_issuing",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0627\u0644\u0635\u0631\u0641\u064a\u0629",
    "no_copy": 1,
@@ -71,7 +73,6 @@
    "read_only": 1
   },
   {
-   "default": "Today",
    "fieldname": "issue_date",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -107,17 +108,36 @@
    "options": "Vouchers Issued Per Liquid"
   },
   {
-   "fetch_from": "liquids_issuing.issue_type",
+   "default": "\u0648\u0642\u0648\u062f",
    "fieldname": "issue_type",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0635\u0631\u0641\u064a\u0629",
-   "read_only": 1
+   "options": "\n\u0648\u0642\u0648\u062f\n\u0632\u064a\u062a\n\u063a\u0633\u064a\u0644",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "voucher_flag",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "voucher_flag",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:!(doc.__islocal)",
+   "fieldname": "print",
+   "fieldtype": "Button",
+   "label": "\u0637\u0640\u0640\u0628\u0640\u0640\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0627\u0644\u0635\u0631\u0641\u064a\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-04-25 00:57:38.543483",
+ "modified": "2023-07-18 19:58:21.314184",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Liquid Vouchers Issuing",
@@ -125,6 +145,8 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -134,10 +156,11 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
- "sort_field": "modified",
+ "sort_field": "issue_date",
  "sort_order": "DESC",
  "states": []
 }

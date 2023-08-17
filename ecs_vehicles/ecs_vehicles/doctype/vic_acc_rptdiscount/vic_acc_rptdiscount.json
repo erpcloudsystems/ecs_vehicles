@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-15 19:20:49.534450",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "dec_50_no",
+  "taxvalue",
+  "taxname",
+  "taxper",
+  "dnormal",
+  "dadd",
+  "dnazari",
+  "dmamali",
+  "dlaw",
+  "dlater",
+  "delcontract",
+  "dpolice",
+  "supp_code",
+  "disother1",
+  "disother2",
+  "dsign",
+  "dtender",
+  "dinvoice",
+  "ddev"
+ ],
+ "fields": [
+  {
+   "fieldname": "dec_50_no",
+   "fieldtype": "Data",
+   "label": "DEC_50_NO"
+  },
+  {
+   "fieldname": "taxvalue",
+   "fieldtype": "Data",
+   "label": "TAXVALUE"
+  },
+  {
+   "fieldname": "taxname",
+   "fieldtype": "Data",
+   "label": "TAXNAME"
+  },
+  {
+   "fieldname": "taxper",
+   "fieldtype": "Data",
+   "label": "TAXPER"
+  },
+  {
+   "fieldname": "dnormal",
+   "fieldtype": "Data",
+   "label": "DNORMAL"
+  },
+  {
+   "fieldname": "dadd",
+   "fieldtype": "Data",
+   "label": "DADD"
+  },
+  {
+   "fieldname": "dnazari",
+   "fieldtype": "Data",
+   "label": "DNAZARI"
+  },
+  {
+   "fieldname": "dmamali",
+   "fieldtype": "Data",
+   "label": "DMAMALI"
+  },
+  {
+   "fieldname": "dlaw",
+   "fieldtype": "Data",
+   "label": "DLAW"
+  },
+  {
+   "fieldname": "dlater",
+   "fieldtype": "Data",
+   "label": "DLATER"
+  },
+  {
+   "fieldname": "delcontract",
+   "fieldtype": "Data",
+   "label": "DELCONTRACT"
+  },
+  {
+   "fieldname": "dpolice",
+   "fieldtype": "Data",
+   "label": "DPOLICE"
+  },
+  {
+   "fieldname": "supp_code",
+   "fieldtype": "Data",
+   "label": "SUPP_CODE"
+  },
+  {
+   "fieldname": "disother1",
+   "fieldtype": "Data",
+   "label": "DISOTHER1"
+  },
+  {
+   "fieldname": "disother2",
+   "fieldtype": "Data",
+   "label": "DISOTHER2"
+  },
+  {
+   "fieldname": "dsign",
+   "fieldtype": "Data",
+   "label": "DSIGN"
+  },
+  {
+   "fieldname": "dtender",
+   "fieldtype": "Data",
+   "label": "DTENDER"
+  },
+  {
+   "fieldname": "dinvoice",
+   "fieldtype": "Data",
+   "label": "DINVOICE"
+  },
+  {
+   "fieldname": "ddev",
+   "fieldtype": "Data",
+   "label": "DDEV"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-05-15 19:20:49.534450",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "VIC_ACC_RPTDISCOUNT",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

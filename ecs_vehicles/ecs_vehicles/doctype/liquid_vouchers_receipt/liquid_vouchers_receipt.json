@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2022-09-28 11:40:18.693507",
@@ -59,7 +60,6 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0625\u0630\u0646 \u0627\u0644\u0625\u0636\u0627\u0641\u0629",
-   "no_copy": 1,
    "reqd": 1
   },
   {
@@ -69,7 +69,6 @@
    "label": "\u0645\u062c\u0645\u0648\u0639\u0629"
   },
   {
-   "default": "Today",
    "fieldname": "receipt_date",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -124,12 +123,14 @@
    "fieldname": "from_voucher",
    "fieldtype": "Int",
    "label": "\u0645\u0646 \u0645\u0633\u0644\u0633\u0644 \u0628\u0648\u0646",
+   "length": 20,
    "no_copy": 1
   },
   {
    "fieldname": "to_voucher",
    "fieldtype": "Int",
    "label": "\u0625\u0644\u0649 \u0645\u0633\u0644\u0633\u0644 \u0628\u0648\u0646",
+   "length": 20,
    "no_copy": 1
   },
   {
@@ -258,7 +259,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-10-26 15:02:22.624214",
+ "modified": "2023-07-18 18:24:09.589769",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Liquid Vouchers Receipt",
@@ -266,6 +267,8 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -275,10 +278,11 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
- "sort_field": "modified",
+ "sort_field": "receipt_date",
  "sort_order": "DESC",
  "states": []
 }

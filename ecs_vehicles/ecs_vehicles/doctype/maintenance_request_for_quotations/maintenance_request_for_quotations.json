@@ -25,15 +25,20 @@
   "column_break_14",
   "total",
   "supplier",
+  "ezn_flag",
+  "totpart_out",
+  "action_id",
   "section_break_15",
   "supplier_table",
   "section_break_7",
   "vehicles",
   "vehicle_no",
+  "vehicle_type",
   "vehicle_brand",
   "group_shape",
   "column_break_27",
   "vehicle_model",
+  "motor_no",
   "chassis_no",
   "entity_name",
   "possession_type",
@@ -48,11 +53,12 @@
  ],
  "fields": [
   {
+   "default": "REQ-Q-",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "hidden": 1,
    "label": "naming_series",
-   "options": "REQ-QU-",
+   "options": "REQ-Q-\nREQ-QU-",
    "read_only": 1
   },
   {
@@ -73,8 +79,6 @@
    "default": "Today",
    "fieldname": "date",
    "fieldtype": "Date",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "\u0627\u0644\u062a\u0627\u0631\u064a\u062e"
   },
   {
@@ -107,11 +111,14 @@
   {
    "fieldname": "total",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "\u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a"
   },
   {
    "fieldname": "fiscal_year",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "\u0627\u0644\u0633\u0646\u0629 \u0627\u0644\u0645\u0627\u0644\u064a\u0629",
    "options": "Fiscal Year"
   },
@@ -251,6 +258,8 @@
    "fetch_from": "maintenance_order.ezn_no",
    "fieldname": "maintenance_no",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0625\u0630\u0646 \u0627\u0644\u0625\u0635\u0644\u0627\u062d",
    "no_copy": 1,
    "read_only": 1
@@ -258,9 +267,10 @@
   {
    "fetch_from": "maintenance_order.date",
    "fieldname": "ezn_date",
-   "fieldtype": "Date",
-   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0625\u0630\u0646",
-   "read_only": 1
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0625\u0630\u0646 \u0627\u0644\u0625\u0635\u0644\u0627\u062d"
   },
   {
    "fieldname": "fix_type",
@@ -272,12 +282,47 @@
    "fieldname": "fix_description",
    "fieldtype": "Small Text",
    "label": "\u0628\u064a\u0627\u0646 \u0627\u0644\u0625\u0635\u0644\u0627\u062d"
+  },
+  {
+   "fieldname": "ezn_flag",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "EZN_FLAG",
+   "read_only": 1
+  },
+  {
+   "fieldname": "totpart_out",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "TOTPART_OUT",
+   "read_only": 1
+  },
+  {
+   "fieldname": "action_id",
+   "fieldtype": "Data",
+   "label": "ACTION_ID"
+  },
+  {
+   "fetch_from": "vehicles.vehicle_type",
+   "fetch_if_empty": 1,
+   "fieldname": "vehicle_type",
+   "fieldtype": "Link",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicle Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "vehicles.motor_no",
+   "fieldname": "motor_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-01 23:19:31.314409",
+ "modified": "2023-05-04 22:31:31.491839",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Maintenance Request for Quotations",

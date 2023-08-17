@@ -1,0 +1,245 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-05-10 17:12:46.021110",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "items_section",
+  "action_date",
+  "maintenance_method",
+  "maintenance_type",
+  "consumption_type",
+  "scrapped_vehicle",
+  "item_code",
+  "item_name",
+  "item_group",
+  "description",
+  "brand",
+  "column_break_jikgn",
+  "qty",
+  "default_unit_of_measure",
+  "prt_prc",
+  "disc",
+  "quality",
+  "store_code",
+  "last_issue_detail",
+  "last_sarf_qty",
+  "namozg_no2",
+  "section_break_ge24f",
+  "custody_report",
+  "custody_report_item",
+  "column_break_jdmx6",
+  "kle",
+  "is_printed"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "maintenance_method",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "\u0637\u0631\u064a\u0642\u0629 \u0627\u0644\u0627\u0635\u0644\u0627\u062d",
+   "options": "\n\u0625\u0630\u0646 \u0635\u0631\u0641 \u0648\u0625\u0631\u062a\u062c\u0627\u0639\n\u062d\u0627\u0641\u0638\u0629 \u0645\u0634\u062a\u0631\u064a\u0627\u062a\n\u0625\u0635\u0644\u0627\u062d \u062e\u0627\u0631\u062c\u064a\n\u0625\u0635\u0644\u0627\u062d \u062e\u0627\u0631\u062c\u064a \u0639\u0644\u0649 \u0627\u0644\u062c\u0647\u0629\n\u0634\u0647\u0627\u062f\u0629 \u0625\u0633\u062a\u0628\u062f\u0627\u0644\n\u0634\u0647\u0627\u062f\u0629 \u0625\u0631\u062a\u062c\u0627\u0639\n\u0625\u0630\u0646 \u0635\u0631\u0641"
+  },
+  {
+   "columns": 1,
+   "fieldname": "maintenance_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u0627\u0635\u0644\u0627\u062d",
+   "options": "\n\u062a\u0648\u0631\u064a\u062f \u0648\u062a\u0631\u0643\u064a\u0628\n\u062a\u0631\u0643\u064a\u0628 \u0641\u0642\u0637\n\u0645\u0635\u0646\u0639\u064a\u0627\u062a\n\u062a\u0648\u0631\u064a\u062f \u0641\u0642\u0637"
+  },
+  {
+   "fieldname": "consumption_type",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0625\u0633\u062a\u0647\u0644\u0627\u0643",
+   "options": "\n\u0625\u0633\u062a\u0647\u0644\u0627\u0643 \u0639\u0627\u062f\u064a\n\u0625\u0633\u062a\u0647\u0644\u0627\u0643 \u0645\u0628\u0643\u0631\n\u0625\u0633\u062a\u0647\u0644\u0627\u0643 \u0623\u062b\u0631 \u062d\u0627\u062f\u062b\u0629"
+  },
+  {
+   "columns": 2,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0642\u0637\u0639\u0629",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fetch_if_empty": 1,
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0642\u0637\u0639\u0629",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item_code.item_group",
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "label": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0635\u0646\u0641",
+   "options": "Item Group"
+  },
+  {
+   "fetch_from": "item_code.description",
+   "fetch_if_empty": 1,
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0648\u0635\u0641"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "item_code.stock_uom",
+   "fetch_if_empty": 1,
+   "fieldname": "default_unit_of_measure",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0648\u062d\u062f\u0629",
+   "options": "UOM"
+  },
+  {
+   "fetch_from": "item_code.country_of_origin",
+   "fetch_if_empty": 1,
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "label": "\u0628\u0644\u062f \u0627\u0644\u0645\u0646\u0634\u0623",
+   "options": "Vehicle Origin"
+  },
+  {
+   "columns": 1,
+   "default": "1",
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0643\u0645\u064a\u0629"
+  },
+  {
+   "columns": 1,
+   "fieldname": "disc",
+   "fieldtype": "Float",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "\u0627\u0644\u062e\u0635\u0645"
+  },
+  {
+   "columns": 1,
+   "fieldname": "last_issue_detail",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0622\u062e\u0631 \u0635\u0631\u0641",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "columns": 1,
+   "default": "1",
+   "fieldname": "namozg_no2",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0646\u0645\u0648\u0630\u062c"
+  },
+  {
+   "default": "100",
+   "fieldname": "quality",
+   "fieldtype": "Percent",
+   "label": "\u0627\u0644\u0635\u0644\u0627\u062d\u064a\u0629",
+   "precision": "2"
+  },
+  {
+   "fieldname": "prt_prc",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0633\u0639\u0631"
+  },
+  {
+   "fieldname": "store_code",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u062e\u0632\u0646"
+  },
+  {
+   "fieldname": "last_sarf_qty",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "\u0622\u062e\u0631 \u0643\u0645\u064a\u0629"
+  },
+  {
+   "fieldname": "custody_report",
+   "fieldtype": "Data",
+   "label": "Custody Report",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "custody_report_item",
+   "fieldtype": "Data",
+   "label": "Custody Report Item",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "kle",
+   "fieldtype": "Data",
+   "label": "Karta Ledger Entry",
+   "no_copy": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "action_date",
+   "fieldtype": "Date",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0625\u062c\u0631\u0627\u0621"
+  },
+  {
+   "fieldname": "column_break_jikgn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ge24f",
+   "fieldtype": "Section Break",
+   "label": "Reference"
+  },
+  {
+   "fieldname": "column_break_jdmx6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0642\u0637\u0639 \u0627\u0644\u063a\u064a\u0627\u0631"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_printed",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "\u062a\u0645 \u0627\u0644\u0637\u0628\u0627\u0639\u0629",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.maintenance_method == \"\u0634\u0647\u0627\u062f\u0629 \u0625\u0633\u062a\u0628\u062f\u0627\u0644\"",
+   "fieldname": "scrapped_vehicle",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629 \u0627\u0644\u0645\u062e\u0631\u062f\u0629"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-07-11 14:04:48.121364",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Ezn Egraa Item",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

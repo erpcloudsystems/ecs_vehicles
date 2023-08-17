@@ -1,0 +1,188 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-05-18 19:00:57.208332",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_group",
+  "maintenance_type",
+  "item_code",
+  "item_name",
+  "description",
+  "default_unit_of_measure",
+  "brand",
+  "qty",
+  "rate",
+  "amount",
+  "rate1",
+  "rate2",
+  "vehicles",
+  "vehicle_no",
+  "vehicle_brand",
+  "maintenance_order",
+  "entity_name",
+  "vehicle_model",
+  "disc"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "label": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0635\u0646\u0641",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "maintenance_type",
+   "fieldtype": "Select",
+   "label": "\u0637\u0628\u064a\u0639\u0629 \u0627\u0644\u0627\u0635\u0644\u0627\u062d",
+   "options": "\u062a\u0648\u0631\u064a\u062f \u0648\u062a\u0631\u0643\u064a\u0628\n\u062a\u0631\u0643\u064a\u0628 \u0641\u0642\u0637\n\u0645\u0635\u0646\u0639\u064a\u0627\u062a\n\u062a\u0648\u0631\u064a\u062f \u0641\u0642\u0637"
+  },
+  {
+   "columns": 1,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0643\u0648\u062f \u0627\u0644\u0642\u0637\u0639\u0629",
+   "options": "Item"
+  },
+  {
+   "columns": 2,
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0633\u0645 \u0627\u0644\u0642\u0637\u0639\u0629",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0648\u0635\u0641"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "item_code.stock_uom",
+   "fieldname": "default_unit_of_measure",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0648\u062d\u062f\u0647",
+   "options": "UOM"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "item_code.brand",
+   "fieldname": "brand",
+   "fieldtype": "Link",
+   "label": "\u0628\u0644\u062f \u0627\u0644\u0645\u0646\u0634\u0623",
+   "options": "Brand"
+  },
+  {
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0643\u0645\u064a\u0629"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0633\u0639\u0631 \u0627\u0644\u0648\u062d\u062f\u0629"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0627\u0644\u0627\u062c\u0645\u0627\u0644\u064a",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "rate1",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0633\u0639\u0631 \u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0646\u064a"
+  },
+  {
+   "fieldname": "rate2",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0633\u0639\u0631 \u0627\u0644\u0645\u0648\u0631\u062f \u0627\u0644\u062b\u0627\u0644\u062b"
+  },
+  {
+   "fieldname": "vehicles",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629",
+   "options": "Vehicles",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_brand",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
+   "options": "Vehicle Brand",
+   "read_only": 1
+  },
+  {
+   "fieldname": "maintenance_order",
+   "fieldtype": "Link",
+   "label": "\u0623\u0630\u0646 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
+   "options": "Maintenance Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "entity_name",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u062c\u0647\u0647 \u0627\u0644\u062a\u0627\u0628\u0639 \u0644\u0647\u0627",
+   "options": "Entity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_model",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
+   "options": "Vehicle Model",
+   "read_only": 1
+  },
+  {
+   "fieldname": "disc",
+   "fieldtype": "Currency",
+   "label": "\u0627\u0644\u062e\u0635\u0645"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-05-18 19:00:57.208332",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Presentation Note Items",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

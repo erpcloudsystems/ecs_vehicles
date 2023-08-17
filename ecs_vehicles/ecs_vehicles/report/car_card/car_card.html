@@ -10,16 +10,15 @@
             
         }
     .header {
-        margin-top:20px;
         display:flex; 
         flex-direction:column;
         justify-content:center;
     }
     .under-header {
-        display:flex;
-        flex-direction:row;
-        justify-content:space-between;
-        align-items:center;
+        display: flex;
+    flex-direction: revert;
+    justify-content: space-evenly;
+    align-items: center;
     }
     .esm-algeha {
         margin-top:30px;
@@ -62,76 +61,143 @@
         flex-direction:column;
     
     }
+
+.header-box {
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    /* padding: 2px; */
+    border: 2px solid black;
+    /* width: 90%; */
+    /* margin-bottom: 20px; */
+    margin: 10px 20px;
+}
+.sec-three {
+    
+    /* border-right: 2px solid black; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 98%;
+    font-size: 11pt;
+    font-weight: bold;
+    /* padding: 7pt; */
+
+
+}
     </style>
+    {% var numbers = ({"0":"٠","1":"١","2": "٢", "3":"٣", "4":"٤", "5":"٥", "6":"٦", "7":"٧", "8":"٨", "9":"٩"}) %}
+
     {% var pageNumber = 0 %}
     {% var months = ["يناير", "فبراير", "مارس", "ابريل", "مايو", "يونيو", "يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر", "ديسمبر"]%}
     
 <div class="header">
 
     <div class="under-header">
-    <div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;">
-        <div>
-    <img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
-    </div>
-    <div style="font-weight:bold;">
-        وزارة الداخلية
-    </div>
-    <div>
-    الادارة العامه لمركبات الشرطه
-    </div>
-    <div>
-    </div>
+        
+    <div style="    font-weight: bold;
+    font-size: large;
+    margin-left: -310px;">
+        كارتة سابقة الصرف
     </div>
     <div>
         <div style="display: flex; flex-direction: row; align-items: center;">
             <div style="font-weight: bold;">تاريخ الطباعة  </div>
             <div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
-                {%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
+                {% let date = [] %}
+                {% [...frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()).toString()].forEach((item, idx, array)=>{ %}
+                    {% date.push(numbers[item] ? numbers[item] : item  ) %}
+                {% }) %}                
+                {%= date.join("") %}
                 {{data[0].cur_user}}
             </div>
         </div>
 
     </div>
+
     </div>
 
 </div>
-<div style="display:flex;flex-direction:row;  align-items:center;" >
-	<div style="width:13em; background:gray;font-weight: bold; text-align: center;">بيانات المركبة</div>
-	<div style="display:flex; flex-direction:row; border: 2px solid black;">
-			<div class="column1">
-					<div style="display:flex; flex-direction:row; flex-wrap:wrap;">
-						<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;"> رقم الشرطة</div>
-						<div style="border: 2px solid black;padding: 0.2em; margin: 0.2em;">{%= filters.name %}</div>
-						<div style="width: 10em;"></div>
-						<div class="break"></div>
-						<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">الحهة التابعة لها  </div>
-						<div style="padding: 0.2em;margin: 0.2em;">{%= data[0].entity_name %}</div>
-						<div></div>
-						<div class="break"></div>
-						<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">تاريخ دخولها الخدمة</div>
-						<div style="padding: 0.2em;margin: 0.2em;">{%= data[0].possession_date%}</div>
-						<div></div>
-					</div>
-			</div>
-			<div class="column2">
-				<div style="display:flex; flex-direction:row; flex-wrap:wrap;">
 
-					<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">رقم الموتور </div>
-					<div style="padding: 0.2em;margin: 0.2em;">{%= data[0].motor_no%}</div>
-					<div></div>
-					<div class="break"></div>
-					<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">ماركة / طراز</div>
-					<div style="padding: 0.2em;margin: 0.2em;">{%= data[0].vehicle_style%}- {%= data[0].vehicle_model%}</div>
-					<div style="width:3em;"></div>
-					<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">الموديل </div>
-					<div style="padding: 0.2em;margin: 0.2em;">{%= data[0].vehicle_model%}</div>
-					<div></div>
-				</div>
-		</div>
-			</div>
-			<div style="opacity:0%;width: 20px;">بيانات المركبة</div>
+<div class="header-box">
+   
+    <div class="sec-three">
+        <div style="display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-left: 2px solid;
+        padding-left: 29px;
+    ">
+            <div>
+        <img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
+        </div>
+        <div style="font-weight:bold;">
+            وزارة الداخلية
+        </div>
+        <div>
+        الادارة العامه لمركبات الشرطه
+        </div>
+        <div>
+        </div>
+        </div>
+        <div>
+            
 
-	</div>
+            {% let vehicle_no = [] %}
+            {% [...data[0].vehicle_no].forEach((item, idx, array)=>{ %}
+                {% vehicle_no.push(numbers[item] ? numbers[item] : item  ) %}
+            {% }) %}
+
+        <p>  رقم المركبة شرطة:  {%= vehicle_no.join("") %} </p>
+        <p>    الشكل: {%= data[0].vehicle_shape %}</p>
+        <p>    نوع الحيازة: {%= data[0].possession_type %} </p>
+        <p>    مخصص الصرف: {%= data[0].exchange_allowance %} </p>
+        <p >  الجهه التابع لها : {%= data[0].entity_name %}  </p>
+        </div>
+        <div>
+            {% let chassis_no = [] %}
+            {% [...data[0].chassis_no].forEach((item, idx, array)=>{ %}
+                {% chassis_no.push(numbers[item] ? numbers[item] : item  ) %}
+            {% }) %}
+         <p > رقم الشاسية :  {%= chassis_no.join("") %}  </p>
+         <p >  مجموعة الشكل :   {%= data[0].group_shape %} </p>
+         {% let vehicle_model = [] %}
+         {% [...data[0].vehicle_model.toString()].forEach((item, idx, array)=>{ %}
+             {% vehicle_model.push(numbers[item] ? numbers[item] : item  ) %}
+         {% }) %}
+         <p >   الموديل  :  {%= vehicle_model.join("") %} </p>
+         {% let litre_capacity = [] %}
+         {% [...data[0].litre_capacity.toString()].forEach((item, idx, array)=>{ %}
+             {% litre_capacity.push(numbers[item] ? numbers[item] : item  ) %}
+         {% }) %}
+         <p >   السعة اللترية: {%= litre_capacity.join("") %}   </p>
+        
+        </div>
+        <div >
+         <p> الماركه / الطراز : {%= data[0].vehicle_style %}   / {%= data[0].vehicle_brand %}  </p>
+         {% let motor_no = [] %}
+         {% [...data[0].motor_no].forEach((item, idx, array)=>{ %}
+             {% motor_no.push(numbers[item] ? numbers[item] : item  ) %}
+         {% }) %}
+         <p >   رقم الموتور :  {%= motor_no.join("") %}</p>
+         {% let possession_date = [] %}
+         {% [...data[0].possession_date].forEach((item, idx, array)=>{ %}
+             {% possession_date.push(numbers[item] ? numbers[item] : item  ) %}
+         {% }) %}
+         <p >    تاريخ الحيازة : {%= possession_date.join("") %}</p>
+         {% let fuel_type = [] %}
+         {% [...data[0].fuel_type.toString()].forEach((item, idx, array)=>{ %}
+             {% fuel_type.push(numbers[item] ? numbers[item] : item  ) %}
+         {% }) %}
+         <p >   نوع الوقود          : {%= fuel_type.join("") %} </p>
+         
+        </div>
+    </div>
+ 
+
+</div>
+
 
 
 {% var counter = 1 %}
@@ -159,22 +225,57 @@
                 </tr>
             </thead>
             <tbody>
-                {% for(var i=0, f=data.length; i<f; i++) { %}
+                {% for(var i=0, f=data.length -1; i<f; i++) { %}
 
                 <tr>
+                    {% let indes = [] %}
+         {% [...(i+1).toString()].forEach((item, idx, array)=>{ %}
+             {% indes.push(numbers[item] ? numbers[item] : item  ) %}
+         {% }) %}
                     <td>
-                        {%= i+1 %}
+                        {%= indes.join("") %}
                     </td>
-                    <td>{%= (data[i].item_code) %}</td>
-                    <td>{%= data[i].item_name %}</td>
-                    <td>{%= data[i].date %}</td>
-                    <td>{%= data[i].qty %}</td>
+                    {% let item_code = [] %}
+         {% [...data[i].item_code.toString()].forEach((item, idx, array)=>{ %}
+             {% item_code.push(numbers[item] ? numbers[item] : item  ) %}
+         {% }) %}
+                    <td>{%= item_code.join("") %}</td>
+
+                </td>
+                {% let item_name = [] %}
+                {% [...data[i].item_name.toString()].forEach((item, idx, array)=>{ %}
+                    {% item_name.push(numbers[item] ? numbers[item] : item  ) %}
+                {% }) %}
+                <td>{%= item_name.join("") %}</td>
+
+                    {% let date = [] %}
+                    {% [...data[i].date.toString()].forEach((item, idx, array)=>{ %}
+                        {% date.push(numbers[item] ? numbers[item] : item  ) %}
+                    {% }) %}
+                    <td>{%= date.join("").split("-")[2] %} / {%= date.join("").split("-")[1] %} / {%= date.join("").split("-")[0] %}</td>
+                    {% let qty = [] %}
+                    {% [...data[i].qty.toString()].forEach((item, idx, array)=>{ %}
+                        {% qty.push(numbers[item] ? numbers[item] : item  ) %}
+                    {% }) %}
+                    <td>{%= qty.join("") %}</td>
                     <td>{%= data[i].default_unit_of_measure %}</td>
                     <td>{%= data[i].brand %}</td>
-                    <td>{%= data[i].validity %}</td>
-                    <td>{%= data[i].ezn_no %}</td>
+                    {% let validity = [] %}
+                    {% [...data[i].validity.toString()].forEach((item, idx, array)=>{ %}
+                        {% validity.push(numbers[item] ? numbers[item] : item  ) %}
+                    {% }) %}
+                    <td>{%= validity.join("") %}</td>
+                    {% let ezn_no = [] %}
+                    {% [...data[i].ezn_no.toString()].forEach((item, idx, array)=>{ %}
+                        {% ezn_no.push(numbers[item] ? numbers[item] : item  ) %}
+                    {% }) %}
                     <td>{%= data[i].namozg %}</td>
-                    <td>{%= data[i].date2 %}</td>
+                    <td>{%= ezn_no.join("") %}</td>
+                    {% let namozg_date = [] %}
+                    {% [...data[i].date2.toString()].forEach((item, idx, array)=>{ %}
+                        {% namozg_date.push(numbers[item] ? numbers[item] : item  ) %}
+                    {% }) %}
+                    <td>{%= namozg_date.join("").split("-")[2] %} / {%= namozg_date.join("").split("-")[1] %} / {%= namozg_date.join("").split("-")[0] %}</td>
                     <td>{%= data[i].maintenance_entity %}</td>
                     <td>{%= data[i].werash %}</td>
                     <td>{%= data[i].werash_name %}</td>

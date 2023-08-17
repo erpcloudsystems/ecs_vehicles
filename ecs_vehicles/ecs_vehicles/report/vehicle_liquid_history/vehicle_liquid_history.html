@@ -1,154 +1,198 @@
-
 <style>
-* {
-		margin:0;
-		padding:0;
-		direction:rtl;
+	* {
+		margin: 0;
+		padding: 0;
+		direction: rtl;
 	}
+
 	.print-format {
-		padding:0in;
-		
+		padding: 0in;
+
 	}
-.header {
-    margin-top:20px;
-    display:flex; 
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-.under-header {
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-	align-items:center;
-}
-.esm-algeha {
-    margin-top:30px;
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-}
-table, th, td , th{
-    border:2px solid black;
-    border-collapse:collapse;
-    text-align:center;
-}
-.print-format th {
-    color:black;
-        text-align:center;
-        font-weight:bold;
-        background-color:lightgray;
 
-}
-.print-format td {
-	padding: 0px !important;
-}
-.break {
-    flex-basis: 100%;
-    height: 0;
-  }
-  .column1 {
-	border-left: 2px solid black;
-  }
-.table1 {
-    margin-top:5px;
-    margin-right:20px;
-    margin-left:20px;
-    display:flex; 
-    flex-direction:column;
+	.header {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 
-}
+	.under-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.esm-algeha {
+		margin-top: 30px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	table,
+	th,
+	td,
+	th {
+		border: 2px solid black;
+		border-collapse: collapse;
+		text-align: center;
+	}
+
+	.print-format th {
+		color: black;
+		text-align: center;
+		font-weight: bold;
+		background-color: lightgray;
+
+	}
+
+	.print-format td {
+		padding: 0px !important;
+	}
+
+	.break {
+		flex-basis: 100%;
+		height: 0;
+	}
+
+	.column1 {
+		border-left: 2px solid black;
+	}
+
+	.table1 {
+		margin-top: 5px;
+		margin-right: 20px;
+		margin-left: 20px;
+		display: flex;
+		flex-direction: column;
+
+	}
 </style>
+{% var numbers = ({"0":"٠","1":"١","2": "٢", "3":"٣", "4":"٤", "5":"٥", "6":"٦", "7":"٧", "8":"٨", "9":"٩"}) %}
 
+{% var pageNumber = 0 %}
+{% var months = ["يناير", "فبراير", "مارس", "ابريل", "مايو", "يونيو", "يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر",
+"ديسمبر"]%}
 <div class="under-header">
-<div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;">
-    <div>
-<img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
-</div>
-<div>
-    وزارة الداخلية
-</div>
-<div>
-الادارة العامه لمركبات الشرطه
-</div>
-<div>
-  </div>
-</div>
-
-<div>
-	<div style="display: flex; flex-direction: row; align-items: center;">
-		<div style="font-weight: bold;">تاريخ الطباعة  </div>
-		<div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
-			{%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
-			{{data[0].cur_user}}
-
+	<div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;">
+		<div>
+			<img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
+		</div>
+		<div>
+			وزارة الداخلية
+		</div>
+		<div>
+			الادارة العامه لمركبات الشرطه
+		</div>
+		<div>
 		</div>
 	</div>
 
-</div>
+	<div>
+		<div style="display: flex; flex-direction: row; align-items: center;">
+			<div style="font-weight: bold;">تاريخ الطباعة </div>
+			<div
+				style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
+				{% let date = [] %}
+				{% [...frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()).toString()].forEach((item,
+				idx, array)=>{ %}
+				{% date.push(numbers[item] ? numbers[item] : item ) %}
+				{% }) %}
+				{%= date.join("") %} {{data[0].cur_user}}
+
+			</div>
+		</div>
+
+	</div>
 </div>
 
 <div style="display: flex; justify-content:center; margin: 1em auto;">
-  		<div style=" display: flex;flex-direction: column; justify-content:center; align-items: center;margin-top:-5em">
-			<div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold; margin-bottom: 0.5em; font-size: 2.1em;">
-				{{filters.issue_type}}
-			</div>
-			<div>
-				<h3 style="border:2px solid black; background-color:lightgray;font-family:Cairo; margin: 0px 20px">{%= __("تقرير عن بيانات سابقة صرف") %} {{ filters.issue_type }} {%= __("لمركبة") %}</h3>
-			</div>
-  		</div>
+	<div style=" display: flex;flex-direction: column; justify-content:center; align-items: center;margin-top:-5em">
+		<div
+			style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold; margin-bottom: 0.5em; font-size: 2.1em;">
+			{{filters.issue_type}}
+		</div>
+		<div>
+			<h3 style="border:2px solid black; background-color:lightgray;font-family:Cairo; margin: 0px 20px">{%=
+				__("تقرير عن بيانات سابقة صرف") %} {{ filters.issue_type }} {%= __("لمركبة") %}</h3>
+		</div>
+	</div>
 </div>
 
-<div style="display:flex;flex-direction:row;  align-items:center;" >
+<div style="display:flex;flex-direction:row;  align-items:center;">
 	<div style="width:13em; background:gray;font-weight: bold; text-align: center;">بيانات المركبة</div>
 	<div style="display:flex; flex-direction:row; border: 2px solid black;">
-			<div class="column1">
-					<div style="display:flex; flex-direction:row; flex-wrap:wrap;">
-						<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;"> رقم الشرطة</div>
-						<div style="border: 2px solid black;padding: 0.2em; margin: 0.2em;">{{ data[0].plate_no }}</div>
-						<div style="width: 10em;"></div>
-						<div class="break"></div>
-						<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">الحهة التابعة لها  </div>
-						<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].entity_name }}</div>
-						<div></div>
-						<div class="break"></div>
-						<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">تاريخ دخولها الخدمة</div>
-						<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].possession_date }}</div>
-						<div></div>
-					</div>
+		<div class="column1">
+			<div style="display:flex; flex-direction:row; flex-wrap:wrap;">
+				<div
+					style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">
+					رقم الشرطة</div>
+
+				<div style="border: 2px solid black;padding: 0.2em; margin: 0.2em;">{{ data[0].plate_no }}</div>
+				<div style="width: 10em;"></div>
+				<div class="break"></div>
+				<div
+					style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">
+					الحهة التابعة لها </div>
+				<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].entity_name }}</div>
+				<div></div>
+				<div class="break"></div>
+				<div
+					style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">
+					تاريخ دخولها الخدمة</div>
+				<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].possession_date }}</div>
+				<div></div>
 			</div>
-			<div class="column2">
-				<div style="display:flex; flex-direction:row; flex-wrap:wrap;">
-					<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">كود المركبة</div>
-					<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;">{{ filters.name }}</div>
-					<div style="width:3em;"></div>
-					<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">نوع الوقود</div>
-					<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].fuel_type }}</div>
-					<div style="width:5%;"></div>
-					<div class="break"></div>
-					<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">نوع المركبة</div>
-					<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].vehicle_type }}</div>
-					<div style="width:5em;"></div>
-					<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">الشكل </div>
-					<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].vehicle_shape }}</div>
-					<div></div>
-					<div class="break"></div>
-					<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">ماركة / طراز</div>
-					<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].vehicle_brand }} - {{ data[0].vehicle_style }}</div>
-					<div style="width:3em;"></div>
-					<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">الموديل </div>
-					<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].vehicle_model }}</div>
-					<div></div>
-				</div>
 		</div>
+		<div class="column2">
+			<div style="display:flex; flex-direction:row; flex-wrap:wrap;">
+				<div
+					style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">
+					كود المركبة</div>
+				<div style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;">{{
+					data[0].vehicle_code }}</div>
+				<div style="width:3em;"></div>
+				<div
+					style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">
+					نوع الوقود</div>
+				<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].fuel_type }}</div>
+				<div style="width:5%;"></div>
+				<div class="break"></div>
+				<div
+					style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">
+					نوع المركبة</div>
+				<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].vehicle_type }}</div>
+				<div style="width:5em;"></div>
+				<div
+					style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">
+					الشكل </div>
+				<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].vehicle_shape }}</div>
+				<div></div>
+				<div class="break"></div>
+				<div
+					style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">
+					ماركة / طراز</div>
+				<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].vehicle_brand }} - {{ data[0].vehicle_style }}
+				</div>
+				<div style="width:3em;"></div>
+				<div
+					style="border: 2px solid black; background-color:lightgray;padding: 0.2em;margin: 0.2em;font-weight: bold;">
+					الموديل </div>
+				<div style="padding: 0.2em;margin: 0.2em;">{{ data[0].vehicle_model }}</div>
+				<div></div>
 			</div>
-			<div style="opacity:0%;width: 20px;">بيانات المركبة</div>
-
+		</div>
 	</div>
+	<div style="opacity:0%;width: 20px;">بيانات المركبة</div>
+
+</div>
 
 
 
-   <div class="table1">
+<div class="table1">
 	<table style="font-family:Cairo" dir="rtl">
 		<thead>
 			<tr>
@@ -163,25 +207,49 @@ table, th, td , th{
 			</tr>
 		</thead>
 		<tbody>
-			{% for(var i=0, l=data.length; i<l; i++) { %}
-			<tr>
+			{% for(var i=0, l=data.length; i<l; i++) { %} <tr>
 				<td>{%= i+1 %}</td>
 				<td>{%= data[i].entity %}</td>
 				<td>{%= __(data[i].vehicle_status) %}</td>
-				<td>{%= data[i].voucher %}</td>
-				<td>{%= Math.ceil(data[i].qty) %}</td>
-				<td>{%= data[i].from_date %}</td>
-				<td>{%= data[i].to_date %}</td>
+				{% let vehicle_no = [] %}
+				{% [...data[0].voucher.toString()].forEach((item, idx, array)=>{ %}
+				{% vehicle_no.push(numbers[item] ? numbers[item] : item ) %}
+				{% }) %}
+				<td>{%= vehicle_no.join("") %}</td>
+				{% var col_qty = [] %}
+				{% var col_qtyListsplit = data[i].qty %}
+				{% for(var j=0, len=col_qtyListsplit.length; j<len; j++) { %} {%
+					col_qty.push(numbers[col_qtyListsplit[j]]) %} {% } %} <td>{%= col_qty.join("") %}</td>
+					{% var from_date = [] %}
+					{% var from_dateListsplit = data[i].from_date.split("") %}
+					{% for(var j=0, len=from_dateListsplit.length; j<len; j++) { %} {% if (from_dateListsplit[j]=="-" )
+						{ %} {% from_date.push("-") %} {% } %} {% from_date.push(numbers[from_dateListsplit[j]]) %} {% }
+						%} <td>
+						{%= from_date.join("").split("-")[2] %} / {%= from_date.join("").split("-")[1] %} / {%=
+						from_date.join("").split("-")[0] %}</td>
 
-			</tr>
-			{% } %}
-			<tr style="background-color:lightgray; font-weight:bold;">
-				<td colspan="4">الإجمــــــــــــــــــــــــالي</td>
-				<td>{%= data[0].total_qty %}</td>
-				<td colspan="2"><br></td>
+						{% var to_date = [] %}
+						{% var to_dateListsplit = data[i].to_date.split("") %}
+						{% for(var j=0, len=to_dateListsplit.length; j<len; j++) { %} {% if (to_dateListsplit[j]=="-" )
+							{ %} {% to_date.push("-") %} {% } %} {% to_date.push(numbers[to_dateListsplit[j]]) %} {% }
+							%} <td>{%=
+							to_date.join("").split("-")[2] %} / {%= to_date.join("").split("-")[1] %} / {%=
+							to_date.join("").split("-")[0] %}</td>
 
-			</tr>
+
+							</tr>
+							{% } %}
+							<tr style="background-color:lightgray; font-weight:bold;">
+								<td colspan="4">الإجمــــــــــــــــــــــــالي</td>
+								{% let vehicle_no = [] %}
+								{% [...data[0].total_qty.toString()].forEach((item, idx, array)=>{ %}
+								{% vehicle_no.push(numbers[item] ? numbers[item] : item ) %}
+								{% }) %}
+								<td>{%= vehicle_no.join("") %}
+								</td>
+								<td colspan="2"><br></td>
+
+							</tr>
 		</tbody>
 	</table>
 </div>
-

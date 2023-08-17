@@ -1,0 +1,127 @@
+
+<style>
+    * {
+            margin:0;
+            padding:0;
+            direction:rtl;
+        }
+        .print-format {
+            padding:0in;
+            
+        }
+    .header {
+        margin-top:20px;
+        display:flex; 
+        flex-direction:column;
+        justify-content:center;
+    }
+    .under-header {
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+    }
+    .esm-algeha {
+        margin-top:30px;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+    table, th, td , th{
+        border:2px solid black;
+        border-collapse:collapse;
+        text-align:center;
+        font-size: large;
+    }
+    .print-format th {
+        color:black;
+            text-align:center;
+            font-weight:bold;
+            background-color:lightgray;
+    
+    }
+    .print-format td {
+        padding: 0px !important;
+    }
+    .break {
+        flex-basis: 100%;
+        height: 0;
+      }
+      .column1 {
+        border-left: 2px solid black;
+      }
+    .table1 {
+        margin-top:5px;
+        margin-right:20px;
+        margin-left:20px;
+        display:flex; 
+        flex-direction:column;
+    
+    }
+    </style>
+    
+<div class="header">
+    <div class="under-header">
+        <div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;"><div>
+        <img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
+    </div>
+
+    <div style="font-weight:bold;">
+        وزارة الداخلية
+    </div>
+    <div>
+        الادارة العامه لمركبات الشرطه
+    </div>
+    <div>
+    </div>
+</div>
+
+    <div>
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="font-weight: bold;">تاريخ الطباعة  </div>
+            <div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
+                {%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
+                {{data[0].cur_user}}
+            </div>
+        </div>
+    </div>
+    </div>
+    <div style="display: flex; justify-content:center; margin: 1em auto;">
+                <div style="border:2px solid black; background-color:lightgray;">
+                    <h3 style="font-family:Cairo; margin: 0px 20px">متابعة و تدقيق البيانات</h3>
+                    <p style="font-size: 12pt; font-weight: bold; ">
+                        دفعة رقم {%= filters.batch_no %}  
+                        لسنة {%= filters.fiscal_year %}  
+                    </p>
+                </div>
+    </div>
+</div>
+
+<div class="table1">
+    {% var counter = 1 %}
+    
+    <table style="font-family:Cairo" dir="rtl">
+        <thead>
+            <tr>
+                <th>{%= __("م") %}</th>
+                <th>{%= __("فئة البون") %}</th>
+                <th>{%= __("العدد") %}</th>
+            </tr>
+        </thead>
+        {% var total = 0 %}
+        {% data.forEach( (element, i, llist)=> { %}     
+            <tr>
+                <td>{%= counter %}</td>
+                <td>{%= data[i].voucher_type %}</td>
+                <td>{%= data[i].vouchers_count %}</td>
+            </tr>
+            {% counter = counter + 1 %}
+            {% total = total + data[i].vouchers_count %}
+        {% }) %}              
+            <tr>
+                <td colspan="2" style="background-color: lightgray; font-weight: bold;">الإجمــالي</td>
+                <td style="background-color: lightgray; font-weight: bold;">{{total}}</td>
+            </tr>
+    
+    </table>    
+    </div>

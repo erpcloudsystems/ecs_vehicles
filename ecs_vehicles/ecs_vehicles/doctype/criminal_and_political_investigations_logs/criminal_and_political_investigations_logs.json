@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-07-12 13:51:48.755872",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "political_investigation_date",
+  "receipt_the_result_of_political_investigation_date",
+  "political_investigation_result",
+  "criminal_investigation_date",
+  "receipt_the_result_of_criminal_investigation_date",
+  "criminal_investigation_result",
+  "transaction_no"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "political_investigation_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Political Investigation Date",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "receipt_the_result_of_political_investigation_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Receipt The result Of Political Investigation Date",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "political_investigation_result",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Political Investigation Result",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "criminal_investigation_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Criminal Investigation Date",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "receipt_the_result_of_criminal_investigation_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Receipt The result Of Criminal Investigation Date",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "criminal_investigation_result",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Criminal Investigation Result",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transaction_no",
+   "fieldtype": "Data",
+   "label": "Transaction No"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-07-12 15:05:16.139350",
+ "modified_by": "Administrator",
+ "module": "Ecs Vehicles",
+ "name": "Criminal And Political Investigations Logs",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

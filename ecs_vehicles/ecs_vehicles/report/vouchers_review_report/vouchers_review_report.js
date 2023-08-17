@@ -15,6 +15,7 @@ frappe.query_reports["Vouchers Review Report"] = {
 			"label": __("السنة"),
 			"fieldtype": "Link",
 			"options": "Fiscal Year",
+			"default": frappe.defaults.get_user_default("fiscal_year"),
 		},
 		{
 			"fieldname": "batch_no",

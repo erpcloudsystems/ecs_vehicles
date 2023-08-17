@@ -15,6 +15,7 @@
   "employment_type",
   "column_break_7",
   "errand_date",
+  "mission_return_date",
   "notes",
   "amended_from"
  ],
@@ -87,12 +88,19 @@
    "options": "External Errands",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "mission_return_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Mission Return Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-18 12:51:57.183489",
+ "modified": "2023-07-17 12:24:24.273887",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "External Errands",

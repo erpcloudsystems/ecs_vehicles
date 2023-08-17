@@ -98,9 +98,8 @@ def get_query(conditions):
             COUNT(license_summary.entity) AS entity_count
 
 
-        FROM `tabLicense Entry Summary` license_summary
-        JOIN `tabVehicle License` vehicle_license ON vehicle_license.name = license_summary.parent
-        WHERE vehicle_license.docstatus =  1
+        FROM `tabVehicle License Entries` license_summary
+        WHERE license_summary.is_current =  "1"
         AND license_summary.entity is not null
         {conditions}
         GROUP BY license_summary.entity

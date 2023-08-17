@@ -6,7 +6,24 @@ from frappe import _
 
 frappe.whitelist()
 def hourly():
-    pass
+    date = nowdate()
+
+    # frappe.db.sql(
+    #     """ update `tabVehicles` set license_status = "منتهية" 
+    #         where license_to_date < '{date}' 
+    #     """.format(date=date)
+    # )
+    frappe.db.sql(
+        """ update `tabVehicle License Entries` set license_state = "منتهية" 
+            where to_date < '{date}' 
+        """.format(date=date)
+    )
+    frappe.db.sql(
+        """ update `tabVehicle License Entries` set license_state = "سارية" 
+            where to_date >= '{date}' 
+        """.format(date=date)
+    )
+    
     '''
     date = nowdate()
     frappe.db.sql(

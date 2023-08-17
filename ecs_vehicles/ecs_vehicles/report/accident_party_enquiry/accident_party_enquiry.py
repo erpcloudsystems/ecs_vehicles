@@ -34,6 +34,12 @@ def get_columns():
             "width": 170
         },
         {
+            "label": _("السنة المالية"),
+			"fieldname": "fiscal_year",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+        {
             "label": _("رقم الواقعة"),
             "fieldname": "accident_no",
             "fieldtype": "Data",
@@ -77,7 +83,7 @@ def get_columns():
             "width": 150
         },
         {
-            "label": _("رقم المركبة"),
+            "label": _("رقم الشرطة"),
             "fieldname": "police_no",
             "fieldtype": "Data",
             "width": 100
@@ -105,6 +111,8 @@ def get_item_price_qty_data(filters):
         conditions += "and party_id_type = %(party_id_type)s"
     if filters.get("police_no"):
         conditions += "and police_no = %(police_no)s"
+    if filters.get("fiscal_year"):
+        conditions += "and fiscal_year = %(fiscal_year)s"
     if filters.get("entity"):
         conditions += "and entity = %(entity)s"
     if filters.get("accident_type"):
@@ -117,7 +125,7 @@ def get_item_price_qty_data(filters):
     result = []
     item_results = frappe.db.sql("""
         select
-            name, police_no, accident_no, accident_date, accident_type, entity, deduction_amount, 
+            name, police_no, fiscal_year, accident_no, accident_date, accident_type, entity, deduction_amount, 
             administrative_expenses, total_deduction_amount, party_name, party_id, party_id_type
         from
             `tabAccident`
@@ -135,6 +143,7 @@ def get_item_price_qty_data(filters):
             'entity': item_dict.entity,
             'accident_no': str(item_dict.accident_no),
             'name': item_dict.name,
+            'fiscal_year': item_dict.fiscal_year,
             'accident_date': item_dict.accident_date,
             'accident_type': item_dict.accident_type,
             'deduction_amount': item_dict.deduction_amount,
