@@ -9,46 +9,81 @@ class Vehicles(Document):
     @frappe.whitelist()
     def check_police_no(doc, method=None):
         vehicle_list = frappe.db.sql(
-            """ Select name, vehicle_no, vehicle_type from `tabVehicles` where docstatus = 0""", as_dict=1)
+            """ Select name, vehicle_no, vehicle_type from `tabVehicles` where docstatus = 0""",
+            as_dict=1,
+        )
 
         for x in vehicle_list:
             if doc.vehicle_no == x.vehicle_no and doc.vehicle_no:
                 frappe.throw(
-                    " لا يمكن إستخدام رقم الشرطة " + x.vehicle_no + " أكثر من مرة حيث أنه مستخدم في المركبة رقم " + x.name)
+                    " لا يمكن إستخدام رقم الشرطة "
+                    + x.vehicle_no
+                    + " أكثر من مرة حيث أنه مستخدم في المركبة رقم "
+                    + x.name
+                )
 
         frappe.throw(" رقم الشرطة " + doc.vehicle_no + " متاح للإستخدام ")
 
     @frappe.whitelist()
     def check_chassis_no(doc, method=None):
         chassis_list = frappe.db.sql(
-            """ Select name, chassis_no from `tabVehicles` where docstatus = 0 and vehicle_status not in ("مخردة", "بيعت بالمزاد") """, as_dict=1)
+            """ Select name, chassis_no from `tabVehicles` where docstatus = 0 and vehicle_status not in ("مخردة", "بيعت بالمزاد") """,
+            as_dict=1,
+        )
 
         for x in chassis_list:
             if doc.chassis_no == x.chassis_no and doc.chassis_no:
                 frappe.throw(
-                    " لا يمكن إستخدام رقم الشاسيه " + x.chassis_no + " أكثر من مرة حيث أنه مستخدم في المركبة رقم " + x.name)
+                    " لا يمكن إستخدام رقم الشاسيه "
+                    + x.chassis_no
+                    + " أكثر من مرة حيث أنه مستخدم في المركبة رقم "
+                    + x.name
+                )
 
         frappe.throw(" رقم الشاسيه " + doc.chassis_no + " متاح للإستخدام ")
 
-
     def before_insert(self):
-        chassis_list = frappe.db.sql(""" Select chassis_no, vehicle_no from `tabVehicles` where docstatus = 0 and vehicle_status not in ("مخردة", "بيعت بالمزاد") """, as_dict=1)
+        chassis_list = frappe.db.sql(
+            """ Select chassis_no, vehicle_no from `tabVehicles` where docstatus = 0 and vehicle_status not in ("مخردة", "بيعت بالمزاد") """,
+            as_dict=1,
+        )
 
         for x in chassis_list:
             if self.chassis_no == x.chassis_no and self.chassis_no:
-                frappe.throw(" لا يمكن إستخدام رقم الشاسيه " + x.chassis_no + " أكثر من مرة حيث أنه مستخدم في المركبة رقم " + x.vehicle_no)
-                
+                frappe.throw(
+                    " لا يمكن إستخدام رقم الشاسيه "
+                    + x.chassis_no
+                    + " أكثر من مرة حيث أنه مستخدم في المركبة رقم "
+                    + x.vehicle_no
+                )
 
-        vehicle_list = frappe.db.sql(""" Select name, vehicle_no, vehicle_type from `tabVehicles` where docstatus = 0""", as_dict=1)
+        vehicle_list = frappe.db.sql(
+            """ Select name, vehicle_no, vehicle_type from `tabVehicles` where docstatus = 0""",
+            as_dict=1,
+        )
 
         for x in vehicle_list:
             if self.vehicle_no == x.vehicle_no and self.vehicle_type == x.vehicle_type:
-                frappe.throw(" لا يمكن إستخدام رقم الشرطة " + x.vehicle_no + " أكثر من مرة حيث أنه مستخدم في المركبة رقم " + x.name)
+                frappe.throw(
+                    " لا يمكن إستخدام رقم الشرطة "
+                    + x.vehicle_no
+                    + " أكثر من مرة حيث أنه مستخدم في المركبة رقم "
+                    + x.name
+                )
 
-
-        if frappe.db.exists("Police Plate", {"plate_no": self.vehicle_no, "vehicle_type": self.vehicle_type, "status": "معدمة"}):
-            frappe.throw(" لا يمكن إستخدام لوحة الشرطة رقم " + self.vehicle_no + " حيث أن حالتها معدمة ")
-
+        if frappe.db.exists(
+            "Police Plate",
+            {
+                "plate_no": self.vehicle_no,
+                "vehicle_type": self.vehicle_type,
+                "status": "معدمة",
+            },
+        ):
+            frappe.throw(
+                " لا يمكن إستخدام لوحة الشرطة رقم "
+                + self.vehicle_no
+                + " حيث أن حالتها معدمة "
+            )
 
     def after_insert(self):
         if self.vehicle_no:
@@ -60,13 +95,18 @@ class Vehicles(Document):
             self.police_id = self.vehicle_no
             self.save()
 
-            if not frappe.db.exists("Police Plate", {"plate_no": self.vehicle_no, "vehicle_type": self.vehicle_type}):
-                police_plate_no = frappe.get_doc({
-                    "doctype": "Police Plate",
-                    "plate_no": self.vehicle_no,
-                    "vehicle_type": self.vehicle_type,
-                    "current_vehicle": self.name
-                })
+            if not frappe.db.exists(
+                "Police Plate",
+                {"plate_no": self.vehicle_no, "vehicle_type": self.vehicle_type},
+            ):
+                police_plate_no = frappe.get_doc(
+                    {
+                        "doctype": "Police Plate",
+                        "plate_no": self.vehicle_no,
+                        "vehicle_type": self.vehicle_type,
+                        "current_vehicle": self.name,
+                    }
+                )
                 police_plate_no.insert(ignore_permissions=True)
 
                 plate_no = police_plate_no.append("plate_table", {})
@@ -78,8 +118,14 @@ class Vehicles(Document):
                 plate_no.save()
                 police_plate_no.save()
 
-            if frappe.db.exists("Police Plate", {"plate_no": self.vehicle_no, "vehicle_type": self.vehicle_type}):
-                pol_plate = frappe.get_doc("Police Plate", {"plate_no": self.vehicle_no, "vehicle_type": self.vehicle_type})
+            if frappe.db.exists(
+                "Police Plate",
+                {"plate_no": self.vehicle_no, "vehicle_type": self.vehicle_type},
+            ):
+                pol_plate = frappe.get_doc(
+                    "Police Plate",
+                    {"plate_no": self.vehicle_no, "vehicle_type": self.vehicle_type},
+                )
                 plate_no_ = pol_plate.append("plate_table", {})
                 plate_no_.date = datetime.now()
                 plate_no_.value = self.name
@@ -89,7 +135,6 @@ class Vehicles(Document):
                 plate_no_.save()
                 pol_plate.current_vehicle = self.name
                 pol_plate.save()
-
 
         if self.private_no:
             private = self.append("private_no_table", {})
@@ -112,7 +157,7 @@ class Vehicles(Document):
             private_no.doctype_name = "Vehicles"
             private_no.edit_vehicle = self.name
             private_no.save()
-            
+
             private_plate_no.save()
 
         if self.motor_no:
@@ -122,11 +167,10 @@ class Vehicles(Document):
             motor.remarks = "رقم الموتور الأساسي الذي تم إدخاله مع إنشاء المركبة"
             motor.edited_by = frappe.db.get_value("User", self.owner, "full_name")
             self.save()
-            
 
             motor_no = frappe.get_doc("Vehicle Motor", self.motor_no)
             motor_no.current_vehicle = self.name
-            
+
             motor = motor_no.append("motor_table", {})
             motor.date = datetime.now()
             motor.value = self.name
@@ -134,7 +178,7 @@ class Vehicles(Document):
             motor.doctype_name = "Vehicles"
             motor.edit_vehicle = self.name
             motor.save()
-            
+
             motor_no.save()
 
         if self.entity_name:
@@ -157,8 +201,12 @@ class Vehicles(Document):
             processing_type = self.append("processing_type_table", {})
             processing_type.date = datetime.now()
             processing_type.value = self.processing_type
-            processing_type.remarks = "نوع التجهيز الأساسي الذي تم إدخاله مع إنشاء المركبة"
-            processing_type.edited_by = frappe.db.get_value("User", self.owner, "full_name")
+            processing_type.remarks = (
+                "نوع التجهيز الأساسي الذي تم إدخاله مع إنشاء المركبة"
+            )
+            processing_type.edited_by = frappe.db.get_value(
+                "User", self.owner, "full_name"
+            )
             self.save()
 
         if self.chassis_no:
@@ -173,7 +221,9 @@ class Vehicles(Document):
             group_shape = self.append("group_shape_table", {})
             group_shape.date = datetime.now()
             group_shape.value = self.group_shape
-            group_shape.remarks = "مجموعة الشكل الأساسية التي تم إدخالها مع إنشاء المركبة"
+            group_shape.remarks = (
+                "مجموعة الشكل الأساسية التي تم إدخالها مع إنشاء المركبة"
+            )
             group_shape.edited_by = frappe.db.get_value("User", self.owner, "full_name")
             self.save()
 
@@ -221,16 +271,24 @@ class Vehicles(Document):
             exchange_allowance = self.append("exchange_allowance_table", {})
             exchange_allowance.date = datetime.now()
             exchange_allowance.value = self.exchange_allowance
-            exchange_allowance.remarks = "مخصص الصرف الأساسي الذي تم إدخاله مع إنشاء المركبة"
-            exchange_allowance.edited_by = frappe.db.get_value("User", self.owner, "full_name")
+            exchange_allowance.remarks = (
+                "مخصص الصرف الأساسي الذي تم إدخاله مع إنشاء المركبة"
+            )
+            exchange_allowance.edited_by = frappe.db.get_value(
+                "User", self.owner, "full_name"
+            )
             self.save()
 
         if self.maintenance_entity:
             maintenance_entity = self.append("maintenance_entity_table", {})
             maintenance_entity.date = datetime.now()
             maintenance_entity.value = self.maintenance_entity
-            maintenance_entity.remarks = "جهة الصيانة الأساسية التي تم إدخالها مع إنشاء المركبة"
-            maintenance_entity.edited_by = frappe.db.get_value("User", self.owner, "full_name")
+            maintenance_entity.remarks = (
+                "جهة الصيانة الأساسية التي تم إدخالها مع إنشاء المركبة"
+            )
+            maintenance_entity.edited_by = frappe.db.get_value(
+                "User", self.owner, "full_name"
+            )
             self.save()
 
         if self.vehicle_status:
@@ -242,8 +300,14 @@ class Vehicles(Document):
             self.save()
 
     def validate(self):
-	# chassis_list = frappe.db.sql(""" Select chassis_no, vehicle_no from `tabVehicles` 
-        #where vehicle_status not in ("مخردة", "بيعت بالمزاد") and name != '{name}' """.format(name=self.name), as_dict=1)
+        if self.oil_type:
+            if self.oil_count is None or self.oil_count != 0:
+                self.oil_count = frappe.db.get_value(
+                    "Oil Type", self.oil_type, ["litre_count"]
+                )
+
+        # chassis_list = frappe.db.sql(""" Select chassis_no, vehicle_no from `tabVehicles`
+        # where vehicle_status not in ("مخردة", "بيعت بالمزاد") and name != '{name}' """.format(name=self.name), as_dict=1)
 
         # for x in chassis_list:
         #     if self.chassis_no == x.chassis_no:
@@ -253,7 +317,11 @@ class Vehicles(Document):
                 """ Select date as date from `tabPolice Plate Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_vehicle_no_date:
                 if getdate(self.edit_vehicle_no_date) < getdate(v.date):
@@ -262,22 +330,63 @@ class Vehicles(Document):
             if self.vehicle_no == self.new_vehicle_no:
                 frappe.throw(" يجب إختيار رقم شرطة جديد للمركبة ")
 
-            vehicle_list = frappe.db.sql(""" Select name, vehicle_no, vehicle_type from `tabVehicles` 
-                    where docstatus = 0 and name != '{name}' """.format(name=self.name), as_dict=1)
+            vehicle_list = frappe.db.sql(
+                """ Select name, vehicle_no, vehicle_type from `tabVehicles` 
+                    where docstatus = 0 and name != '{name}' """.format(
+                    name=self.name
+                ),
+                as_dict=1,
+            )
 
             for x in vehicle_list:
-                if self.new_vehicle_no == x.vehicle_no and self.vehicle_type == x.vehicle_type:
-                    frappe.throw(" لا يمكن إستخدام رقم الشرطة " + x.vehicle_no + " أكثر من مرة حيث أنه مستخدم في المركبة رقم " + x.name)
+                if (
+                    self.new_vehicle_no == x.vehicle_no
+                    and self.vehicle_type == x.vehicle_type
+                ):
+                    frappe.throw(
+                        " لا يمكن إستخدام رقم الشرطة "
+                        + x.vehicle_no
+                        + " أكثر من مرة حيث أنه مستخدم في المركبة رقم "
+                        + x.name
+                    )
 
-            if self.vehicle_no != self.new_vehicle_no:                  
-                if frappe.db.exists("Police Plate", {"plate_no": self.new_vehicle_no, "vehicle_type": self.vehicle_type}):
-                    existing_police_plate = frappe.get_doc("Police Plate", {"plate_no": self.new_vehicle_no, "vehicle_type": self.vehicle_type})
-                    if existing_police_plate.current_vehicle and existing_police_plate.current_vehicle != "إحتياطي مخزن لوحات":
-                        frappe.throw(" لا يمكن إستخدام رقم الشرطة " + self.new_vehicle_no + " أكثر من مرة حيث أنه مستخدم في المركبة رقم " + existing_police_plate.current_vehicle)
+            if self.vehicle_no != self.new_vehicle_no:
+                if frappe.db.exists(
+                    "Police Plate",
+                    {
+                        "plate_no": self.new_vehicle_no,
+                        "vehicle_type": self.vehicle_type,
+                    },
+                ):
+                    existing_police_plate = frappe.get_doc(
+                        "Police Plate",
+                        {
+                            "plate_no": self.new_vehicle_no,
+                            "vehicle_type": self.vehicle_type,
+                        },
+                    )
+                    if (
+                        existing_police_plate.current_vehicle
+                        and existing_police_plate.current_vehicle
+                        != "إحتياطي مخزن لوحات"
+                    ):
+                        frappe.throw(
+                            " لا يمكن إستخدام رقم الشرطة "
+                            + self.new_vehicle_no
+                            + " أكثر من مرة حيث أنه مستخدم في المركبة رقم "
+                            + existing_police_plate.current_vehicle
+                        )
 
-                    if existing_police_plate.current_vehicle == "إحتياطي مخزن لوحات" and existing_police_plate.status == "معدمة":
-                        frappe.throw(" لا يمكن إستخدام لوحة الشرطة رقم " + self.new_vehicle_no + " حيث أن حالتها معدمة " )
-                    
+                    if (
+                        existing_police_plate.current_vehicle == "إحتياطي مخزن لوحات"
+                        and existing_police_plate.status == "معدمة"
+                    ):
+                        frappe.throw(
+                            " لا يمكن إستخدام لوحة الشرطة رقم "
+                            + self.new_vehicle_no
+                            + " حيث أن حالتها معدمة "
+                        )
+
                     else:
                         vehicle = self.append("vehicle_no_table", {})
                         vehicle.date = self.edit_vehicle_no_date
@@ -285,7 +394,13 @@ class Vehicles(Document):
                         vehicle.remarks = self.vehicle_no_remarks
                         vehicle.edited_by = frappe.session.user
 
-                        existing_police_plate2 = frappe.get_doc("Police Plate", {"plate_no": self.new_vehicle_no, "vehicle_type": self.vehicle_type})
+                        existing_police_plate2 = frappe.get_doc(
+                            "Police Plate",
+                            {
+                                "plate_no": self.new_vehicle_no,
+                                "vehicle_type": self.vehicle_type,
+                            },
+                        )
                         existing_police_plate2.current_vehicle = self.name
                         plate = existing_police_plate2.append("plate_table", {})
                         plate.date = self.edit_vehicle_no_date
@@ -298,7 +413,13 @@ class Vehicles(Document):
                         existing_police_plate2.save()
 
                         if self.vehicle_no:
-                            old_police_plate = frappe.get_doc("Police Plate", {"plate_no": self.vehicle_no, "vehicle_type": self.vehicle_type})
+                            old_police_plate = frappe.get_doc(
+                                "Police Plate",
+                                {
+                                    "plate_no": self.vehicle_no,
+                                    "vehicle_type": self.vehicle_type,
+                                },
+                            )
                             old_police_plate.current_vehicle = "إحتياطي مخزن لوحات"
                             old_plate = old_police_plate.append("plate_table", {})
                             old_plate.date = self.edit_vehicle_no_date
@@ -309,21 +430,29 @@ class Vehicles(Document):
                             old_plate.edit_vehicle = self.name
                             old_plate.save()
                             old_police_plate.save()
-                
-                if not frappe.db.exists("Police Plate", {"plate_no": self.new_vehicle_no, "vehicle_type": self.vehicle_type}):
+
+                if not frappe.db.exists(
+                    "Police Plate",
+                    {
+                        "plate_no": self.new_vehicle_no,
+                        "vehicle_type": self.vehicle_type,
+                    },
+                ):
                     vehicle = self.append("vehicle_no_table", {})
                     vehicle.date = self.edit_vehicle_no_date
                     vehicle.value = self.new_vehicle_no
                     vehicle.remarks = self.vehicle_no_remarks
                     vehicle.edited_by = frappe.session.user
 
-                    new_police_plate = frappe.get_doc({
-                        "doctype": "Police Plate",
-                        "plate_no": self.new_vehicle_no,
-                        "status": "صالحة",
-                        "vehicle_type": self.vehicle_type,
-                        "current_vehicle": self.name
-                    })
+                    new_police_plate = frappe.get_doc(
+                        {
+                            "doctype": "Police Plate",
+                            "plate_no": self.new_vehicle_no,
+                            "status": "صالحة",
+                            "vehicle_type": self.vehicle_type,
+                            "current_vehicle": self.name,
+                        }
+                    )
                     new_police_plate.insert(ignore_permissions=True)
 
                     plate = new_police_plate.append("plate_table", {})
@@ -337,7 +466,13 @@ class Vehicles(Document):
                     new_police_plate.save()
 
                     if self.vehicle_no:
-                        old_police_plate2 = frappe.get_doc("Police Plate", {"plate_no": self.vehicle_no, "vehicle_type": self.vehicle_type})
+                        old_police_plate2 = frappe.get_doc(
+                            "Police Plate",
+                            {
+                                "plate_no": self.vehicle_no,
+                                "vehicle_type": self.vehicle_type,
+                            },
+                        )
                         old_police_plate2.current_vehicle = "إحتياطي مخزن لوحات"
                         old_plate = old_police_plate2.append("plate_table", {})
                         old_plate.date = self.edit_vehicle_no_date
@@ -360,8 +495,11 @@ class Vehicles(Document):
                 """ Select date as date from `tabPrivate Plate Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
-
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_private_no_date:
                 if getdate(self.edit_private_no_date) < getdate(v.date):
@@ -369,7 +507,7 @@ class Vehicles(Document):
 
             if self.private_no == self.new_private_no:
                 frappe.throw(" يجب إختيار رقم ملاكي جديد للمركبة ")
-                
+
             else:
                 private = self.append("private_no_table", {})
                 private.date = self.edit_private_no_date
@@ -419,9 +557,9 @@ class Vehicles(Document):
             self.private_no_remarks = ""
 
             # plates_list = frappe.db.sql(
-            #     """ Select name, private_no from `tabVehicles` where docstatus = 0 and private_no = '{private_no}' and name != '{vehicle}' 
+            #     """ Select name, private_no from `tabVehicles` where docstatus = 0 and private_no = '{private_no}' and name != '{vehicle}'
             #     """.format(private_no=self.new_private_no, vehicle=self.name), as_dict=1)
-            
+
             # if plates_list:
             #     for vehicle in plates_list:
             #         if frappe.db.exists("Vehicles", vehicle.name):
@@ -438,13 +576,16 @@ class Vehicles(Document):
             #             private_logs.plate_type = "-"
             #             vehicle_doc.save()
 
-
         if self.edit_motor_no:
             last_motor_date = frappe.db.sql(
                 """ Select date as date from `tabMotor Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_motor_date:
                 if getdate(self.edit_motor_no_date) < getdate(v.date):
@@ -495,7 +636,11 @@ class Vehicles(Document):
                 """ Select date as date from `tabStyle No Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_style_date:
                 if getdate(self.edit_style_date) < getdate(v.date):
@@ -520,7 +665,11 @@ class Vehicles(Document):
                 """ Select date as date from `tabAttached Entity Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_attached_entity_date:
                 if getdate(self.edit_attached_entity_date) < getdate(v.date):
@@ -545,7 +694,11 @@ class Vehicles(Document):
                 """ Select date as date from `tabColor Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_color_date:
                 if getdate(self.edit_color_date) < getdate(v.date):
@@ -564,14 +717,17 @@ class Vehicles(Document):
                 self.new_color = ""
                 self.edit_color_date = ""
                 self.color_remarks = ""
-        
-        
+
         if self.edit_processing_type:
             last_processing_type = frappe.db.sql(
                 """ Select date as date from `tabProcessing Type Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_processing_type:
                 if getdate(self.edit_processing_type_date) < getdate(v.date):
@@ -596,7 +752,11 @@ class Vehicles(Document):
                 """ Select date as date from `tabEntity Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_entity_date:
                 if getdate(self.edit_entity_date) < getdate(v.date):
@@ -612,12 +772,16 @@ class Vehicles(Document):
                 entity.remarks = self.entity_remarks
                 entity.edited_by = frappe.session.user
 
-                m_entity = frappe.db.get_value("Entity", self.new_entity, "maintenance_entity")
+                m_entity = frappe.db.get_value(
+                    "Entity", self.new_entity, "maintenance_entity"
+                )
                 if m_entity != self.maintenance_entity and m_entity:
                     maint_entity = self.append("maintenance_entity_table", {})
                     maint_entity.date = self.edit_entity_date
                     maint_entity.value = m_entity
-                    maint_entity.remarks = " تم تعديل جهة الصيانة تلقائيا مع تعديل جهة المركبة "
+                    maint_entity.remarks = (
+                        " تم تعديل جهة الصيانة تلقائيا مع تعديل جهة المركبة "
+                    )
                     maint_entity.edited_by = frappe.session.user
                     self.maintenance_entity = m_entity
 
@@ -649,13 +813,16 @@ class Vehicles(Document):
                 self.edit_entity_date = ""
                 self.entity_remarks = ""
 
-
         if self.edit_maintenance_entity:
             last_maintenance_entity_date = frappe.db.sql(
                 """ Select date as date from `tabMaintenance Entity Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_maintenance_entity_date:
                 if getdate(self.edit_maintenance_entity_date) < getdate(v.date):
@@ -680,7 +847,11 @@ class Vehicles(Document):
                 """ Select date as date from `tabVehicle Status Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_status_date:
                 if getdate(self.edit_status_date) < getdate(v.date):
@@ -690,13 +861,19 @@ class Vehicles(Document):
                 frappe.throw(" يجب إختيار حالة جديدة للمركبة ")
 
             if self.new_status == "صالحة" and self.vehicle_status == "تحت التخريد":
-                frappe.throw(" يجب تخصيص حالة المركبة إلى عاطلة أولا حتى تتمكن من تخصيص حالتها إلى صالحة ")
+                frappe.throw(
+                    " يجب تخصيص حالة المركبة إلى عاطلة أولا حتى تتمكن من تخصيص حالتها إلى صالحة "
+                )
 
             if self.new_status == "تحت التخريد" and self.vehicle_status != "عاطلة":
-                frappe.throw(" يجب تخصيص حالة المركبة إلى عاطلة أولا حتى تتمكن من تخصيص حالتها إلى تحت التخريد ")
+                frappe.throw(
+                    " يجب تخصيص حالة المركبة إلى عاطلة أولا حتى تتمكن من تخصيص حالتها إلى تحت التخريد "
+                )
 
             if self.new_status == "مخردة" and self.vehicle_status != "تحت التخريد":
-                frappe.throw(" يجب تخصيص حالة المركبة إلى تحت التخريد أولا حتى تتمكن من تخصيص حالتها إلى مخردة ")
+                frappe.throw(
+                    " يجب تخصيص حالة المركبة إلى تحت التخريد أولا حتى تتمكن من تخصيص حالتها إلى مخردة "
+                )
 
             if self.new_status == "مخردة" and self.vehicle_no:
                 police_plate_id = self.vehicle_no + " - " + self.vehicle_type
@@ -725,7 +902,6 @@ class Vehicles(Document):
                 self.police_id = self.vehicle_no
                 self.vehicle_no = ""
 
-
             else:
                 status = self.append("status_table", {})
                 status.date = self.edit_status_date
@@ -743,7 +919,11 @@ class Vehicles(Document):
                 """ Select date as date from `tabChassis No Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_chassis_date:
                 if getdate(self.edit_chassis_no_date) < getdate(v.date):
@@ -763,13 +943,16 @@ class Vehicles(Document):
                 self.edit_chassis_no_date = ""
                 self.chassis_no_remarks = ""
 
-
         if self.edit_group_shape:
             last_group_shape_date = frappe.db.sql(
                 """ Select date as date from `tabGroup Shape Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_group_shape_date:
                 if getdate(self.edit_group_shape_date) < getdate(v.date):
@@ -789,13 +972,16 @@ class Vehicles(Document):
                 self.edit_group_shape_date = ""
                 self.group_shape_remarks = ""
 
-
         if self.edit_shape:
             last_shape_date = frappe.db.sql(
                 """ Select date as date from `tabShape No Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_shape_date:
                 if getdate(self.edit_shape_date) < getdate(v.date):
@@ -815,13 +1001,16 @@ class Vehicles(Document):
                 self.edit_shape_date = ""
                 self.shape_remarks = ""
 
-
         if self.edit_brand:
             last_brand_date = frappe.db.sql(
                 """ Select date as date from `tabBrand No Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_brand_date:
                 if getdate(self.edit_brand_date) < getdate(v.date):
@@ -846,7 +1035,11 @@ class Vehicles(Document):
                 """ Select date as date from `tabModel No Loge` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_model_date:
                 if getdate(self.edit_model_date) < getdate(v.date):
@@ -866,13 +1059,16 @@ class Vehicles(Document):
                 self.edit_model_date = ""
                 self.model_remarks = ""
 
-
         if self.edit_country:
             last_country_date = frappe.db.sql(
                 """ Select date as date from `tabCountry No Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_country_date:
                 if getdate(self.edit_country_date) < getdate(v.date):
@@ -892,13 +1088,16 @@ class Vehicles(Document):
                 self.edit_country_date = ""
                 self.country_remarks = ""
 
-
         if self.edit_exchange_allowance:
             last_exchange_allowance_date = frappe.db.sql(
                 """ Select date as date from `tabExchange Allowance Logs` 
                     where parent = '{parent}'
                     order by date desc limit 1
-                """.format(parent=self.name), as_dict=1)
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
 
             for v in last_exchange_allowance_date:
                 if getdate(self.edit_exchange_allowance_date) < getdate(v.date):
@@ -917,113 +1116,216 @@ class Vehicles(Document):
                 self.new_exchange_allowance = ""
                 self.edit_exchange_allowance_date = ""
                 self.exchange_allowance_remarks = ""
-    
 
     @frappe.whitelist()
     def delete_vehicle(doc, method=None):
         if frappe.db.exists("Police Plate", {"current_vehicle": doc.vehicle_no}):
-            frappe.db.sql(""" UPDATE `tabPolice Plate` SET current_vehicle = "" WHERE current_vehicle = '{vehicle}'
-                """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabPolice Plate` SET current_vehicle = "" WHERE current_vehicle = '{vehicle}'
+                """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Private Plate", {"current_vehicle": doc.vehicle_no}):
-            frappe.db.sql(""" UPDATE `tabPrivate Plate` SET current_vehicle = "" WHERE current_vehicle = '{vehicle}'
-                """.format(vehicle=doc.name))
-                    
+            frappe.db.sql(
+                """ UPDATE `tabPrivate Plate` SET current_vehicle = "" WHERE current_vehicle = '{vehicle}'
+                """.format(
+                    vehicle=doc.name
+                )
+            )
+
         if frappe.db.exists("Vehicle Motor", {"current_vehicle": doc.name}):
-            frappe.db.sql(""" UPDATE `tabVehicle Motor` SET current_vehicle = "" WHERE current_vehicle = '{vehicle}'
-                """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabVehicle Motor` SET current_vehicle = "" WHERE current_vehicle = '{vehicle}'
+                """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Editing Table", {"edit_vehicle": doc.name}):
-            frappe.db.sql(""" DELETE FROM `tabEditing Table` WHERE edit_vehicle = '{vehicle}'
-                """.format(vehicle=doc.name))
-        
+            frappe.db.sql(
+                """ DELETE FROM `tabEditing Table` WHERE edit_vehicle = '{vehicle}'
+                """.format(
+                    vehicle=doc.name
+                )
+            )
+
         if frappe.db.exists("Edit Vehicle", {"vehicle_no": doc.name}):
-            frappe.db.sql(""" UPDATE `tabEdit Vehicle` SET vehicle_no = "" WHERE vehicle_no = '{vehicle}'
-            """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabEdit Vehicle` SET vehicle_no = "" WHERE vehicle_no = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Vehicle Maintenance Process", {"vehicles": doc.name}):
-            frappe.db.sql(""" UPDATE `tabVehicle Maintenance Process` SET vehicles = "" WHERE vehicles = '{vehicle}'
-            """.format(vehicle=doc.name))
-        
+            frappe.db.sql(
+                """ UPDATE `tabVehicle Maintenance Process` SET vehicles = "" WHERE vehicles = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
+
         if frappe.db.exists("Vehicles Issuing Table", {"vehicle": doc.name}):
-            frappe.db.sql(""" UPDATE `tabVehicles Issuing Table` SET vehicle = "" WHERE vehicle = '{vehicle}'
-            """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabVehicles Issuing Table` SET vehicle = "" WHERE vehicle = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Specified Vehicles Issuing Table", {"vehicle": doc.name}):
-            frappe.db.sql(""" UPDATE `tabSpecified Vehicles Issuing Table` SET vehicle = "" WHERE vehicle = '{vehicle}'
-            """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabSpecified Vehicles Issuing Table` SET vehicle = "" WHERE vehicle = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
-            
         if frappe.db.exists("Vehicles Table", {"vehicle": doc.name}):
-            frappe.db.sql(""" UPDATE `tabVehicles Table` SET vehicle = "" WHERE vehicle = '{vehicle}'
-            """.format(vehicle=doc.name))
-        
+            frappe.db.sql(
+                """ UPDATE `tabVehicles Table` SET vehicle = "" WHERE vehicle = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Accident", {"vehicle": doc.name}):
-            frappe.db.sql(""" UPDATE `tabAccident` SET vehicle = "" WHERE vehicle = '{vehicle}'
-                """.format(vehicle=doc.name))
-            
-        if frappe.db.exists("Vehicle License", {"vehicle":doc.name}):
-            frappe.db.sql(""" UPDATE `tabVehicle License` SET vehicle = "" WHERE vehicle = '{vehicle}'
-            """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabAccident` SET vehicle = "" WHERE vehicle = '{vehicle}'
+                """.format(
+                    vehicle=doc.name
+                )
+            )
 
-        if frappe.db.exists("Vehicle License", {"vehicle2":doc.name}):
-            frappe.db.sql(""" UPDATE `tabVehicle License` SET vehicle2 = "" WHERE vehicle2 = '{vehicle}'
-            """.format(vehicle=doc.name))
+        if frappe.db.exists("Vehicle License", {"vehicle": doc.name}):
+            frappe.db.sql(
+                """ UPDATE `tabVehicle License` SET vehicle = "" WHERE vehicle = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
-        if frappe.db.exists("Vehicle License", {"vehicle3":doc.name}):
-            frappe.db.sql(""" UPDATE `tabVehicle License` SET vehicle3 = "" WHERE vehicle3 = '{vehicle}'
-            """.format(vehicle=doc.name))
+        if frappe.db.exists("Vehicle License", {"vehicle2": doc.name}):
+            frappe.db.sql(
+                """ UPDATE `tabVehicle License` SET vehicle2 = "" WHERE vehicle2 = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
-        if frappe.db.exists("Vehicle License", {"vehicle4":doc.name}):
-            frappe.db.sql(""" UPDATE `tabVehicle License` SET vehicle4 = "" WHERE vehicle4 = '{vehicle}'
-            """.format(vehicle=doc.name))
+        if frappe.db.exists("Vehicle License", {"vehicle3": doc.name}):
+            frappe.db.sql(
+                """ UPDATE `tabVehicle License` SET vehicle3 = "" WHERE vehicle3 = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
+
+        if frappe.db.exists("Vehicle License", {"vehicle4": doc.name}):
+            frappe.db.sql(
+                """ UPDATE `tabVehicle License` SET vehicle4 = "" WHERE vehicle4 = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Vehicle License Entries", {"vehicle": doc.name}):
-            frappe.db.sql(""" UPDATE `tabVehicle License Entries` SET vehicle = "" WHERE vehicle = '{vehicle}'
-            """.format(vehicle=doc.name))
-        
+            frappe.db.sql(
+                """ UPDATE `tabVehicle License Entries` SET vehicle = "" WHERE vehicle = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
+
         if frappe.db.exists("Custody Report", {"vehicles": doc.name}):
-            frappe.db.sql(""" UPDATE `tabCustody Report` SET vehicles = "" WHERE vehicles = '{vehicle}'
-            """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabCustody Report` SET vehicles = "" WHERE vehicles = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Maintenance Order", {"vehicles": doc.name}):
-            frappe.db.sql(""" UPDATE `tabMaintenance Order` SET vehicles = "" WHERE vehicles = '{vehicle}'
-            """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabMaintenance Order` SET vehicles = "" WHERE vehicles = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
-        if frappe.db.exists("Maintenance Request for Quotations", {"vehicles": doc.name}):
-            frappe.db.sql(""" UPDATE `tabMaintenance Request for Quotations` SET vehicles = "" WHERE vehicles = '{vehicle}'
-            """.format(vehicle=doc.name))
+        if frappe.db.exists(
+            "Maintenance Request for Quotations", {"vehicles": doc.name}
+        ):
+            frappe.db.sql(
+                """ UPDATE `tabMaintenance Request for Quotations` SET vehicles = "" WHERE vehicles = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Presentation Note Out", {"vehicles": doc.name}):
-            frappe.db.sql(""" UPDATE `tabPresentation Note Out` SET vehicles = "" WHERE vehicles = '{vehicle}'
-            """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabPresentation Note Out` SET vehicles = "" WHERE vehicles = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Job Order", {"vehicles": doc.name}):
-            frappe.db.sql(""" UPDATE `tabJob Order` SET vehicles = "" WHERE vehicles = '{vehicle}'
-            """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabJob Order` SET vehicles = "" WHERE vehicles = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Presentation Note Item", {"vehicles": doc.name}):
-            frappe.db.sql(""" UPDATE `tabPresentation Note Item` SET vehicles = "" WHERE vehicles = '{vehicle}'
-            """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabPresentation Note Item` SET vehicles = "" WHERE vehicles = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Purchase Order Item", {"vehicles": doc.name}):
-            frappe.db.sql(""" UPDATE `tabPurchase Order Item` SET vehicles = "" WHERE vehicles = '{vehicle}'
-            """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabPurchase Order Item` SET vehicles = "" WHERE vehicles = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Purchase Invoices", {"vehicles": doc.name}):
-            frappe.db.sql(""" UPDATE `tabPurchase Invoices` SET vehicles = "" WHERE vehicles = '{vehicle}'
-            """.format(vehicle=doc.name))
+            frappe.db.sql(
+                """ UPDATE `tabPurchase Invoices` SET vehicles = "" WHERE vehicles = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
 
         if frappe.db.exists("Finance Form Invoices", {"vehicle": doc.name}):
-            frappe.db.sql(""" UPDATE `tabFinance Form Invoices` SET vehicle = "" WHERE vehicle = '{vehicle}'
-            """.format(vehicle=doc.name))
-        
+            frappe.db.sql(
+                """ UPDATE `tabFinance Form Invoices` SET vehicle = "" WHERE vehicle = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
+
         if frappe.db.exists("Stock Entry", {"vehicles": doc.name}):
-            frappe.db.sql(""" UPDATE `tabStock Entry` SET vehicles = "" WHERE vehicles = '{vehicle}'
-            """.format(vehicle=doc.name))
-            
-        frappe.db.sql(""" DELETE FROM `tabVehicles` WHERE name = '{vehicle}'
-            """.format(vehicle=doc.name))
-        #doc.delete(ignore_permissions=True)
+            frappe.db.sql(
+                """ UPDATE `tabStock Entry` SET vehicles = "" WHERE vehicles = '{vehicle}'
+            """.format(
+                    vehicle=doc.name
+                )
+            )
+
+        frappe.db.sql(
+            """ DELETE FROM `tabVehicles` WHERE name = '{vehicle}'
+            """.format(
+                vehicle=doc.name
+            )
+        )
+        # doc.delete(ignore_permissions=True)
         frappe.msgprint(" تم حذف المركبة بنجاح ")

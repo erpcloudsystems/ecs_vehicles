@@ -56,7 +56,13 @@ frappe.ui.form.on("Purchase Invoices", "print_format1", function (frm) {
 });
 
 frappe.ui.form.on("Purchase Invoices", "print_format2", function (frm) {
-	var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=%D8%A5%D8%B0%D9%86%20%D8%B5%D8%B1%D9%81&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+
+	if (!frm.doc.tawreed_no){
+		var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=%D8%A5%D8%B0%D9%86%20%D8%B5%D8%B1%D9%81&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+	} else {
+
+	var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=Tawreed%20Order&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+	}
 });
 
 frappe.ui.form.on("Purchase Invoices", "print_format3", function (frm) {

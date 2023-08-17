@@ -144,9 +144,7 @@ class LiquidsIssuing(Document):
                 if doc.issue_type == "غسيل":
                     voucher = (
                         frappe.db.get_value("Vehicles", z.name, "washing_voucher")
-                        if frappe.db.get_value(
-                            "Vehicles", z.name, "washing_voucher"
-                        )
+                        if frappe.db.get_value("Vehicles", z.name, "washing_voucher")
                         else "لا يوجد"
                     )
                 voucher = "غاز طبيعي فئة 15 متر مكعب"
@@ -3168,7 +3166,7 @@ class LiquidsIssuing(Document):
                     "Vehicles", t.vehicle, "vehicle_type"
                 )
                 vehicle_issue_list = frappe.db.sql(
-                    """ Select from_date, to_date, entity, qty from `tabLiquids Issuing Table` 
+                    """ Select idx, issue_type, from_date, to_date, entity, qty from `tabLiquids Issuing Table` 
                         where parent = '{parent}' and issue_type = '{issue_type}'
                         order by to_date desc limit 1
                     """.format(
@@ -3192,9 +3190,9 @@ class LiquidsIssuing(Document):
                             + " : لا يمكن صرف "
                             + self.issue_type
                             + " إلى المركبة "
-                            + str(q.vehicle_no)
+                            + str(t.vehicle_no)
                             + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
-                            + str(q.entity_name)
+                            + str(q.entity)
                         )
 
                     if (
@@ -3208,9 +3206,9 @@ class LiquidsIssuing(Document):
                             + " : لا يمكن صرف "
                             + self.issue_type
                             + " إلى المركبة "
-                            + str(q.vehicle_no)
+                            + str(t.vehicle_no)
                             + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
-                            + str(q.entity_name)
+                            + str(q.entity)
                         )
                 if self.issue_type == "وقود":
                     t.qty = (
