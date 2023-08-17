@@ -33161,5 +33161,18 @@
   "name": "4cb342844b",
   "source_text": "Weight Per Unit",
   "translated_text": "\u0648\u0632\u0646 \u0627\u0644\u0627\u0631\u062a\u062c\u0627\u0639 \u0628\u0627\u0644\u062c\u0631\u0627\u0645"
+ },
+ {
+  "context": null,
+  "contributed": 0,
+  "contribution_docname": null,
+  "contribution_status": "",
+  "docstatus": 0,
+  "doctype": "Translation",
+  "language": "ar",
+  "modified": "2023-08-17 13:49:17.075730",
+  "name": "7052d8b94c",
+  "source_text": "Vehicles Report",
+  "translated_text": "\u062a\u0642\u0631\u064a\u0631 \u062a\u0641\u0635\u064a\u0644\u064a \u0644\u0644\u0645\u0631\u0643\u0628\u0627\u062a"
  }
 ]
