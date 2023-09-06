@@ -26,14 +26,7 @@
   "estimated_price",
   "selling_price",
   "tax_percent",
-  "tax_amount",
-  "sale_id",
-  "customer_code",
-  "username",
-  "umachine",
-  "uaction",
-  "pri_key",
-  "udate"
+  "tax_amount"
  ],
  "fields": [
   {
@@ -195,50 +188,15 @@
    "read_only": 1
   },
   {
-   "fieldname": "sale_id",
-   "fieldtype": "Int",
-   "label": "sale_id"
-  },
-  {
    "fieldname": "tax_amount",
    "fieldtype": "Int",
    "label": "TAX_AMOUNT"
-  },
-  {
-   "fieldname": "customer_code",
-   "fieldtype": "Int",
-   "label": "CUSTOMER_CODE"
-  },
-  {
-   "fieldname": "username",
-   "fieldtype": "Data",
-   "label": "USERNAME"
-  },
-  {
-   "fieldname": "umachine",
-   "fieldtype": "Data",
-   "label": "UMACHINE"
-  },
-  {
-   "fieldname": "uaction",
-   "fieldtype": "Data",
-   "label": "UACTION"
-  },
-  {
-   "fieldname": "pri_key",
-   "fieldtype": "Int",
-   "label": "PRI_KEY"
-  },
-  {
-   "fieldname": "udate",
-   "fieldtype": "Data",
-   "label": "UDATE"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-07-30 12:25:54.574288",
+ "modified": "2023-09-01 16:07:03.032217",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Scrapped Vehicles Table",

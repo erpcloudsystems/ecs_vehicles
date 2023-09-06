@@ -507,6 +507,29 @@ class Vehicles(Document):
 
             if self.private_no == self.new_private_no:
                 frappe.throw(" يجب إختيار رقم ملاكي جديد للمركبة ")
+            if (
+                frappe.db.exists(
+                    "Vehicles",
+                    [
+                        ["private_no", "=", self.new_private_no],
+                        ["name", "!=", self.name],
+                        ["new_private_no", "!=", "0"],
+                    ],
+                )
+                and self.new_private_no != "0"
+            ):
+                vehicle_no = frappe.db.get_value(
+                    "Vehicles",
+                    [
+                        ["private_no", "=", self.new_private_no],
+                        ["name", "!=", self.name],
+                        ["new_private_no", "!=", "0"],
+                    ],
+                    ["vehicle_no"],
+                )
+                frappe.throw(
+                    "لا يمكن تخصيص رقم الملاكي لانه مستخدم في المركبة رقم " + vehicle_no
+                )
 
             else:
                 private = self.append("private_no_table", {})
@@ -677,6 +700,10 @@ class Vehicles(Document):
 
             if self.attached_entity == self.new_attached_entity:
                 frappe.throw(" يجب إختيار جهة إلحاق جديدة للمركبة ")
+
+            if self.entity_name == self.new_attached_entity:
+                frappe.throw(" يجب إختيار جهة إلحاق مختلفة عن الجهة الأساسية للمركبة ")
+
             else:
                 attached_entity = self.append("attached_entity_logs", {})
                 attached_entity.date = self.edit_attached_entity_date

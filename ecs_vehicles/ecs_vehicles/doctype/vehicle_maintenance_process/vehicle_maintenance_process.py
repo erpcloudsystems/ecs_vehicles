@@ -133,6 +133,7 @@ class VehicleMaintenanceProcess(Document):
             AND vehicle_maintenance_process.fiscal_year = "{fiscal_year}"
             AND vehicle_maintenance_process.name != "{name}"
             AND vehicle_maintenance_process.job_order_no  is not NULL
+            AND vehicle_maintenance_process.cancel_ezn  = 0
             """.format(
                     vehicles=self.vehicles, fiscal_year=self.fiscal_year, name=self.name
                 ),
@@ -219,7 +220,7 @@ class VehicleMaintenanceProcess(Document):
                                 "Item", row.item_code, "warehouse"
                             ),
                             "ezn_no": self.ezn_no,
-                            "ezn_date": self.date,
+                            "ezn_date": self.ezn_date,
                             "doc_type": "Vehicle Maintenance Process",
                             "geha_code": self.entity_name,
                             "year": self.fiscal_year,
@@ -333,7 +334,7 @@ class VehicleMaintenanceProcess(Document):
                                         "Item", row.item_code, "warehouse"
                                     ),
                                     "ezn_no": self.ezn_no,
-                                    "ezn_date": self.date,
+                                    "ezn_date": self.ezn_date,
                                     "doc_type": "Vehicle Maintenance Process",
                                     "geha_code": self.entity_name,
                                     "year": self.fiscal_year,
@@ -435,6 +436,7 @@ class VehicleMaintenanceProcess(Document):
         for row in self.kashf_ohda_item:
             if row.maintenance_method == "إصلاح خارجي" and not row.maintenance_type:
                 frappe.throw(" برجاء تحديد طبيعة الإصلاح للإصلاح الخارجي ")
+        #                                                and (stock_ledger.doc_type = "Vehicle Maintenance Process" and stock_ledger.maintenance_method != "إصلاح خارجي")
 
         # if(item.include_in_maintenance_order && emdad2023emdad_2023 !ezn_egraa_item2.includes(item.name.toString()) && item.maintenance_method === "إذن صرف وإرتجاع" && !item.kle) {
         for item in self.kashf_ohda_item:
@@ -445,7 +447,6 @@ class VehicleMaintenanceProcess(Document):
                                                 where stock_ledger.vic_serial = '{vehicles}'
                                                 and stock_ledger.part_universal_code = '{item_code}'
                                                 and stock_ledger.del_flag = "0"
-                                                and (stock_ledger.doc_type = "Vehicle Maintenance Process" and stock_ledger.maintenance_method != "إصلاح خارجي")
                                                 order by stock_ledger.action_date desc limit 1
                                                 """.format(
                     vehicles=self.vehicles, item_code=item.item_code
@@ -535,8 +536,8 @@ class VehicleMaintenanceProcess(Document):
                 self.get_in_words2()
                 # self.aamr_shoghl_total_in_words = in_words(self.aamr_shoghl_total_amount, "جنيها مصريا فقط لا غير")
 
-        if self.total:
-            self.purchase_inwords = in_words(self.total, "جنيها مصريا فقط لا غير")
+        # if self.total:
+        #     self.purchase_inwords = in_words(self.total, "جنيها مصريا فقط لا غير")
 
         if self.job_order_date:
             self.work_end_date = add_to_date(self.job_order_date, days=10)
@@ -591,14 +592,15 @@ class VehicleMaintenanceProcess(Document):
         past_date = add_months(today, -32)
         last_sarf_date = frappe.db.sql(
             """ select 
-                                                  item.item_code, item.item_name, item.item_group, item.description,
+                                                   item.item_code, item.item_name, item.item_group, item.description,
                                                 karta_ledger.action_date, karta_ledger.part_qty	
                                                 from `tabKarta Ledger Entry` karta_ledger
-                                                JOIN  `tabItem` item ON item.item_code = part_universal_code
-                                                where karta_ledger.vic_serial = '{vehicles}'
-                                                and item.item_group = '{item_group}'
+                                                JOIN  `tabItem` item ON item.item_code = part_universal_code      
+                                                where item.item_group = '{item_group}'
                                                 and karta_ledger.del_flag = "0"
-                                                and karta_ledger.action_date > "{past_date}"
+                                                group by item.item_code
+                                                order by item.item_code
+                                                limit 30
                                                 """.format(
                 vehicles=doc.vehicles, item_group="البطاريات", past_date=past_date
             ),
@@ -613,8 +615,6 @@ class VehicleMaintenanceProcess(Document):
             table.qty = 1
             table.include_in_maintenance_order = 0
             table.namozag_no = "1"
-            table.last_issue_detail = row.action_date
-            table.last_sarf_qty = row.part_qty
 
     @frappe.whitelist()
     def update_table(doc, method=None):
@@ -760,7 +760,7 @@ class VehicleMaintenanceProcess(Document):
             table.amount = row.amount
         doc.save()
         frappe.msgprint(" تم إنشاء أمر شغل بنجاح ")
-
+        
     @frappe.whitelist()
     def add_maintenance_invoice(doc, method=None):
         if not doc.job_order_no:
@@ -826,67 +826,24 @@ class VehicleMaintenanceProcess(Document):
                 new_doc.name, new_doc.name
             )
         )
-
-    @frappe.whitelist()
-    def create_purchase_order_request(doc, method=None):
-        doc.order_request_items = []
-        for row in doc.ezn_egraa_item:
-            if row.maintenance_method == "حافظة مشتريات":
-                table = doc.append("order_request_items", {})
-                table.item_code = row.item_code
-                table.item_name = row.item_name
-                table.item_group = row.item_group
-                table.description = row.description
-                table.brand = row.brand
-                table.default_unit_of_measure = row.default_unit_of_measure
-                table.qty = row.qty
-                table.disc = row.disc
-                table.prt_prc = 0
-                table.amount = 0
-        doc.save()
-        frappe.msgprint(" تم إنشاء طلب عرض أسعار مشتريات بنجاح ")
-
-    @frappe.whitelist()
-    def create_mozakira_purchase(doc, method=None):
-        doc.presentation_note = []
-        total = 0
-        for row in doc.order_request_items:
-            table = doc.append("presentation_note", {})
-            table.item_code = row.item_code
-            table.item_name = row.item_name
-            table.item_group = row.item_group
-            table.description = row.description
-            table.brand = row.brand
-            table.default_unit_of_measure = row.default_unit_of_measure
-            table.qty = row.qty
-            table.disc = row.disc
-            table.rate = row.prt_prc
-            table.amount = float(row.prt_prc) * float(row.qty)
-            total += table.amount
-        doc.total = total
-        doc.save()
-        frappe.msgprint(" تم إنشاء مذكرة عرض مشتريات بنجاح ")
-
-    @frappe.whitelist()
-    def create_purchase_import_order(doc, method=None):
-        doc.export_order_items = []
-        total = 0
-        for row in doc.presentation_note:
-            table = doc.append("export_order_items", {})
-            table.item_code = row.item_code
-            table.item_name = row.item_name
-            table.item_group = row.item_group
-            table.description = row.description
-            table.brand = row.brand
-            table.default_unit_of_measure = row.default_unit_of_measure
-            table.qty = row.qty
-            table.disc = row.disc
-            table.prt_prc = row.rate
-            table.total_amount = float(row.rate) * float(row.qty)
-            total += table.total_amount
-        doc.total = total
-        doc.save()
-        frappe.msgprint(" تم إنشاء مذكرة عرض مشتريات بنجاح ")
+    # @frappe.whitelist()
+    # def create_purchase_order_request(doc, method=None):
+    #     doc.order_request_items = []
+    #     for row in doc.ezn_egraa_item:
+    #         if row.maintenance_method == "حافظة مشتريات":
+    #             table = doc.append("order_request_items", {})
+    #             table.item_code = row.item_code
+    #             table.item_name = row.item_name
+    #             table.item_group = row.item_group
+    #             table.description = row.description
+    #             table.brand = row.brand
+    #             table.default_unit_of_measure = row.default_unit_of_measure
+    #             table.qty = row.qty
+    #             table.disc = row.disc
+    #             table.prt_prc = 0
+    #             table.amount = 0
+    #     doc.save()
+    #     frappe.msgprint(" تم إنشاء طلب عرض أسعار مشتريات بنجاح ")
 
     @frappe.whitelist()
     def print_internal_ezn(doc, method=None):

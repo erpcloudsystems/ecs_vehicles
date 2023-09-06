@@ -1241,7 +1241,7 @@ class LiquidsIssuing(Document):
                 )
                 current_vehicles = []
                 for t in gas_valid_vehicle_list:
-                    current_vehicles.append(t.vehicle)
+                    current_vehicles.append(str(t.vehicle))
                     vehicle_status = frappe.db.get_value(
                         "Vehicles", t.vehicle, "vehicle_status"
                     )
@@ -1587,11 +1587,6 @@ class LiquidsIssuing(Document):
         if self.issue_to == "جهة":
             self.set("specified_vehicles_issuing_table", [])
             self.set("qty_per_liquid", [])
-            self.set("fixed_vehicles", [])
-            self.set("broken_vehicles", [])
-            self.set("scraped_vehicles", [])
-            self.set("transferred_to_vehicles", [])
-            self.set("transferred_from_vehicles", [])
             self.set("previous_vehicles_issuing_table", [])
             self.set("gas_per_vehicle_type_table", [])
 
@@ -3694,3 +3689,43 @@ class LiquidsIssuing(Document):
                     issue_no=self.name
                 )
             )
+
+
+@frappe.whitelist()
+def remove_duplicated_privateno():
+    query = frappe.db.sql(
+        """
+        SELECT `tabVehicles`.name, `tabVehicles`.private_no, `tabPrivate Plate Logs`.date
+        From `tabVehicles`
+        JOIN `tabPrivate Plate Logs` ON `tabVehicles`.name = `tabPrivate Plate Logs`.parent
+        where `tabVehicles`.private_no = `tabPrivate Plate Logs`.value
+        and `tabPrivate Plate Logs`.idx = (select max(idx) from `tabPrivate Plate Logs` where `tabPrivate Plate Logs`.parent = `tabVehicles`.name)
+        ORDER BY `tabPrivate Plate Logs`.date DESC
+        """,
+        as_dict=1,
+    )
+    formatted_dict = {}
+    for row in query:
+        if row.private_no not in formatted_dict:
+            formatted_dict[row.private_no] = [{row.name: row.date}]
+        else:
+            formatted_dict[row.private_no].append({row.name: row.date})
+    filtered_dict = []
+    for row in formatted_dict:
+        if len(formatted_dict[row]) > 1:
+            filtered_dict.append({row: formatted_dict[row]})
+    print(filtered_dict)
+    for row in filtered_dict:
+        for private_no in row:
+            for vehicle in row[private_no][1:]:
+                for vehicle_name in vehicle:
+                    frappe.db.sql(
+                        """
+                        Update `tabVehicles`
+                        set private_no = NULL
+                        where name = "{vehicle_name}"
+                        """.format(
+                            vehicle_name=vehicle_name, private_no=private_no
+                        )
+                    )
+                    frappe.db.commit()

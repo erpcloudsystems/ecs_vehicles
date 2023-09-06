@@ -186,7 +186,7 @@ frappe.ui.form.on("Liquids Issuing", 'refresh', function (frm) {
     frm.set_df_property("specified_vehicles_issuing_table", "cannot_add_rows", true);
     const start_day = frappe.datetime.month_start();
     const last_day = frappe.datetime.month_end();
-    cur_frm.set_value("compare_with_date", frappe.datetime.add_months(start_day, -1));
+    // cur_frm.set_value("compare_with_date", frappe.datetime.add_months(start_day, -1));
 });
 
 frappe.ui.form.on('Liquids Issuing', {

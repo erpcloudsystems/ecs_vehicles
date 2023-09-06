@@ -279,7 +279,7 @@ class Boats(Document):
     def validate(self):
         if len(self.engine_table) > 2:
             frappe.throw(" لا يمكن إضافة أكثر من محركين للانش " + self.boat_no)
-        elif not self.engine_no or not self.engine_no2:
+        elif not self.engine_no and not self.engine_no2:
             self.boat_validity = "عاطلة"
 
         for row in self.engine_table:

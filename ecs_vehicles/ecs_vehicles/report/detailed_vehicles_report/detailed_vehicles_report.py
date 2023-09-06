@@ -20,172 +20,170 @@ def get_columns():
             "fieldname": "name",
             "fieldtype": "Link",
             "options": "Vehicles",
-            "width": 110
+            "width": 110,
         },
         {
             "label": _("رقم الشرطة"),
             "fieldname": "vehicle_no",
             "fieldtype": "Data",
-            "width": 110
-        },
-        {
-            "label": _("النوع"),
-            "fieldname": "vehicle_type",
-            "fieldtype": "Data",
-            "width": 80
-        },
-        {
-            "label": _("الشكل"),
-            "fieldname": "vehicle_shape",
-            "fieldtype": "Data",
-            "width": 140
-        },
-        {
-            "label": _("الماركة"),
-            "fieldname": "vehicle_brand",
-            "fieldtype": "Data",
-            "width": 100
-        },
-        {
-            "label": _("الطراز"),
-            "fieldname": "vehicle_style",
-            "fieldtype": "Data",
-            "width": 100
-        },
-        {
-            "label": _("الموديل"),
-            "fieldname": "vehicle_model",
-            "fieldtype": "Data",
-            "width": 80
-        },
-        {
-            "label": _("اللون"),
-            "fieldname": "vehicle_color",
-            "fieldtype": "Data",
-            "width": 120
-        },
-        {
-            "label": _("الجهة"),
-            "fieldname": "entity_name",
-            "fieldtype": "Data",
-            "width": 180
-        },
-        {
-            "label": _("رقم الموتور"),
-            "fieldname": "motor_no",
-            "fieldtype": "Data",
-            "width": 100
-        },
-        {
-            "label": _("رقم الشاسيه"),
-            "fieldname": "chassis_no",
-            "fieldtype": "Data",
-            "width": 100
-        },
-        {
-            "label": _("رقم الملاكي"),
-            "fieldname": "private_no",
-            "fieldtype": "Data",
-            "width": 120
-        },
-        {
-            "label": _("الحالة"),
-            "fieldname": "vehicle_status",
-            "fieldtype": "Data",
-            "width": 110
-        },
-        {
-            "label": _("جهة الصيانة"),
-            "fieldname": "maintenance_entity",
-            "fieldtype": "Data",
-            "width": 180
-        },
-        {
-            "label": _("نوع التجهيز"),
-            "fieldname": "processing_type",
-            "fieldtype": "Data",
-            "width": 120
-        },
-        {
-            "label": _("مخصص الصرف"),
-            "fieldname": "exchange_allowance",
-            "fieldtype": "Data",
-            "width": 200
-        },
-        {
-            "label": _("تاريخ الحيازة"),
-            "fieldname": "possession_date",
-            "fieldtype": "Date",
-            "width": 120
-        },
-        {
-            "label": _("نوع الوقود"),
-            "fieldname": "fuel_type",
-            "fieldtype": "Data",
-            "width": 100
-        },
-        {
-            "label": _("السعة اللترية"),
-            "fieldname": "litre_capacity",
-            "fieldtype": "Data",
-            "width": 100
-        },
-        {
-            "label": _("عدد السلندرات"),
-            "fieldname": "cylinder_count",
-            "fieldtype": "Data",
-            "width": 110
-        },
-        {
-            "label": _("بون الوقود"),
-            "fieldname": "fuel_voucher",
-            "fieldtype": "Data",
-            "width": 150
-        },
-        {
-            "label": _("مقرر الوقود"),
-            "fieldname": "litre_count",
-            "fieldtype": "Data",
-            "width": 90
+            "width": 110,
         },
         {
             "label": _("نوع الزيت"),
             "fieldname": "oil_type",
             "fieldtype": "Data",
-            "width": 150
+            "width": 150,
         },
         {
             "label": _("مقرر الزيت"),
             "fieldname": "oil_count",
             "fieldtype": "Data",
-            "width": 90
+            "width": 90,
+        },
+        {
+            "label": _("النوع"),
+            "fieldname": "vehicle_type",
+            "fieldtype": "Data",
+            "width": 80,
+        },
+        {
+            "label": _("الشكل"),
+            "fieldname": "vehicle_shape",
+            "fieldtype": "Data",
+            "width": 140,
+        },
+        {
+            "label": _("الماركة"),
+            "fieldname": "vehicle_brand",
+            "fieldtype": "Data",
+            "width": 100,
+        },
+        {
+            "label": _("الطراز"),
+            "fieldname": "vehicle_style",
+            "fieldtype": "Data",
+            "width": 100,
+        },
+        {
+            "label": _("الموديل"),
+            "fieldname": "vehicle_model",
+            "fieldtype": "Data",
+            "width": 80,
+        },
+        {
+            "label": _("اللون"),
+            "fieldname": "vehicle_color",
+            "fieldtype": "Data",
+            "width": 120,
+        },
+        {
+            "label": _("الجهة"),
+            "fieldname": "entity_name",
+            "fieldtype": "Data",
+            "width": 180,
+        },
+        {
+            "label": _("رقم الموتور"),
+            "fieldname": "motor_no",
+            "fieldtype": "Data",
+            "width": 100,
+        },
+        {
+            "label": _("رقم الشاسيه"),
+            "fieldname": "chassis_no",
+            "fieldtype": "Data",
+            "width": 100,
+        },
+        {
+            "label": _("رقم الملاكي"),
+            "fieldname": "private_no",
+            "fieldtype": "Data",
+            "width": 120,
+        },
+        {
+            "label": _("الحالة"),
+            "fieldname": "vehicle_status",
+            "fieldtype": "Data",
+            "width": 110,
+        },
+        {
+            "label": _("جهة الصيانة"),
+            "fieldname": "maintenance_entity",
+            "fieldtype": "Data",
+            "width": 180,
+        },
+        {
+            "label": _("نوع التجهيز"),
+            "fieldname": "processing_type",
+            "fieldtype": "Data",
+            "width": 120,
+        },
+        {
+            "label": _("مخصص الصرف"),
+            "fieldname": "exchange_allowance",
+            "fieldtype": "Data",
+            "width": 200,
+        },
+        {
+            "label": _("تاريخ الحيازة"),
+            "fieldname": "possession_date",
+            "fieldtype": "Date",
+            "width": 120,
+        },
+        {
+            "label": _("نوع الوقود"),
+            "fieldname": "fuel_type",
+            "fieldtype": "Data",
+            "width": 100,
+        },
+        {
+            "label": _("السعة اللترية"),
+            "fieldname": "litre_capacity",
+            "fieldtype": "Data",
+            "width": 100,
+        },
+        {
+            "label": _("عدد السلندرات"),
+            "fieldname": "cylinder_count",
+            "fieldtype": "Data",
+            "width": 110,
+        },
+        {
+            "label": _("بون الوقود"),
+            "fieldname": "fuel_voucher",
+            "fieldtype": "Data",
+            "width": 150,
+        },
+        {
+            "label": _("مقرر الوقود"),
+            "fieldname": "litre_count",
+            "fieldtype": "Data",
+            "width": 90,
         },
         {
             "label": _("بون الغاز"),
             "fieldname": "gas_voucher",
             "fieldtype": "Data",
-            "width": 150
+            "width": 150,
         },
         {
             "label": _("مقرر الغاز"),
             "fieldname": "gas_count",
             "fieldtype": "Data",
-            "width": 90
+            "width": 90,
         },
         {
             "label": _("بون الغسيل"),
             "fieldname": "washing_voucher",
             "fieldtype": "Data",
-            "width": 150
+            "width": 150,
         },
         {
             "label": _("مقرر الغسيل"),
             "fieldname": "washing_count",
             "fieldtype": "Data",
-            "width": 95
+            "width": 95,
         },
-
-
     ]
 
 
@@ -236,7 +234,8 @@ def get_item_price_qty_data(filters):
     # if filters.get("to_date"):
     #     conditions += " and creation <= %(to_date)s"
 
-    item_results = frappe.db.sql("""
+    item_results = frappe.db.sql(
+        """
         Select
             name as name,
             vehicle_no as vehicle_no,
@@ -271,42 +270,115 @@ def get_item_price_qty_data(filters):
         where docstatus = 0
         {conditions}
         order by modified desc
-        """.format(conditions=conditions), filters, as_dict=1)
+        """.format(
+            conditions=conditions
+        ),
+        filters,
+        as_dict=1,
+    )
 
     result = []
     if item_results:
         for item_dict in item_results:
             data = {
-                'name': item_dict.name,
-                'vehicle_no': item_dict.vehicle_no if item_dict.vehicle_no else item_dict.police_id,
-                'vehicle_type': item_dict.vehicle_type if item_dict.vehicle_type else "-----------",
-                'vehicle_shape': item_dict.vehicle_shape if item_dict.vehicle_shape else "-----------",
-                'vehicle_brand': item_dict.vehicle_brand if item_dict.vehicle_brand else "-----------",
-                'vehicle_style': item_dict.vehicle_style if item_dict.vehicle_style else "-----------",
-                'vehicle_model': item_dict.vehicle_model if item_dict.vehicle_model else "-----------",
-                'vehicle_color': item_dict.vehicle_color if item_dict.vehicle_color else "-----------",
-                'entity_name': item_dict.entity_name if item_dict.entity_name else "-----------",
-                'motor_no': item_dict.motor_no if item_dict.motor_no else "-----------",
-                'chassis_no': item_dict.chassis_no if item_dict.chassis_no else "-----------",
-                'private_no': item_dict.private_no if item_dict.private_no else "-----------",
-                'vehicle_status': item_dict.vehicle_status if item_dict.vehicle_status else "-----------",
-                'maintenance_entity': item_dict.maintenance_entity if item_dict.maintenance_entity else "-----------",
-                'processing_type': item_dict.processing_type if item_dict.processing_type else "-----------",
-                'exchange_allowance': item_dict.exchange_allowance if item_dict.exchange_allowance else "-----------",
-                'possession_date': item_dict.possession_date if item_dict.possession_date else "-----------",
-                'fuel_type': item_dict.fuel_type if item_dict.fuel_type else "-----------",
-                'litre_capacity': item_dict.litre_capacity if item_dict.litre_capacity else "-----------",
-                'cylinder_count': item_dict.cylinder_count if item_dict.cylinder_count else "-----------",
-                'fuel_voucher': item_dict.fuel_voucher if item_dict.fuel_voucher else "-----------",
-                'litre_count': item_dict.litre_count if item_dict.litre_count else "-----------",
-                'oil_type': item_dict.oil_type if item_dict.oil_type else "-----------",
-                'oil_count': item_dict.oil_count if item_dict.oil_count else "-----------",
-                'gas_voucher': item_dict.gas_voucher if item_dict.gas_voucher else "-----------",
-                'gas_count': item_dict.gas_count if item_dict.gas_count else "-----------",
-                'washing_voucher': item_dict.washing_voucher if item_dict.washing_voucher else "-----------",
-                'washing_count': item_dict.washing_count if item_dict.washing_count else "-----------",
+                "name": item_dict.name,
+                "vehicle_no": item_dict.vehicle_no
+                if item_dict.vehicle_no
+                else item_dict.police_id,
+                "vehicle_type": item_dict.vehicle_type
+                if item_dict.vehicle_type
+                else "-----------",
+                "vehicle_shape": item_dict.vehicle_shape
+                if item_dict.vehicle_shape
+                else "-----------",
+                "vehicle_brand": item_dict.vehicle_brand
+                if item_dict.vehicle_brand
+                else "-----------",
+                "vehicle_style": item_dict.vehicle_style
+                if item_dict.vehicle_style
+                else "-----------",
+                "vehicle_model": item_dict.vehicle_model
+                if item_dict.vehicle_model
+                else "-----------",
+                "vehicle_color": item_dict.vehicle_color
+                if item_dict.vehicle_color
+                else "-----------",
+                "entity_name": item_dict.entity_name
+                if item_dict.entity_name
+                else "-----------",
+                "motor_no": item_dict.motor_no if item_dict.motor_no else "-----------",
+                "chassis_no": item_dict.chassis_no
+                if item_dict.chassis_no
+                else "-----------",
+                "private_no": item_dict.private_no
+                if item_dict.private_no
+                else "-----------",
+                "vehicle_status": item_dict.vehicle_status
+                if item_dict.vehicle_status
+                else "-----------",
+                "maintenance_entity": item_dict.maintenance_entity
+                if item_dict.maintenance_entity
+                else "-----------",
+                "processing_type": item_dict.processing_type
+                if item_dict.processing_type
+                else "-----------",
+                "exchange_allowance": item_dict.exchange_allowance
+                if item_dict.exchange_allowance
+                else "-----------",
+                "possession_date": item_dict.possession_date
+                if item_dict.possession_date
+                else "-----------",
+                "fuel_type": item_dict.fuel_type
+                if item_dict.fuel_type
+                else "-----------",
+                "litre_capacity": item_dict.litre_capacity
+                if item_dict.litre_capacity
+                else "-----------",
+                "cylinder_count": item_dict.cylinder_count
+                if item_dict.cylinder_count
+                else "-----------",
+                "fuel_voucher": item_dict.fuel_voucher
+                if item_dict.fuel_voucher
+                else "-----------",
+                "litre_count": item_dict.litre_count
+                if item_dict.litre_count
+                else "-----------",
+                "oil_type": item_dict.oil_type if item_dict.oil_type else "-----------",
+                "oil_count": item_dict.oil_count
+                if item_dict.oil_count
+                else "-----------",
+                "gas_voucher": item_dict.gas_voucher
+                if item_dict.gas_voucher
+                else "-----------",
+                "gas_count": item_dict.gas_count
+                if item_dict.gas_count
+                else "-----------",
+                "washing_voucher": item_dict.washing_voucher
+                if item_dict.washing_voucher
+                else "-----------",
+                "washing_count": item_dict.washing_count
+                if item_dict.washing_count
+                else "-----------",
             }
             result.append(data)
 
-        if filters.get("name") or filters.get("vehicle_type") or filters.get("vehicle_shape") or filters.get("vehicle_brand") or filters.get("vehicle_style") or filters.get("vehicle_model") or filters.get("vehicle_color") or filters.get("entity") or filters.get("motor_no") or filters.get("chassis_no") or filters.get("private_no") or filters.get("vehicle_status") or filters.get("maintenance_entity") or filters.get("processing_type") or filters.get("exchange_allowance") or filters.get("fuel_type") or filters.get("cylinder_count"):
+        if (
+            filters.get("name")
+            or filters.get("vehicle_type")
+            or filters.get("vehicle_shape")
+            or filters.get("vehicle_brand")
+            or filters.get("vehicle_style")
+            or filters.get("vehicle_model")
+            or filters.get("vehicle_color")
+            or filters.get("entity")
+            or filters.get("motor_no")
+            or filters.get("chassis_no")
+            or filters.get("private_no")
+            or filters.get("vehicle_status")
+            or filters.get("maintenance_entity")
+            or filters.get("processing_type")
+            or filters.get("exchange_allowance")
+            or filters.get("fuel_type")
+            or filters.get("cylinder_count")
+        ):
             return result

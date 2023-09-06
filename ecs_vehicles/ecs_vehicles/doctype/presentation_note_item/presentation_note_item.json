@@ -23,7 +23,6 @@
   "vehicles",
   "vehicle_no",
   "vehicle_brand",
-  "maintenance_order",
   "entity_name",
   "vehicle_model",
   "disc",
@@ -130,13 +129,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "maintenance_order",
-   "fieldtype": "Link",
-   "label": "\u0623\u0630\u0646 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
-   "options": "Maintenance Order",
-   "read_only": 1
-  },
-  {
    "fieldname": "entity_name",
    "fieldtype": "Link",
    "label": "\u0627\u0644\u062c\u0647\u0647 \u0627\u0644\u062a\u0627\u0628\u0639 \u0644\u0647\u0627",
@@ -221,7 +213,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-06-11 10:02:34.558335",
+ "modified": "2023-09-01 11:43:01.680995",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Presentation Note Item",

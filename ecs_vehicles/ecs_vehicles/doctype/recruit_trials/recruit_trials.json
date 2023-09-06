@@ -1,118 +1,118 @@
 {
- "actions": [],
- "allow_rename": 1,
- "autoname": "naming_series:",
- "creation": "2022-09-19 14:19:26.575603",
- "doctype": "DocType",
- "editable_grid": 1,
- "engine": "InnoDB",
- "field_order": [
-  "naming_series",
-  "recruit",
-  "employee_name",
-  "employment_type",
-  "violation_description",
-  "column_break_4",
-  "trial_type",
-  "trial_date",
-  "amended_from"
- ],
- "fields": [
-  {
-   "fieldname": "recruit",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Recruit",
-   "options": "Employee"
-  },
-  {
-   "fieldname": "violation_description",
-   "fieldtype": "Small Text",
-   "label": "Violation Description"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Recruit Trials",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_4",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fetch_from": "recruit.employment_type",
-   "fieldname": "employment_type",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Employment Type",
-   "options": "Employment Type",
-   "read_only": 1
-  },
-  {
-   "default": "RT-",
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "hidden": 1,
-   "label": "Naming Series",
-   "options": "RT-"
-  },
-  {
-   "fieldname": "trial_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Trial Date"
-  },
-  {
-   "fieldname": "trial_type",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u062d\u0627\u0643\u0645\u0629",
-   "options": "\n\u0645\u062f\u0646\u064a\u0629\n\u0639\u0633\u0643\u0631\u064a\u0629"
-  },
-  {
-   "fetch_from": "recruit.employee_name",
-   "fieldname": "employee_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Employee Name",
-   "read_only": 1
-  }
- ],
- "index_web_pages_for_search": 1,
- "is_submittable": 1,
- "links": [],
- "modified": "2023-01-16 15:12:29.452853",
- "modified_by": "Administrator",
- "module": "Ecs Supply",
- "name": "Recruit Trials",
- "naming_rule": "By \"Naming Series\" field",
- "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
- "sort_field": "modified",
- "sort_order": "DESC",
- "states": [],
- "track_changes": 1,
- "track_seen": 1
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "naming_series:",
+    "creation": "2022-09-19 14:19:26.575603",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "naming_series",
+        "recruit",
+        "employee_name",
+        "employment_type",
+        "violation_description",
+        "column_break_4",
+        "trial_type",
+        "trial_date",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "fieldname": "recruit",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Recruit",
+            "options": "Employee"
+        },
+        {
+            "fieldname": "violation_description",
+            "fieldtype": "Small Text",
+            "label": "Violation Description"
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "hidden": 1,
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "Recruit Trials",
+            "print_hide": 1,
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_4",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fetch_from": "recruit.employment_type",
+            "fieldname": "employment_type",
+            "fieldtype": "Link",
+            "hidden": 1,
+            "label": "Employment Type",
+            "options": "Employment Type",
+            "read_only": 1
+        },
+        {
+            "default": "RT-",
+            "fieldname": "naming_series",
+            "fieldtype": "Select",
+            "hidden": 1,
+            "label": "Naming Series",
+            "options": "RT-"
+        },
+        {
+            "fieldname": "trial_date",
+            "fieldtype": "Date",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Trial Date"
+        },
+        {
+            "fieldname": "trial_type",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u062d\u0627\u0643\u0645\u0629",
+            "options": "\n\u0645\u062f\u0646\u064a\u0629\n\u0639\u0633\u0643\u0631\u064a\u0629"
+        },
+        {
+            "fetch_from": "recruit.employee_name",
+            "fieldname": "employee_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Employee Name",
+            "read_only": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2023-01-16 15:12:29.452853",
+    "modified_by": "Administrator",
+    "module": "Ecs Vehicles",
+    "name": "Recruit Trials",
+    "naming_rule": "By \"Naming Series\" field",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1,
+    "track_seen": 1
 }

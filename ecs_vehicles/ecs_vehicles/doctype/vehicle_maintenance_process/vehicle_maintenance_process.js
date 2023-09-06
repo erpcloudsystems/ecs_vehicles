@@ -244,7 +244,7 @@ frappe.ui.form.on('Vehicle Maintenance Process', {
 			frm.set_df_property("aamr_shoghl_total_in_words", "read_only", false);
 			frm.set_df_property("edit_in_words3", "hidden", false);
 			frm.set_df_property("purchase_invoices", "read_only", false);
-			frm.set_df_property("invoice_no", "read_only", false);
+			// frm.set_df_property("invoice_no", "read_only", false);
 			frm.set_df_property("add_maintenance_invoice", "hidden", false);
 			frm.set_df_property("add_job_order", "hidden", false);
 			frm.set_df_property("add_presentation_note_out", "hidden", false);
@@ -295,6 +295,18 @@ frappe.ui.form.on('Vehicle Maintenance Process', {
 		// frm.scroll_to_field('vehicle_maintenance_status');
 
 
+	},
+	add_maintenance_invoice: function (frm) {
+		frappe.call({
+			doc: frm.doc,
+			method: "add_maintenance_invoice",
+			freeze: 1,
+			callback: function (r) {
+				// frm.scroll_to_field('inv_no');
+				frm.refresh_fields();
+				frm.refresh();
+			}
+		});
 	},
 	setup: function (frm) {
 		frm.set_query("vehicles", function () {
@@ -360,55 +372,19 @@ frappe.ui.form.on('Vehicle Maintenance Process', {
 		});
 	},
 
+	// create_purchase_order_request: function (frm) {
+	// 	frappe.call({
+	// 		doc: frm.doc,
+	// 		method: "create_purchase_order_request",
+	// 		freeze: 1,
+	// 		callback: function (r) {
+	// 			frm.scroll_to_field('mister');
+	// 			frm.refresh_fields();
+	// 			frm.refresh();
+	// 		}
+	// 	});
+	// },
 
-	add_maintenance_invoice: function (frm) {
-		frappe.call({
-			doc: frm.doc,
-			method: "add_maintenance_invoice",
-			freeze: 1,
-			callback: function (r) {
-				// frm.scroll_to_field('inv_no');
-				frm.refresh_fields();
-				frm.refresh();
-			}
-		});
-	},
-	create_purchase_order_request: function (frm) {
-		frappe.call({
-			doc: frm.doc,
-			method: "create_purchase_order_request",
-			freeze: 1,
-			callback: function (r) {
-				frm.scroll_to_field('mister');
-				frm.refresh_fields();
-				frm.refresh();
-			}
-		});
-	},
-	create_mozakira_purchase: function (frm) {
-		frappe.call({
-			doc: frm.doc,
-			method: "create_mozakira_purchase",
-			freeze: 1,
-			callback: function (r) {
-				frm.scroll_to_field('request_for_quotations');
-				frm.refresh_fields();
-				frm.refresh();
-			}
-		});
-	},
-	create_purchase_import_order: function (frm) {
-		frappe.call({
-			doc: frm.doc,
-			method: "create_purchase_import_order",
-			freeze: 1,
-			callback: function (r) {
-				frm.scroll_to_field('company_name');
-				frm.refresh_fields();
-				frm.refresh();
-			}
-		});
-	},
 
 
 	group_type: function (frm) {
@@ -985,15 +961,15 @@ frappe.ui.form.on("Vehicle Maintenance Process", "print_ezn_ertgaa", function (f
 });
 
 
-frappe.ui.form.on("Vehicle Maintenance Process", "print_request_for_quotations", function (frm) {
-	var myWin = window.open('/printview?doctype=Vehicle%20Maintenance%20Process&name=' + cur_frm.doc.name + '&trigger_print=1&format=Request%20Order%20for%20Quotation%20Items&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
-});
-frappe.ui.form.on("Vehicle Maintenance Process", "print_mozakira_purchase", function (frm) {
-	var myWin = window.open('/printview?doctype=Vehicle%20Maintenance%20Process&name=' + cur_frm.doc.name + '&trigger_print=1&format=Direct%20Order%20Purchase&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
-});
-frappe.ui.form.on("Vehicle Maintenance Process", "print_purchase_order", function (frm) {
-	var myWin = window.open('/printview?doctype=Vehicle%20Maintenance%20Process&name=' + cur_frm.doc.name + '&trigger_print=1&format=Purchase%20Import&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
-});
+// frappe.ui.form.on("Vehicle Maintenance Process", "print_request_for_quotations", function (frm) {
+// 	var myWin = window.open('/printview?doctype=Vehicle%20Maintenance%20Process&name=' + cur_frm.doc.name + '&trigger_print=1&format=Request%20Order%20for%20Quotation%20Items&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+// });
+// frappe.ui.form.on("Vehicle Maintenance Process", "print_mozakira_purchase", function (frm) {
+// 	var myWin = window.open('/printview?doctype=Vehicle%20Maintenance%20Process&name=' + cur_frm.doc.name + '&trigger_print=1&format=Direct%20Order%20Purchase&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+// });
+// frappe.ui.form.on("Vehicle Maintenance Process", "print_purchase_order", function (frm) {
+// 	var myWin = window.open('/printview?doctype=Vehicle%20Maintenance%20Process&name=' + cur_frm.doc.name + '&trigger_print=1&format=Purchase%20Import&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+// });
 
 
 // frappe.ui.form.on("Kashf Ohda Item", "item_code", function(frm, cdt, cdn) {

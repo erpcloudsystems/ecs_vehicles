@@ -264,3 +264,18 @@ set `tabBoats`.engine_no2 = `tabEngine Table`.engine_no,
 WHERE `tabEngine Table`.parenttype = "Boats"
 AND `tabEngine Table`.parentfield = "engine_table"
 and `tabEngine Table`.idx =2;
+
+-- GET ALL VEHICLES HAS DUPLICAT private_no
+SELECT `tabVehicles`.name, `tabVehicles`.private_no, count(`tabVehicles`.private_no)
+FROM `tabVehicles`
+GROUP BY `tabVehicles`.private_no
+HAVING count(`tabVehicles`.private_no) > 1;
+
+
+SELECT `tabVehicles`.name, `tabVehicles`.private_no, `tabPrivate Plate Logs`.date
+From `tabVehicles`
+JOIN `tabPrivate Plate Logs` ON `tabVehicles`.name = `tabPrivate Plate Logs`.parent
+where `tabVehicles`.private_no = `tabPrivate Plate Logs`.value
+and `tabPrivate Plate Logs`.idx = (select max(idx) from `tabPrivate Plate Logs` where `tabPrivate Plate Logs`.parent = `tabVehicles`.name);
+
+[{'222300': [{'VEH-00765': datetime.date(2004, 10, 23)}, {'VEH-13794': datetime.date(2004, 6, 5)}]}]

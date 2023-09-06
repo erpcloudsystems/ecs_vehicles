@@ -7,12 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "voucher_type",
-  "qty",
-  "bon_code",
-  "notes",
-  "udate",
-  "ukey",
-  "locked"
+  "qty"
  ],
  "fields": [
   {
@@ -23,41 +18,17 @@
    "read_only": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "qty",
    "fieldtype": "Int",
    "in_list_view": 1,
    "label": "\u0627\u0644\u0643\u0645\u064a\u0629"
-  },
-  {
-   "fieldname": "bon_code",
-   "fieldtype": "Data",
-   "label": "BON_CODE"
-  },
-  {
-   "fieldname": "notes",
-   "fieldtype": "Data",
-   "label": "NOTES"
-  },
-  {
-   "fieldname": "udate",
-   "fieldtype": "Data",
-   "label": "UDATE"
-  },
-  {
-   "fieldname": "ukey",
-   "fieldtype": "Data",
-   "label": "UKEY"
-  },
-  {
-   "fieldname": "locked",
-   "fieldtype": "Data",
-   "label": "LOCKED"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-06-05 19:51:46.659627",
+ "modified": "2023-09-01 15:10:48.534253",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vouchers Count Table",

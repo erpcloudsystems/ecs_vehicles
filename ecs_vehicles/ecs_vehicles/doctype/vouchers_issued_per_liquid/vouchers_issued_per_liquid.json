@@ -15,16 +15,6 @@
   "notebook_count",
   "from_serial",
   "to_serial",
-  "section_break_oykby",
-  "print_num",
-  "taswia",
-  "detail_id",
-  "act_qty",
-  "column_break_icq8s",
-  "act_date",
-  "udate",
-  "bon_code",
-  "bon_version",
   "voucher_flag"
  ],
  "fields": [
@@ -86,54 +76,6 @@
    "label": "\u0627\u0644\u0643\u0645\u064a\u0629"
   },
   {
-   "fieldname": "bon_code",
-   "fieldtype": "Data",
-   "label": "BON_CODE"
-  },
-  {
-   "fieldname": "print_num",
-   "fieldtype": "Data",
-   "label": "PRINT_NUM"
-  },
-  {
-   "fieldname": "taswia",
-   "fieldtype": "Data",
-   "label": "TASWIA"
-  },
-  {
-   "fieldname": "detail_id",
-   "fieldtype": "Data",
-   "label": "DETAIL_ID"
-  },
-  {
-   "fieldname": "act_qty",
-   "fieldtype": "Data",
-   "label": "ACT_QTY"
-  },
-  {
-   "fieldname": "act_date",
-   "fieldtype": "Data",
-   "label": "ACT_DATE"
-  },
-  {
-   "fieldname": "udate",
-   "fieldtype": "Data",
-   "label": "UDATE"
-  },
-  {
-   "fieldname": "bon_version",
-   "fieldtype": "Data",
-   "label": "BON_VERSION"
-  },
-  {
-   "fieldname": "section_break_oykby",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_icq8s",
-   "fieldtype": "Column Break"
-  },
-  {
    "columns": 1,
    "fieldname": "vehicles_count",
    "fieldtype": "Data",
@@ -153,7 +95,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-07-27 08:48:04.805677",
+ "modified": "2023-09-01 15:14:22.808348",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vouchers Issued Per Liquid",

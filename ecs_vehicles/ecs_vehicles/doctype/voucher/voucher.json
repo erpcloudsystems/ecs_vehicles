@@ -57,13 +57,7 @@
   "vehicle_style",
   "vehicle_model",
   "vehicle_color",
-  "processing_type",
-  "tab_break_ie4we",
-  "bon_serial",
-  "bon_code",
-  "bon_version",
-  "sarfia_no",
-  "i_date"
+  "processing_type"
  ],
  "fields": [
   {
@@ -385,31 +379,6 @@
    "search_index": 1
   },
   {
-   "fieldname": "bon_serial",
-   "fieldtype": "Data",
-   "label": "BON_SERIAL"
-  },
-  {
-   "fieldname": "bon_code",
-   "fieldtype": "Data",
-   "label": "BON_CODE"
-  },
-  {
-   "fieldname": "bon_version",
-   "fieldtype": "Data",
-   "label": "BON_VERSION"
-  },
-  {
-   "fieldname": "sarfia_no",
-   "fieldtype": "Data",
-   "label": "SARFIA_NO"
-  },
-  {
-   "fieldname": "i_date",
-   "fieldtype": "Data",
-   "label": "I_DATE"
-  },
-  {
    "fieldname": "receipt_id",
    "fieldtype": "Data",
    "label": "\u0645\u0633\u062a\u0646\u062f \u0627\u0644\u0625\u0636\u0627\u0641\u0629",
@@ -442,11 +411,6 @@
    "search_index": 1
   },
   {
-   "fieldname": "tab_break_ie4we",
-   "fieldtype": "Tab Break",
-   "label": "\u0627\u0644\u0645\u0631\u062c\u0639"
-  },
-  {
    "default": "0",
    "fieldname": "lost",
    "fieldtype": "Check",
@@ -467,7 +431,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-07-17 12:58:11.690366",
+ "modified": "2023-09-01 14:02:10.741258",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Voucher",

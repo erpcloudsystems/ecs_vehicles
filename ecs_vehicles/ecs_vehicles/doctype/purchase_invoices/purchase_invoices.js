@@ -28,18 +28,7 @@ frappe.ui.form.on("Purchase Invoices", {
 
 
 	},
-	maintenance_order: function (frm) {
-		frappe.call({
-			doc: frm.doc,
-			method: "get_data",
-			callback: function (r) {
-				frm.refresh_fields();
-				frm.refresh();
-				frm.save();
 
-			}
-		});
-	}
 });
 
 frappe.ui.form.on("Purchase Invoices", "setup", function (frm) {
@@ -52,20 +41,61 @@ frappe.ui.form.on("Purchase Invoices", "date", function (frm) {
 
 
 frappe.ui.form.on("Purchase Invoices", "print_format1", function (frm) {
-	var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=محضر%20فحص%20اصلاح%20مركبه&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+	if (!frm.doc.tawreed_no) {
+		var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=محضر%20فحص%20اصلاح%20مركبه&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+	} else {
+		if (frm.doc.inv_no) {
+			frappe.call({
+				doc: frm.doc,
+				method: "set_inv_no",
+				callback: function (r) {
+					frm.refresh_field("inv_no");
+				}
+			});
+			var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=Quality%20Inspection%20Tawreed&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+		} else {
+			frappe.throw("برجاء إضافة رقم الفاتورة")
+		}
+	}
 });
 
 frappe.ui.form.on("Purchase Invoices", "print_format2", function (frm) {
 
-	if (!frm.doc.tawreed_no){
+	if (!frm.doc.tawreed_no) {
 		var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=%D8%A5%D8%B0%D9%86%20%D8%B5%D8%B1%D9%81&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
 	} else {
-
-	var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=Tawreed%20Order&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+		if (frm.doc.inv_no) {
+			frappe.call({
+				doc: frm.doc,
+				method: "set_inv_no",
+				callback: function (r) {
+					frm.refresh_field("inv_no");
+				}
+			});
+			var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=Tawreed%20Order&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+		} else {
+			frappe.throw("برجاء إضافة رقم الفاتورة")
+		}
 	}
 });
 
 frappe.ui.form.on("Purchase Invoices", "print_format3", function (frm) {
-	var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=%D8%A5%D8%B0%D9%86%20%D8%A5%D8%B1%D8%AA%D8%AC%D8%A7%D8%B9&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+	if (!frm.doc.tawreed_no) {
+		var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=%D8%A5%D8%B0%D9%86%20%D8%A5%D8%B1%D8%AA%D8%AC%D8%A7%D8%B9&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+	} else {
+		if (frm.doc.inv_no) {
+			frappe.call({
+				doc: frm.doc,
+				method: "set_inv_no",
+				callback: function (r) {
+					frm.refresh_field("inv_no");
+				}
+			});
+			var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=Tawreed%20Number%20Return&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+		} else {
+			frappe.throw("برجاء إضافة رقم الفاتورة")
+		}
+	}
+
 });
 

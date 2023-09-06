@@ -1,0 +1,1029 @@
+{% set user = frappe.db.get_value("User", frappe.session.user, ["full_name"])%}
+{% set numbers = ({"0":"٠","1":"١","2": "٢", "3":"٣", "4":"٤", "5":"٥", "6":"٦", "7":"٧", "8":"٨", "9":"٩"}) %}
+
+<div style="margin-right:5px">
+    <div class="sec-one">
+        <table class="table-border">
+            <tr>
+                {% set total = frappe.utils.fmt_money( doc.total_invoices)|string %}
+                {% set total_no = [] %}
+                {% for char in total | string %}
+                <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+                {% endfor %}
+                {% set total = total_no|join("")%}
+            <tr>
+                <td>
+                    <p class="right-row p-tag ">صرف المبلغ / </p>
+                </td>
+                <td>
+                    <p> {{ total }}</p>
+                </td>
+            </tr>
+        </table>
+        <table class="table-border">
+            <tr>
+                <td>
+                    <p class="right-row p-tag ">ضمن المبلغ / </p>
+                </td>
+                <td>
+                    <p><span style="  margin-right: 80px;"></span> </p>
+                </td>
+            </tr>
+        </table>
+        <!-- <p class="p-tag">جمـــهورية مصر العربية </p> -->
+
+        <div class="break">
+        </div>
+        <div style="display: flex; ">
+            <p class="p-tag" style="    margin-right: 10px;
+                font-weight: bold;
+                font-size: 11pt;">رقم الموافقة
+                <br>
+                تاريخ الموافقة
+                <br>
+                {% set series_no = [] %}
+                {% for char in doc.series_no | string %}
+                <span style="display: none;">{{ series_no.append(numbers.get(char|string, char)) }}</span>
+                {% endfor %}
+                رقم الاستمارة {{series_no|join("")}}
+            </p>
+        </div>
+    </div>
+    <div
+        style="display: flex;  text-align:center; font-weight:bold;font-size:7pt; justify-content: space-around; margin-top: -46px; margin-right: 291px;">
+        <div class="title-mid">
+            <p class="p-tag">
+                جمهورية مصر العربية
+                <br>
+                اســـــتــــمــارة لإعتمـــاد الــصــــــرف
+
+            </p>
+        </div>
+        <div style="border:2px solid black; height:fit-content; width:fit-content;margin-top: -41px;">
+            تاريخ الطباعة
+            <br>
+            {% set print_date = frappe.utils.today() %}
+
+            {% set date2 = [] %}
+            {% for char in print_date | string %}
+            <span style="display: none;">{{ date2.append(numbers.get(char|string, char)) }}</span>
+            {% endfor %}
+
+            {% set print_date = date2|join("") %}
+            {{ print_date.split("-")[2] }} / {{ print_date.split("-")[1] }} / {{ print_date.split("-")[0] }}
+            <br>
+            الطباعة بواسطة
+            <br>
+            {{user}}
+        </div>
+
+        <div class="title-left">
+
+            <p class="p-tag"> ( استمارة رقم "٥٠" ع.ح ) </p>
+        </div>
+    </div>
+</div>
+<div class="sec-two">
+    <div class="item1">
+        <p class="sign">الختم ذو التاريخ</p>
+        <img src="/files/—Pngtree—black circle ring_5487769.png" class="circle">
+        <p class="under-sign p-tag">كتب المراجعة</p>
+        <div class="line"></div>
+        <p class="uu-sign p-tag">رئـيــس الـقـســم</p>
+        <div class="line two"></div>
+
+    </div>
+    <div class="item2">
+        <table class="table-border">
+            <tr>
+                <td colspan="5" style="text-align: center; border-bottom: 2px solid black;">
+                    <p class="table-title">بـــــيانـــــــات الـــــفــــواتـــــير</p>
+                </td>
+            </tr>
+            <tr style="border-bottom:2px solid black;">
+                <td>
+                    <h4>قرش </h4>
+                </td>
+                <td>
+                    <h4>جنية </h4>
+                </td>
+                <td>
+                    <h4>التاريخ</h4>
+                </td>
+                <td>
+                    <h4>إذن الإضافة</h4>
+                </td>
+                <td>
+                    <h4>م / ش / ت</h4>
+                </td>
+            </tr>
+            {% set counter = doc.form_invoices | length %}
+            {% if counter < 7%} {% for row in doc.form_invoices %} {% set total='%0.2f' | format(row.total|float)
+                |string %} {% set total_no=[] %} {% for char in total | string %} <span style="display: none;">{{
+                total_no.append(numbers.get(char|string, char)) }}</span>
+                {% endfor %}
+                {% set total = total_no|join("")%}
+                <tr>
+                    <td>{{total.split(".")[1]}}</td>
+                    <td>{{ total.split(".")[0] }}</td>
+                    {% set date = [] %}
+                    {% for char in row.date | string %}
+                    <span style="display: none;">{{ date.append(numbers.get(char|string, char)) }}</span>
+                    {% endfor %}
+                    {% set date2 = date|join("") %}
+                    {% if row.date %}
+                    <td>{{date2.split("-")[0]}}/{{date2.split("-")[1]}}/{{date2.split("-")[2]}}</td>
+                    {% else %}
+                    <td> - </td>
+
+                    {%endif%}
+
+                    {% set inv_no = frappe.db.get_value("Purchase Invoices", row.purchase_invoices, ["inv_no"])%}
+
+
+                    {% if inv_no %}
+                    {% set inv_no_n = [] %}
+                    {% for char in inv_no | string %}
+                    <span style="display: none;">{{ inv_no_n.append(numbers.get(char|string, char)) }}</span>
+                    {% endfor %}
+                    <td>{{inv_no_n|join("")}}</td>
+
+                    {% else %}
+                    {% set inv_no_n = [] %}
+                    {% for char in row.add_no | string %}
+                    <span style="display: none;">{{ inv_no_n.append(numbers.get(char|string, char)) }}</span>
+                    {% endfor %}
+                    <td>{{inv_no_n|join("")}}</td>
+
+                    {%endif%}
+                    {% set order_no = frappe.db.get_value("Purchase Invoices", row.purchase_invoices, ["order_no"])%}
+
+                    {% if order_no %}
+                    {% set order_no_n = [] %}
+                    {% for char in order_no | string %}
+                    <span style="display: none;">{{ order_no_n.append(numbers.get(char|string, char)) }}</span>
+                    {% endfor %}
+                    <td>{{order_no_n|join("")}}</td>
+                    {% else %}
+                    {% set order_no_n = [] %}
+                    {% for char in row.p_no | string %}
+                    <span style="display: none;">{{ order_no_n.append(numbers.get(char|string, char)) }}</span>
+                    {% endfor %}
+                    <td>{{order_no_n|join("")}}</td>
+                    {% endif%}
+                </tr>
+                {% endfor %}
+                {% else%}
+                <tr>
+                    {% set total_invoices = frappe.utils.fmt_money( doc.total_invoices)|string %}
+
+                    {% set total = frappe.utils.fmt_money( doc.total_invoices)|string %}
+                    {% set total_no = [] %}
+                    {% for char in total | string %}
+                    <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+                    {% endfor %}
+                    {% set total = total_no|join("")%}
+
+                    <td>
+                        <div>{{total.split(".")[1]}}</div>
+                    </td>
+                    <td>
+                        <div>{{ total.split(".")[0] }}</div>
+                    </td>
+
+                    <td>
+                        <div>
+                            {% for row in range(7 ) %}
+
+                            <br>
+                            {% endfor %}
+                        </div>
+                    </td>
+                    <td>
+                        <div></div>
+                    </td>
+                    <td>
+                        <div></div>
+                    </td>
+
+
+                </tr>
+                {%endif%}
+                {% if counter > 0 %}
+                <tr>
+
+                    <td>
+                        <div>
+                            {% for row in range(7 - counter) %}
+
+                            <br>
+                            {% endfor %}
+                        </div>
+                    </td>
+                    <td>
+                        <div></div>
+                    </td>
+                    <td>
+                        <div></div>
+                    </td>
+                    <td>
+                        <div></div>
+                    </td>
+                    <td>
+                        <div></div>
+                    </td>
+
+
+                </tr>
+
+
+                {% endif %}
+                {% set total_invoices = frappe.utils.fmt_money( doc.total_invoices)|string %}
+                {% set total = frappe.utils.fmt_money( doc.total_invoices)|string %}
+                {% set total_no = [] %}
+                {% for char in total | string %}
+                <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+                {% endfor %}
+                {% set total = total_no|join("")%}
+
+                <tr>
+                    <td style="border-top: 2px solid black;">{{total.split(".")[1]}}</td>
+                    <td style="border-top: 2px solid black;">{{ total.split(".")[0] }}</td>
+                    <td></td>
+                    <td></td>
+                    <td>الجملة</td>
+                </tr>
+        </table>
+    </div>
+    <div class="item3">
+        <p>
+            مصلحة :
+            <span style="margin-right:10px; font-size:large; font-weight:medium;">الإدارة العامة لمركبات الشرطة</span>
+            <br>
+            قــــــســـــــم :
+            <span style="margin-right:10px; font-size:10pt; font-weight:medium;">الحســــــــابــات</span>
+            <br>
+            المبلغ المستحق إلي :
+            {% if doc.supplier %}
+            <span style="margin-right:10px; font-size:10pt; font-weight:bold; ">{{doc.supplier}}</span>
+            {% else %}
+            <span style="margin-right:10px; font-size:10pt; font-weight:bold; "> </span>
+
+            {% endif%}
+            <br>
+            بمـــــوجـــــــب :
+
+            {% if doc.bank_name %}
+            <span style="margin-right:10px; font-size:10pt; font-weight:bold; "> {{doc.bank_name}} </span>
+            {% else %}
+            <span style="margin-right:10px; font-size:10pt; font-weight:bold; "> </span>
+
+            {% endif%}
+            <br>
+            صار مراجعته ووجد علي صحة ومقدم لاعتماده إداريا وصرف القيمة بواسطة :
+            <br>
+            إذن صــــرف علي
+            <span style="margin-right:10px; font-size:large; font-weight:bold;"> ............................. </span>
+            <br>
+            شيك على البنك المركزى في
+            <span style="margin-right:10px; font-size:large; font-weight:bold;"> ............................. </span>
+            <br>
+            يـســحـــــب بـــاســــــم : .........................................................................
+            <br>
+            يرسل على حسابة الأتي :
+            {% set bank_account_no = [] %}
+            {% for char in doc.bank_account_no | string %}
+            <span style="display: none;">{{ bank_account_no.append(numbers.get(char|string, char)) }}</span>
+            {% endfor %}
+            {% if doc.bank_account_no %}
+            <span style="margin-right:10px; font-size:large; font-weight:bold; ">{{bank_account_no|join("")}}</span>
+            {% else %}
+            <span style="margin-right:10px; font-size:large; font-weight:bold; "> </span>
+
+            {% endif %}
+        </p>
+
+
+
+    </div>
+
+</div>
+<div class="sec-three">
+    <div class="wide-line">
+
+    </div>
+    <div>
+        <p> ( ب ) الكاتب المنوط : {{doc.assigned_author}} <span style="margin-right: 302px;"></span> تـقـيـد فـي
+            السـجــل برقـم .....................</p>
+    </div>
+
+    <div class="wide-line "> </div>
+    <div class="inner-sec-two">
+        <div class="right-rect">
+            <p>الختم ذو التاريخ</p>
+            <div class="box">
+                <p class="p-tag center" style="font-size:12pt;">
+                    الإدارة العامة لمركبات الشرطة<br>
+                    إدارة الميزانية والحسابات<br>
+                    {% set date = [] %}
+                    {% for char in doc.date | string %}
+                    <span style="display: none;">{{ date.append(numbers.get(char|string, char)) }}</span>
+                    {% endfor %}
+                    {% set date2 = date|join("") %}
+                    {% if doc.optional_date %}
+                    {% set optional_date = [] %}
+                    {% for char in doc.optional_date | string %}
+                    <span style="display: none;">{{ optional_date.append(numbers.get(char|string, char)) }}</span>
+                    {% endfor %}
+                    {{optional_date|join("")}}<br>
+
+                    {% else %}
+                    {{date2.split("-")[0]}}/{{date2.split("-")[1]}}/{{date2.split("-")[2]}}<br>
+
+                    {%endif%}
+                    قسم الحسابات
+                </p>
+            </div>
+            <p>روجــع </p>
+            <div style="margin-bottom: 20px;">......................</div>
+            <p>رئيس المصلحة</p>
+            <p class="general" style="    margin-top: 11px;">لـــــواء/ ................................</p>
+            <p>مدير الادارة العامة لمركبات الشرطة </p>
+
+        </div>
+        <table class="table-border1">
+            <tr>
+                <td colspan="7" style="text-align: center;
+                    border-bottom: 2px solid;
+                    border-right: 2px solid; ">
+                    <p class="table-title1">الاعتماد الاداري ونوع الخصم </p>
+                </td>
+                <td rowspan="3" style="text-align: center;">
+                    <p style="font-size: 8pt;"> عــدد
+                        <br>
+                        المرفقـات
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7">
+                    <p> </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="border-right: 2px solid black; border-bottom: 2px solid black;">
+                    <p>نوع الخصم</p>
+                </td>
+                <td style="    border-bottom: 2px solid black;">
+                    <p>بيــــانـــــات</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="border-right: 2px solid black;">
+                    <p>قرش</p>
+                </td>
+                <td>
+                    <p>جنيه</p>
+                </td>
+                <td>
+                    <p>قسم</p>
+                </td>
+                <td>
+                    <p>فرع</p>
+                </td>
+                <td>
+                    <p>فصل</p>
+                </td>
+                <td>
+                    <p>بند</p>
+                </td>
+                {% if doc.data_filled %}
+                <td rowspan="4">{{doc.data_filled}}</td>
+                {% else %}
+                <td rowspan="4"></td>
+
+                {% endif %}
+                {% if doc.number_of_attachments %}
+                {% set number_of_attachments = [] %}
+                {% for char in doc.number_of_attachments | string %}
+                <span style="display: none;">{{ bank_account_no.append(numbers.get(char|string, char)) }}</span>
+                {% endfor %}
+                <td rowspan="4">{{number_of_attachments|join("")}}</td>
+                {% else %}
+                <td rowspan="4"></td>
+
+                {% endif %}
+            </tr>
+            {% set total_invoices = frappe.utils.fmt_money( doc.total_invoices)|string %}
+
+
+            <tr class="blank_row 1">
+                <td rowspan="2" style="border-right: 2px solid black; border-bottom:2px solid black;">
+                    {% set total_no = [] %}
+                    {% for char in total_invoices | string %}
+                    <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+                    {% endfor %}
+                    {% set total = total_no|join("")%}
+                    {{ total.split(".")[1] }}
+                </td>
+                <td rowspan="2" style="border-bottom:2px solid black;">
+                    {{ total.split(".")[0] }}
+                </td>
+                <td rowspan="2" style="border-bottom:2px solid black;">
+                    <p><br></p>
+                </td>
+                <td rowspan="2" style="border-bottom:2px solid black;">
+                    <p><br></p>
+                </td>
+                <td rowspan="2" style="border-bottom:2px solid black;">
+                    <p><br></p>
+                </td>
+                <td rowspan="2" style="border-bottom:2px solid black;">
+                    <p><br></p>
+                </td>
+
+            </tr>
+            <tr>
+
+
+            </tr>
+            {% set total = frappe.utils.fmt_money( doc.total_invoices)|string%}
+
+            <tr>
+                {% set total_no = [] %}
+                {% for char in total | string %}
+                <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+                {% endfor %}
+                {% set total = total_no|join("")%}
+                <td style="border-right: 2px solid black; border-bottom: 2px solid black;">{{ total.split(".")[1] }}
+                </td>
+                <td style="border-bottom: 2px solid black;">{{ total.split(".")[0] }}</td>
+                <td colspan="4" style="border-bottom: 2px solid black;">إجمالي الأصل</td>
+
+            </tr>
+            <tr class="blank_row 2">
+                <td></td>
+                <td style="border-bottom: 2px solid black;"></td>
+                <td colspan="2" style="border-bottom: 2px solid black;">
+                    <p>قرش</p>
+                </td>
+                <td colspan="2" style="border-bottom: 2px solid black;">
+                    <p>جنيه</p>
+                </td>
+                <td style="border-right: 2px solid black; border-bottom: 2px solid black;border-top: 2px solid black;">
+                    <p>بيانات الاستقطاعات</p>
+                </td>
+                <td></td>
+            </tr>
+            {% if doc.taxes %}
+            {% set taxes = frappe.utils.fmt_money( doc.total_taxes)|string %}
+            <tr class="blank_row 3">
+                <td></td>
+                <td></td>
+                {% set total_no = [] %}
+                {% for char in taxes | string %}
+                <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+                {% endfor %}
+                {% set total = total_no|join("")%}
+                <td colspan="2">
+                    <p> {{ total.split(".")[1] }}</p>
+                </td>
+                <td colspan="2">
+                    <p> {{ total.split(".")[0] }}</p>
+                </td>
+                <td>
+                    <p style="text-align: right;"> {{ doc.taxes[0].taxes }}</p>
+                </td>
+                <td></td>
+
+            </tr>
+            {% else %}
+            <tr class="blank_row 4">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <p></p>
+                </td>
+                <td colspan="2">
+                    <p> <br></p>
+                </td>
+                <td>
+                    <p style="text-align: right;"> </p>
+                </td>
+                <td></td>
+
+            </tr>
+            {% endif %}
+            {% if doc.disabled %}
+            {% set total = frappe.utils.fmt_money( doc.disabled)|string%}
+            <tr class="blank_row 5">
+                <td></td>
+                <td></td>
+                {% set total_no = [] %}
+                {% for char in total | string %}
+                <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+                {% endfor %}
+                {% set total = total_no|join("")%}
+                <td colspan="2">
+                    <p> {{ total.split(".")[1] }}</p>
+                </td>
+                <td colspan="2">
+                    <p> {{ total.split(".")[0] }}</p>
+                </td>
+                <td>
+                    <p style="text-align: right;">معاقين</p>
+                </td>
+                <td></td>
+
+            </tr>
+            {% else%}
+            <tr class="blank_row 6">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <p></p>
+                </td>
+                <td colspan="2">
+                    <p> <br></p>
+                </td>
+                <td>
+                    <p style="text-align: right;"> </p>
+                </td>
+                <td></td>
+
+            </tr>
+            {% endif %}
+            {% if doc.development %}
+            {% set total = frappe.utils.fmt_money( doc.development)|string%}
+            {% set total_no = [] %}
+            {% for char in total | string %}
+            <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+            {% endfor %}
+            {% set total = total_no|join("")%}
+            <tr class="blank_row 7">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <p> {{ total.split(".")[1] }}</p>
+                </td>
+                <td colspan="2">
+                    <p> {{ total.split(".")[0] }}</p>
+                </td>
+                <td>
+                    <p style="text-align: right;">تنمية</p>
+                </td>
+                <td></td>
+
+            </tr>
+            {%else%}
+            <tr class="blank_row 8">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <p></p>
+                </td>
+                <td colspan="2">
+                    <p> <br></p>
+                </td>
+                <td>
+                    <p style="text-align: right;"> </p>
+                </td>
+                <td></td>
+
+            </tr>
+            {% endif %}
+            {% if doc.martyrs %}
+            {% set total = frappe.utils.fmt_money( doc.martyrs)|string%}
+            {% set total_no = [] %}
+            {% for char in total | string %}
+            <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+            {% endfor %}
+            {% set total = total_no|join("")%}
+            <tr class="blank_row 9">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <p> {{ total.split(".")[1] }}</p>
+                </td>
+                <td colspan="2">
+                    <p> {{ total.split(".")[0] }}</p>
+                </td>
+                <td>
+                    <p style="text-align: right;">شهداء</p>
+                </td>
+                <td></td>
+
+            </tr>
+            {%else%}
+            <tr class="blank_row 10">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <p></p>
+                </td>
+                <td colspan="2">
+                    <p> <br></p>
+                </td>
+                <td>
+                    <p style="text-align: right;"> </p>
+                </td>
+                <td></td>
+
+            </tr>
+            {% endif %}
+            {% if doc.total_a_fine %}
+            {% set total = frappe.utils.fmt_money( doc.total_a_fine)|string%}
+            {% set total_no = [] %}
+            {% for char in total | string %}
+            <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+            {% endfor %}
+            {% set total = total_no|join("")%}
+            <tr class="blank_row 11">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <p> {{ total.split(".")[1] }}</p>
+                </td>
+                <td colspan="2">
+                    <p> {{ total.split(".")[0] }}</p>
+                </td>
+                <td>
+                    <p style="text-align: right;">غرامة تأخير</p>
+                </td>
+                <td></td>
+            </tr>
+            {% else%}
+            <tr class=" 12">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <p></p>
+                </td>
+                <td colspan="2">
+                    <p> <br></p>
+                </td>
+                <td>
+                    <p style="text-align: right;"> </p>
+                </td>
+                <td></td>
+
+            </tr>
+            {% endif %}
+            {% if doc.total_technical_a_fine %}
+            {% set total = frappe.utils.fmt_money( doc.total_technical_a_fine)|string%}
+            {% set total_no = [] %}
+            {% for char in total | string %}
+            <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+            {% endfor %}
+            {% set total = total_no|join("")%}
+            <tr class="blank_row 13">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <p> {{ total.split(".")[1] }}</p>
+                </td>
+                <td colspan="2">
+                    <p> {{ total.split(".")[0] }}</p>
+                </td>
+                <td>
+                    <p style="text-align: right;">إجمالي الخصم الفني</p>
+                </td>
+                <td></td>
+
+            </tr>
+            {%else%}
+            <tr class="blank_row 14">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <p></p>
+                </td>
+                <td colspan="2">
+                    <p> <br></p>
+                </td>
+                <td>
+                    <p style="text-align: right;"> </p>
+                </td>
+                <td></td>
+
+            </tr>
+            {% endif %}
+            {% if doc.total_legal_a_fine %}
+            {% set total = frappe.utils.fmt_money( doc.total_legal_a_fine)|string%}
+            {% set total_no = [] %}
+            {% for char in total | string %}
+            <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+            {% endfor %}
+            {% set total = total_no|join("")%}
+            <tr class="blank_row 15">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <p> {{ total.split(".")[1] }}</p>
+                </td>
+                <td colspan="2">
+                    <p> {{ total.split(".")[0] }}</p>
+                </td>
+                <td>
+                    <p style="text-align: right;">إجمالي خصم القانوني</p>
+                </td>
+                <td></td>
+
+            </tr>
+            {%else%}
+            <tr class="blank_row 16">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <p></p>
+                </td>
+                <td colspan="2">
+                    <p> <br></p>
+                </td>
+                <td>
+                    <p style="text-align: right;"> </p>
+                </td>
+                <td></td>
+
+            </tr>
+            {% endif %}
+            {% if doc.total_of_imprints %}
+            {% set total = frappe.utils.fmt_money( doc.total_of_imprints)|string%}
+            {% set total_no = [] %}
+            {% for char in total | string %}
+            <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+            {% endfor %}
+            {% set total = total_no|join("")%}
+            {% set total_of_deductions = frappe.utils.fmt_money( doc.total_deductions)|string%}
+            {% set total_no = [] %}
+            {% for char in total_of_deductions | string %}
+            <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+            {% endfor %}
+            {% set total_of_deductionstotal = total_no|join("")%}
+            <tr class="blank_row 17">
+                <td style="text-align: bottom;  border-bottom: 2px solid black;">
+                    <p> {{ total_of_deductionstotal.split(".")[1] }}</p>
+                </td>
+                <td style="text-align: bottom; border-bottom: 2px solid black;">
+                    <p> {{ total_of_deductionstotal.split(".")[0] }}</p>
+                </td>
+                <td colspan="2" style="border-bottom: 2px solid black;">
+                    <p> {{ total.split(".")[1] }} </p>
+                </td>
+                <td colspan="2" style="border-bottom: 2px solid black;">
+                    <p> {{ total.split(".")[0] }} </p>
+                </td>
+                {% set total_no = [] %}
+                {% set total4 = '%0.2f'| format(doc.normal_imprint|float) %}
+                {% for char in total4 | string %}
+                <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+                {% endfor %}
+                {% set total = total_no|join("")%}
+                {% set total_no2 = [] %}
+                {% set total3 = '%0.2f'| format(doc.extra_imprint|float) %}
+                {% for char in total3 | string %}
+                <span style="display: none;">{{ total_no2.append(numbers.get(char|string, char)) }}</span>
+                {% endfor %}
+                {% set total2 = total_no2|join("")%}
+                <td>
+                    <div style="display:flex; justify-content:space-around;">
+                        <div> <br> رسم الدمغات </div>
+                        <div> دمغة عادية <br> {{total}}</div>
+                        <div> دمغة إضافية <br> {{total2}}</div>
+
+                    </div>
+                </td>
+                <td> </td>
+
+            </tr>
+            {% endif %}
+            {% set total = frappe.utils.fmt_money( doc.total)|string%}
+            {% set total_no = [] %}
+            {% for char in total | string %}
+            <span style="display: none;">{{ total_no.append(numbers.get(char|string, char)) }}</span>
+            {% endfor %}
+            {% set total = total_no|join("")%}
+            <tr class="blank_row 18">
+                <td style="border-bottom: 2px solid black; border-right: 2px solid black;">
+                    <p> {{ total.split(".")[1] }}</p>
+                </td>
+                <td style="border-bottom: 2px solid black; ">
+                    <p> {{ total.split(".")[0] }}</p>
+                </td>
+                <td colspan="4" style="border-bottom: 2px solid black;"></td>
+                <td></td>
+                <td></td>
+
+
+            </tr>
+
+        </table>
+    </div>
+    <div class="under-table">
+        <p>صافي القيمة المطلوب صرفها</p>
+        {%if doc.no_to_words %}
+        <p style="margin-right:10px; font-size:17; font-weight:bold; " class="title-under-table">
+            {{ doc.no_to_words }}
+
+        </p>
+        {%else%}
+        <p style="margin-right:10px; font-size:17; font-weight:bold; " class="title-under-table"></p>
+
+        {% endif%}
+    </div>
+
+    <div class="paragraph">
+
+        <p>١ -إقرار كاتب سجل الحجوزات والتنازلات </p>
+        <div class="line four"></div>
+        <p>الإمضاء</p>
+        <div class="line five"></div>
+    </div>
+    <div class="paragraph">
+        <p>٢ -إقرار بأن القيمة مرتبطة بها علي الاعتماد المخصص وأن البند المختص يسمح ولم يسبق الصر</p>
+        <div class="line six"></div>
+        <p>الإمضاء</p>
+        <div class="line five"></div>
+    </div>
+    <div class="paragraph">
+        <p>(أو) بأن المبلغ مضاف بحساب</p>
+        <div style="display:flex; flex-direction:column;">
+            <div style="display:flex; flex-direction:row;">
+                <p style="margin-right: 100px;">جاري</p>
+                <div class="line sm-seven sm"></div>
+
+            </div>
+            <div class="line seven"></div>
+            <div style="display:flex; flex-direction:row;">
+                <p style="margin-right: 100px;">الإيرادات</p>
+                <div class="line sm-seven sm"></div>
+
+            </div>
+        </div>
+
+        <p>بتاريخ</p>
+        <div class="line five"></div>
+        <p>الإمضاء</p>
+        <div class="line five"></div>
+
+
+    </div>
+</div>
+<div class="third-sec">
+    <div class="wide-line mid"> </div>
+
+    <div class="paragraph">
+        <p>(ج) قيد في سجل رقم ٥٥" ع.ح"برقم </p>
+        <div class="line eight"></div>
+        <p>توقيع الكاتب المنوط بالسجل </p>
+        <div class="line five"></div>
+    </div>
+    <div class="sign-two">
+        <div class="right-sign">
+            <p class="sign">الختم ذو التاريخ</p>
+            <img src="/files/—Pngtree—black circle ring_5487769.png" class="circle">
+            <p class="under-sign p-tag">وكيل الحسابات</p>
+            <div class="line sm-circle"></div>
+        </div>
+        <div class="middle">
+
+            <div class="line nine"> </div>
+
+            <p class="middle-text" style="margin-right:369px;">(علامات المراجع ورئيس المصلحة )</p>
+            <div class="inline">
+
+                <p>روجع فـي ...........................................</p>
+                <p>سنة</p>
+                <p>١٩</p>
+
+            </div>
+            <div class="before-last">
+                <p>يعتمد سحب</p>
+                <div class="three-center">
+                    <p>شيك</p>
+                    <div class="line zero"></div>
+                    <p>إذن صرف</p>
+                </div>
+                <div class="line ten"></div>
+
+            </div>
+            <div class="third-line">
+                <p style="margin-right: 2;">مدير أو رئيس الحسابات</p>
+                <div class="line ten right"></div>
+
+            </div>
+            <div class="last-line">
+                <div class="line eleven"></div>
+
+
+                <p style="margin-right: 60px;">في .................... سنة <span style="margin-right:35px;">١٩</span>
+                    <span style="margin-right: 77px;">بمبلغ</span>
+                </p>
+                <div class="line ten left" style="height: 0px;
+            margin-bottom: 13px;
+            margin-right: 10px;">
+                    <div class="line ten left" style="height: 7px">
+                        <div class="line ten left" style="height: 13px;"></div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="wide-line "> </div>
+<div class="sign-two">
+
+    <div class="right-sign">
+
+        <p class="sign">(د)</p>
+
+        <p class="sign">الختم ذو التاريخ</p>
+        <img src="/files/—Pngtree—black circle ring_5487769.png" class="circle">
+        <p class="under-sign p-tag">وكيل الحسابات</p>
+        <div class="line sm-circle"></div>
+        <div class="break"></div> <!-- break -->
+
+    </div>
+
+    <div class="paragraph-sm">
+        <div>
+
+            <p>١- رقم المستند
+                ( وهو رقم القيد في الدفتر رقم ٢٢٤ ع.ح) </p>
+        </div>
+        <div class="line five-sm"></div>
+        <div>
+
+            <p>إمضاء الكاتب المنوط</p>
+        </div>
+        <div class="line eight-sm"></div>
+        <div>
+
+            <p>٢ -قيد في دفاتر الحسابات المختصة</p>
+        </div>
+        <div style="margin-right:20;" class="three-center">
+            <div class="line zero sms"></div>
+            <p>إمضاءات موظفي الشطب</p>
+        </div>
+        <div class="break"></div> <!-- break -->
+        <p style="margin-top: 6px;">٣-سحب</p>
+        <div style="margin-right:5;" class="three-center">
+            <p>شيك</p>
+            <div class="line zero"></div>
+            <p>إذن صرف</p>
+        </div>
+        <p style="margin-right:5; margin-top:6px;">رقم</p>
+        <div class="line five-sm"></div>
+        <p style="margin-right:20; margin-top:6px;">إمضاء الكاتب المنوط</p>
+        <div style="margin-right:5;" class="line eight-sm"></div>
+        <div class="break"></div> <!-- break -->
+
+        <p style="margin-top: 6px;">٤ -قيد في سجل</p>
+        <div style="margin-right:5;" class="three-center">
+            <p>الشيكات</p>
+            <div class="line zero"></div>
+            <p>الحوالات</p>
+        </div>
+        <p style="margin-right:5; margin-top:6px;">تحت رقم</p>
+        <div class="line five-sm"></div>
+        <p style="margin-right:20; margin-top:6px;">إمضاء الكاتب المنوط</p>
+        <div style="margin-right:5;" class="line eight-sm"></div>
+        <div class="break"></div> <!-- break -->
+        <p style="margin-top: 6px;">٥ -أدرج في كشف</p>
+        <div style="margin-right:5;" class="three-center">
+            <p>الشيكات</p>
+            <div class="line zero"></div>
+            <p>الحوالات</p>
+        </div>
+        <p style="margin-right:5; margin-top:6px;">رقم</p>
+        <div class="line five-sm"></div>
+        <p style="margin-right:20; margin-top:6px;">إمضاء الكاتب المنوط</p>
+        <div style="margin-right:5;" class="line eight-sm"></div>
+        <div class="break"></div> <!-- break -->
+        <p style="margin-top: 6px;">٦- استلمت</p>
+        <div style="margin-right:5;" class="three-center">
+            <p>شيــك</p>
+            <div class="line zero"></div>
+            <p>إذن صرف</p>
+
+        </div>
+
+        <div style="margin-right:5;" class="line eight-sm ss"></div>
+        <p style="margin-right: 27px;">في .................... سنة <span style="margin-right:35px;">١٩</span>
+        </p>
+        <div class="break"></div> <!-- break -->
+        <p style="margin-right: 250px;
+                     margin-top: -17px;">إمضاء طالب أو كاتب التصدير</p>
+    </div>
+
+</div>
+
+</div>

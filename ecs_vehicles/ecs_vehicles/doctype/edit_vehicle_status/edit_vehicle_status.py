@@ -262,15 +262,23 @@ class EditVehicleStatus(Document):
                     vic.save()
                 elif frappe.db.exists("Boats", {"name": vehicle.vehicle}):
                     vehicle.updated = 1
-                    vic = frappe.get_doc("Boats", {"name": vehicle.vehicle})
-                    vic.boat_validity = vehicle.vehicle_status_new
-                    row = vic.append("validity_table", {})
+                    boat = frappe.get_doc("Boats", {"name": vehicle.vehicle})
+                    # frappe.db.sql(
+                    #     """
+                    #     UPDATE `tabBoats` SET boat_validity = "{vehicle_status_new}" WHERE name = "{name}"
+                    #     """.format(
+                    #         name=boat.name,
+                    #         vehicle_status_new=vehicle.vehicle_status_new,
+                    #     )
+                    # )
+                    boat.boat_validity = vehicle.vehicle_status_new
+                    row = boat.append("validity_table", {})
                     row.date = vehicle.cur_date
                     row.value = vehicle.vehicle_status_new
                     row.edited_by = frappe.db.get_value("User", self.owner, "full_name")
                     row.old_transaction_no = self.name
                     row.remarks = vehicle.notes
-                    vic.save()
+                    boat.save()
 
     def on_trash(self):
         logs = frappe.db.get_all(

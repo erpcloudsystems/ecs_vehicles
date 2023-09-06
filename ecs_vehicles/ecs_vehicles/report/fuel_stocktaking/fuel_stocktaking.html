@@ -1,100 +1,116 @@
 <style>
-* {
-		margin:0;
-		padding:0;
-		direction:rtl;
+	* {
+		margin: 0;
+		padding: 0;
+		direction: rtl;
 	}
+
 	.print-format {
 
-		padding:0in;
+		padding: 0in;
 
 	}
-.header {
-    margin-top:20px;
-    display:flex; 
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-.under-header {
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-	align-items:center;
-}
-.esm-algeha {
-    margin-top:30px;
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-}
-table, th, td , th{
-    border:2px solid black;
-    border-collapse:collapse;
-    text-align:center;
-}
-.print-format th {
-    color:black;
-        text-align:center;
-        font-weight:bold;
-        background-color:lightgray;
 
-}
-.print-format td {
-	padding: 0px !important;
-}
-.break {
-    flex-basis: 100%;
-    height: 0;
-  }
-  .column1 {
-	border-left: 2px solid black;
-  }
-.table1 {
-    margin-top:5px;
-    margin-right:20px;
-    margin-left:20px;
-    display:flex; 
-    flex-direction:column;
+	.header {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 
-}
+	.under-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.esm-algeha {
+		margin-top: 30px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	table,
+	th,
+	td,
+	th {
+		border: 2px solid black;
+		border-collapse: collapse;
+		text-align: center;
+	}
+
+	.print-format th {
+		color: black;
+		text-align: center;
+		font-weight: bold;
+		background-color: lightgray;
+
+	}
+
+	.print-format td {
+		padding: 0px !important;
+	}
+
+	.break {
+		flex-basis: 100%;
+		height: 0;
+	}
+
+	.column1 {
+		border-left: 2px solid black;
+	}
+
+	.table1 {
+		margin-top: 5px;
+		margin-right: 20px;
+		margin-left: 20px;
+		display: flex;
+		flex-direction: column;
+
+	}
 </style>
 
 <div class="under-header">
-<div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;">
-    <div>
-<img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
-</div>
-<div>
-    وزارة الداخلية
-</div>
-<div>
-الادارة العامه لمركبات الشرطه
-</div>
-<div>
-</div>
-</div>
-<div>
-	<div style="display: flex; flex-direction: row; align-items: center;">
-		<div style="font-weight: bold;">تاريخ الطباعة  </div>
-		<div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
-			{%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
-			{{data[0].cur_user}}
+	{% var numbers = ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"] %}
+
+	<div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;">
+		<div>
+			<img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
+		</div>
+		<div>
+			وزارة الداخلية
+		</div>
+		<div>
+			الادارة العامه لمركبات الشرطه
+		</div>
+		<div>
 		</div>
 	</div>
+	<div>
+		<div style="display: flex; flex-direction: row; align-items: center;">
+			<div style="font-weight: bold;">تاريخ الطباعة </div>
+			<div
+				style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
+				{%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
+				{{data[0].cur_user}}
+			</div>
+		</div>
 
-</div>
+	</div>
 </div>
 
 <div style="display: flex; justify-content:center; margin: 1em auto;">
-  		<div style="border:2px solid black; background-color:lightgray;">
-				<h3 style="font-family:Cairo; margin: 0px 20px">{%= __("جرد خزينة الوقود") %}</h3>
-  		</div>
+	<div style="border:2px solid black; background-color:lightgray;">
+		<h3 style="font-family:Cairo; margin: 0px 20px">{%= __("جرد خزينة الوقود") %}</h3>
+	</div>
 </div>
 
 
 
-   <div class="table1">
+<div class="table1">
 	<table style="font-family:Cairo" dir="rtl">
 		<thead>
 			<tr>
@@ -111,21 +127,66 @@ table, th, td , th{
 			</tr>
 		</thead>
 		<tbody>
-			{% for(var i=0, l=data.length; i<l; i++) { %}
-			<tr>
-				<td>{%= i+1 %}</td>
-				<td>{%= data[i].voucher_type %}</td>
-				<td>{%= data[i].from_serial %}</td>
-				<td>{%= data[i].to_serial %}</td>
-				<td>{%= data[i].count_voucher %}</td>
-				<td>{%= data[i].count_notebook %}</td>
-				<td>{%= data[i].qty_litre %}</td>
-				<td>{%= data[i].unit_price %}</td>
-				<td>{%= data[i].total_price %}</td>
+			{% for(var i=0, l=data.length; i<l; i++) { %} <tr>
+				{% var idx = [] %}
+				{% var loopIndex = (i + 1).toString() %}
+				{% var idxListsplit = loopIndex.split("") %}
+				{% for(var j=0, len=idxListsplit.length; j<len; j++) { %} {% idx.push(numbers[idxListsplit[j]]) %} {% }
+					%} <td>{%= idx.join("") %}</td>
+					{% var from_serial = [] %}
+					{% var from_serialListsplit2 = data[i].from_serial.toString() %}
+					{% var from_serialListsplit3 = from_serialListsplit2.split(".")[0] %}
+					{% var from_serialListsplit = from_serialListsplit3.split("") %}
+					{% for(var j=0, len=from_serialListsplit.length; j<len; j++) { %} {%
+						from_serial.push(numbers[from_serialListsplit[j]]) %} {% } %} <td>{%= data[i].voucher_type %}
+						</td>
+						<td>{%= from_serial.join("") %}</td>
+						{% var to_serial = [] %}
+						{% var from_serialListsplit2 = data[i].to_serial.toString() %}
+						{% var from_serialListsplit3 = from_serialListsplit2.split(".")[0] %}
+						{% var from_serialListsplit = from_serialListsplit3.split("") %}
 
-			</tr>
-			{% } %}
+						{% for(var j=0, len=from_serialListsplit.length; j<len; j++) { %} {%
+							to_serial.push(numbers[from_serialListsplit[j]]) %} {% } %} <td>{%= to_serial.join("") %}
+							</td>
+							{% var count_voucher = [] %}
+							{% var from_serialListsplit2 = data[i].count_voucher.toString() %}
+							{% var from_serialListsplit3 = from_serialListsplit2.split(".")[0] %}
+							{% var from_serialListsplit = from_serialListsplit3.split("") %}
+							{% for(var j=0, len=from_serialListsplit.length; j<len; j++) { %} {%
+								count_voucher.push(numbers[from_serialListsplit[j]]) %} {% } %} <td>{%=
+								count_voucher.join("") %}</td>
+								{% var count_notebook = [] %}
+								{% var from_serialListsplit2 = data[i].count_notebook.toString() %}
+								{% var from_serialListsplit3 = from_serialListsplit2.split(".")[0] %}
+								{% var from_serialListsplit = from_serialListsplit3.split("") %}
+								{% for(var j=0, len=from_serialListsplit.length; j<len; j++) { %} {%
+									count_notebook.push(numbers[from_serialListsplit[j]]) %} {% } %} <td>{%=
+									count_notebook.join("") %}</td>
+									{% var qty_litre = [] %}
+									{% var from_serialListsplit2 = data[i].qty_litre.toString() %}
+									{% var from_serialListsplit3 = from_serialListsplit2.split(".")[0] %}
+									{% var from_serialListsplit = from_serialListsplit3.split("") %}
+									{% for(var j=0, len=from_serialListsplit.length; j<len; j++) { %} {%
+										qty_litre.push(numbers[from_serialListsplit[j]]) %} {% } %} <td>{%=
+										qty_litre.join("") %}</td>
+										{% var unit_price = [] %}
+										{% var from_serialListsplit2 = data[i].unit_price.toString() %}
+										{% var from_serialListsplit3 = from_serialListsplit2.split(".")[0] %}
+										{% var from_serialListsplit = from_serialListsplit3.split("") %}
+										{% for(var j=0, len=from_serialListsplit.length; j<len; j++) { %} {%
+											unit_price.push(numbers[from_serialListsplit[j]]) %} {% } %} <td>{%=
+											unit_price.join("") %}</td>
+											{% var total_price = [] %}
+											{% var from_serialListsplit2 = data[i].total_price.toString() %}
+											{% var from_serialListsplit3 = from_serialListsplit2.split(".")[0] %}
+											{% var from_serialListsplit = from_serialListsplit3.split("") %}
+											{% for(var j=0, len=from_serialListsplit.length; j<len; j++) { %} {%
+												total_price.push(numbers[from_serialListsplit[j]]) %} {% } %} <td>{%=
+												total_price.join("") %}</td>
+
+												</tr>
+												{% } %}
 		</tbody>
 	</table>
 </div>
-

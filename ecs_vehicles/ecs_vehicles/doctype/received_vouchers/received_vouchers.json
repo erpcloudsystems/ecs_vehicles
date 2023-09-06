@@ -19,12 +19,7 @@
   "section_break_8",
   "vouchers_count_table",
   "document_name",
-  "amended_from",
-  "section_break_fnv9b",
-  "locked_invoice",
-  "udate",
-  "ukey",
-  "pri_id"
+  "amended_from"
  ],
  "fields": [
   {
@@ -63,6 +58,7 @@
    "reqd": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "invoice_no",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -83,6 +79,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "allow_on_submit": 1,
    "depends_on": "eval:!(doc.__islocal)",
    "fieldname": "vouchers_count_table",
    "fieldtype": "Table",
@@ -121,37 +118,12 @@
    "hidden": 1,
    "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u0646\u062f",
    "read_only": 1
-  },
-  {
-   "fieldname": "locked_invoice",
-   "fieldtype": "Data",
-   "label": "LOCKED_INVOICE"
-  },
-  {
-   "fieldname": "udate",
-   "fieldtype": "Data",
-   "label": "UDATE"
-  },
-  {
-   "fieldname": "ukey",
-   "fieldtype": "Data",
-   "label": "UKEY"
-  },
-  {
-   "fieldname": "section_break_fnv9b",
-   "fieldtype": "Section Break",
-   "hidden": 1
-  },
-  {
-   "fieldname": "pri_id",
-   "fieldtype": "Data",
-   "label": "PRI_ID"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-18 16:19:32.940336",
+ "modified": "2023-09-01 15:06:28.949656",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Received Vouchers",
