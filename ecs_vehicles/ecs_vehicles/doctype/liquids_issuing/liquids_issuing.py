@@ -1,6 +1,3 @@
-# Copyright (c) 2022, ERP CLOUD SYSTEMS and contributors
-# For license information, please see license.txt
-
 import frappe
 from frappe.model.document import Document
 from frappe.utils import (
@@ -1361,120 +1358,63 @@ class LiquidsIssuing(Document):
 
         if self.issue_to == "مركبة أو مجموعة مركبات":
             for t in self.specified_vehicles_issuing_table:
-                if t.last_issue_from_date or t.last_issue_to_date:
-                    if (
-                        float(t.last_issue_qty) > 0
-                        and getdate(t.last_issue_from_date) >= getdate(self.from_date)
-                        and getdate(t.last_issue_from_date) <= getdate(self.to_date)
-                    ):
-                        frappe.throw(
-                            " الصف # "
-                            + str(t.idx)
-                            + " : لا يمكن صرف "
-                            + self.issue_type
-                            + " إلى المركبة "
-                            + str(t.vehicle_no)
-                            + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
-                            + str(t.entity_name)
-                        )
+                if t.vehicle_boat != "Boats":
+                    if t.last_issue_from_date or t.last_issue_to_date:
+                        if (
+                            float(t.last_issue_qty) > 0
+                            and getdate(t.last_issue_from_date)
+                            >= getdate(self.from_date)
+                            and getdate(t.last_issue_from_date) <= getdate(self.to_date)
+                        ):
+                            frappe.throw(
+                                " الصف # "
+                                + str(t.idx)
+                                + " : لا يمكن صرف "
+                                + self.issue_type
+                                + " إلى المركبة "
+                                + str(t.vehicle_no)
+                                + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
+                                + str(t.entity_name)
+                            )
 
-                    if (
-                        float(t.last_issue_qty) > 0
-                        and getdate(t.last_issue_to_date) >= getdate(self.from_date)
-                        and getdate(t.last_issue_to_date) <= getdate(self.to_date)
-                    ):
-                        frappe.throw(
-                            " الصف # "
-                            + str(t.idx)
-                            + " : لا يمكن صرف "
-                            + self.issue_type
-                            + " إلى المركبة "
-                            + str(t.vehicle_no)
-                            + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
-                            + str(t.entity_name)
-                        )
+                        if (
+                            float(t.last_issue_qty) > 0
+                            and getdate(t.last_issue_to_date) >= getdate(self.from_date)
+                            and getdate(t.last_issue_to_date) <= getdate(self.to_date)
+                        ):
+                            frappe.throw(
+                                " الصف # "
+                                + str(t.idx)
+                                + " : لا يمكن صرف "
+                                + self.issue_type
+                                + " إلى المركبة "
+                                + str(t.vehicle_no)
+                                + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
+                                + str(t.entity_name)
+                            )
 
-                vehicle_status = frappe.db.get_value(
-                    "Vehicles", t.vehicle, "vehicle_status"
-                )
-                voucher = ""
-
-                if self.issue_type == "وقود":
-                    voucher = (
-                        frappe.db.get_value("Vehicles", t.vehicle, "fuel_voucher")
-                        if frappe.db.get_value("Vehicles", t.vehicle, "fuel_voucher")
-                        else "لا يوجد"
-                    )
-                if self.issue_type == "زيت":
-                    voucher = frappe.db.get_value("Vehicles", t.vehicle, "oil_type")
-                if self.issue_type == "غاز":
-                    voucher = "غاز طبيعي فئة 15 متر مكعب"
-                if self.issue_type == "غسيل":
-                    voucher = frappe.db.get_value(
-                        "Vehicles", t.vehicle, "washing_voucher"
-                    )
-
-                record_name = 1
-                max_id = frappe.db.sql(
-                    """
-                    SELECT MAX(name) as max_name
-                    FROM `tabLiquids Issuing Table`
-                    """,
-                    as_dict=1,
-                )
-                if frappe.db.exists("Liquids Issuing Table", 1):
-                    record_name = int(max_id[0]["max_name"]) + 1
-                frappe.db.sql(
-                    """ INSERT INTO `tabLiquids Issuing Table`
-                                                        (issue_date, issue_type, vehicle_status, voucher, from_date, to_date, entity, qty, created_by, issue_no, parent, parentfield, parenttype, name)
-                                                VALUES ('{issue_date}', '{issue_type}', '{vehicle_status}', '{voucher}', '{from_date}', '{to_date}', '{entity}', '{qty}', '{created_by}', '{issue_no}','{parent}', '{parentfield}', '{parenttype}', '{record_name}')
-                                              """.format(
-                        issue_date=self.issue_date,
-                        issue_type=self.issue_type,
-                        from_date=self.from_date,
-                        vehicle_status=vehicle_status,
-                        voucher=voucher,
-                        qty=t.qty,
-                        to_date=self.to_date,
-                        entity=self.entity,
-                        created_by=frappe.session.user,
-                        issue_no=self.name,
-                        parenttype="Vehicles",
-                        parent=t.vehicle,
-                        parentfield="liquid_table",
-                        record_name=record_name,
-                    )
-                )
-
-                gas_valid_vehicle_list = frappe.db.sql(
-                    """ Select
-                        `tabVehicles`.name as vehicle,
-                        `tabVehicles`.gas_count as gas_count
-                        from `tabVehicles` 
-                        where `tabVehicles`.name = '{vehicle}'
-                        and `tabVehicles`.gas_count > 0
-                        and `tabVehicles`.name not in (select `tabLiquids Issuing Table`.parent 
-                            from `tabLiquids Issuing Table`
-                            where `tabLiquids Issuing Table`.issue_type = '{issue_type}'
-                            and `tabLiquids Issuing Table`.from_date >= '{from_date}'
-                            and `tabLiquids Issuing Table`.to_date <= '{to_date}')
-                    """.format(
-                        entity=self.entity,
-                        from_date=self.from_date,
-                        to_date=self.to_date,
-                        issue_type="غاز",
-                        vehicle=t.vehicle,
-                    ),
-                    as_dict=1,
-                )
-                current_vehicles = []
-                if gas_valid_vehicle_list:
-                    current_vehicles.append(t.vehicle)
                     vehicle_status = frappe.db.get_value(
                         "Vehicles", t.vehicle, "vehicle_status"
                     )
                     voucher = ""
-                    voucher1 = ""
+
+                    if self.issue_type == "وقود":
+                        voucher = (
+                            frappe.db.get_value("Vehicles", t.vehicle, "fuel_voucher")
+                            if frappe.db.get_value(
+                                "Vehicles", t.vehicle, "fuel_voucher"
+                            )
+                            else "لا يوجد"
+                        )
+                    if self.issue_type == "زيت":
+                        voucher = frappe.db.get_value("Vehicles", t.vehicle, "oil_type")
+                    if self.issue_type == "غاز":
+                        voucher = "غاز طبيعي فئة 15 متر مكعب"
+                    if self.issue_type == "غسيل":
+                        voucher = frappe.db.get_value(
+                            "Vehicles", t.vehicle, "washing_voucher"
+                        )
+
                     record_name = 1
                     max_id = frappe.db.sql(
                         """
@@ -1485,26 +1425,19 @@ class LiquidsIssuing(Document):
                     )
                     if frappe.db.exists("Liquids Issuing Table", 1):
                         record_name = int(max_id[0]["max_name"]) + 1
-                    voucher = "غاز طبيعي فئة 15 متر مكعب"
-                    voucher1 = "لا يوجد"
-                    # frappe.throw(str(gas_valid_vehicle_list))
                     frappe.db.sql(
                         """ INSERT INTO `tabLiquids Issuing Table`
-                                            (issue_date, issue_type, vehicle_status, voucher, from_date, to_date, entity, qty, created_by, issue_no, parent, parentfield, parenttype, name)
-                                    VALUES ('{issue_date}', '{issue_type}', '{vehicle_status}', '{voucher}' ,'{from_date}', '{to_date}', '{entity}', '{qty}', '{created_by}', '{issue_no}','{parent}', '{parentfield}', '{parenttype}', '{record_name}')
-                                    """.format(
+                                                            (issue_date, issue_type, vehicle_status, voucher, from_date, to_date, entity, qty, created_by, issue_no, parent, parentfield, parenttype, name)
+                                                    VALUES ('{issue_date}', '{issue_type}', '{vehicle_status}', '{voucher}', '{from_date}', '{to_date}', '{entity}', '{qty}', '{created_by}', '{issue_no}','{parent}', '{parentfield}', '{parenttype}', '{record_name}')
+                                                """.format(
                             issue_date=self.issue_date,
-                            issue_type="غاز",
-                            vehicle_status=vehicle_status,
+                            issue_type=self.issue_type,
                             from_date=self.from_date,
+                            vehicle_status=vehicle_status,
                             voucher=voucher,
+                            qty=t.qty,
                             to_date=self.to_date,
                             entity=self.entity,
-                            qty=(
-                                self.issue_days
-                                * gas_valid_vehicle_list[0].gas_count
-                                / 30
-                            ),
                             created_by=frappe.session.user,
                             issue_no=self.name,
                             parenttype="Vehicles",
@@ -1514,11 +1447,156 @@ class LiquidsIssuing(Document):
                         )
                     )
 
-                if len(current_vehicles) == 1:
-                    current_vehicles.append("None")
-                if not current_vehicles:
-                    pass
-                    # frappe.msgprint("لا يوجد مركبات تستحق الصرف")
+                    gas_valid_vehicle_list = frappe.db.sql(
+                        """ Select
+                            `tabVehicles`.name as vehicle,
+                            `tabVehicles`.gas_count as gas_count
+                            from `tabVehicles` 
+                            where `tabVehicles`.name = '{vehicle}'
+                            and `tabVehicles`.gas_count > 0
+                            and `tabVehicles`.name not in (select `tabLiquids Issuing Table`.parent 
+                                from `tabLiquids Issuing Table`
+                                where `tabLiquids Issuing Table`.issue_type = '{issue_type}'
+                                and `tabLiquids Issuing Table`.from_date >= '{from_date}'
+                                and `tabLiquids Issuing Table`.to_date <= '{to_date}')
+                        """.format(
+                            entity=self.entity,
+                            from_date=self.from_date,
+                            to_date=self.to_date,
+                            issue_type="غاز",
+                            vehicle=t.vehicle,
+                        ),
+                        as_dict=1,
+                    )
+                    current_vehicles = []
+                    if gas_valid_vehicle_list:
+                        current_vehicles.append(t.vehicle)
+                        vehicle_status = frappe.db.get_value(
+                            "Vehicles", t.vehicle, "vehicle_status"
+                        )
+                        voucher = ""
+                        voucher1 = ""
+                        record_name = 1
+                        max_id = frappe.db.sql(
+                            """
+                            SELECT MAX(name) as max_name
+                            FROM `tabLiquids Issuing Table`
+                            """,
+                            as_dict=1,
+                        )
+                        if frappe.db.exists("Liquids Issuing Table", 1):
+                            record_name = int(max_id[0]["max_name"]) + 1
+                        voucher = "غاز طبيعي فئة 15 متر مكعب"
+                        voucher1 = "لا يوجد"
+                        # frappe.throw(str(gas_valid_vehicle_list))
+                        frappe.db.sql(
+                            """ INSERT INTO `tabLiquids Issuing Table`
+                                                (issue_date, issue_type, vehicle_status, voucher, from_date, to_date, entity, qty, created_by, issue_no, parent, parentfield, parenttype, name)
+                                        VALUES ('{issue_date}', '{issue_type}', '{vehicle_status}', '{voucher}' ,'{from_date}', '{to_date}', '{entity}', '{qty}', '{created_by}', '{issue_no}','{parent}', '{parentfield}', '{parenttype}', '{record_name}')
+                                        """.format(
+                                issue_date=self.issue_date,
+                                issue_type="غاز",
+                                vehicle_status=vehicle_status,
+                                from_date=self.from_date,
+                                voucher=voucher,
+                                to_date=self.to_date,
+                                entity=self.entity,
+                                qty=(
+                                    self.issue_days
+                                    * gas_valid_vehicle_list[0].gas_count
+                                    / 30
+                                ),
+                                created_by=frappe.session.user,
+                                issue_no=self.name,
+                                parenttype="Vehicles",
+                                parent=t.vehicle,
+                                parentfield="liquid_table",
+                                record_name=record_name,
+                            )
+                        )
+
+                    if len(current_vehicles) == 1:
+                        current_vehicles.append("None")
+                    if not current_vehicles:
+                        pass
+                        # frappe.msgprint("لا يوجد مركبات تستحق الصرف")
+                else:
+                    if t.last_issue_from_date or t.last_issue_to_date:
+                        if (
+                            float(t.last_issue_qty) > 0
+                            and getdate(t.last_issue_from_date)
+                            >= getdate(self.from_date)
+                            and getdate(t.last_issue_from_date) <= getdate(self.to_date)
+                        ):
+                            frappe.throw(
+                                " الصف # "
+                                + str(t.idx)
+                                + " : لا يمكن صرف "
+                                + self.issue_type
+                                + " إلى المركبة "
+                                + str(t.vehicle_no)
+                                + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
+                                + str(t.entity_name)
+                            )
+
+                        if (
+                            float(t.last_issue_qty) > 0
+                            and getdate(t.last_issue_to_date) >= getdate(self.from_date)
+                            and getdate(t.last_issue_to_date) <= getdate(self.to_date)
+                        ):
+                            frappe.throw(
+                                " الصف # "
+                                + str(t.idx)
+                                + " : لا يمكن صرف "
+                                + self.issue_type
+                                + " إلى المركبة "
+                                + str(t.vehicle_no)
+                                + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
+                                + str(t.entity_name)
+                            )
+
+                    vehicle_status = frappe.db.get_value(
+                        "Boats", t.vehicle, "boat_validity"
+                    )
+                    voucher = ""
+
+                    if self.issue_type == "وقود":
+                        voucher = (
+                            frappe.db.get_value("Boats", t.vehicle, "fuel_voucher")
+                            if frappe.db.get_value("Boats", t.vehicle, "fuel_voucher")
+                            else "لا يوجد"
+                        )
+                    record_name = 1
+                    max_id = frappe.db.sql(
+                        """
+                        SELECT MAX(name) as max_name
+                        FROM `tabLiquids Issuing Table`
+                        """,
+                        as_dict=1,
+                    )
+                    if frappe.db.exists("Liquids Issuing Table", 1):
+                        record_name = int(max_id[0]["max_name"]) + 1
+                    frappe.db.sql(
+                        """ INSERT INTO `tabLiquids Issuing Table`
+                                                            (issue_date, issue_type, vehicle_status, voucher, from_date, to_date, entity, qty, created_by, issue_no, parent, parentfield, parenttype, name)
+                                                    VALUES ('{issue_date}', '{issue_type}', '{vehicle_status}', '{voucher}', '{from_date}', '{to_date}', '{entity}', '{qty}', '{created_by}', '{issue_no}','{parent}', '{parentfield}', '{parenttype}', '{record_name}')
+                                                """.format(
+                            issue_date=self.issue_date,
+                            issue_type=self.issue_type,
+                            from_date=self.from_date,
+                            vehicle_status=vehicle_status,
+                            voucher=voucher,
+                            qty=t.qty,
+                            to_date=self.to_date,
+                            entity=self.entity,
+                            created_by=frappe.session.user,
+                            issue_no=self.name,
+                            parenttype="Boats",
+                            parent=t.vehicle,
+                            parentfield="liquid_table",
+                            record_name=record_name,
+                        )
+                    )
 
         # set submitted = 1
         frappe.db.sql(
@@ -1695,6 +1773,7 @@ class LiquidsIssuing(Document):
                 #                 where parent = '{parent}' and issue_type = '{issue_type}'
                 #                 order by to_date desc limit 1
                 #             """.format(
+
                 #                 parent=q.vehicle, issue_type=self.issue_type
                 #             ),
                 #             as_dict=1,
@@ -3156,118 +3235,196 @@ class LiquidsIssuing(Document):
             sum_gas_qty = 0
             vehicle_count = 0
             for t in self.specified_vehicles_issuing_table:
-                t.vehicle_no = frappe.db.get_value("Vehicles", t.vehicle, "vehicle_no")
-                t.vehicle_type = frappe.db.get_value(
-                    "Vehicles", t.vehicle, "vehicle_type"
-                )
-                vehicle_issue_list = frappe.db.sql(
-                    """ Select idx, issue_type, from_date, to_date, entity, qty from `tabLiquids Issuing Table` 
-                        where parent = '{parent}' and issue_type = '{issue_type}'
-                        order by to_date desc limit 1
-                    """.format(
-                        parent=t.vehicle, issue_type=self.issue_type
-                    ),
-                    as_dict=1,
-                )
-                for q in vehicle_issue_list:
-                    t.last_issue_from_date = q.from_date
-                    t.last_issue_to_date = q.to_date
-                    t.entity_name = q.entity
-                    t.last_issue_qty = q.qty
-                    if (
-                        float(q.qty) > 0
-                        and getdate(q.from_date) >= getdate(self.from_date)
-                        and getdate(q.from_date) <= getdate(self.to_date)
-                    ):
-                        frappe.throw(
-                            " الصف # "
-                            + str(q.idx)
-                            + " : لا يمكن صرف "
-                            + self.issue_type
-                            + " إلى المركبة "
-                            + str(t.vehicle_no)
-                            + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
-                            + str(q.entity)
-                        )
-
-                    if (
-                        float(q.qty) > 0
-                        and getdate(q.to_date) >= getdate(self.from_date)
-                        and getdate(q.to_date) <= getdate(self.to_date)
-                    ):
-                        frappe.throw(
-                            " الصف # "
-                            + str(q.idx)
-                            + " : لا يمكن صرف "
-                            + self.issue_type
-                            + " إلى المركبة "
-                            + str(t.vehicle_no)
-                            + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
-                            + str(q.entity)
-                        )
-                if self.issue_type == "وقود":
-                    t.qty = (
-                        self.issue_days
-                        * frappe.db.get_value("Vehicles", t.vehicle, "litre_count")
-                        / 30
+                if t.vehicle_boat != "Boats":
+                    t.vehicle_no = frappe.db.get_value(
+                        "Vehicles", t.vehicle, "vehicle_no"
                     )
-                    t.liquid = frappe.db.get_value("Vehicles", t.vehicle, "fuel_type")
-                if self.issue_type == "زيت":
-                    t.qty = 1
-                    t.liquid = frappe.db.get_value("Vehicles", t.vehicle, "oil_type")
-
-                if self.issue_type == "غسيل":
-                    t.qty = 1
-                    t.liquid = frappe.db.get_value(
-                        "Vehicles", t.vehicle, "washing_voucher"
+                    t.vehicle_type = frappe.db.get_value(
+                        "Vehicles", t.vehicle, "vehicle_type"
                     )
-                liquid = "غاز طبيعي"
-                gas_valid_vehicle_list = frappe.db.sql(
-                    """ Select
-                        `tabVehicles`.name as vehicle,
-                        `tabVehicles`.gas_count as gas_count
-                        from `tabVehicles` 
-                        where `tabVehicles`.name = '{vehicle}'
-                        and `tabVehicles`.gas_count > 0
-                        and `tabVehicles`.name not in (select `tabLiquids Issuing Table`.parent 
-                            from `tabLiquids Issuing Table`
-                            where `tabLiquids Issuing Table`.issue_type = '{issue_type}'
-                            and `tabLiquids Issuing Table`.from_date >= '{from_date}'
-                            and `tabLiquids Issuing Table`.to_date <= '{to_date}')
-                    """.format(
-                        from_date=self.from_date,
-                        to_date=self.to_date,
-                        issue_type="غاز",
-                        vehicle=t.vehicle,
-                    ),
-                    as_dict=1,
-                )
-                current_vehicles = []
-                if gas_valid_vehicle_list:
-                    current_vehicles.append(t.vehicle)
-                    vehicle_status = frappe.db.get_value(
-                        "Vehicles", t.vehicle, "vehicle_status"
-                    )
-                    voucher = ""
-                    voucher1 = ""
-                    record_name = 1
-                    max_id = frappe.db.sql(
-                        """
-                        SELECT MAX(name) as max_name
-                        FROM `tabLiquids Issuing Table`
-                        """,
+                    vehicle_issue_list = frappe.db.sql(
+                        """ Select idx, issue_type, from_date, to_date, entity, qty , issue_no
+                            from `tabLiquids Issuing Table` 
+                            where parent = '{parent}' and issue_type = '{issue_type}'
+                            order by to_date  desc, from_date desc limit 1
+                        """.format(
+                            parent=t.vehicle, issue_type=self.issue_type
+                        ),
                         as_dict=1,
                     )
-                    if frappe.db.exists("Liquids Issuing Table", 1):
-                        record_name = int(max_id[0]["max_name"]) + 1
-                    voucher = "غاز طبيعي فئة 15 متر مكعب"
-                    voucher1 = "لا يوجد"
-                    # frappe.throw(str(gas_valid_vehicle_list))
-                    sum_gas_qty += (
-                        self.issue_days * gas_valid_vehicle_list[0].gas_count / 30
-                    )
-                    vehicle_count += 1
+                    frappe.msgprint(str(vehicle_issue_list))
+                    for q in vehicle_issue_list:
+                        t.last_issue_from_date = q.from_date
+                        t.last_issue_to_date = q.to_date
+                        t.entity_name = q.entity
+                        t.last_issue_qty = q.qty
+                        if (
+                            float(q.qty) > 0
+                            and getdate(q.from_date) >= getdate(self.from_date)
+                            and getdate(q.from_date) <= getdate(self.to_date)
+                        ):
+                            frappe.throw(
+                                " الصف # "
+                                + str(q.idx)
+                                + " : لا يمكن صرف "
+                                + self.issue_type
+                                + " إلى المركبة "
+                                + str(t.vehicle_no)
+                                + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
+                                + str(q.entity)
+                                + "\n \t \t \t \t \t \t \t \t \t "
+                                + "صرفية رقم "
+                                + str(q.issue_no)
+                            )
 
+                        if (
+                            float(q.qty) > 0
+                            and getdate(q.to_date) >= getdate(self.from_date)
+                            and getdate(q.to_date) <= getdate(self.to_date)
+                        ):
+                            frappe.throw(
+                                " الصف # "
+                                + str(q.idx)
+                                + " : لا يمكن صرف "
+                                + self.issue_type
+                                + " إلى المركبة "
+                                + str(t.vehicle_no)
+                                + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
+                                + str(q.entity)
+                                + "\n \t \t \t \t \t \t \t \t \t "
+                                + "صرفية رقم "
+                                + str(q.issue_no)
+                            )
+                    if self.issue_type == "وقود":
+                        t.qty = (
+                            self.issue_days
+                            * frappe.db.get_value("Vehicles", t.vehicle, "litre_count")
+                            / 30
+                        )
+                        t.liquid = frappe.db.get_value(
+                            "Vehicles", t.vehicle, "fuel_type"
+                        )
+                    if self.issue_type == "زيت":
+                        t.qty = 1
+                        t.liquid = frappe.db.get_value(
+                            "Vehicles", t.vehicle, "oil_type"
+                        )
+
+                    if self.issue_type == "غسيل":
+                        t.qty = 1
+                        t.liquid = frappe.db.get_value(
+                            "Vehicles", t.vehicle, "washing_voucher"
+                        )
+                    liquid = "غاز طبيعي"
+                    gas_valid_vehicle_list = frappe.db.sql(
+                        """ Select
+                            `tabVehicles`.name as vehicle,
+                            `tabVehicles`.gas_count as gas_count
+                            from `tabVehicles` 
+                            where `tabVehicles`.name = '{vehicle}'
+                            and `tabVehicles`.gas_count > 0
+                            and `tabVehicles`.name not in (select `tabLiquids Issuing Table`.parent 
+                                from `tabLiquids Issuing Table`
+                                where `tabLiquids Issuing Table`.issue_type = '{issue_type}'
+                                and `tabLiquids Issuing Table`.from_date >= '{from_date}'
+                                and `tabLiquids Issuing Table`.to_date <= '{to_date}')
+                        """.format(
+                            from_date=self.from_date,
+                            to_date=self.to_date,
+                            issue_type="غاز",
+                            vehicle=t.vehicle,
+                        ),
+                        as_dict=1,
+                    )
+                    current_vehicles = []
+                    if gas_valid_vehicle_list:
+                        current_vehicles.append(t.vehicle)
+                        vehicle_status = frappe.db.get_value(
+                            "Vehicles", t.vehicle, "vehicle_status"
+                        )
+                        voucher = ""
+                        voucher1 = ""
+                        record_name = 1
+                        max_id = frappe.db.sql(
+                            """
+                            SELECT MAX(name) as max_name
+                            FROM `tabLiquids Issuing Table`
+                            """,
+                            as_dict=1,
+                        )
+                        if frappe.db.exists("Liquids Issuing Table", 1):
+                            record_name = int(max_id[0]["max_name"]) + 1
+                        voucher = "غاز طبيعي فئة 15 متر مكعب"
+                        voucher1 = "لا يوجد"
+                        # frappe.throw(str(gas_valid_vehicle_list))
+                        sum_gas_qty += (
+                            self.issue_days * gas_valid_vehicle_list[0].gas_count / 30
+                        )
+                        vehicle_count += 1
+                else:
+                    t.vehicle_no = frappe.db.get_value("Boats", t.vehicle, "boat_no")
+                    t.vehicle_type = "لانش"
+
+                    vehicle_issue_list = frappe.db.sql(
+                        """ Select idx, issue_type, from_date, to_date, entity, qty , issue_no
+                            from `tabLiquids Issuing Table` 
+                            where parent = '{parent}' and issue_type = '{issue_type}'
+                            order by to_date  desc, from_date desc limit 1
+                        """.format(
+                            parent=t.vehicle, issue_type=self.issue_type
+                        ),
+                        as_dict=1,
+                    )
+                    # frappe.msgprint(str(vehicle_issue_list))
+                    for q in vehicle_issue_list:
+                        t.last_issue_from_date = q.from_date
+                        t.last_issue_to_date = q.to_date
+                        t.entity_name = q.entity
+                        t.last_issue_qty = q.qty
+                        if (
+                            float(q.qty) > 0
+                            and getdate(q.from_date) >= getdate(self.from_date)
+                            and getdate(q.from_date) <= getdate(self.to_date)
+                        ):
+                            frappe.throw(
+                                " الصف # "
+                                + str(q.idx)
+                                + " : لا يمكن صرف "
+                                + self.issue_type
+                                + " إلى المركبة "
+                                + str(t.vehicle_no)
+                                + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
+                                + str(q.entity)
+                                + "\n \t \t \t \t \t \t \t \t \t "
+                                + "صرفية رقم "
+                                + str(q.issue_no)
+                            )
+
+                        if (
+                            float(q.qty) > 0
+                            and getdate(q.to_date) >= getdate(self.from_date)
+                            and getdate(q.to_date) <= getdate(self.to_date)
+                        ):
+                            frappe.throw(
+                                " الصف # "
+                                + str(q.idx)
+                                + " : لا يمكن صرف "
+                                + self.issue_type
+                                + " إلى المركبة "
+                                + str(t.vehicle_no)
+                                + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
+                                + str(q.entity)
+                                + "\n \t \t \t \t \t \t \t \t \t "
+                                + "صرفية رقم "
+                                + str(q.issue_no)
+                            )
+                    if self.issue_type == "وقود":
+                        t.qty = (
+                            self.issue_days
+                            * frappe.db.get_value("Boats", t.vehicle, "qty")
+                            / 30
+                        )
+                        t.liquid = frappe.db.get_value("Boats", t.vehicle, "fuel_type")
             liquid = self.get_liquids()
             for h in liquid:
                 sum_qty = self.get_sum_qty(h)
@@ -3284,334 +3441,6 @@ class LiquidsIssuing(Document):
                 rows.in_words = in_words(sum_gas_qty)
 
     def on_submit(self):
-        # self.issue_state = "جاري تحضير الصرفية ومراجعتها"
-        # if self.issue_to == "جهة":
-        #     current_vehicles = []
-
-        #     for t in self.vehicles_issuing_table:
-        #         current_vehicles.append(t.vehicle)
-
-        #         vehicle_status = frappe.db.get_value(
-        #             "Vehicles", t.vehicle, "vehicle_status"
-        #         )
-        #         boat_status = frappe.db.get_value("Boats", t.vehicle, "boat_validity")
-        #         voucher = ""
-        #         voucher1 = ""
-
-        #         if self.issue_type == "وقود":
-        #             voucher = (
-        #                 frappe.db.get_value("Vehicles", t.vehicle, "fuel_voucher")
-        #                 if frappe.db.get_value("Vehicles", t.vehicle, "fuel_voucher")
-        #                 else "لا يوجد"
-        #             )
-        #             voucher1 = (
-        #                 frappe.db.get_value("Boats", t.vehicle, "fuel_voucher")
-        #                 if frappe.db.get_value("Boats", t.vehicle, "fuel_voucher")
-        #                 else "لا يوجد"
-        #             )
-        #         if self.issue_type == "زيت":
-        #             voucher = (
-        #                 frappe.db.get_value("Vehicles", t.vehicle, "oil_type")
-        #                 if frappe.db.get_value("Vehicles", t.vehicle, "oil_type")
-        #                 else "لا يوجد"
-        #             )
-        #             voucher1 = "لا يوجد"
-        #         if self.issue_type == "غاز":
-        #             voucher = "غاز طبيعي فئة 15 متر مكعب"
-        #             voucher1 = "لا يوجد"
-        #         if self.issue_type == "غسيل":
-        #             voucher = (
-        #                 frappe.db.get_value("Vehicles", t.vehicle, "washing_voucher")
-        #                 if frappe.db.get_value("Vehicles", t.vehicle, "washing_voucher")
-        #                 else "لا يوجد"
-        #             )
-        #             voucher1 = "لا يوجد"
-
-        #         record_name = 1
-        #         max_id = frappe.db.sql(
-        #             """
-        #             SELECT MAX(name) as max_name
-        #             FROM `tabLiquids Issuing Table`
-        #             """,
-        #             as_dict=1,
-        #         )
-        #         if frappe.db.exists("Liquids Issuing Table", 1):
-        #             record_name = int(max_id[0]["max_name"]) + 1
-
-        #         if t.vehicle_boat == "Vehicles":
-        #             frappe.db.sql(
-        #                 """ INSERT INTO `tabLiquids Issuing Table`
-        #                                     (issue_date, issue_type, vehicle_status, voucher, from_date, to_date, entity, qty, created_by, issue_no, parent, parentfield, parenttype, name)
-        #                             VALUES ('{issue_date}', '{issue_type}', '{vehicle_status}', '{voucher}' ,'{from_date}', '{to_date}', '{entity}', '{qty}', '{created_by}', '{issue_no}','{parent}', '{parentfield}', '{parenttype}', '{record_name}')
-        #                           """.format(
-        #                     issue_date=self.issue_date,
-        #                     issue_type=self.issue_type,
-        #                     vehicle_status=vehicle_status,
-        #                     from_date=self.from_date,
-        #                     voucher=voucher,
-        #                     to_date=self.to_date,
-        #                     entity=self.entity,
-        #                     qty=t.qty,
-        #                     created_by=frappe.session.user,
-        #                     issue_no=self.name,
-        #                     parenttype=t.vehicle_boat,
-        #                     parent=t.vehicle,
-        #                     parentfield="liquid_table",
-        #                     record_name=record_name,
-        #                 )
-        #             )
-        #             frappe.db.commit()
-
-        #         if t.vehicle_boat == "Boats":
-        #             frappe.db.sql(
-        #                 """ INSERT INTO `tabLiquids Issuing Table`
-        #                                     (issue_date, issue_type, vehicle_status, voucher, from_date, to_date, entity, qty, created_by, issue_no, parent, parentfield, parenttype, name)
-        #                             VALUES ('{issue_date}', '{issue_type}', '{vehicle_status}', '{voucher}' ,'{from_date}', '{to_date}', '{entity}', '{qty}', '{created_by}', '{issue_no}','{parent}', '{parentfield}', '{parenttype}', '{record_name}')
-        #                           """.format(
-        #                     issue_date=self.issue_date,
-        #                     issue_type=self.issue_type,
-        #                     vehicle_status=boat_status,
-        #                     from_date=self.from_date,
-        #                     voucher=voucher1,
-        #                     to_date=self.to_date,
-        #                     entity=frappe.db.get_value(
-        #                         "Boats", t.vehicle, ["entity_name"]
-        #                     ),
-        #                     qty=t.qty,
-        #                     created_by=frappe.session.user,
-        #                     issue_no=self.name,
-        #                     parenttype=t.vehicle_boat,
-        #                     parent=t.vehicle,
-        #                     parentfield="liquid_table",
-        #                     record_name=record_name,
-        #                 )
-        #             )
-        #             frappe.db.commit()
-
-        #     if len(current_vehicles) == 1:
-        #         current_vehicles.append("None")
-        #         frappe.msgprint(str(current_vehicles))
-        #     if not current_vehicles:
-        #         frappe.throw("لا يوجد مركبات تستحق الصرف")
-        #     not_in_vehicle_table = frappe.db.sql(
-        #         """
-        #         select name, vehicle_status
-        #         from `tabVehicles`
-        #         where  ((`tabVehicles`.entity_name = '{entity}' and (`tabVehicles`.attached_entity is null or `tabVehicles`.attached_entity = ""))
-        #         or (`tabVehicles`.entity_name != '{entity}' and `tabVehicles`.attached_entity = '{entity}'))
-        #         and name not in {current_vehicles}
-        #         and `tabVehicles`.vehicle_status in ("عاطلة","تحت التخريد")
-        #     """.format(
-        #             entity=self.entity, current_vehicles=tuple(current_vehicles)
-        #         ),
-        #         as_dict=1,
-        #     )
-        #     not_in_boat_table = frappe.db.sql(
-        #         """
-        #                     select name, boat_validity
-        #                     from `tabBoats`
-        #                     where entity_name = '{cur_entity}'
-        #                     and name not in {current_vehicles}
-        #                     and boat_validity in ("عاطلة","تحت التخريد")
-
-        #                 """.format(
-        #             cur_entity=self.entity, current_vehicles=tuple(current_vehicles)
-        #         ),
-        #         as_dict=1,
-        #     )
-
-        #     for z in not_in_vehicle_table:
-        #         record_name = 1
-        #         max_id = frappe.db.sql(
-        #             """
-        #             SELECT MAX(name) as max_name
-        #             FROM `tabLiquids Issuing Table`
-        #             """,
-        #             as_dict=1,
-        #         )
-        #         if frappe.db.exists("Liquids Issuing Table", 1):
-        #             record_name = int(max_id[0]["max_name"]) + 1
-        #         voucher = ""
-        #         if self.issue_type == "وقود":
-        #             voucher = (
-        #                 frappe.db.get_value("Vehicles", z.name, "fuel_voucher")
-        #                 if frappe.db.get_value("Vehicles", z.name, "fuel_voucher")
-        #                 else "لا يوجد"
-        #             )
-        #         if self.issue_type == "زيت":
-        #             voucher = (
-        #                 frappe.db.get_value("Vehicles", z.name, "oil_type")
-        #                 if frappe.db.get_value("Vehicles", z.name, "oil_type")
-        #                 else "لا يوجد"
-        #             )
-        #         if self.issue_type == "غاز":
-        #             voucher = "غاز طبيعي فئة 15 متر مكعب"
-        #         if self.issue_type == "غسيل":
-        #             voucher = (
-        #                 frappe.db.get_value("Vehicles", z.name, "washing_voucher")
-        #                 if frappe.db.get_value("Vehicles", z.name, "washing_voucher")
-        #                 else "لا يوجد"
-        #             )
-
-        #         frappe.db.sql(
-        #             """ INSERT INTO `tabLiquids Issuing Table`
-        #                                                 (issue_date, issue_type, vehicle_status, voucher, from_date, to_date, entity, qty, created_by, issue_no, parent, parentfield, parenttype, name)
-        #                                         VALUES ('{issue_date}', '{issue_type}', '{vehicle_status}', '{voucher}' ,'{from_date}', '{to_date}', '{entity}', '{qty}', '{created_by}', '{issue_no}','{parent}', '{parentfield}', '{parenttype}', '{record_name}')
-        #                                       """.format(
-        #                 issue_date=self.issue_date,
-        #                 issue_type=self.issue_type,
-        #                 vehicle_status="عاطلة",
-        #                 from_date=self.from_date,
-        #                 voucher=voucher,
-        #                 to_date=self.to_date,
-        #                 entity=self.entity,
-        #                 qty=0,
-        #                 created_by=frappe.session.user,
-        #                 issue_no=self.name,
-        #                 parenttype="Vehicles",
-        #                 parent=z.name,
-        #                 parentfield="liquid_table",
-        #                 record_name=record_name,
-        #             )
-        #         )
-        #         frappe.db.commit()
-
-        #     for w in not_in_boat_table:
-        #         record_name = 1
-        #         max_id = frappe.db.sql(
-        #             """
-        #             SELECT MAX(name) as max_name
-        #             FROM `tabLiquids Issuing Table`
-        #             """,
-        #             as_dict=1,
-        #         )
-        #         if frappe.db.exists("Liquids Issuing Table", 1):
-        #             record_name = int(max_id[0]["max_name"]) + 1
-        #         voucher = ""
-        #         if self.issue_type == "وقود":
-        #             voucher = (
-        #                 frappe.db.get_value("Boats", w.name, "fuel_voucher")
-        #                 if frappe.db.get_value("Boats", w.name, "fuel_voucher")
-        #                 else "لا يوجد"
-        #             )
-        #         if self.issue_type == "زيت":
-        #             voucher = "لا يوجد"
-        #         if self.issue_type == "غاز":
-        #             voucher = "لا يوجد"
-        #         if self.issue_type == "غسيل":
-        #             voucher = "لا يوجد"
-
-        #         frappe.db.sql(
-        #             """ INSERT INTO `tabLiquids Issuing Table`
-        #                                                 (issue_date, issue_type, vehicle_status, voucher, from_date, to_date, entity, qty, created_by, issue_no, parent, parentfield, parenttype, name)
-        #                                         VALUES ('{issue_date}', '{issue_type}', '{vehicle_status}', '{voucher}' ,'{from_date}', '{to_date}', '{entity}', '{qty}', '{created_by}', '{issue_no}','{parent}', '{parentfield}', '{parenttype}', '{record_name}')
-        #                                       """.format(
-        #                 issue_date=self.issue_date,
-        #                 issue_type=self.issue_type,
-        #                 vehicle_status="عاطلة",
-        #                 from_date=self.from_date,
-        #                 voucher=voucher,
-        #                 to_date=self.to_date,
-        #                 entity=self.entity,
-        #                 qty=0,
-        #                 created_by=frappe.session.user,
-        #                 issue_no=self.name,
-        #                 parenttype="Boats",
-        #                 parent=w.name,
-        #                 parentfield="liquid_table",
-        #                 record_name=record_name,
-        #             )
-        #         )
-        #         frappe.db.commit()
-
-        # if self.issue_to == "مركبة أو مجموعة مركبات":
-        #     for t in self.specified_vehicles_issuing_table:
-        #         if t.last_issue_from_date or t.last_issue_to_date:
-        #             if (
-        #                 float(t.last_issue_qty) > 0
-        #                 and getdate(t.last_issue_from_date) >= getdate(self.from_date)
-        #                 and getdate(t.last_issue_from_date) <= getdate(self.to_date)
-        #             ):
-        #                 frappe.throw(
-        #                     " الصف # "
-        #                     + str(t.idx)
-        #                     + " : لا يمكن صرف "
-        #                     + self.issue_type
-        #                     + " إلى المركبة "
-        #                     + str(t.vehicle_no)
-        #                     + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
-        #                     + str(t.entity_name)
-        #                 )
-
-        #             if (
-        #                 float(t.last_issue_qty) > 0
-        #                 and getdate(t.last_issue_to_date) >= getdate(self.from_date)
-        #                 and getdate(t.last_issue_to_date) <= getdate(self.to_date)
-        #             ):
-        #                 frappe.throw(
-        #                     " الصف # "
-        #                     + str(t.idx)
-        #                     + " : لا يمكن صرف "
-        #                     + self.issue_type
-        #                     + " إلى المركبة "
-        #                     + str(t.vehicle_no)
-        #                     + " حيث أنه تم الصرف لها من قبل خلال الفترة المحددة إلى جهة "
-        #                     + str(t.entity_name)
-        #                 )
-
-        #         vehicle_status = frappe.db.get_value(
-        #             "Vehicles", t.vehicle, "vehicle_status"
-        #         )
-        #         voucher = ""
-
-        #         if self.issue_type == "وقود":
-        #             voucher = (
-        #                 frappe.db.get_value("Vehicles", t.vehicle, "fuel_voucher")
-        #                 if frappe.db.get_value("Vehicles", t.vehicle, "fuel_voucher")
-        #                 else "لا يوجد"
-        #             )
-        #         if self.issue_type == "زيت":
-        #             voucher = frappe.db.get_value("Vehicles", t.vehicle, "oil_type")
-        #         if self.issue_type == "غاز":
-        #             voucher = "غاز طبيعي فئة 15 متر مكعب"
-        #         if self.issue_type == "غسيل":
-        #             voucher = frappe.db.get_value(
-        #                 "Vehicles", t.vehicle, "washing_voucher"
-        #             )
-
-        #         record_name = 1
-        #         max_id = frappe.db.sql(
-        #             """
-        #             SELECT MAX(name) as max_name
-        #             FROM `tabLiquids Issuing Table`
-        #             """,
-        #             as_dict=1,
-        #         )
-        #         if frappe.db.exists("Liquids Issuing Table", 1):
-        #             record_name = int(max_id[0]["max_name"]) + 1
-        #         frappe.db.sql(
-        #             """ INSERT INTO `tabLiquids Issuing Table`
-        #                                                 (issue_date, issue_type, vehicle_status, voucher, from_date, to_date, entity, qty, created_by, issue_no, parent, parentfield, parenttype, name)
-        #                                         VALUES ('{issue_date}', '{issue_type}', '{vehicle_status}', '{voucher}', '{from_date}', '{to_date}', '{entity}', '{qty}', '{created_by}', '{issue_no}','{parent}', '{parentfield}', '{parenttype}', '{record_name}')
-        #                                       """.format(
-        #                 issue_date=self.issue_date,
-        #                 issue_type=self.issue_type,
-        #                 from_date=self.from_date,
-        #                 vehicle_status=vehicle_status,
-        #                 voucher=voucher,
-        #                 qty=t.qty,
-        #                 to_date=self.to_date,
-        #                 entity=self.entity,
-        #                 created_by=frappe.session.user,
-        #                 issue_no=self.name,
-        #                 parenttype="Vehicles",
-        #                 parent=t.vehicle,
-        #                 parentfield="liquid_table",
-        #                 record_name=record_name,
-        #             )
-        #         )
-        #         frappe.db.commit()
-
         pass
 
     def on_trash(self):

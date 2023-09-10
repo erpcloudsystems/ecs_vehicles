@@ -347,33 +347,37 @@ class VehicleMaintenanceProcess(Document):
                             new_doc.insert(ignore_permissions=True)
                             row.kle = new_doc.name
 
+    def assign_shadow(self):
+        # if item.maintenance_method == "حافظة مشتريات" self.shadow = 1
+        for row in self.kashf_ohda_item:
+            # check if this item found before in the same fiscal year for the same vehicle in Vehicle Maintenance Process
+            # if found then update the shadow field to 1
+            check_shadow = frappe.db.sql(
+                """
+                select kashf_item.item_code
+                from `tabVehicle Maintenance Process` vmp
+                join `tabKashf Ohda Item` kashf_item on kashf_item.parent = vmp.name
+                where vmp.vehicles = '{vehicles}' 
+                and vmp.fiscal_year = '{fiscal_year}'
+                and vmp.name != '{name}'
+                and kashf_item.item_code = '{item_code}'
+                and kashf_item.maintenance_method in ("حافظة مشتريات", "إصلاح خارجي")
+                and kashf_item.include_in_maintenance_order = 1
+                """.format(
+                    vehicles=self.vehicles,
+                    fiscal_year=self.fiscal_year,
+                    name=self.name,
+                    item_code=row.item_code,
+                ),
+                as_dict=1,
+            )
+            if check_shadow:
+                for x in check_shadow:
+                    row.shadow = 1
+            else:
+                row.shadow = 0
+
     def validate(self):
-        # if self.vehicle_maintenance_status == "فاتورة صيانة" or self.vehicle_maintenance_status == "أمر شغل":
-        #     frappe.throw("{invoice_no} لا يمكن تجديد الإذن نظرا لوجود فاتورة صيانة برقم".format(self.invoice_no))
-        # if self.vehicle_maintenance_status == "أمر شغل":
-        #     frappe.throw("{job_order_no} لا يمكن تجديد الإذن نظرا لوجود أمر شغل برقم".format(self.job_order_no))
-        # repeated_ezn = 0
-        # for x in self.kashf_ohda_item:
-        #     if x.maintenance_method == "إصلاح خارجي" and x.include_in_maintenance_order == 1:
-        #         repeated_ezn = 1
-        # # job_order_list = frappe.db.get_list("Vehicle Maintenance Process", filters=[["vehicles","=", self.vehicles], ["fiscal_year","=",self.fiscal_year], ["name","!=", self.name], ["job_order_no", "!=", None]], fields={"name", "job_order_no", "job_order_date", "fiscal_year", "purchase_invoices"})
-        # if repeated_ezn == 1:
-        #     job_order_list = frappe.db.sql("""
-        #     SELECT name, job_order_no, job_order_date, fiscal_year, purchase_invoices
-        #     FROM `tabVehicle Maintenance Process` vehicle_maintenance_process
-        #     WHERE vehicle_maintenance_process.vehicles = "{vehicles}"
-        #     AND vehicle_maintenance_process.fiscal_year = "{fiscal_year}"
-        #     AND vehicle_maintenance_process.name != "{name}"
-        #     AND vehicle_maintenance_process.job_order_no  is not NULL
-        #     """.format(vehicles=self.vehicles, fiscal_year=self.fiscal_year, name=self.name), as_dict=1)
-
-        #     if job_order_list:
-        #         for y in job_order_list:
-        #             # purchase_invoices_list = frappe.db.exists("Vehicle Maintenance Process", filters={"vehicles": self.vehicles, "job_order_no":y.job_order_no}, fields={"name"})
-        #             if not y.purchase_invoices and self.pass_order == 0:
-        #             # if not purchase_invoices_list and not self.pass_order:
-        #                 frappe.throw(" لا يجوز إضافة إجراء إصلاح خارجي للمركبة وذلك لوجود أمر شغل ساري رقم " + str(y.job_order_no) + " بتاريخ " + str(y.ezn_date or y.fiscal_year))
-
         self.validate_for_duplicate_items()
 
         if not self.kashf_ohda_item:
@@ -442,13 +446,23 @@ class VehicleMaintenanceProcess(Document):
         for item in self.kashf_ohda_item:
             last_sarf_date = frappe.db.sql(
                 """ select
-                                                stock_ledger.action_date, stock_ledger.part_qty
-                                                from `tabKarta Ledger Entry` stock_ledger 
-                                                where stock_ledger.vic_serial = '{vehicles}'
-                                                and stock_ledger.part_universal_code = '{item_code}'
-                                                and stock_ledger.del_flag = "0"
-                                                order by stock_ledger.action_date desc limit 1
-                                                """.format(
+                        stock_ledger.action_date, stock_ledger.part_qty
+                        from `tabKarta Ledger Entry` stock_ledger 
+                        where stock_ledger.vic_serial = '{vehicles}'
+                        and stock_ledger.part_universal_code = '{item_code}'
+                        and stock_ledger.del_flag = "0"
+                        and (
+                        (stock_ledger.maintenance_method = "إذن صرف وإرتجاع"
+                        and doc_type = "Vehicle Maintenance Process" ) 
+                        or 
+                        (stock_ledger.maintenance_method = "إصلاح خارجي"
+                        and doc_type = "Purchase Invoices" ) 
+                        or 
+                        (stock_ledger.maintenance_method = "خطاب جهة"
+                        and doc_type = "Add To Karta" )
+                        )
+                        order by stock_ledger.action_date desc limit 1
+                """.format(
                     vehicles=self.vehicles, item_code=item.item_code
                 ),
                 as_dict=1,
@@ -461,8 +475,8 @@ class VehicleMaintenanceProcess(Document):
             except:
                 if not item.last_issue_detail:
                     item.last_issue_detail = "لم يسبق"
+        self.assign_shadow()
         self.ezn_egraa_item = []
-        # delete_fkarta_ledger_entry_method(self.name)
         for item in self.kashf_ohda_item:
             if not item.qty and item.include_in_maintenance_order:
                 frappe.throw("برجاء اضافة كمية كل صنف")
@@ -760,7 +774,7 @@ class VehicleMaintenanceProcess(Document):
             table.amount = row.amount
         doc.save()
         frappe.msgprint(" تم إنشاء أمر شغل بنجاح ")
-        
+
     @frappe.whitelist()
     def add_maintenance_invoice(doc, method=None):
         if not doc.job_order_no:
@@ -826,6 +840,7 @@ class VehicleMaintenanceProcess(Document):
                 new_doc.name, new_doc.name
             )
         )
+
     # @frappe.whitelist()
     # def create_purchase_order_request(doc, method=None):
     #     doc.order_request_items = []

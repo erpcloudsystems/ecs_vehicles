@@ -22,20 +22,19 @@ def execute(filters=None):
 
 def get_columns():
     return [
-        {
-            "label": ("الكارتة"),
-            "fieldname": "name",
-            "fieldtype": "Link",
-            "options": "Karta Ledger Entry",
-            "width": 100
+                {
+            "label": ("نوع النموذج"),
+            "fieldname": "namozg",
+            "fieldtype": "Data",
+            "width": 130
         },
         {
-            "label": ("كود القطعة"),
-            "fieldname": "item_code",
-            "fieldtype": "Link",
-            "options": "Item",
-            "width": 90
+            "label": ("رقم النموذج"),
+            "fieldname": "ezn_no",
+            "fieldtype": "Data",
+            "width": 120
         },
+        
         {
             "label": ("قطعة الغيار"),
             "fieldname": "item_name",
@@ -67,23 +66,39 @@ def get_columns():
             "fieldtype": "Data",
             "width": 90
         },
-        {
-            "label": ("نوع النموذج"),
-            "fieldname": "namozg",
-            "fieldtype": "Data",
-            "width": 130
-        },
-        {
-            "label": ("رقم النموذج"),
-            "fieldname": "ezn_no",
-            "fieldtype": "Data",
-            "width": 120
-        },
+
         {
             "label": ("تاريخ النموذج"),
             "fieldname": "date2",
             "fieldtype": "Data",
             "width": 110
+        },
+        
+        {
+            "label": ("نوع الورش"),
+            "fieldname": "werash",
+            "fieldtype": "Data",
+            "width": 110
+        },
+        {
+            "label": ("إسم الورشة"),
+            "fieldname": "werash_name",
+            "fieldtype": "Data",
+            "width": 180
+        },
+        {
+            "label": ("الكارتة"),
+            "fieldname": "name",
+            "fieldtype": "Link",
+            "options": "Karta Ledger Entry",
+            "width": 100
+        },
+        {
+            "label": ("كود القطعة"),
+            "fieldname": "item_code",
+            "fieldtype": "Link",
+            "options": "Item",
+            "width": 90
         },
         {
             "label": ("المنشأ"),
@@ -96,18 +111,6 @@ def get_columns():
             "fieldname": "maintenance_entity",
             "fieldtype": "Data",
             "width": 140
-        },
-        {
-            "label": ("نوع الورش"),
-            "fieldname": "werash",
-            "fieldtype": "Data",
-            "width": 110
-        },
-        {
-            "label": ("إسم الورشة"),
-            "fieldname": "werash_name",
-            "fieldtype": "Data",
-            "width": 180
         },
 
     ]

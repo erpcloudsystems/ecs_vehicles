@@ -279,3 +279,12 @@ where `tabVehicles`.private_no = `tabPrivate Plate Logs`.value
 and `tabPrivate Plate Logs`.idx = (select max(idx) from `tabPrivate Plate Logs` where `tabPrivate Plate Logs`.parent = `tabVehicles`.name);
 
 [{'222300': [{'VEH-00765': datetime.date(2004, 10, 23)}, {'VEH-13794': datetime.date(2004, 6, 5)}]}]
+
+
+UPDATE `tabPolice Plate`
+SET current_vehicle = "إحتياطي مخزن لوحات"
+WHERE current_vehicle != "إحتياطي مخزن لوحات"
+AND current_vehicle not in (
+    SELECT name 
+    FROM `tabVehicles`
+);

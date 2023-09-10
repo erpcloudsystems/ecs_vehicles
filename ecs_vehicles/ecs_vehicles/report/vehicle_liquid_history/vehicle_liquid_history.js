@@ -4,7 +4,7 @@
 
 frappe.query_reports["Vehicle Liquid History"] = {
 	"filters": [
-        {
+		{
 			fieldname: "name",
 			label: __("رقم المركبة"),
 			fieldtype: "Data",
@@ -26,18 +26,20 @@ frappe.query_reports["Vehicle Liquid History"] = {
 			fieldname: "issue_type",
 			label: __("نوع السائل"),
 			fieldtype: "Select",
-			options: ["وقود","زيت","غاز","غسيل"],
+			options: ["وقود", "زيت", "غاز", "غسيل"],
 			default: "وقود",
 		},
 		{
 			fieldname: "from_date",
 			label: __("من تاريخ"),
 			fieldtype: "Date",
+			default: frappe.datetime.add_months(frappe.datetime.month_start(), -84),
 		},
 		{
 			fieldname: "to_date",
 			label: __("إلى تاريخ"),
 			fieldtype: "Date",
+			default: frappe.datetime.get_today(),
 		},
 	]
 };

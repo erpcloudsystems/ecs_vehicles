@@ -259,6 +259,7 @@
    "reqd": 1
   },
   {
+   "default": "2023/2024",
    "fieldname": "fiscal_year",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -317,7 +318,6 @@
   },
   {
    "fetch_from": "vehicles.vehicle_no",
-   "fetch_if_empty": 1,
    "fieldname": "vehicle_no",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -327,7 +327,6 @@
   },
   {
    "fetch_from": "vehicles.vehicle_type",
-   "fetch_if_empty": 1,
    "fieldname": "vehicle_type",
    "fieldtype": "Data",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
@@ -335,7 +334,6 @@
   },
   {
    "fetch_from": "vehicles.group_shape",
-   "fetch_if_empty": 1,
    "fieldname": "group_shape",
    "fieldtype": "Data",
    "label": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0634\u0643\u0644",
@@ -343,7 +341,6 @@
   },
   {
    "fetch_from": "vehicles.vehicle_shape",
-   "fetch_if_empty": 1,
    "fieldname": "vehicle_shape",
    "fieldtype": "Data",
    "label": "\u0627\u0644\u0634\u0643\u0644",
@@ -355,7 +352,6 @@
   },
   {
    "fetch_from": "vehicles.vehicle_brand",
-   "fetch_if_empty": 1,
    "fieldname": "vehicle_brand",
    "fieldtype": "Data",
    "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
@@ -363,7 +359,6 @@
   },
   {
    "fetch_from": "vehicles.motor_no",
-   "fetch_if_empty": 1,
    "fieldname": "motor_no",
    "fieldtype": "Data",
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u0648\u062a\u0648\u0631",
@@ -371,7 +366,6 @@
   },
   {
    "fetch_from": "vehicles.vehicle_style",
-   "fetch_if_empty": 1,
    "fieldname": "vehicle_style",
    "fieldtype": "Data",
    "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
@@ -379,7 +373,6 @@
   },
   {
    "fetch_from": "vehicles.vehicle_model",
-   "fetch_if_empty": 1,
    "fieldname": "vehicle_model",
    "fieldtype": "Data",
    "label": "\u0627\u0644\u0645\u0648\u062f\u064a\u0644",
@@ -387,7 +380,6 @@
   },
   {
    "fetch_from": "vehicles.fuel_type",
-   "fetch_if_empty": 1,
    "fieldname": "fuel_type",
    "fieldtype": "Data",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
@@ -399,7 +391,6 @@
   },
   {
    "fetch_from": "vehicles.entity_name",
-   "fetch_if_empty": 1,
    "fieldname": "entity_name",
    "fieldtype": "Data",
    "label": "\u0627\u0644\u062c\u0647\u0629",
@@ -408,7 +399,6 @@
   {
    "allow_on_submit": 1,
    "fetch_from": "vehicles.maintenance_entity",
-   "fetch_if_empty": 1,
    "fieldname": "maintenance_entity",
    "fieldtype": "Data",
    "label": "\u062c\u0647\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
@@ -417,7 +407,6 @@
   {
    "allow_on_submit": 1,
    "fetch_from": "vehicles.possession_date",
-   "fetch_if_empty": 1,
    "fieldname": "possession_date",
    "fieldtype": "Date",
    "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
@@ -425,7 +414,6 @@
   },
   {
    "fetch_from": "vehicles.chassis_no",
-   "fetch_if_empty": 1,
    "fieldname": "chassis_no",
    "fieldtype": "Data",
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
@@ -433,7 +421,6 @@
   },
   {
    "fetch_from": "vehicles.possession_type",
-   "fetch_if_empty": 1,
    "fieldname": "possession_type",
    "fieldtype": "Data",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
@@ -441,7 +428,6 @@
   },
   {
    "fetch_from": "vehicles.processing_type",
-   "fetch_if_empty": 1,
    "fieldname": "processing_type",
    "fieldtype": "Data",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u062c\u0647\u064a\u0632",
@@ -1661,7 +1647,7 @@
  "index_web_pages_for_search": 1,
  "links": [],
  "make_attachments_public": 1,
- "modified": "2023-09-02 12:53:27.394599",
+ "modified": "2023-09-09 10:45:20.964001",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vehicle Maintenance Process",

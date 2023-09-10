@@ -225,7 +225,7 @@ class PresentationNote(Document):
                     "maintenance_method": row.maintenance_method,
                     "description": row.description,
                     "uom": row.default_unit_of_measure,
-                    "brand": row.brand,
+                    "vehicle_origin": row.brand,
                     "qty": row.qty,
                     "rate": row.rate,
                     "amount": row.amount,

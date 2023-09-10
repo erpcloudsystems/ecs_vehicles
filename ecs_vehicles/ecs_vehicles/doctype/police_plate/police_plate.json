@@ -45,8 +45,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629 \u0627\u0644\u062d\u0627\u0644\u064a\u0629",
-   "read_only": 1
+   "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629 \u0627\u0644\u062d\u0627\u0644\u064a\u0629"
   },
   {
    "fieldname": "section_break_5",
@@ -72,7 +71,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-27 19:56:51.632693",
+ "modified": "2023-09-07 18:52:21.179271",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Police Plate",

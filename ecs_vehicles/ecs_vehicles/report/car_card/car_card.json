@@ -9,7 +9,7 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2023-05-25 15:21:14.374923",
+ "modified": "2023-09-09 12:09:39.152017",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Car Card",
@@ -21,6 +21,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Maintenance"
   }
  ]
 }

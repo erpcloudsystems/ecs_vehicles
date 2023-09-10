@@ -57,7 +57,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "ORD_SERIAL",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "detail_serial",
@@ -71,7 +72,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "VIC_SERIAL",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "part_universal_code",
@@ -80,7 +82,8 @@
    "in_standard_filter": 1,
    "label": "PART_UNIVERSAL_CODE",
    "options": "Item",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "action_type",
@@ -93,7 +96,8 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "label": "ACTION_DATE",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "part_unit",
@@ -129,19 +133,22 @@
    "fieldname": "ezn_no",
    "fieldtype": "Data",
    "label": "EZN_NO",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "ezn_date",
    "fieldtype": "Date",
    "label": "EZN_DATE",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "doc_type",
    "fieldtype": "Data",
    "label": "DOC_TYPE",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "doc_no",
@@ -245,7 +252,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "DEL_FLAG",
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "fieldname": "naming_series",
@@ -257,12 +265,13 @@
   {
    "fieldname": "maintenance_method",
    "fieldtype": "Data",
-   "label": "MAINTENANCE_METHOD"
+   "label": "MAINTENANCE_METHOD",
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-05-21 16:14:03.498933",
+ "modified": "2023-09-09 14:13:34.576473",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Karta Ledger Entry",

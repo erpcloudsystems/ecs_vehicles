@@ -174,7 +174,7 @@ def get_qty_per_liquids(filters):
                 'batch_no': item_dict.batch_no,
                 'batch_date': item_dict.batch_date,
                 'revision_date': item_dict.revision_date,
-                'group_no': int(item_dict.group_no),
+                'group_no': str(item_dict.group_no),
                 'voucher_type': row.voucher_type,
                 'total_count': row.voucher_type_count,
                 "cur_user":user_printed
