@@ -1,7 +1,33 @@
 [
  {
   "charts": [],
+  "content": "[{\"id\":\"2eyXSHwMTE\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h2\\\">Hi,</span>\",\"col\":12}},{\"id\":\"ZusKvFOXgu\",\"type\":\"paragraph\",\"data\":{\"text\":\"I guess you don't have access to any workspace yet, but you can create one just for yourself. Click on the <b>Create Workspace</b> button to create one.<br>\",\"col\":12}}]",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "image-view",
+  "is_hidden": 0,
+  "label": "Welcome Workspace",
+  "links": [],
+  "modified": "2023-07-28 20:15:32.222029",
+  "module": "Core",
+  "name": "Welcome Workspace",
+  "number_cards": [],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [],
+  "sequence_id": 22.0,
+  "shortcuts": [],
+  "title": "Welcome Workspace"
+ },
+ {
+  "charts": [],
   "content": "[{\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Home\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leaderboard\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Accounting\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Stock\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Human Resources\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"CRM\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Data Import and Settings\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -363,6 +389,7 @@
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Item",
     "link_to": "Item",
     "parent": "Home",
@@ -370,13 +397,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Customer",
     "link_to": "Customer",
     "parent": "Home",
@@ -384,13 +413,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Supplier",
     "link_to": "Supplier",
     "parent": "Home",
@@ -398,13 +429,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Sales Invoice",
     "link_to": "Sales Invoice",
     "parent": "Home",
@@ -412,13 +445,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Leaderboard",
     "link_to": "leaderboard",
     "parent": "Home",
@@ -426,7 +461,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Page"
+    "type": "Page",
+    "url": null
    }
   ],
   "title": "Home"
@@ -442,6 +478,7 @@
    }
   ],
   "content": "[{\"type\":\"chart\",\"data\":{\"chart_name\":\"Territory Wise Sales\",\"col\":12}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Lead\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Opportunity\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Analytics\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Sales Pipeline\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Campaign\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Maintenance\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -1123,6 +1160,7 @@
     "doc_view": null,
     "format": "{} Open",
     "icon": null,
+    "kanban_board": null,
     "label": "Lead",
     "link_to": "Lead",
     "parent": "CRM",
@@ -1130,13 +1168,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":\"Open\"}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Blue",
     "doc_view": null,
     "format": "{} Assigned",
     "icon": null,
+    "kanban_board": null,
     "label": "Opportunity",
     "link_to": "Opportunity",
     "parent": "CRM",
@@ -1144,13 +1184,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"_assign\": [\"like\", '%' + frappe.session.user + '%']}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Customer",
     "link_to": "Customer",
     "parent": "CRM",
@@ -1158,13 +1200,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Sales Analytics",
     "link_to": "Sales Analytics",
     "parent": "CRM",
@@ -1172,13 +1216,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "CRM",
     "parent": "CRM",
@@ -1186,7 +1232,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    }
   ],
   "title": "CRM"
@@ -1202,6 +1249,7 @@
    }
   ],
   "content": "[{\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Selling\",\"col\":12}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"Sales Order Trends\",\"col\":12}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Access</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Order\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Analytics\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Order Analysis\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Selling\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Items and Pricing\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -2251,6 +2299,7 @@
     "doc_view": null,
     "format": "{} Available",
     "icon": null,
+    "kanban_board": null,
     "label": "Item",
     "link_to": "Item",
     "parent": "Selling",
@@ -2258,13 +2307,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"disabled\":0\n}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Yellow",
     "doc_view": null,
     "format": "{}  To Deliver",
     "icon": null,
+    "kanban_board": null,
     "label": "Sales Order",
     "link_to": "Sales Order",
     "parent": "Selling",
@@ -2272,13 +2323,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"company\": [\"like\", '%' + frappe.defaults.get_global_default(\"company\") + '%'],\n    \"status\":[\"in\", [\"To Deliver\", \"To Deliver and Bill\"]]\n}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": null,
     "format": "{} Open",
     "icon": null,
+    "kanban_board": null,
     "label": "Sales Analytics",
     "link_to": "Sales Analytics",
     "parent": "Selling",
@@ -2286,13 +2339,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{ \"Status\": \"Open\" }",
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Sales Order Analysis",
     "link_to": "Sales Order Analysis",
     "parent": "Selling",
@@ -2300,13 +2355,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "Selling",
     "parent": "Selling",
@@ -2314,7 +2371,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    }
   ],
   "title": "Selling"
@@ -2330,6 +2388,7 @@
    }
   ],
   "content": "[{\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Buying\",\"col\":12}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"Purchase Order Trends\",\"col\":12}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Material Request\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Analytics\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Order Analysis\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Buying\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Items & Pricing\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Supplier\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Supplier Scorecard\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Regional\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -3107,6 +3166,7 @@
     "doc_view": null,
     "format": "{} Available",
     "icon": null,
+    "kanban_board": null,
     "label": "Item",
     "link_to": "Item",
     "parent": "Buying",
@@ -3114,13 +3174,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"disabled\": 0\n}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Yellow",
     "doc_view": null,
     "format": "{} Pending",
     "icon": null,
+    "kanban_board": null,
     "label": "Material Request",
     "link_to": "Material Request",
     "parent": "Buying",
@@ -3128,13 +3190,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"company\": [\"like\", '%' + frappe.defaults.get_global_default(\"company\") + '%'],\n    \"status\": \"Pending\"\n}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Yellow",
     "doc_view": null,
     "format": "{}  To Receive",
     "icon": null,
+    "kanban_board": null,
     "label": "Purchase Order",
     "link_to": "Purchase Order",
     "parent": "Buying",
@@ -3142,13 +3206,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"company\": [\"like\", '%' + frappe.defaults.get_global_default(\"company\") + '%'],\n    \"status\":[\"in\", [\"To Receive\", \"To Receive and Bill\"]]\n}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Purchase Analytics",
     "link_to": "Purchase Analytics",
     "parent": "Buying",
@@ -3156,13 +3222,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Purchase Order Analysis",
     "link_to": "Purchase Order Analysis",
     "parent": "Buying",
@@ -3170,13 +3238,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "Buying",
     "parent": "Buying",
@@ -3184,7 +3254,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    }
   ],
   "title": "Buying"
@@ -3192,6 +3263,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Website\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Blog Post\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Blogger\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Web Page\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Web Form\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Website Settings\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Setup\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Blog\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Web Site\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Portal\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Knowledge Base\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -3553,6 +3625,7 @@
     "doc_view": null,
     "format": "{} Published",
     "icon": null,
+    "kanban_board": null,
     "label": "Blog Post",
     "link_to": "Blog Post",
     "parent": "Website",
@@ -3560,13 +3633,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"published\":\"1\"}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Green",
     "doc_view": null,
     "format": "{} Active",
     "icon": null,
+    "kanban_board": null,
     "label": "Blogger",
     "link_to": "Blogger",
     "parent": "Website",
@@ -3574,13 +3649,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"disabled\": 0}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Green",
     "doc_view": null,
     "format": "{} Published",
     "icon": null,
+    "kanban_board": null,
     "label": "Web Page",
     "link_to": "Web Page",
     "parent": "Website",
@@ -3588,13 +3665,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{ \"published\": 1 }",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Web Form",
     "link_to": "Web Form",
     "parent": "Website",
@@ -3602,13 +3681,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Website Settings",
     "link_to": "Website Settings",
     "parent": "Website",
@@ -3616,7 +3697,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Website"
@@ -3624,6 +3706,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ToDo\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Note\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"File\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Assignment Rule\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Auto Repeat\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Tools\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Email\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Automation\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Event Streaming\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -3953,6 +4036,7 @@
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "ToDo",
     "link_to": "ToDo",
     "parent": "Tools",
@@ -3960,13 +4044,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Note",
     "link_to": "Note",
     "parent": "Tools",
@@ -3974,13 +4060,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "File",
     "link_to": "File",
     "parent": "Tools",
@@ -3988,13 +4076,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Assignment Rule",
     "link_to": "Assignment Rule",
     "parent": "Tools",
@@ -4002,13 +4092,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Auto Repeat",
     "link_to": "Auto Repeat",
     "parent": "Tools",
@@ -4016,7 +4108,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Tools"
@@ -4024,6 +4117,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Settings</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"System Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Print Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Website Settings\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Data\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Email / Notifications\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Website\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Core\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Printing\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Workflow\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -4561,6 +4655,7 @@
     "doc_view": null,
     "format": null,
     "icon": "setting",
+    "kanban_board": null,
     "label": "System Settings",
     "link_to": "System Settings",
     "parent": "Settings",
@@ -4568,13 +4663,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": "printer",
+    "kanban_board": null,
     "label": "Print Settings",
     "link_to": "Print Settings",
     "parent": "Settings",
@@ -4582,13 +4679,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": "website",
+    "kanban_board": null,
     "label": "Website Settings",
     "link_to": "Website Settings",
     "parent": "Settings",
@@ -4596,7 +4695,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Settings"
@@ -4604,6 +4704,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Role\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Permission Manager\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User Profile\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"User Type\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Users\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Logs\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Permissions\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -4837,6 +4938,7 @@
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "User",
     "link_to": "User",
     "parent": "Users",
@@ -4844,13 +4946,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Role",
     "link_to": "Role",
     "parent": "Users",
@@ -4858,13 +4962,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Permission Manager",
     "link_to": "permission-manager",
     "parent": "Users",
@@ -4872,13 +4978,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Page"
+    "type": "Page",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "User Profile",
     "link_to": "user-profile",
     "parent": "Users",
@@ -4886,13 +4994,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Page"
+    "type": "Page",
+    "url": null
    },
    {
     "color": null,
     "doc_view": "",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "User Type",
     "link_to": "User Type",
     "parent": "Users",
@@ -4900,7 +5010,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Users"
@@ -4908,6 +5019,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Customization\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customize Form\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Custom Role\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Client Script\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Server Script\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Dashboards\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Form Customization\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Other\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -5125,6 +5237,7 @@
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Customize Form",
     "link_to": "Customize Form",
     "parent": "Customization",
@@ -5132,13 +5245,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Custom Role",
     "link_to": "Custom Role",
     "parent": "Customization",
@@ -5146,13 +5261,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Client Script",
     "link_to": "Client Script",
     "parent": "Customization",
@@ -5160,13 +5277,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": "",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Server Script",
     "link_to": "Server Script",
     "parent": "Customization",
@@ -5174,7 +5293,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Customization"
@@ -5182,6 +5302,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Backup\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Google Services\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Authentication\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -5503,6 +5624,7 @@
    }
   ],
   "content": "[{\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Accounts\",\"col\":12}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"Profit and Loss\",\"col\":12}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Chart of Accounts\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Invoice\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Journal Entry\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payment Entry\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accounts Receivable\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"General Ledger\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Trial Balance\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Accounting Masters\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"General Ledger\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Receivable\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Accounts Payable\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Financial Statements\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Multi Currency\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Bank Statement\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Subscription Management\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Share Management\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Cost Center and Budgeting\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Opening and Closing\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Taxes\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Profitability\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -7160,6 +7282,7 @@
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Chart of Accounts",
     "link_to": "Account",
     "parent": "Accounting",
@@ -7167,13 +7290,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Sales Invoice",
     "link_to": "Sales Invoice",
     "parent": "Accounting",
@@ -7181,13 +7306,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Purchase Invoice",
     "link_to": "Purchase Invoice",
     "parent": "Accounting",
@@ -7195,13 +7322,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Journal Entry",
     "link_to": "Journal Entry",
     "parent": "Accounting",
@@ -7209,13 +7338,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Payment Entry",
     "link_to": "Payment Entry",
     "parent": "Accounting",
@@ -7223,13 +7354,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Accounts Receivable",
     "link_to": "Accounts Receivable",
     "parent": "Accounting",
@@ -7237,13 +7370,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "General Ledger",
     "link_to": "General Ledger",
     "parent": "Accounting",
@@ -7251,13 +7386,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Trial Balance",
     "link_to": "Trial Balance",
     "parent": "Accounting",
@@ -7265,13 +7402,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "Accounts",
     "parent": "Accounting",
@@ -7279,7 +7418,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    }
   ],
   "title": "Accounting"
@@ -7295,6 +7435,7 @@
    }
   ],
   "content": "[{\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Stock\",\"col\":12}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"Warehouse wise Stock Value\",\"col\":12}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Quick Access</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Material Request\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Entry\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Purchase Receipt\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Delivery Note\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Ledger\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Balance\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Reports</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Items and Pricing\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Stock Transactions\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Stock Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Serial No and Batch\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Tools\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -8376,6 +8517,7 @@
     "doc_view": null,
     "format": "{}  Available",
     "icon": null,
+    "kanban_board": null,
     "label": "Item",
     "link_to": "Item",
     "parent": "Stock",
@@ -8383,13 +8525,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"disabled\" : 0\n}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Yellow",
     "doc_view": null,
     "format": "{} Pending",
     "icon": null,
+    "kanban_board": null,
     "label": "Material Request",
     "link_to": "Material Request",
     "parent": "Stock",
@@ -8397,13 +8541,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"company\": [\"like\", '%' + frappe.defaults.get_global_default(\"company\") + '%'],\n    \"status\": \"Pending\"\n}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Stock Entry",
     "link_to": "Stock Entry",
     "parent": "Stock",
@@ -8411,13 +8557,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Yellow",
     "doc_view": null,
     "format": "{} To Bill",
     "icon": null,
+    "kanban_board": null,
     "label": "Purchase Receipt",
     "link_to": "Purchase Receipt",
     "parent": "Stock",
@@ -8425,13 +8573,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"company\": [\"like\", '%' + frappe.defaults.get_global_default(\"company\") + '%'],\n    \"status\": \"To Bill\"\n}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Yellow",
     "doc_view": null,
     "format": "{} To Bill",
     "icon": null,
+    "kanban_board": null,
     "label": "Delivery Note",
     "link_to": "Delivery Note",
     "parent": "Stock",
@@ -8439,13 +8589,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"company\": [\"like\", '%' + frappe.defaults.get_global_default(\"company\") + '%'],\n    \"status\": \"To Bill\"\n}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Stock Ledger",
     "link_to": "Stock Ledger",
     "parent": "Stock",
@@ -8453,13 +8605,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Stock Balance",
     "link_to": "Stock Balance",
     "parent": "Stock",
@@ -8467,13 +8621,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "Stock",
     "parent": "Stock",
@@ -8481,7 +8637,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    }
   ],
   "title": "Stock"
@@ -8497,6 +8654,7 @@
    }
   ],
   "content": "[{\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Assets\",\"col\":12}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"Asset Value Analytics\",\"col\":12}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Asset Category\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Fixed Asset Register\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Assets\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Maintenance\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -8778,6 +8936,7 @@
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Asset",
     "link_to": "Asset",
     "parent": "Assets",
@@ -8785,13 +8944,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Asset Category",
     "link_to": "Asset Category",
     "parent": "Assets",
@@ -8799,13 +8960,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Fixed Asset Register",
     "link_to": "Fixed Asset Register",
     "parent": "Assets",
@@ -8813,13 +8976,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "Asset",
     "parent": "Assets",
@@ -8827,7 +8992,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    }
   ],
   "title": "Assets"
@@ -8843,6 +9009,7 @@
    }
   ],
   "content": "[{\"type\":\"chart\",\"data\":{\"chart_name\":\"Open Projects\",\"col\":12}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Task\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Timesheet\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Billing Summary\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Projects\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Time Tracking\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -9140,6 +9307,7 @@
     "doc_view": null,
     "format": "{} Assigned",
     "icon": null,
+    "kanban_board": null,
     "label": "Task",
     "link_to": "Task",
     "parent": "Projects",
@@ -9147,13 +9315,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"_assign\": [\"like\", '%' + frappe.session.user + '%'],\n    \"status\": \"Open\"\n}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Blue",
     "doc_view": null,
     "format": "{} Open",
     "icon": null,
+    "kanban_board": null,
     "label": "Project",
     "link_to": "Project",
     "parent": "Projects",
@@ -9161,13 +9331,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"status\": \"Open\"\n}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Timesheet",
     "link_to": "Timesheet",
     "parent": "Projects",
@@ -9175,13 +9347,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Project Billing Summary",
     "link_to": "Project Billing Summary",
     "parent": "Projects",
@@ -9189,13 +9363,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "Project",
     "parent": "Projects",
@@ -9203,7 +9379,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    }
   ],
   "title": "Projects"
@@ -9211,6 +9388,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Issue\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Maintenance Visit\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Service Level Agreement\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Issues\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Maintenance\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Service Level Agreement\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Warranty\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -9492,6 +9670,7 @@
     "doc_view": null,
     "format": "{} Assigned",
     "icon": null,
+    "kanban_board": null,
     "label": "Issue",
     "link_to": "Issue",
     "parent": "Support",
@@ -9499,13 +9678,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"_assign\": [\"like\", '%' + frappe.session.user + '%'],\n    \"status\": \"Open\"\n}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Maintenance Visit",
     "link_to": "Maintenance Visit",
     "parent": "Support",
@@ -9513,13 +9694,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Service Level Agreement",
     "link_to": "Service Level Agreement",
     "parent": "Support",
@@ -9527,7 +9710,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Support"
@@ -9543,6 +9727,7 @@
    }
   ],
   "content": "[{\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Human Resource\",\"col\":12}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"Hiring vs Attrition Count\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leave Application\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"HR Dashboard\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Recruitment Dashboard\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Lifecycle Dashboard\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Attendance Dashboard\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Claims Dashboard\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Setup\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Employee\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Leaves\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Expense Claim\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Key Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Other Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -10160,6 +10345,7 @@
     "doc_view": null,
     "format": "{} Open",
     "icon": null,
+    "kanban_board": null,
     "label": "HR Dashboard",
     "link_to": "Human Resource",
     "parent": "HR",
@@ -10167,13 +10353,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\n    \"status\": \"Open\"\n}",
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Leave Application",
     "link_to": "Leave Application",
     "parent": "HR",
@@ -10181,13 +10369,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Green",
     "doc_view": null,
     "format": "{} Active",
     "icon": null,
+    "kanban_board": null,
     "label": "Employee",
     "link_to": "Employee",
     "parent": "HR",
@@ -10195,13 +10385,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":\"Active\"}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Expense Claims Dashboard",
     "link_to": "Expense Claims",
     "parent": "HR",
@@ -10209,13 +10401,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Recruitment Dashboard",
     "link_to": "Recruitment",
     "parent": "HR",
@@ -10223,13 +10417,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Employee Lifecycle Dashboard",
     "link_to": "Employee Lifecycle",
     "parent": "HR",
@@ -10237,13 +10433,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Attendance Dashboard",
     "link_to": "Attendance",
     "parent": "HR",
@@ -10251,7 +10449,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    }
   ],
   "title": "HR"
@@ -10259,6 +10458,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quality Goal\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quality Procedure\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quality Inspection\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quality Review\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Quality Action\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Non Conformance\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Goal and Procedure\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Feedback\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Meeting\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Review and Action\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -10492,6 +10692,7 @@
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Quality Goal",
     "link_to": "Quality Goal",
     "parent": "Quality",
@@ -10499,13 +10700,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "Tree",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Quality Procedure",
     "link_to": "Quality Procedure",
     "parent": "Quality",
@@ -10513,13 +10716,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Quality Inspection",
     "link_to": "Quality Inspection",
     "parent": "Quality",
@@ -10527,13 +10732,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "",
     "format": "{} Open",
     "icon": null,
+    "kanban_board": null,
     "label": "Quality Review",
     "link_to": "Quality Review",
     "parent": "Quality",
@@ -10541,13 +10748,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\": \"Open\"}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "",
     "format": "{} Open",
     "icon": null,
+    "kanban_board": null,
     "label": "Quality Action",
     "link_to": "Quality Action",
     "parent": "Quality",
@@ -10555,13 +10764,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\": \"Open\"}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "",
     "format": "{} Open",
     "icon": null,
+    "kanban_board": null,
     "label": "Non Conformance",
     "link_to": "Non Conformance",
     "parent": "Quality",
@@ -10569,7 +10780,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\": \"Open\"}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Quality"
@@ -10577,6 +10789,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BOM\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Production Plan\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Work Order\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Card\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Forecasting\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BOM Stock Report\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Production Planning Report\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Production\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Bill of Materials\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Tools\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -11194,6 +11407,7 @@
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "BOM",
     "link_to": "BOM",
     "parent": "Manufacturing",
@@ -11201,13 +11415,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"is_active\":[\"=\",1]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Production Plan",
     "link_to": "Production Plan",
     "parent": "Manufacturing",
@@ -11215,13 +11431,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"not in\",[\"Closed\",\"Cancelled\",\"Completed\"]]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Work Order",
     "link_to": "Work Order",
     "parent": "Manufacturing",
@@ -11229,13 +11447,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"not in\",[\"Closed\",\"Cancelled\",\"Completed\"]]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Job Card",
     "link_to": "Job Card",
     "parent": "Manufacturing",
@@ -11243,13 +11463,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"not in\",[\"Cancelled\",\"Completed\",null]]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Forecasting",
     "link_to": "Exponential Smoothing Forecasting",
     "parent": "Manufacturing",
@@ -11257,13 +11479,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "BOM Stock Report",
     "link_to": "BOM Stock Report",
     "parent": "Manufacturing",
@@ -11271,13 +11495,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Production Planning Report",
     "link_to": "Production Planning Report",
     "parent": "Manufacturing",
@@ -11285,7 +11511,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    }
   ],
   "title": "Manufacturing"
@@ -11293,6 +11520,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Point Of Sale\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings & Configurations\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Loyalty Program\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Opening & Closing\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -11462,6 +11690,7 @@
     "doc_view": "",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Point Of Sale",
     "link_to": "point-of-sale",
     "parent": "Retail",
@@ -11469,7 +11698,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Page"
+    "type": "Page",
+    "url": null
    }
   ],
   "title": "Retail"
@@ -11477,6 +11707,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"_38WStznya\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"id\":\"t7o_K__1jB\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Loan Application\",\"col\":3}},{\"id\":\"IRiNDC6w1p\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Loan\",\"col\":3}},{\"id\":\"xbbo0FYbq0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"7ZL4Bro-Vi\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"yhyioTViZ3\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"oYFn4b1kSw\",\"type\":\"card\",\"data\":{\"card_name\":\"Loan\",\"col\":4}},{\"id\":\"vZepJF5tl9\",\"type\":\"card\",\"data\":{\"card_name\":\"Loan Processes\",\"col\":4}},{\"id\":\"k-393Mjhqe\",\"type\":\"card\",\"data\":{\"card_name\":\"Disbursement and Repayment\",\"col\":4}},{\"id\":\"6crJ0DBiBJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Loan Security\",\"col\":4}},{\"id\":\"Um5YwxVLRJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -11918,6 +12149,7 @@
     "doc_view": null,
     "format": "{} Open",
     "icon": null,
+    "kanban_board": null,
     "label": "Loan Application",
     "link_to": "Loan Application",
     "parent": "Loans",
@@ -11925,13 +12157,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{ \"status\": \"Open\" }",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Loan",
     "link_to": "Loan",
     "parent": "Loans",
@@ -11939,13 +12173,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": "",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "Loan Dashboard",
     "parent": "Loans",
@@ -11953,7 +12189,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    }
   ],
   "title": "Loans"
@@ -11969,6 +12206,7 @@
    }
   ],
   "content": "[{\"type\":\"onboarding\",\"data\":{\"onboarding_name\":\"Payroll\",\"col\":12}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"Outgoing Salary\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salary Register\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Quick Links\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -12074,6 +12312,7 @@
     "doc_view": null,
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "Payroll",
     "parent": "Payroll",
@@ -12081,13 +12320,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Salary Register",
     "link_to": "Salary Register",
     "parent": "Payroll",
@@ -12095,7 +12336,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    }
   ],
   "title": "Payroll"
@@ -12103,6 +12345,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Marketplace\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Payments\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -12256,6 +12499,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Video\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -12329,6 +12573,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"DocType\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Workspace\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Report\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Elements</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Modules\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Models\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Views\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Scripting\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Packages\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"System Logs\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -12770,6 +13015,7 @@
     "doc_view": "",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "DocType",
     "link_to": "DocType",
     "parent": "Build",
@@ -12777,13 +13023,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": "",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Workspace",
     "link_to": "Workspace",
     "parent": "Build",
@@ -12791,13 +13039,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": "",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Report",
     "link_to": "Report",
     "parent": "Build",
@@ -12805,7 +13055,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Build"
@@ -12813,6 +13064,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts\\n\\t\\t\\t\\n\\t\\t\\n\\t\\t\\t\\n\\t\\t\\n\\t\\t\\t\\n\\t\\t</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Projects Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Accounts Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Stock Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"HR Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Selling Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Buying Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Support Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shopping Cart Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Portal Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Domain Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Products Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Naming Series\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Manufacturing Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Education Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Hotel Settings\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"CRM Settings\",\"col\":3}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -12837,6 +13089,7 @@
     "doc_view": null,
     "format": null,
     "icon": "project",
+    "kanban_board": null,
     "label": "Projects Settings",
     "link_to": "Projects Settings",
     "parent": "ERPNext Settings",
@@ -12844,13 +13097,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": "accounting",
+    "kanban_board": null,
     "label": "Accounts Settings",
     "link_to": "Accounts Settings",
     "parent": "ERPNext Settings",
@@ -12858,13 +13113,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": "stock",
+    "kanban_board": null,
     "label": "Stock Settings",
     "link_to": "Stock Settings",
     "parent": "ERPNext Settings",
@@ -12872,13 +13129,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": "sell",
+    "kanban_board": null,
     "label": "Selling Settings",
     "link_to": "Selling Settings",
     "parent": "ERPNext Settings",
@@ -12886,13 +13145,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": "buying",
+    "kanban_board": null,
     "label": "Buying Settings",
     "link_to": "Buying Settings",
     "parent": "ERPNext Settings",
@@ -12900,13 +13161,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": "support",
+    "kanban_board": null,
     "label": "Support Settings",
     "link_to": "Support Settings",
     "parent": "ERPNext Settings",
@@ -12914,13 +13177,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": "retail",
+    "kanban_board": null,
     "label": "E Commerce Settings",
     "link_to": "E Commerce Settings",
     "parent": "ERPNext Settings",
@@ -12928,13 +13193,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": "website",
+    "kanban_board": null,
     "label": "Portal Settings",
     "link_to": "Portal Settings",
     "parent": "ERPNext Settings",
@@ -12942,13 +13209,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": "organization",
+    "kanban_board": null,
     "label": "Manufacturing Settings",
     "link_to": "Manufacturing Settings",
     "parent": "ERPNext Settings",
@@ -12956,13 +13225,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": "Manufacturing",
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": null,
     "format": null,
     "icon": "setting",
+    "kanban_board": null,
     "label": "Domain Settings",
     "link_to": "Domain Settings",
     "parent": "ERPNext Settings",
@@ -12970,13 +13241,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": null,
     "doc_view": "",
     "format": null,
     "icon": "crm",
+    "kanban_board": null,
     "label": "CRM Settings",
     "link_to": "CRM Settings",
     "parent": "ERPNext Settings",
@@ -12984,7 +13257,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "ERPNext Settings"
@@ -12992,6 +13266,7 @@
  {
   "charts": [],
   "content": "[]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -13016,6 +13291,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"dxAK4x-A5g\",\"type\":\"card\",\"data\":{\"card_name\":\"\u062a\u0643\u0648\u064a\u062f \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629\",\"col\":4}},{\"id\":\"91XC7qV9Gb\",\"type\":\"card\",\"data\":{\"card_name\":\"\u062a\u0643\u0648\u064a\u062f \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0641\u0646\u064a\u0629\",\"col\":4}},{\"id\":\"ZBd8nB8s8z\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0623\u0643\u0648\u0627\u062f \u0627\u0644\u0645\u0648\u0631\u062f\u064a\u0646\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -13489,6 +13765,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"card\",\"data\":{\"card_name\":\"\u062a\u0643\u0648\u064a\u062f \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0623\u0633\u0627\u0633\u064a\u0629\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"\u062a\u0643\u0648\u064a\u062f \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0641\u0646\u064a\u0629\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -13866,6 +14143,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"mUqyn_tywy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u062d\u0635\u0627\u0626\u064a\u0627\u062a\",\"col\":4}},{\"id\":\"BrJ5xvRb5h\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0633\u062a\u0639\u0644\u0627\u0645 \u0639\u0646 \u0645\u0631\u0643\u0628\u0629\",\"col\":4}},{\"id\":\"2b2yOxIPAl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0636\u0627\u0641\u0629 \u0645\u0631\u0643\u0628\u0629 \u062c\u062f\u064a\u062f\u0629\",\"col\":4}},{\"id\":\"NBoe6dluIM\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629\",\"col\":6}},{\"id\":\"SHcAEhmngt\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062a\u0642\u0627\u0631\u064a\u0631\",\"col\":6}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -14195,6 +14473,7 @@
     "doc_view": "New",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0633\u062a\u0639\u0644\u0627\u0645 \u0639\u0646 \u0645\u0631\u0643\u0628\u0629",
     "link_to": "Vehicle Inquiry",
     "parent": "\u0627\u0644\u0645\u0631\u0643\u0628\u0627\u062a",
@@ -14202,13 +14481,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Blue",
     "doc_view": "New",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0636\u0627\u0641\u0629 \u0645\u0631\u0643\u0628\u0629 \u062c\u062f\u064a\u062f\u0629",
     "link_to": "Vehicles",
     "parent": "\u0627\u0644\u0645\u0631\u0643\u0628\u0627\u062a",
@@ -14216,13 +14497,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u062d\u0635\u0627\u0626\u064a\u0627\u062a",
     "link_to": "\u0627\u0644\u0645\u0631\u0643\u0628\u0627\u062a",
     "parent": "\u0627\u0644\u0645\u0631\u0643\u0628\u0627\u062a",
@@ -14230,7 +14513,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    }
   ],
   "title": "\u0627\u0644\u0645\u0631\u0643\u0628\u0627\u062a"
@@ -14238,6 +14522,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"qJU-vxfikx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u062d\u0635\u0627\u0626\u064a\u0627\u062a\",\"col\":6}},{\"id\":\"FXlR3A89As\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0636\u0627\u0641\u0629 \u0644\u0627\u0646\u0634 \u062c\u062f\u064a\u062f\",\"col\":6}},{\"id\":\"TJhIqghUtQ\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629\",\"col\":6}},{\"id\":\"AvKjxM6XVB\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062d\u0631\u0643\u0627\u062a\",\"col\":6}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -14375,6 +14660,7 @@
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u062d\u0635\u0627\u0626\u064a\u0627\u062a",
     "link_to": "\u0627\u0644\u0644\u0627\u0646\u0634\u0627\u062a",
     "parent": "\u0627\u0644\u0644\u0627\u0646\u0634\u0627\u062a",
@@ -14382,13 +14668,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    },
    {
     "color": "Blue",
     "doc_view": "New",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0636\u0627\u0641\u0629 \u0644\u0627\u0646\u0634 \u062c\u062f\u064a\u062f",
     "link_to": "Boats",
     "parent": "\u0627\u0644\u0644\u0627\u0646\u0634\u0627\u062a",
@@ -14396,7 +14684,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "\u0627\u0644\u0644\u0627\u0646\u0634\u0627\u062a"
@@ -14412,6 +14701,7 @@
    }
   ],
   "content": "[{\"id\":\"5vtWWuFVl5\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Department Wise Openings\",\"col\":12}},{\"id\":\"ZEoAw35RfK\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"xepXoykemN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"id\":\"LMnFL-FVNb\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Opening\",\"col\":3}},{\"id\":\"BOczA5gAXn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Applicant\",\"col\":3}},{\"id\":\"h6LkcOPQpV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Offer\",\"col\":3}},{\"id\":\"TrRgFLeATn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"VqqHZk5Ymw\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"B0A1wqOP8R\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Interviews (This Week)\",\"col\":6}},{\"id\":\"BSfCSxeOZN\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ouzRaGAJJl\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Reports</b></span>\",\"col\":12}},{\"id\":\"0akZyj1E4k\",\"type\":\"card\",\"data\":{\"card_name\":\"Jobs\",\"col\":4}},{\"id\":\"3Q-ITUYR-W\",\"type\":\"card\",\"data\":{\"card_name\":\"Interviews\",\"col\":4}},{\"id\":\"06gIuB5svR\",\"type\":\"card\",\"data\":{\"card_name\":\"Appointment\",\"col\":4}},{\"id\":\"Q4msp7F8vF\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -14718,6 +15008,7 @@
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "Recruitment",
     "parent": "Recruitment",
@@ -14725,13 +15016,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    },
    {
     "color": "Red",
     "doc_view": "List",
     "format": "{} Open",
     "icon": null,
+    "kanban_board": null,
     "label": "Job Applicant",
     "link_to": "Job Applicant",
     "parent": "Recruitment",
@@ -14739,13 +15032,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"=\",\"Open\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Orange",
     "doc_view": "List",
     "format": "{} Open",
     "icon": null,
+    "kanban_board": null,
     "label": "Job Opening",
     "link_to": "Job Opening",
     "parent": "Recruitment",
@@ -14753,13 +15048,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"=\",\"Open\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Green",
     "doc_view": "List",
     "format": "{} Accepted",
     "icon": null,
+    "kanban_board": null,
     "label": "Job Offer",
     "link_to": "Job Offer",
     "parent": "Recruitment",
@@ -14767,7 +15064,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"=\",\"Accepted\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Recruitment"
@@ -14775,6 +15073,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Onboarding\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Separation\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Grievance\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"New Hires (This Month)\",\"col\":4}},{\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Exits (This Month)\",\"col\":4}},{\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Trainings (This Week)\",\"col\":4}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Reports</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Onboarding\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Journey\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Grievance\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Training\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Exit\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Daily Work Summary\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -15289,6 +15588,7 @@
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "Employee Lifecycle",
     "parent": "Employee Lifecycle",
@@ -15296,13 +15596,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    },
    {
     "color": "Orange",
     "doc_view": "List",
     "format": "{} Pending",
     "icon": null,
+    "kanban_board": null,
     "label": "Employee Onboarding",
     "link_to": "Employee Onboarding",
     "parent": "Employee Lifecycle",
@@ -15310,13 +15612,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"boarding_status\":[\"=\",\"Pending\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Orange",
     "doc_view": "List",
     "format": "{} Pending",
     "icon": null,
+    "kanban_board": null,
     "label": "Employee Separation",
     "link_to": "Employee Separation",
     "parent": "Employee Lifecycle",
@@ -15324,13 +15628,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"boarding_status\":[\"=\",\"Pending\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Orange",
     "doc_view": "List",
     "format": "{} Open",
     "icon": null,
+    "kanban_board": null,
     "label": "Employee Grievance",
     "link_to": "Employee Grievance",
     "parent": "Employee Lifecycle",
@@ -15338,7 +15644,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"=\",\"Open\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Employee Lifecycle"
@@ -15354,6 +15661,7 @@
    }
   ],
   "content": "[{\"type\":\"chart\",\"data\":{\"chart_name\":\"Attendance Count\",\"col\":12}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Checkin\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Attendance\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shift Request\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px;\\\"><b>Masters &amp; Reports</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Shifts\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Attendance\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Time\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -15667,6 +15975,7 @@
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Attendance",
     "link_to": "Attendance",
     "parent": "Shift & Attendance",
@@ -15674,13 +15983,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "Attendance",
     "parent": "Shift & Attendance",
@@ -15688,13 +15999,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    },
    {
     "color": "Green",
     "doc_view": "List",
     "format": "{} ",
     "icon": null,
+    "kanban_board": null,
     "label": "Employee Checkin",
     "link_to": "Employee Checkin",
     "parent": "Shift & Attendance",
@@ -15702,13 +16015,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Orange",
     "doc_view": "List",
     "format": "{} Pending",
     "icon": null,
+    "kanban_board": null,
     "label": "Shift Request",
     "link_to": "Shift Request",
     "parent": "Shift & Attendance",
@@ -15716,7 +16031,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"=\",\"Draft\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Shift & Attendance"
@@ -15724,6 +16040,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leave Application\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leave Allocation\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Reports</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Setup\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Allocation\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Application\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -16021,6 +16338,7 @@
     "doc_view": "List",
     "format": "{} Open",
     "icon": null,
+    "kanban_board": null,
     "label": "Leave Application",
     "link_to": "Leave Application",
     "parent": "Leaves",
@@ -16028,13 +16346,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"=\",\"Open\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Leave Allocation",
     "link_to": "Leave Allocation",
     "parent": "Leaves",
@@ -16042,7 +16362,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Leaves"
@@ -16050,6 +16371,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Appraisal\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Transactions</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Appraisal\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Energy Points\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Promotion\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -16219,6 +16541,7 @@
     "doc_view": "List",
     "format": "{} Pending",
     "icon": null,
+    "kanban_board": null,
     "label": "Appraisal",
     "link_to": "Appraisal",
     "parent": "Performance",
@@ -16226,7 +16549,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"=\",\"Draft\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Performance"
@@ -16242,6 +16566,7 @@
    }
   ],
   "content": "[{\"type\":\"chart\",\"data\":{\"chart_name\":\"Expense Claims\",\"col\":12}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Expense Claim\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Advance\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Reports</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Claims\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Advances\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Fleet Management\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Travel\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Accounting Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -16651,6 +16976,7 @@
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Dashboard",
     "link_to": "Expense Claims",
     "parent": "Expense Claims",
@@ -16658,13 +16984,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    },
    {
     "color": "Orange",
     "doc_view": "List",
     "format": "{} Unclaimed",
     "icon": null,
+    "kanban_board": null,
     "label": "Employee Advance",
     "link_to": "Employee Advance",
     "parent": "Expense Claims",
@@ -16672,13 +17000,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"=\",\"Paid\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Orange",
     "doc_view": "List",
     "format": "{} Pending",
     "icon": null,
+    "kanban_board": null,
     "label": "Expense Claim",
     "link_to": "Expense Claim",
     "parent": "Expense Claims",
@@ -16686,7 +17016,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"=\",\"Draft\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Expense Claims"
@@ -16694,6 +17025,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salary Slip\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Payroll Entry\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salary Register\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Transactions &amp; Reports</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Payroll\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Incentives\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Loans\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Accounting\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Accounting Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Payroll Reports\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Deduction Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -17343,6 +17675,7 @@
     "doc_view": "List",
     "format": "{} Draft",
     "icon": null,
+    "kanban_board": null,
     "label": "Salary Slip",
     "link_to": "Salary Slip",
     "parent": "Salary Payout",
@@ -17350,13 +17683,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"=\",\"Draft\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Salary Register",
     "link_to": "Salary Register",
     "parent": "Salary Payout",
@@ -17364,13 +17699,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": "Red",
     "doc_view": "List",
     "format": "{} Draft",
     "icon": null,
+    "kanban_board": null,
     "label": "Payroll Entry",
     "link_to": "Payroll Entry",
     "parent": "Salary Payout",
@@ -17378,7 +17715,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"status\":[\"=\",\"Draft\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "Salary Payout"
@@ -17386,6 +17724,7 @@
  {
   "charts": [],
   "content": "[{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Tax Exemption Declaration\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Additional Salary\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Income Tax Computation\",\"col\":3}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Masters &amp; Reports</b></span>\",\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"Tax Setup\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Exemption\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Benefits\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -17619,6 +17958,7 @@
     "doc_view": "List",
     "format": "{} Draft",
     "icon": null,
+    "kanban_board": null,
     "label": "Employee Tax Exemption Declaration",
     "link_to": "Employee Tax Exemption Declaration",
     "parent": "Tax & Benefits",
@@ -17626,13 +17966,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"docstatus\":[\"=\",\"0\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Additional Salary",
     "link_to": "Additional Salary",
     "parent": "Tax & Benefits",
@@ -17640,13 +17982,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "Income Tax Computation",
     "link_to": "Income Tax Computation",
     "parent": "Tax & Benefits",
@@ -17654,7 +17998,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    }
   ],
   "title": "Tax & Benefits"
@@ -17662,6 +18007,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"V0BZ1GCBZ4\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">\u0625\u062f\u0627\u0631\u0629 \u0627\u0644\u0645\u062e\u0627\u0632\u0646</span>\",\"col\":12}},{\"id\":\"L7FjEOiWt7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a <br></b></span>\",\"col\":12}},{\"id\":\"3jv6Y6BxRM\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629\",\"col\":4}},{\"id\":\"9xPAuY1CP7\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>\u0627\u0644\u062d\u0631\u0643\u0627\u062a \u0627\u0644\u0645\u062e\u0632\u0646\u064a\u0629 <br></b></span>\",\"col\":12}},{\"id\":\"JRwR2hjlOd\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0630\u0646 \u0625\u0636\u0627\u0641\u0629 (\u0646\u0645\u0648\u0630\u062c 1 \u062d\u0643\u0648\u0645\u064a)\",\"col\":3}},{\"id\":\"feKbRxk4sN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0630\u0646 \u0635\u0631\u0641 (\u0646\u0645\u0648\u0630\u062c 2 \u0645\u062e\u0627\u0632\u0646)\",\"col\":3}},{\"id\":\"6UXMNFmTZU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0646\u0645\u0648\u0630\u062c 3 \u0645\u062e\u0627\u0632\u0646\",\"col\":3}},{\"id\":\"q4Va3ilFh9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0646\u0645\u0648\u0630\u062c 4 \u0645\u062e\u0627\u0632\u0646\",\"col\":3}},{\"id\":\"NIgWETeP8J\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0646\u0645\u0648\u0630\u062c 5 \u0645\u062e\u0627\u0632\u0646\",\"col\":3}},{\"id\":\"IF1a8SmnQo\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0646\u0645\u0648\u0630\u062c 6 \u0645\u062e\u0627\u0632\u0646\",\"col\":3}},{\"id\":\"ze35OG1jb7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0646\u0645\u0648\u0630\u062c 7 \u0645\u062e\u0627\u0632\u0646\",\"col\":3}},{\"id\":\"6XMak9kFLS\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0646\u0645\u0648\u0630\u062c 8 \u0645\u062e\u0627\u0632\u0646\",\"col\":3}},{\"id\":\"Eh_4FD_2Js\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0646\u0645\u0648\u0630\u062c 9 \u0645\u062e\u0627\u0632\u0646\",\"col\":3}},{\"id\":\"iDYsdtsLsY\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0631\u0635\u064a\u062f \u0627\u0644\u0645\u062e\u0627\u0632\u0646\",\"col\":3}},{\"id\":\"EI42zyZy6l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0646\u0645\u0648\u0630\u062c 11 \u0645\u062e\u0627\u0632\u0646\",\"col\":3}},{\"id\":\"NSeR9BtFyR\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0646\u0645\u0648\u0630\u062c 12 \u0645\u062e\u0627\u0632\u0646\",\"col\":3}},{\"id\":\"lJaq4bFZfw\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0646\u0645\u0648\u0630\u062c 13 \u0645\u062e\u0627\u0632\u0646\",\"col\":3}},{\"id\":\"GxsYE2TVOn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0645\u062d\u0636\u0631 \u0644\u062c\u0646\u0629 \u0627\u0644\u0641\u062d\u0635\",\"col\":3}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -17751,6 +18097,7 @@
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0646\u0645\u0648\u0630\u062c 4 \u0645\u062e\u0627\u0632\u0646",
     "link_to": "Stock Entry",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17758,13 +18105,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"stock_entry_type\":[\"=\",\"\u0635\u0631\u0641 \u0625\u0644\u0649 \u0645\u062e\u0632\u0646 \u062f\u0627\u062e\u0644\u064a\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0630\u0646 \u0635\u0631\u0641 (\u0646\u0645\u0648\u0630\u062c 2 \u0645\u062e\u0627\u0632\u0646)",
     "link_to": "Stock Entry",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17772,13 +18121,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"stock_entry_type\":[\"=\",\"\u0635\u0631\u0641 \u0625\u0644\u0649 \u062c\u0647\u0629\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0646\u0645\u0648\u0630\u062c 8 \u0645\u062e\u0627\u0632\u0646",
     "link_to": "Stock Entry",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17786,13 +18137,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"stock_entry_type\":[\"=\",\"\u0635\u0631\u0641 \u0625\u0644\u0649 \u0645\u0631\u0643\u0628\u0629\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0630\u0646 \u0625\u0636\u0627\u0641\u0629 (\u0646\u0645\u0648\u0630\u062c 1 \u062d\u0643\u0648\u0645\u064a)",
     "link_to": "Purchase Receipt",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17800,13 +18153,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0645\u062d\u0636\u0631 \u0644\u062c\u0646\u0629 \u0627\u0644\u0641\u062d\u0635",
     "link_to": "Quality Inspection",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17814,13 +18169,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0646\u0645\u0648\u0630\u062c 5 \u0645\u062e\u0627\u0632\u0646",
     "link_to": "Stock Ledger",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17828,13 +18185,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0646\u0645\u0648\u0630\u062c 9 \u0645\u062e\u0627\u0632\u0646",
     "link_to": "Stock Entry",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17842,13 +18201,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"stock_entry_type\":[\"=\",\"Material Issue\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0646\u0645\u0648\u0630\u062c 3 \u0645\u062e\u0627\u0632\u0646",
     "link_to": "Stock Entry",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17856,13 +18217,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0646\u0645\u0648\u0630\u062c 11 \u0645\u062e\u0627\u0632\u0646",
     "link_to": "Stock Entry",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17870,13 +18233,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": "{\"stock_entry_type\":[\"=\",\"Material Transfer\"]}",
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0646\u0645\u0648\u0630\u062c 12 \u0645\u062e\u0627\u0632\u0646",
     "link_to": "Stock Entry",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17884,13 +18249,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0646\u0645\u0648\u0630\u062c 13 \u0645\u062e\u0627\u0632\u0646",
     "link_to": "Stock Entry",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17898,13 +18265,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0631\u0635\u064a\u062f \u0627\u0644\u0645\u062e\u0627\u0632\u0646",
     "link_to": "Stock Balance",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17912,13 +18281,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Report"
+    "type": "Report",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0646\u0645\u0648\u0630\u062c 6 \u0645\u062e\u0627\u0632\u0646",
     "link_to": "Stock Reconciliation",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17926,13 +18297,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0646\u0645\u0648\u0630\u062c 7 \u0645\u062e\u0627\u0632\u0646",
     "link_to": "Stock Ledger Entry",
     "parent": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646",
@@ -17940,7 +18313,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "\u0627\u0644\u0645\u062e\u0627\u0632\u0646"
@@ -17948,6 +18322,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"fB-gtzdkPC\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629\",\"col\":6}},{\"id\":\"Gak0rz-IMB\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062d\u0631\u0643\u0627\u062a\",\"col\":6}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -18069,6 +18444,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"JXmiNuBF8F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u062a\u062c\u0647\u064a\u0632 \u0635\u0631\u0641\u064a\u0629 \u062c\u062f\u064a\u062f\u0629\",\"col\":3}},{\"id\":\"dwyrSClDxC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0635\u0644\u0627\u062d / \u062a\u0639\u0637\u064a\u0644 \u0645\u0631\u0643\u0628\u0629\",\"col\":3}},{\"id\":\"3P87vSm7w6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0633\u062a\u0639\u0644\u0627\u0645 \u0639\u0646 \u0645\u0631\u0643\u0628\u0629\",\"col\":3}},{\"id\":\"G5BjMhBXL0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0633\u062a\u0639\u0644\u0627\u0645 \u0639\u0646 \u0628\u0648\u0646\",\"col\":3}},{\"id\":\"hHKIQfkFj5\",\"type\":\"card\",\"data\":{\"card_name\":\"\u062a\u062c\u0647\u064a\u0632 \u0635\u0631\u0641\u064a\u0629 \u0627\u0644\u0633\u0648\u0627\u0626\u0644\",\"col\":4}},{\"id\":\"ZWv8M_1bRv\",\"type\":\"card\",\"data\":{\"card_name\":\"\u062e\u0632\u064a\u0646\u0629 \u0627\u0644\u0633\u0648\u0627\u0626\u0644\",\"col\":4}},{\"id\":\"0iTCt_U0qI\",\"type\":\"card\",\"data\":{\"card_name\":\"\u062c\u0631\u062f \u062e\u0632\u064a\u0646\u0629 \u0627\u0644\u0633\u0648\u0627\u0626\u0644\",\"col\":4}},{\"id\":\"o0j7EY5pkU\",\"type\":\"card\",\"data\":{\"card_name\":\"\u062a\u0633\u0648\u064a\u0629 \u0627\u0644\u0628\u0648\u0646\u0627\u062a\",\"col\":4}},{\"id\":\"X4nr_j3GlM\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062a\u0642\u0627\u0631\u064a\u0631\",\"col\":4}},{\"id\":\"7DEF5o6TeE\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062a\u0643\u0648\u064a\u062f\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -18670,6 +19046,7 @@
     "doc_view": "New",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u062a\u062c\u0647\u064a\u0632 \u0635\u0631\u0641\u064a\u0629 \u062c\u062f\u064a\u062f\u0629",
     "link_to": "Liquids Issuing",
     "parent": "\u0627\u0644\u0633\u0648\u0627\u0626\u0644",
@@ -18677,13 +19054,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "New",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0633\u062a\u0639\u0644\u0627\u0645 \u0639\u0646 \u0628\u0648\u0646",
     "link_to": "Voucher Inquiry",
     "parent": "\u0627\u0644\u0633\u0648\u0627\u0626\u0644",
@@ -18691,13 +19070,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "New",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0635\u0644\u0627\u062d / \u062a\u0639\u0637\u064a\u0644 \u0645\u0631\u0643\u0628\u0629",
     "link_to": "Edit Vehicle Status",
     "parent": "\u0627\u0644\u0633\u0648\u0627\u0626\u0644",
@@ -18705,13 +19086,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "New",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0633\u062a\u0639\u0644\u0627\u0645 \u0639\u0646 \u0645\u0631\u0643\u0628\u0629",
     "link_to": "Vehicle Inquiry",
     "parent": "\u0627\u0644\u0633\u0648\u0627\u0626\u0644",
@@ -18719,7 +19102,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "\u0627\u0644\u0633\u0648\u0627\u0626\u0644"
@@ -18727,6 +19111,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"_MVdjXkUDs\",\"type\":\"paragraph\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><span class=\\\"h5\\\">\u0625\u0633\u062a\u062e\u0631\u0627\u062c \u0631\u062e\u0635\u0629 \u0627\u0644\u062a\u0633\u064a\u064a\u0631 \u0627\u0644\u0645\u0624\u0645\u0646\u0629 \u0644\u0645\u0631\u0643\u0628\u0627\u062a \u0627\u0644\u0634\u0631\u0637\u0629 \u064a\u0646\u0638\u0645\u0647 \u0627\u0644\u0642\u0631\u0627\u0631 \u0627\u0644\u0648\u0632\u0627\u0631\u064a \u0631\u0642\u0645 472 \u0644\u0633\u0646\u0629 1986<br>\u0648\u0643\u0630\u0644\u0643 \u0627\u0644\u0645\u0644\u0635\u0642 \u0627\u0644\u0645\u0631\u0648\u0631\u064a (\u0627\u0644\u0627\u0633\u062a\u064a\u0643\u0631) \u0648\u0627\u0644\u0630\u064a \u064a\u0646\u0638\u0645\u0647 \u0627\u0644\u0641\u0642\u0631\u0629 \u0627\u0644\u062b\u0627\u0644\u062b\u0629 \u0627\u0644\u0645\u0636\u0627\u0641\u0629 \u0625\u0644\u0649 \u0627\u0644\u0645\u0627\u062f\u0629 217 \u0644\u0644\u0627\u0626\u062d\u0629 \u0627\u0644\u062a\u0646\u0641\u064a\u0630\u064a\u0629 \u0644\u0642\u0627\u0646\u0648\u0646 \u0627\u0644\u0645\u0631\u0648\u0631 \u0631\u0642\u0645 777 \u0644\u0633\u0646\u0629 2000<br>\u0641\u064a \u0636\u0648\u0621 \u0627\u0644\u0642\u0631\u0627\u0631 \u0627\u0644\u0648\u0632\u0627\u0631\u064a \u0648\u0642\u0627\u0646\u0648\u0646 \u0627\u0644\u0645\u0631\u0648\u0631 \u0642\u0627\u0645\u062a \u0627\u0644\u0627\u062f\u0627\u0631\u0629 \u0627\u0644\u0639\u0627\u0645\u0629 \u0644\u0645\u0631\u0643\u0628\u0627\u062a \u0627\u0644\u0634\u0631\u0637\u0629 \u0628\u0625\u0639\u062f\u0627\u062f \u0647\u0630\u0627 \u0627\u0644\u0628\u0631\u0646\u0627\u0645\u062c \u0644\u0627\u0633\u062a\u062e\u0631\u0627\u062c \u0631\u062e\u0635\u0629 \u0627\u0644\u062a\u0633\u064a\u064a\u0631 \u0627\u0644\u0645\u0624\u0645\u0646\u0629 \u0648\u0623\u064a\u0636\u0627 \u0627\u0644\u0645\u0644\u0635\u0642 \u0627\u0644\u0645\u0631\u0648\u0631\u064a (\u0627\u0644\u0627\u0633\u062a\u064a\u0643\u0631) \u0644\u0645\u0631\u0643\u0628\u0627\u062a \u0627\u0644\u0634\u0631\u0637\u0629 \u0645\u0646 \u062e\u0644\u0627\u0644 \u0634\u0628\u0643\u0629 \u0627\u0644\u0627\u0646\u062a\u0631\u0627\u0646\u064a\u062a \u0627\u0644\u062e\u0627\u0635\u0629 \u0628\u0648\u0632\u0631\u0627\u0631\u0629 \u0627\u0644\u062f\u0627\u062e\u0644\u064a\u0629</span></span>\",\"col\":12}},{\"id\":\"b5tjzTmBN8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u062d\u0635\u0627\u0626\u064a\u0627\u062a\",\"col\":4}},{\"id\":\"FoEO4HtqyF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0635\u062f\u0627\u0631 \u0648\u062a\u062c\u062f\u064a\u062f \u0631\u062e\u0635\u0629 \u062a\u0633\u064a\u064a\u0631 \u0645\u0624\u0645\u0646\u0629\",\"col\":4}},{\"id\":\"o9Fl8lEc_x\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0636\u0627\u0641\u0629 \u0643\u0631\u0648\u062a \u062c\u062f\u064a\u062f\u0629\",\"col\":4}},{\"id\":\"NLeIFJ2F-S\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062a\u0631\u0627\u062e\u064a\u0635\",\"col\":4}},{\"id\":\"ubmBsfuFqN\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0625\u0639\u062f\u0627\u062f\u0627\u062a\",\"col\":3}},{\"id\":\"ojQ1RsmXl0\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062a\u0642\u0627\u0631\u064a\u0631\",\"col\":5}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -19072,6 +19457,7 @@
     "doc_view": "New",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0636\u0627\u0641\u0629 \u0643\u0631\u0648\u062a \u062c\u062f\u064a\u062f\u0629",
     "link_to": "Add License Cards",
     "parent": "\u0631\u062e\u0635 \u0627\u0644\u062a\u0633\u064a\u064a\u0631 \u0627\u0644\u0645\u0624\u0645\u0646\u0629",
@@ -19079,13 +19465,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Blue",
     "doc_view": "New",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0635\u062f\u0627\u0631 \u0648\u062a\u062c\u062f\u064a\u062f \u0631\u062e\u0635\u0629 \u062a\u0633\u064a\u064a\u0631 \u0645\u0624\u0645\u0646\u0629",
     "link_to": "Vehicle License",
     "parent": "\u0631\u062e\u0635 \u0627\u0644\u062a\u0633\u064a\u064a\u0631 \u0627\u0644\u0645\u0624\u0645\u0646\u0629",
@@ -19093,13 +19481,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u062d\u0635\u0627\u0626\u064a\u0627\u062a",
     "link_to": "\u0627\u0644\u0631\u062e\u0635",
     "parent": "\u0631\u062e\u0635 \u0627\u0644\u062a\u0633\u064a\u064a\u0631 \u0627\u0644\u0645\u0624\u0645\u0646\u0629",
@@ -19107,7 +19497,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    }
   ],
   "title": "\u0631\u062e\u0635 \u0627\u0644\u062a\u0633\u064a\u064a\u0631 \u0627\u0644\u0645\u0624\u0645\u0646\u0629"
@@ -19115,6 +19506,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"pmUz_CBugG\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062d\u0648\u0627\u062f\u062b\",\"col\":4}},{\"id\":\"TNay1O7PJQ\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0623\u0643\u0648\u0627\u062f\",\"col\":4}},{\"id\":\"uJz2EmqcKh\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062a\u0642\u0627\u0631\u064a\u0631\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -19284,6 +19676,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"lPJD49X1UO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0646\u0634\u0627\u0621 \u0643\u0634\u0641 \u0639\u0647\u062f\u0629 \u062c\u062f\u064a\u062f\",\"col\":12}},{\"id\":\"LEx7fiLA0u\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0636\u0627\u0641\u0629 \u0639\u0647\u062f\u0629 \u0625\u0644\u0649 \u0643\u0627\u0631\u062a\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629\",\"col\":12}},{\"id\":\"T46Tu58yMe\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0635\u064a\u0627\u0646\u0629\",\"col\":6}},{\"id\":\"8Repj_6dUk\",\"type\":\"card\",\"data\":{\"card_name\":\"\u062a\u0642\u0627\u0631\u064a\u0631 \u0627\u0644\u0635\u064a\u0627\u0646\u0629\",\"col\":6}},{\"id\":\"H44yu4GnU8\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0645\u0634\u062a\u0631\u064a\u0627\u062a\",\"col\":4}},{\"id\":\"rgg8dyVCbZ\",\"type\":\"card\",\"data\":{\"card_name\":\" \u0627\u0644\u0627\u0645\u0631 \u0627\u0644\u0645\u0628\u0627\u0634\u0631  / \u0627\u0644\u0635\u064a\u0627\u0646\u0629 \u0627\u0644\u062e\u0627\u0631\u062c\u064a\u0629\",\"col\":4}},{\"id\":\"AOhZju3uNv\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062a\u0639\u0627\u0642\u062f\u0627\u062a \u0627\u0644\u062e\u0627\u0631\u062c\u064a\u0629\",\"col\":4}},{\"id\":\"q2mcm5w4Kv\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0627\u0644\u0645\u0639\u0627\u0645\u0644\u0627\u062a \u0627\u0644\u064a\u0648\u0645\u064a\u0629\",\"col\":12}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -19725,6 +20118,7 @@
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0627\u0644\u0645\u0639\u0627\u0645\u0644\u0627\u062a \u0627\u0644\u064a\u0648\u0645\u064a\u0629",
     "link_to": "\u0627\u0644\u0645\u0639\u0627\u0645\u0644\u0627\u062a \u0627\u0644\u064a\u0648\u0645\u064a\u0629",
     "parent": "\u0627\u0644\u0635\u064a\u0627\u0646\u0629 \u0648 \u0627\u0644\u062a\u0639\u0627\u0642\u062f\u0627\u062a",
@@ -19732,13 +20126,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "Dashboard"
+    "type": "Dashboard",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "New",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0636\u0627\u0641\u0629 \u0639\u0647\u062f\u0629 \u0625\u0644\u0649 \u0643\u0627\u0631\u062a\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
     "link_to": "Add To Karta",
     "parent": "\u0627\u0644\u0635\u064a\u0627\u0646\u0629 \u0648 \u0627\u0644\u062a\u0639\u0627\u0642\u062f\u0627\u062a",
@@ -19746,13 +20142,15 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    },
    {
     "color": "Grey",
     "doc_view": "New",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0646\u0634\u0627\u0621 \u0643\u0634\u0641 \u0639\u0647\u062f\u0629 \u062c\u062f\u064a\u062f",
     "link_to": "Vehicle Maintenance Process",
     "parent": "\u0627\u0644\u0635\u064a\u0627\u0646\u0629 \u0648 \u0627\u0644\u062a\u0639\u0627\u0642\u062f\u0627\u062a",
@@ -19760,7 +20158,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "\u0627\u0644\u0635\u064a\u0627\u0646\u0629 \u0648 \u0627\u0644\u062a\u0639\u0627\u0642\u062f\u0627\u062a"
@@ -19768,6 +20167,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"NhprGLJF7i\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">\u0627\u0644\u062d\u0633\u0627\u0628\u0627\u062a</span>\",\"col\":12}},{\"id\":\"dONb-0QWEK\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629\",\"col\":4}},{\"id\":\"kyEtrO-_EB\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062d\u0631\u0643\u0627\u062a\",\"col\":4}},{\"id\":\"JnkSgI6N2r\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062a\u0642\u0627\u0631\u064a\u0631\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -19985,6 +20385,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"izU-hCpABj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0625\u0633\u062a\u0639\u0644\u0627\u0645 \u0639\u0646 \u0645\u0631\u0643\u0628\u0629\",\"col\":3}},{\"id\":\"hYcbdig3ax\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h3\\\">\u0648\u062d\u062f\u0629 \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629</span>\",\"col\":12}},{\"id\":\"y5xcCXjrCj\",\"type\":\"card\",\"data\":{\"card_name\":\"\u062a\u0642\u0627\u0631\u064a\u0631 \u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629\",\"col\":6}},{\"id\":\"dONb-0QWEK\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0646\u0645\u0627\u0630\u062c \u062a\u0639\u062f\u064a\u0644 \u0628\u064a\u0627\u0646\u0627\u062a \u0645\u0631\u0643\u0628\u0629\",\"col\":6}},{\"id\":\"dtW7rDr5Q4\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0645\u0639\u0627\u064a\u0646\u0629 \u0645\u0631\u0643\u0628\u0629 / \u0645\u0644\u0641 \u062a\u062e\u0631\u064a\u062f \u0645\u0631\u0643\u0628\u0629\",\"col\":12}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -20282,6 +20683,7 @@
     "doc_view": "New",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0625\u0633\u062a\u0639\u0644\u0627\u0645 \u0639\u0646 \u0645\u0631\u0643\u0628\u0629",
     "link_to": "Vehicle Inquiry",
     "parent": "\u0645\u0631\u0627\u0642\u0628\u0629 \u0627\u0644\u0639\u0647\u062f",
@@ -20289,7 +20691,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "\u0645\u0631\u0627\u0642\u0628\u0629 \u0627\u0644\u0639\u0647\u062f"
@@ -20297,6 +20700,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"IXUlq4Ae_B\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0645\u0634\u062a\u0631\u064a\u0627\u062a\",\"col\":4}},{\"id\":\"gqxglAvP7H\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0639\u0642\u0648\u062f \u0648\u0627\u0644\u0645\u0634\u062a\u0631\u064a\u0627\u062a\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -20498,6 +20902,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"HWrAR1QZTN\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">\u0634\u0626\u0648\u0646 \u0627\u0644\u0645\u062c\u0646\u062f\u064a\u0646</span>\",\"col\":12}},{\"id\":\"70oOxZui-P\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0627\u0633\u0627\u0633\u064a\u0629\",\"col\":4}},{\"id\":\"E0j7vothSV\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062d\u0631\u0643\u0627\u062a\",\"col\":4}},{\"id\":\"Ei1iOXw3Wl\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062a\u0642\u0627\u0631\u064a\u0631\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -21035,6 +21440,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"B_9M7Wm8a0\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">\u0627\u0644\u0645\u064a\u0632\u0627\u0646\u064a\u0629</span>\",\"col\":12}},{\"id\":\"sKYjfEHNRa\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0645\u064a\u0632\u0627\u0646\u064a\u0629\",\"col\":4}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -21108,6 +21514,7 @@
  {
   "charts": [],
   "content": "[{\"id\":\"SHRaQvu3wX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0637\u0644\u0628\u0627\u062a \u0627\u0644\u062f\u0639\u0645 \u0627\u0644\u0641\u0646\u064a\",\"col\":3}}]",
+  "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
   "for_user": "",
@@ -21132,6 +21539,7 @@
     "doc_view": "List",
     "format": null,
     "icon": null,
+    "kanban_board": null,
     "label": "\u0637\u0644\u0628\u0627\u062a \u0627\u0644\u062f\u0639\u0645 \u0627\u0644\u0641\u0646\u064a",
     "link_to": "Issue",
     "parent": "\u0627\u0644\u062f\u0639\u0645 \u0627\u0644\u0641\u0646\u064a",
@@ -21139,7 +21547,8 @@
     "parenttype": "Workspace",
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType"
+    "type": "DocType",
+    "url": null
    }
   ],
   "title": "\u0627\u0644\u062f\u0639\u0645 \u0627\u0644\u0641\u0646\u064a"
