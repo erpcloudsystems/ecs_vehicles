@@ -89,9 +89,8 @@
   },
   {
    "fieldname": "vehicle_type",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0645\u0631\u0643\u0628\u0629",
-   "options": "Vehicle Type",
    "read_only": 1
   },
   {
@@ -111,7 +110,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-07-27 14:16:02.428068",
+ "modified": "2023-09-11 13:47:05.007372",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Edit Vehicle Status",
