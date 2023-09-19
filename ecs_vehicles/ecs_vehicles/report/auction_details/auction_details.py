@@ -110,11 +110,33 @@ def get_columns():
 
 
 def get_data(filters, columns):
-    item_price_qty_data = get_item_price_qty_data(filters)
+    conditions = get_conditions(filters)
+    item_price_qty_data = get_item_price_qty_data(conditions)
     return item_price_qty_data
 
+def get_conditions(filters):
+    conditions = ""
+    if filters.get("name"):
+        conditions += " AND auction.name=%s" % frappe.db.escape(filters.get("name"))
+    if filters.get("police_no"):
+        conditions += " AND auction_slips.police_id=%s" % frappe.db.escape(
+            filters.get("police_no")
+        )
+    if filters.get("lot_no"):
+        conditions += " AND auction_slips.idx=%s" % frappe.db.escape(
+            filters.get("lot_no")
+        )
+    if filters.get("grouped_lot_no"):
+        conditions += " AND auction_slips.accumulated_lot=%s" % frappe.db.escape(filters.get("grouped_lot_no"))
+    if filters.get("from_date"):
+        conditions += " AND auction.auction_date>='%s'" % filters.get("from_date")
 
-def get_item_price_qty_data(filters):
+    if filters.get("to_date"):
+        conditions += " AND auction.auction_date<='%s'" % filters.get("to_date")
+    return conditions
+
+
+def get_item_price_qty_data(conditions):
     voucher_type_list = frappe.db.sql(
         """
         select  
@@ -136,10 +158,14 @@ def get_item_price_qty_data(filters):
         from `tabAuction Info` auction
         join `tabAuction Sales Slips` auction_slips on auction_slips.parent = auction.name
         where auction.docstatus = 1
+        {conditions}
+
         ORDER BY 
             auction.auction_date DESC
         
-        """,
+        """.format(
+            conditions=conditions
+        ),
         as_dict=1,
     )
     if voucher_type_list:

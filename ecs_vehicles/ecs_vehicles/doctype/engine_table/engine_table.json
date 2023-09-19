@@ -25,6 +25,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u062d\u0631\u0643",
+   "read_only": 1,
    "reqd": 1,
    "set_only_once": 1
   },
@@ -35,6 +36,7 @@
    "in_list_view": 1,
    "label": "\u0627\u0644\u0645\u0627\u0631\u0643\u0629",
    "options": "Vehicle Brand",
+   "read_only": 1,
    "reqd": 1,
    "set_only_once": 1
   },
@@ -45,6 +47,7 @@
    "hidden": 1,
    "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
    "options": "Vehicle Style",
+   "read_only": 1,
    "set_only_once": 1
   },
   {
@@ -53,6 +56,7 @@
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "\u0627\u0644\u0642\u062f\u0631\u0629",
+   "read_only": 1,
    "reqd": 1,
    "set_only_once": 1
   },
@@ -66,6 +70,7 @@
    "fieldtype": "Int",
    "in_list_view": 1,
    "label": "\u0639\u062f\u062f \u0627\u0644\u0633\u0644\u0646\u062f\u0631\u0627\u062a",
+   "read_only": 1,
    "reqd": 1,
    "set_only_once": 1
   },
@@ -76,6 +81,7 @@
    "in_list_view": 1,
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062a\u063a\u0630\u064a\u0629",
    "options": "Feeding Type",
+   "read_only": 1,
    "reqd": 1,
    "set_only_once": 1
   },
@@ -86,6 +92,7 @@
    "in_list_view": 1,
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0648\u0642\u0648\u062f",
    "options": "Fuel Type",
+   "read_only": 1,
    "reqd": 1,
    "set_only_once": 1
   },
@@ -97,25 +104,28 @@
    "in_list_view": 1,
    "label": "\u0627\u0644\u062c\u0647\u0629",
    "options": "Entity",
+   "read_only": 1,
    "reqd": 1,
    "set_only_once": 1
   },
   {
    "fieldname": "motor_capacity",
    "fieldtype": "Int",
-   "label": "\u0633\u0639\u0629 \u0627\u0644\u0645\u062d\u0631\u0643"
+   "label": "\u0633\u0639\u0629 \u0627\u0644\u0645\u062d\u0631\u0643",
+   "read_only": 1
   },
   {
    "fieldname": "current_validity",
    "fieldtype": "Select",
    "label": "\u0627\u0644\u0635\u0644\u0627\u062d\u064a\u0629 \u0627\u0644\u062d\u0627\u0644\u064a\u0629",
-   "options": "\n\u0635\u0627\u0644\u062d\n\u0639\u0627\u0637\u0644\n\u062a\u062d\u062a \u0627\u0644\u062a\u062e\u0631\u064a\u062f\n\u0645\u062e\u0631\u062f\n\u0627\u062d\u062a\u064a\u0627\u0637\u064a \u0645\u062e\u0632\u0646"
+   "options": "\n\u0635\u0627\u0644\u062d\n\u0639\u0627\u0637\u0644\n\u062a\u062d\u062a \u0627\u0644\u062a\u062e\u0631\u064a\u062f\n\u0645\u062e\u0631\u062f\n\u0627\u062d\u062a\u064a\u0627\u0637\u064a \u0645\u062e\u0632\u0646",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-08-02 11:57:57.888963",
+ "modified": "2023-09-18 20:30:10.787120",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Engine Table",

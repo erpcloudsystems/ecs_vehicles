@@ -44,13 +44,7 @@ frappe.query_reports["Vehicle Licenses Report"] = {
             default: frappe.datetime.get_today(),
 
         },
-        {
-            label: __("رقم الرخصة"),
-            fieldname: "license_no",
-            fieldtype: "Link",
-            options:"License Card",
-
-        },
+        
         {
             label: __("حالة الإصدار"),
             fieldname: "issue_status",
@@ -89,6 +83,16 @@ frappe.query_reports["Vehicle Licenses Report"] = {
             label: __("بواسطة"),
             fieldname: "user",
             fieldtype: "Data",
+        },
+        {
+            label: __("الرخصة على"),
+            fieldname: "license_on",
+            fieldtype: "Select",
+            options: [
+				{ "value": "اللوحة", "label": __("لوحة") },
+				{ "value": "المركبة", "label": __("مركبة") },
+			],
+            default: "اللوحة",
         },
 
 	]

@@ -83,5 +83,16 @@ frappe.query_reports["Vehicle Doesn't Have License Yet"] = {
             fieldtype: "Link",
             options:"License Card",
         },
+        {
+            label: __("الرخصة على"),
+            fieldname: "license_on",
+            fieldtype: "Select",
+            options: [
+				{ "value": "اللوحة", "label": __("لوحة") },
+				{ "value": "المركبة", "label": __("مركبة") },
+			],
+            default: "اللوحة",
+
+        },
     ]
 };	

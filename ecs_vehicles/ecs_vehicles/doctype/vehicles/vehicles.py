@@ -775,6 +775,34 @@ class Vehicles(Document):
                 self.processing_type_remarks = ""
 
         if self.edit_entity:
+            # check if vehicle has Liquids Issuing Table record in the same month
+            # if yes, then msgprint
+            vehicle_liquid_table = frappe.db.sql(
+                """ Select name , issue_no, issue_date, from_date, to_date, issue_type,
+                    entity
+                    from `tabLiquids Issuing Table` 
+                    where parent = '{parent}' and issue_date between '{first_day}' and '{last_day}'
+                """.format(
+                    parent=self.name, first_day=frappe.utils.get_first_day(self.edit_entity_date), last_day=self.edit_entity_date
+                ),
+                as_dict=1,
+            )
+            if vehicle_liquid_table:
+                for row in vehicle_liquid_table:
+                    frappe.msgprint("المركبة لها سجل صرف سوائل في نفس الشهر" + "<br>" 
+                                    + "رقم الصرفية : {issue_no} ".format(issue_no=row.issue_no)
+                                              + "<br>" + 
+                                    "تاريخ الصرفية : {issue_date}".format(issue_date=row.issue_date)
+                                              + "<br>" +
+                                    " من تاريخ : {from_date}".format(from_date=row.from_date)
+                                              + "<br>" +
+                                    "إلى تاريخ : {to_date}".format(to_date=row.to_date)
+                                            + "<br>" +
+                                    " نوع الصرفية : {issue_type} ".format(issue_type=row.issue_type)
+                                            + "<br>" +
+                                    "جهة الصرف : {entity}".format(issue_no=row.issue_no, issue_date=row.issue_date,
+                                            from_date=row.from_date, to_date=row.to_date,
+                                            issue_type=row.issue_type, entity=row.entity))
             last_entity_date = frappe.db.sql(
                 """ Select date as date from `tabEntity Logs` 
                     where parent = '{parent}'

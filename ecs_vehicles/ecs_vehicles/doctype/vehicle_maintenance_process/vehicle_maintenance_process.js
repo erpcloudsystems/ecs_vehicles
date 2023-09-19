@@ -117,7 +117,6 @@ frappe.ui.form.on('Vehicle Maintenance Process', {
 			frm.set_df_property("aamr_shoghl_total_amount", "read_only", false);
 			frm.set_df_property("aamr_shoghl_total_in_words", "read_only", false);
 			frm.set_df_property("edit_in_words3", "hidden", false);
-			frm.set_df_property("purchase_invoices", "read_only", false);
 			frm.set_df_property("invoice_no", "read_only", false);
 			frm.set_df_property("add_maintenance_invoice", "hidden", false);
 			frm.set_df_property("add_job_order", "hidden", false);
@@ -243,7 +242,6 @@ frappe.ui.form.on('Vehicle Maintenance Process', {
 			frm.set_df_property("aamr_shoghl_total_amount", "read_only", false);
 			frm.set_df_property("aamr_shoghl_total_in_words", "read_only", false);
 			frm.set_df_property("edit_in_words3", "hidden", false);
-			frm.set_df_property("purchase_invoices", "read_only", false);
 			// frm.set_df_property("invoice_no", "read_only", false);
 			frm.set_df_property("add_maintenance_invoice", "hidden", false);
 			frm.set_df_property("add_job_order", "hidden", false);
@@ -399,13 +397,14 @@ frappe.ui.form.on('Vehicle Maintenance Process', {
 				callback: function (r) {
 					frm.refresh_fields();
 					frm.refresh();
-					if (!r.length) {
-						frappe.msgprint({
-							title: ('تنبيه'),
-							indicator: 'red',
-							message: ('المركبة لم تصرف اطارات من قبل')
-						});
-					}
+					console.log(last_sarf_date)
+					// if (!r.length) {
+					// 	frappe.msgprint({
+					// 		title: ('تنبيه'),
+					// 		indicator: 'red',
+					// 		message: ('المركبة لم تصرف اطارات من قبل')
+					// 	});
+					// }
 				}
 			});
 		}
@@ -419,13 +418,13 @@ frappe.ui.form.on('Vehicle Maintenance Process', {
 				callback: function (r) {
 					frm.refresh_fields();
 					frm.refresh();
-					if (!r.length) {
-						frappe.msgprint({
-							title: ('تنبيه'),
-							indicator: 'red',
-							message: ('المركبة لم تصرف بطاريات من قبل')
-						});
-					}
+					// if (!r.length) {
+					// 	frappe.msgprint({
+					// 		title: ('تنبيه'),
+					// 		indicator: 'red',
+					// 		message: ('المركبة لم تصرف بطاريات من قبل')
+					// 	});
+					// }
 				}
 			});
 		}

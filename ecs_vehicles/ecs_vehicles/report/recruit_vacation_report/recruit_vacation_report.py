@@ -23,7 +23,7 @@ def get_columns():
 		},
         {
             "label": _("رقم المجند"),
-            "fieldname": "name",
+            "fieldname": "recruit",
             "fieldtype": "Link",
 			"options": "Employee",
             "width": 150
@@ -53,6 +53,12 @@ def get_columns():
             "width": 150
         },
         {
+            "label": _("نوع الاجازة"),
+            "fieldname": "types_of_vacations",
+            "fieldtype": "Data",
+            "width": 300
+        },
+        {
             "label": _("الملاحظات"),
             "fieldname": "notes",
             "fieldtype": "Data",
@@ -69,55 +75,38 @@ def get_data(filters, columns):
 
 def get_item_price_qty_data(filters):
     conditions = ""
-    conditions1 = ""
-    conditions2 = ""
-    conditions3 = ""
     if filters.get("recruit"):
-        conditions1 += "and  `tabEmployee`.name = %(recruit)s"
+        conditions += "and  `tabRecruit Vacation`.recruit = %(recruit)s"
     if filters.get("start_date"):
-        conditions += " and  `tabRecruit Vacation`.start_date = %(start_date)s"
+        conditions += " and  `tabRecruit Vacation`.end_date >= %(start_date)s"
     if filters.get("end_date"):
-        conditions += " and  `tabRecruit Vacation`.end_date = %(end_date)s"
+        conditions += " and  `tabRecruit Vacation`.end_date <= %(end_date)s"
     if filters.get("overnight")== "مبيت":
-        conditions1 += " and  `tabEmployee`.overnight = %(overnight)s"
-    if filters.get("overnight")== "اجازة دورية":
-        conditions2 += " join  `tabRecruit Vacation` on `tabRecruit Vacation`.recruit = `tabEmployee`.name "
-        #conditions3 += " and  `tabRecruit Vacation`.end_date = %(end_date)s"
+        conditions += " and  `tabRecruit Vacation`.types_of_vacations = %(overnight)s"
+    if filters.get("overnight")== "أجازة دورية":
+        conditions += "  and `tabRecruit Vacation`.types_of_vacations = %(overnight)s"
 
     result = []
-
-    item_result2 = frappe.db.sql("""
-        select
-            `tabEmployee`.employee_name, `tabEmployee`.name, `tabEmployee`.overnight
-        from
-           `tabEmployee`  {conditions2}
-        where 
-        `tabEmployee`.employment_type = "Recruit"
-        {conditions1}
-         
-        """.format(conditions1=conditions1,conditions2=conditions2), filters, as_dict=1)
-    for item_dict in item_result2:
-        data = {
-            'employee_name': item_dict.employee_name ,
-            'name': item_dict.name ,
-            'overnight': item_dict.overnight ,
-        }
-        item_results = frappe.db.sql("""
+    item_results = frappe.db.sql("""
             select
-                recruit, employee_name, start_date, start_time, end_date, end_time, notes
+                recruit, employee_name,  start_date, start_time, end_date, end_time, types_of_vacations, notes
             from
                 `tabRecruit Vacation`
             where
                 `tabRecruit Vacation`.docstatus = 1
-                and `tabRecruit Vacation`.recruit = '{recruit}'
                 {conditions}
-            """.format(conditions=conditions,recruit=item_dict.name), filters, as_dict=1)
+            order by end_date desc
+            """.format(conditions=conditions), filters, as_dict=1)
 
-        for x in item_results:
-            data['start_date'] = x.start_date
-            data['start_time'] = x.start_time
-            data['end_date'] = x.end_date
-            data['end_time'] = x.end_time
-            data['notes'] = x.notes
+    for x in item_results:
+        data = {}
+        data['recruit'] = x.recruit
+        data['employee_name'] = x.employee_name
+        data['start_date'] = x.start_date
+        data['start_time'] = x.start_time
+        data['end_date'] = x.end_date
+        data['end_time'] = x.end_time
+        data['types_of_vacations'] = x.types_of_vacations
+        data['notes'] = x.notes
         result.append(data)
     return result

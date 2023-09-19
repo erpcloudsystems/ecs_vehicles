@@ -9,6 +9,9 @@
  "engine": "InnoDB",
  "field_order": [
   "master_data",
+  "search_vehicle",
+  "search",
+  "section_break_wyaye",
   "delete_vehicle",
   "section_break_hkuhn",
   "naming_series",
@@ -1832,11 +1835,25 @@
   {
    "fieldname": "section_break_hkuhn",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "search_vehicle",
+   "fieldtype": "Data",
+   "label": "\u0628\u062d\u062b \u0628\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629"
+  },
+  {
+   "fieldname": "search",
+   "fieldtype": "Button",
+   "label": " "
+  },
+  {
+   "fieldname": "section_break_wyaye",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-09 15:27:54.757050",
+ "modified": "2023-09-14 14:43:08.652829",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vehicles",

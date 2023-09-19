@@ -38,7 +38,7 @@
   },
   {
    "fieldname": "current_vehicle",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u0627\u0644\u0645\u0631\u0643\u0628\u0629 \u0627\u0644\u062d\u0627\u0644\u064a\u0629",
@@ -154,7 +154,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-12 12:27:41.881534",
+ "modified": "2023-09-13 11:59:42.824977",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vehicle Motor",

@@ -288,3 +288,38 @@ AND current_vehicle not in (
     SELECT name 
     FROM `tabVehicles`
 );
+---- Attached Entity Logs
+update `tabAttached Entity Logs`
+Join `tabVehicles` ON `tabVehicles`.vic_serial = `tabAttached Entity Logs`.vic_serial
+set  `tabAttached Entity Logs`.parent = `tabVehicles`.name
+where  `tabAttached Entity Logs`.vic_serial is not  null;
+
+update `tabAttached Entity Logs`
+JOIN `tabEntity` On `tabEntity`.code = `tabAttached Entity Logs`.attgehacode
+set `tabAttached Entity Logs`.value = `tabEntity`.name
+where `tabAttached Entity Logs`.attgehacode is not null;
+
+--- `tabEntity Logs`
+
+update `tabEntity Logs`
+join `tabBoats` ON `tabBoats`.boat_no = `tabEntity Logs`.LAUNCH_NO
+set `tabEntity Logs`.parent = `tabBoats`.name
+where `tabEntity Logs`.LAUNCH_NO is not null;
+
+update `tabEntity Logs`
+join `tabEntity` ON `tabEntity`.code = `tabEntity Logs`.VALUE
+set `tabEntity Logs`.value = `tabEntity`.name
+where `tabEntity Logs`.LAUNCH_NO is not null;
+
+-- `tabVehicle Status Logs`
+
+update `tabVehicle Status Logs`
+join `tabVehicle Status` ON `tabVehicle Status`.code = `tabVehicle Status Logs`.motorcase_code
+set value = `tabVehicle Status`.name
+where `tabVehicle Status Logs`.motorcase_code is not null;
+
+-- Editing Table
+update `tabEditing Table`
+JOIN `tabBoats` ON `tabBoats`.boat_no = `tabEditing Table`.old_transaction_no
+set `tabEditing Table`.old_transaction_no = `tabBoats`.name
+where `tabEditing Table`.ass_date is not null;

@@ -578,7 +578,7 @@ class VehicleMaintenanceProcess(Document):
                                                 from `tabKarta Ledger Entry` karta_ledger
                                                 JOIN  `tabItem` item ON item.item_code = part_universal_code
                                                 where karta_ledger.vic_serial = '{vehicles}'
-                                                and item.item_group = '{item_group}'
+                                                and item.item_name Like '%اطار%'
                                                 and karta_ledger.del_flag = "0"
                                                 and karta_ledger.action_date > "{past_date}"
                                                 """.format(
@@ -599,24 +599,24 @@ class VehicleMaintenanceProcess(Document):
             table.qty = 1
             table.last_issue_detail = row.action_date
             table.last_sarf_qty = row.part_qty
-
+            
     @frappe.whitelist()
     def battaries_update_table(doc, method=None):
         today = date.today()
         past_date = add_months(today, -32)
         last_sarf_date = frappe.db.sql(
-            """ select 
-                                                   item.item_code, item.item_name, item.item_group, item.description,
-                                                karta_ledger.action_date, karta_ledger.part_qty	
+            """ select  item.item_code, item.item_name, item.item_group, item.description,
+                                                karta_ledger.action_date, karta_ledger.part_qty
                                                 from `tabKarta Ledger Entry` karta_ledger
-                                                JOIN  `tabItem` item ON item.item_code = part_universal_code      
-                                                where item.item_group = '{item_group}'
+                                                JOIN  `tabItem` item ON item.item_code = part_universal_code
+                                                where karta_ledger.vic_serial = '{vehicles}'
+                                                and item.item_name Like '%بطاريه%'
                                                 and karta_ledger.del_flag = "0"
-                                                group by item.item_code
-                                                order by item.item_code
-                                                limit 30
+                                                and karta_ledger.action_date > "{past_date}"
                                                 """.format(
-                vehicles=doc.vehicles, item_group="البطاريات", past_date=past_date
+                vehicles=doc.vehicles,
+                item_group="اطارات داخلية و خارجية",
+                past_date=past_date,
             ),
             as_dict=1,
         )

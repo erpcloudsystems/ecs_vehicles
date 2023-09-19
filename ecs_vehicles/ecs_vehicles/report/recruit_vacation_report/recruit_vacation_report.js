@@ -6,17 +6,17 @@ frappe.query_reports["Recruit Vacation Report"] = {
 	"filters": [
 	    {
 			fieldname: "start_date",
-			label: __("تاريخ بداية الاجازة"),
+			label: __("من تاريخ"),
 			fieldtype: "Date",
 		},
 		{
 			fieldname: "end_date",
-			label: __("تاريخ نهاية الاجازة"),
+			label: __("إلى تاريخ"),
 			fieldtype: "Date",
 		},
         {
 			fieldname: "recruit",
-			label: __("رقم المجند"),
+			label: __("اسم المجند"),
 			fieldtype: "Link",
 			options: "Employee",
 		},
@@ -24,8 +24,7 @@ frappe.query_reports["Recruit Vacation Report"] = {
 			fieldname: "overnight",
 			label: __("نوع الاجازة"),
 			fieldtype: "Select",
-			options: ["","مبيت","اجازة دورية"],
-			reqd: 1,
+			options: ["","مبيت","أجازة دورية"],
 		},
 
 

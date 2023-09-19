@@ -193,7 +193,7 @@ def get_conditions(filters):
 
 def get_data(filters):
     conditions = get_conditions(filters)
-    query = get_query(conditions)
+    query = get_query(conditions, filters)
     # license_details_query = license_details()
     # license_summary_entry = license_summary()
     # license_summary_entry = get_license_summary_entry(conditions)
@@ -253,9 +253,10 @@ def get_data(filters):
     return ingaze_row
 
 
-def get_query(conditions):
-    date = nowdate()
-    
+def get_query(conditions, filters):
+    new_cond = "  vehicle.vehicle_no = vehicle_license.police_no"
+    if filters.get("license_on") == "المركبة":
+            new_cond = "  vehicle.name = vehicle_license.vehicle " 
     return frappe.db.sql(
         """
         SELECT
@@ -278,12 +279,12 @@ def get_query(conditions):
             vehicle_license.license_duration AS license_duration,
             vehicle_license.card_code AS card_code,
             vehicle_license.renewal_type AS renewal_type
-        FROM `tabVehicle License Entries` vehicle_license
-        right JOIN `tabVehicles` vehicle ON vehicle.vehicle_no = vehicle_license.police_no
+        FROM `tabVehicle License Entries` vehicle_license 
+        right JOIN `tabVehicles` vehicle ON {new_cond}
         WHERE vehicle_license.license_no IS NULL
         {conditions}
         """.format(
-            conditions=conditions,date=date
+            conditions=conditions,new_cond=new_cond
         ),
         as_dict=1,
     )  # nosec

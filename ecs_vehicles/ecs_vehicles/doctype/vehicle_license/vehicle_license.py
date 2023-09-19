@@ -864,10 +864,8 @@ def updatedate():
 
     veh_license = frappe.db.sql(
         """
-    SELECT veh_rec_date, name
-    FROM `tabJob Order`
-    limit 200000
-    OFFSET 0
+    SELECT attgehadate, name
+    FROM `tabAttached Entity Logs`
     """,
         as_dict=1,
     )
@@ -912,203 +910,12 @@ def history_vehicle1(police_no):
 def updatedate2():
     import datetime
 
-    names = (
-        57198,
-        57201,
-        57202,
-        57187,
-        57188,
-        57189,
-        57190,
-        57192,
-        57199,
-        57200,
-        57169,
-        57170,
-        57171,
-        57172,
-        57173,
-        57174,
-        57175,
-        57176,
-        57177,
-        57179,
-        57180,
-        57181,
-        57182,
-        57183,
-        57184,
-        57185,
-        57186,
-        57191,
-        57193,
-        57194,
-        57195,
-        57196,
-        57197,
-        57151,
-        57152,
-        57153,
-        57154,
-        57155,
-        57156,
-        57157,
-        57158,
-        57159,
-        57160,
-        57161,
-        57162,
-        57163,
-        57164,
-        57165,
-        57167,
-        57168,
-        57126,
-        57127,
-        57128,
-        57129,
-        57130,
-        57131,
-        57132,
-        57133,
-        57134,
-        57135,
-        57136,
-        57137,
-        57139,
-        57140,
-        57141,
-        57142,
-        57143,
-        57144,
-        57145,
-        57146,
-        57147,
-        57148,
-        57149,
-        57150,
-        57113,
-        57114,
-        57115,
-        57116,
-        57117,
-        57118,
-        57119,
-        57120,
-        57121,
-        57122,
-        57123,
-        57124,
-        57125,
-        57096,
-        57097,
-        57098,
-        57101,
-        57102,
-        57103,
-        57104,
-        57105,
-        57106,
-        57108,
-        57109,
-        57110,
-        57112,
-        57076,
-        57077,
-        57081,
-        57082,
-        57083,
-        57084,
-        57085,
-        57086,
-        57087,
-        57088,
-        57089,
-        57090,
-        57091,
-        57092,
-        57094,
-        57095,
-        57054,
-        57055,
-        57057,
-        57058,
-        57059,
-        57061,
-        57062,
-        57064,
-        57065,
-        57066,
-        57067,
-        57068,
-        57069,
-        57070,
-        57071,
-        57072,
-        57073,
-        57074,
-        57075,
-        57036,
-        57037,
-        57038,
-        57040,
-        57042,
-        57043,
-        57044,
-        57045,
-        57046,
-        57047,
-        57048,
-        57049,
-        57050,
-        57052,
-        57053,
-        57022,
-        57027,
-        57029,
-        57032,
-        57033,
-        57034,
-        57035,
-        57014,
-        57017,
-        57018,
-        57019,
-        57250,
-        57008,
-        57237,
-        57239,
-        57217,
-        57219,
-        57222,
-        56984,
-        56990,
-        56993,
-        57208,
-        57209,
-        56980,
-        56982,
-        56983,
-        56978,
-        56979,
-        56976,
-        57203,
-        57204,
-        57205,
-        57206,
-        57207,
-    )
-    list_of_strings_names = [str(i) for i in names]
-    print(list_of_strings_names)
     veh_license = frappe.db.sql(
         """
-    SELECT last_issue_from_date as last_issue_from_date, name
-    FROM `tabVehicles Issuing Table`
-    where last_issue_from_date is not null
-    and parent IN {names}
-    """.format(
-            names=tuple(list_of_strings_names)
-        ),
+    SELECT ass_date, name
+    FROM `tabEditing Table`
+    where ass_date is not null
+    """,
         as_dict=1,
     )
     counter = 0
@@ -1118,15 +925,15 @@ def updatedate2():
             # day = row.sarfia_from_date.split("-")[0][2:]
             # date = datetime.datetime.strptime(str(day) +"-"+ str(row.sarfia_from_date.split("-")[1]) +"-"+ str(row.sarfia_from_date.split("-")[2]), '%d-%m-%y').date()
             # print(date)
-            last_issue_from_date = datetime.datetime.strptime(
-                row.last_issue_from_date, "%d/%m/%y"
+            ass_date = datetime.datetime.strptime(
+                row.ass_date, "%d/%m/%y"
             ).date()
-            print(last_issue_from_date)
+            print(ass_date)
             veh_license_date = frappe.db.sql(
                 """
-                UPDATE `tabVehicles Issuing Table` SET last_issue_from_date="{last_issue_from_date}" where name="{name}"
+                UPDATE `tabEditing Table` SET date="{ass_date}" where name="{name}"
                 """.format(
-                    last_issue_from_date=last_issue_from_date.strftime("%Y-%m-%d"),
+                    ass_date=ass_date.strftime("%Y-%m-%d"),
                     name=row.name,
                 )
             )

@@ -223,4 +223,9 @@ def get_item_price_qty_data(filters):
                 'washing_voucher': item_dict.washing_voucher if item_dict.washing_voucher else "-----------",
             }
             result.append(data)
+    try:
+
+        result[0]["cur_user"] = frappe.db.get_value("User", frappe.session.user, ["full_name"])
+    except:
+        pass
         return result

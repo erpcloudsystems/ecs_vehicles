@@ -776,7 +776,7 @@
   {
    "fetch_from": "vehicle.chassis_no",
    "fieldname": "chassis_no",
-   "fieldtype": "Data",
+   "fieldtype": "Long Text",
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0634\u0627\u0633\u064a\u0647",
    "read_only": 1
   },
@@ -1335,7 +1335,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-08-15 12:26:42.320150",
+ "modified": "2023-09-12 13:19:19.632382",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vehicle License",

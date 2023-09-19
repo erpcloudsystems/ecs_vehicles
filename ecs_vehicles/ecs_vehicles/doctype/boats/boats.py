@@ -50,7 +50,7 @@ class Boats(Document):
         if not frappe.db.exists("Boat Motor", self.motor_no):
             frappe.throw("المحرك غير موجود")
         if self.motor_no in [self.engine_no, self.engine_no2]:
-            frappe.throw("المحرك موجود بالفعل في اللنش")
+            frappe.throw("المحرك موجود بالفعل في اللانش")
         if self.engine_no and self.engine_no2:
             frappe.throw("لا يمكن إضافة محرك ثالث")
         boat_motor = frappe.get_doc("Boat Motor", self.motor_no)
@@ -120,7 +120,7 @@ class Boats(Document):
     @frappe.whitelist()
     def motor_transport(self):
         if self.engin_transaction not in [self.engine_no, self.engine_no2]:
-            frappe.throw("المحرك المدخل غير موجود في اللنش")
+            frappe.throw("المحرك المدخل غير موجود في اللانش")
         if self.spare_warehouse:
             motor_doc = frappe.get_doc("Boat Motor", self.engin_transaction)
             motor_doc.motor_validity = "احتياطي مخزن"
@@ -227,14 +227,14 @@ class Boats(Document):
         entity = self.append("entity_table", {})
         entity.date = datetime.now()
         entity.value = self.entity_name
-        entity.remarks = "الجهة الأساسية للبدن التي تم إدخالها مع إنشاء اللنش"
+        entity.remarks = "الجهة الأساسية للبدن التي تم إدخالها مع إنشاء اللانش"
         entity.edited_by = frappe.db.get_value("User", self.owner, "full_name")
         self.save(ignore_permissions=True)
 
         validity = self.append("validity_table", {})
         validity.date = datetime.now()
         validity.value = self.boat_validity
-        validity.remarks = "الصلاحية الأساسية للبدن التي تم إدخالها مع إنشاء اللنش"
+        validity.remarks = "الصلاحية الأساسية للبدن التي تم إدخالها مع إنشاء اللانش"
         validity.edited_by = frappe.db.get_value("User", self.owner, "full_name")
         self.save(ignore_permissions=True)
         """
@@ -242,7 +242,7 @@ class Boats(Document):
             engine = self.append("engines_table", {})
             engine.date = datetime.now()
             engine.value = x.engine_no
-            engine.remarks = "رقم المحرك الأساسي الذي تم إدخاله مع إنشاء اللنش"
+            engine.remarks = "رقم المحرك الأساسي الذي تم إدخاله مع إنشاء اللانش"
             engine.edited_by = frappe.db.get_value("User", self.owner, "full_name")
             engine.doctype_name = "Boats"
             engine.edit_vehicle = self.name
@@ -281,7 +281,36 @@ class Boats(Document):
             frappe.throw(" لا يمكن إضافة أكثر من محركين للانش " + self.boat_no)
         elif not self.engine_no and not self.engine_no2:
             self.boat_validity = "عاطلة"
-
+        status = frappe.db.sql("""
+                    SELECT current_validity
+                    FROM `tabBoats`
+                    WHERE name = '{name}'
+                """.format(name=self.name), as_dict=1)
+        if status:
+            if status[0].current_validity != self.current_validity:
+                doc = frappe.get_doc("Boat Motor", self.engine_no)
+                doc.motor_validity = self.current_validity
+                doc.append('status_history', {
+                    "value": self.current_validity,
+                    "date": datetime.now(),
+                    "remarks": "الصلاحية من {0} إلا {1} ".format(status[0].current_validity, self.current_validity),
+                })
+                doc.save()
+        status = frappe.db.sql("""
+                    SELECT current_validity2
+                    FROM `tabBoats`
+                    WHERE name = '{name}'
+                """.format(name=self.name), as_dict=1)
+        if status:
+            if status[0].current_validity2 != self.current_validity:
+                doc = frappe.get_doc("Boat Motor", self.engine_no)
+                doc.motor_validity = self.current_validity
+                doc.append('status_history', {
+                    "value": self.current_validity,
+                    "date": datetime.now(),
+                    "remarks": "الصلاحية من {0} إلا {1} ".format(status[0].current_validity2, self.current_validity),
+                })
+                doc.save()
         for row in self.engine_table:
             if frappe.db.exists("Boat Motor", row.engine_no):
                 boat_motor = frappe.get_doc("Boat Motor", row.engine_no)
@@ -315,7 +344,7 @@ class Boats(Document):
                     engine = self.append("engines_table", {})
                     engine.date = datetime.now()
                     engine.value = y.engine_no
-                    engine.remarks = "رقم المحرك الأساسي الذي تم إدخاله مع إنشاء اللنش"
+                    engine.remarks = "رقم المحرك الأساسي الذي تم إدخاله مع إنشاء اللانش"
                     engine.edited_by = frappe.db.get_value(
                         "User", self.owner, "full_name"
                     )
@@ -332,7 +361,13 @@ class Boats(Document):
                             "remarks": "رقم اللانش الأساسي الذي تم إضافته مع إنشاء المحرك",
                         }
                     ]
-
+                    status_history = [
+                                {
+                                    "value": y.current_validity,
+                                    "date": datetime.now(),
+                                    "remarks": "الصلاحية الأساسية للمحرك",
+                                }
+                            ]
                     new_doc = frappe.get_doc(
                         {
                             "doctype": "Boat Motor",
@@ -347,6 +382,7 @@ class Boats(Document):
                             "transfer_history": history,
                             "boat_no": self.name,
                             "motor_validity": y.current_validity,
+                            "status_history": status_history,
                         }
                     )
                     new_doc.insert(ignore_permissions=True)
@@ -362,7 +398,7 @@ class Boats(Document):
                     engine = self.append("engines_table", {})
                     engine.date = datetime.now()
                     engine.value = y.engine_no
-                    engine.remarks = "رقم المحرك الأساسي الذي تم إدخاله مع إنشاء اللنش"
+                    engine.remarks = "رقم المحرك الأساسي الذي تم إدخاله مع إنشاء اللانش"
                     engine.edited_by = frappe.db.get_value("User", self.owner, "full_name")
                     engine.doctype_name = "Boats"
                     engine.edit_vehicle = self.name

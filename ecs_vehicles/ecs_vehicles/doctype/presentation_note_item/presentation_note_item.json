@@ -23,6 +23,7 @@
   "vehicles",
   "vehicle_no",
   "vehicle_brand",
+  "vehicle_style",
   "entity_name",
   "vehicle_model",
   "disc",
@@ -208,12 +209,20 @@
    "in_list_view": 1,
    "label": "\u0627\u0644\u0633\u0639\u0631",
    "precision": "0"
+  },
+  {
+   "fetch_from": "vehicles.vehicle_style",
+   "fieldname": "vehicle_style",
+   "fieldtype": "Link",
+   "label": "\u0627\u0644\u0637\u0631\u0627\u0632",
+   "options": "Vehicle Style",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-09-01 11:43:01.680995",
+ "modified": "2023-09-18 10:32:13.600003",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Presentation Note Item",

@@ -27,6 +27,10 @@ frappe.ui.form.on('Boats', {
     refresh: function (frm) {
         // frm.set_df_property("engine_table", "cannot_delete_rows", true);
         //frm.set_df_property("engine_table", "cannot_add_rows", true);
+        frm.set_df_property("validity_table", "cannot_add_rows", true);
+        frm.set_df_property("entity_table", "cannot_add_rows", true);
+        frm.set_df_property("engine_table", "cannot_add_rows", true);
+        frm.set_df_property("engines_table", "cannot_add_rows", true);
     },
     motor_add: function (frm) {
         frappe.call({

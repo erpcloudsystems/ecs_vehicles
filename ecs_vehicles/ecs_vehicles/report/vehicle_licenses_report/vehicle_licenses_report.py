@@ -91,12 +91,16 @@ def get_columns(filters):
 
 def get_conditions(filters):
     conditions = ""
+    if filters.get("license_on") == "المركبة" and not filters.get("police_no"):
+        frappe.throw("برجاء ادخال رقم الشرطة للمركبة المراد البحث عنها")
     if filters.get("name"):
         conditions += " AND vehicle_license.name=%s" % frappe.db.escape(filters.get("name"))
     if filters.get("police_no"):
         conditions += " AND license_summary.police_no=%s" % frappe.db.escape(
             filters.get("police_no")
         )
+        if filters.get("license_on") == "المركبة":
+            conditions += " AND license_summary.vehicle=%s" % frappe.db.escape(frappe.db.get_value("Vehicles", {"vehicle_no":filters.get("police_no")}, "name") if  frappe.db.exists("Vehicles", {"vehicle_no":filters.get("police_no")}) else frappe.db.get_value("Vehicles", {"police_id":filters.get("police_no")}, "name") )
     if filters.get("vehicle_type"):
         conditions += " AND license_summary.vehicle_type=%s" % frappe.db.escape(
             filters.get("vehicle_type")
@@ -128,7 +132,7 @@ def get_conditions(filters):
 def get_data(filters):
     conditions = get_conditions(filters)
     query = get_query(conditions)
-    license_details_query = license_details()
+    # license_details_query = license_details()
     # license_summary_entry = license_summary()
     # license_summary_entry = get_license_summary_entry(conditions)
     # projects_entry = get_projects_entry(conditions)
@@ -200,12 +204,10 @@ def get_query(conditions):
             license_summary.renewal_type AS renewal_type,
             license_summary.user AS user,
             license_summary.card_code AS card_code
-
         FROM `tabVehicle License Entries` license_summary
         WHERE 1 =  1
         {conditions}
         ORDER BY license_summary.license_no, card_code DESC
-
         """.format(
             conditions=conditions
         ),

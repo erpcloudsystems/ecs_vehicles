@@ -705,7 +705,10 @@ web_include_js = "/assets/js/web_ecs.min.js"
 web_include_css = "/assets/js/web_ecs.min.css"
 #app_css_right = "assets/ecs_vehicles/css/erpnext-rtl.css"
 
-
+website_context = {
+	"favicon": '/vec.emdad.local/public/files/markabat logoce3b5ed30c07d7831d.png',
+	"splash_image": '/vec.emdad.local/public/files/markabat logoce3b5ed30c07d7831d.png',
+}
 # Includes in <head>
 # ------------------
 
