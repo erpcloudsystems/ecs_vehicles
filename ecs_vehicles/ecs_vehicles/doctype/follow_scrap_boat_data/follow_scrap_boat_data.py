@@ -5,6 +5,10 @@ import frappe
 from frappe.model.document import Document
 
 class FollowScrapBoatData(Document):
+	def validate(self):
+		if self.scrap_status == self.boat_status:
+			frappe.throw("يجب إختيار حالة مختلفة عن الحالة الحالية للانش")
+			
 	def on_submit(self):
 		boat = frappe.get_doc('Boats', self.boat_no)
 		if self.scrap_status == "عاملة":

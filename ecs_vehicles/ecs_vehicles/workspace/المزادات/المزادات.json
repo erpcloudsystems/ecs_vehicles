@@ -1,7 +1,7 @@
 {
  "charts": [],
  "content": "[{\"id\":\"fB-gtzdkPC\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629\",\"col\":6}},{\"id\":\"Gak0rz-IMB\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0627\u0644\u062d\u0631\u0643\u0627\u062a\",\"col\":6}}]",
- "creation": "2023-09-11 17:52:33.239562",
+ "creation": "2023-09-19 15:22:44.754371",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -79,7 +79,7 @@
    "type": "Link"
   }
  ],
- "modified": "2023-09-13 12:27:55.408400",
+ "modified": "2023-10-31 17:19:24.459415",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "\u0627\u0644\u0645\u0632\u0627\u062f\u0627\u062a",

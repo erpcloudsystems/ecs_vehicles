@@ -16,8 +16,10 @@
   "counter",
   "column_break_3",
   "received_voucher",
+  "liquid_type",
   "batch_no",
   "group_no",
+  "verify_group",
   "group_count",
   "amended_from",
   "section_break_9",
@@ -76,7 +78,8 @@
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u062f\u0641\u0639\u0629",
    "no_copy": 1,
-   "read_only": 1
+   "read_only": 1,
+   "search_index": 1
   },
   {
    "depends_on": "eval:doc.company_name",
@@ -86,7 +89,8 @@
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u0645\u062c\u0645\u0648\u0639\u0629",
    "mandatory_depends_on": "eval:doc.company_name",
-   "no_copy": 1
+   "no_copy": 1,
+   "search_index": 1
   },
   {
    "fieldname": "section_break_9",
@@ -173,12 +177,31 @@
   {
    "fieldname": "section_break_4hcti",
    "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "depends_on": "eval:doc.group_no && doc.docstatus != 1",
+   "fieldname": "verify_group",
+   "fieldtype": "Button",
+   "label": "\u0627\u0644\u062a\u062d\u0642\u0642 \u0645\u0646 \u0625\u0633\u062a\u062e\u062f\u0627\u0645 \u0631\u0642\u0645 \u0627\u0644\u0645\u062c\u0645\u0648\u0639\u0629"
+  },
+  {
+   "fetch_from": "received_voucher.liquid_type",
+   "fieldname": "liquid_type",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0633\u0627\u0626\u0644",
+   "options": "\n\u0648\u0642\u0648\u062f\n\u0632\u064a\u062a\n\u063a\u0627\u0632\n\u063a\u0633\u064a\u0644",
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-06-22 14:10:25.787192",
+ "modified": "2023-10-19 10:35:27.191931",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vouchers Review",

@@ -5,12 +5,17 @@ import frappe
 from frappe import msgprint, _
 from frappe.utils import flt
 
-
 def execute(filters=None):
     columns, data = [], []
     columns = get_columns()
     data = get_data(filters, columns)
-    return columns, data
+    header = ""
+    
+    total_count = "<b> عدد المركبات : {0}<span style='margin-right:50px'></span></b> ".format(data[0]["total_count"])
+    header = " "  + total_count
+
+    message = [header]
+    return columns, data, message
 
 
 def get_columns():
@@ -170,6 +175,10 @@ def get_item_price_qty_data(filters):
             litre_count as litre_count,
             oil_type as oil_type,
             gas_count as gas_count,
+            possession_type as possession_type,
+            processing_type as processing_type,
+            chassis_no as chassis_no,
+            motor_no as motor_no,    
             washing_voucher as washing_voucher
         FROM `tabVehicles`
         WHERE 1=1
@@ -191,6 +200,10 @@ def get_item_price_qty_data(filters):
             fuel_type as fuel_type,
             cylinder_count as cylinder_count,
             qty as litre_count,
+            '-----------' as possession_type,
+            '-----------' as processing_type,
+            '-----------' as chassis_no,
+            engine_no as motor_no,    
             '-----------' as oil_type,
             '-----------' as gas_count,
             '-----------' as washing_voucher
@@ -202,8 +215,10 @@ def get_item_price_qty_data(filters):
         """.format(conditions1=conditions1, conditions2=conditions2), filters, as_dict=1)
 
     result = []
+    counter = 0
     if item_results:
         for item_dict in item_results:
+            counter += 1
             data = {
                 'name': item_dict.name,
                 'vehicle_no': item_dict.vehicle_no if item_dict.vehicle_no else item_dict.police_id,
@@ -220,12 +235,15 @@ def get_item_price_qty_data(filters):
                 'litre_count': item_dict.litre_count if item_dict.litre_count else "-----------",
                 'oil_type': item_dict.oil_type if item_dict.oil_type else "-----------",
                 'gas_count': item_dict.gas_count if item_dict.gas_count else "-----------",
-                'washing_voucher': item_dict.washing_voucher if item_dict.washing_voucher else "-----------",
+                'possession_type': item_dict.possession_type if item_dict.possession_type else "-----------",
+                'processing_type': item_dict.processing_type if item_dict.processing_type else "-----------",
+                'chassis_no': item_dict.chassis_no if item_dict.chassis_no else "-----------",
+                'motor_no': item_dict.motor_no if item_dict.motor_no else "-----------",
             }
             result.append(data)
     try:
-
         result[0]["cur_user"] = frappe.db.get_value("User", frappe.session.user, ["full_name"])
+        result[0]["total_count"] = counter    
     except:
         pass
-        return result
+    return result

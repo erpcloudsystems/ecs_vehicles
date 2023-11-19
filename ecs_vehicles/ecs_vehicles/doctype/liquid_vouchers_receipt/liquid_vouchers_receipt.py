@@ -27,6 +27,7 @@ def liquid_voucher_receipt(name):
                 """,
         as_dict=1,
     )
+
     if frappe.db.exists("Receipt Voucher Table", 1):
         record_name = int(max_id[0]["max_name"]) + 1
     frappe.db.sql(
@@ -61,7 +62,7 @@ def liquid_voucher_receipt(name):
     barcode_no = ""
     barcode = ""
     notebook_no = self.from_notebook
-    for no in range(self.from_voucher, self.to_voucher + 1):
+    for no in range(int(self.from_voucher), int(self.to_voucher) + 1):
         if no % 25 == 0:
             notebook_no += 1
 
@@ -91,6 +92,13 @@ def liquid_voucher_receipt(name):
         if self.liquid_type == "زيت":
             voucher_type = self.oil_type
             fuel_type = self.oil_type
+
+            if len(str(no)) == 5:
+                no = "00" + str(no)
+            
+            elif len(str(no)) == 6:
+                no = "0" + str(no)
+
             barcode_no = (
                 str(frappe.db.get_value("Oil Type", self.oil_type, "code"))
                 + "-"
@@ -206,7 +214,7 @@ class LiquidVouchersReceipt(Document):
                 },
             )
 
-            self.from_voucher = last_doc.to_voucher + 1
+            self.from_voucher = int(last_doc.to_voucher) + 1
 
         if (
             frappe.db.exists(
@@ -224,7 +232,7 @@ class LiquidVouchersReceipt(Document):
                 },
             )
 
-            self.from_voucher = last_doc.to_voucher + 1
+            self.from_voucher = int(last_doc.to_voucher) + 1
 
         if (
             frappe.db.exists(
@@ -238,7 +246,7 @@ class LiquidVouchersReceipt(Document):
                 {"docstatus": 1, "liquid_type": self.liquid_type},
             )
 
-            self.from_voucher = last_doc.to_voucher + 1
+            self.from_voucher = int(last_doc.to_voucher) + 1
 
         if (
             frappe.db.exists(
@@ -256,25 +264,37 @@ class LiquidVouchersReceipt(Document):
                 {"docstatus": 1, "liquid_type": self.liquid_type},
             )
 
-            self.from_voucher = last_doc.to_voucher + 1
+            self.from_voucher = int(last_doc.to_voucher) + 1
 
     def validate(self):
         self.set("notebook_table", [])
         if not self.from_voucher:
             frappe.throw(" برجاء إدخال خانة من مسلسل بون ")
+        
         self.to_voucher = (
-            self.from_voucher
+            int(self.from_voucher)
             - 1
             + (self.notebook_count * self.voucher_count_per_notebook)
         )
+
+
         if self.liquid_type == "وقود":
             self.qty = (
                 frappe.db.get_value("Fuel Voucher", self.fuel_voucher, "litre_count")
                 * self.voucher_count_per_notebook
                 * self.notebook_count
             )
-        # if self.liquid_type == "زيت":
-        # 	self.qty = frappe.db.get_value("Oil Type", self.oil_type, "litre_count") * self.voucher_count_per_notebook * self.notebook_count
+
+        if self.liquid_type == "زيت":
+            if len(str(self.from_voucher)) == 5:
+                self.from_voucher = "00" + str(self.from_voucher)
+            if len(str(self.to_voucher)) == 5:
+                self.to_voucher = "00" + str(self.to_voucher)
+            if len(str(self.from_voucher)) == 6:
+                self.from_voucher = "0" + str(self.from_voucher)
+            if len(str(self.to_voucher)) == 6:
+                self.to_voucher = "0" + str(self.to_voucher)
+
         if self.liquid_type == "غاز":
             self.qty = (
                 frappe.db.get_value("Gas Voucher", self.gas_type, "gas_count")

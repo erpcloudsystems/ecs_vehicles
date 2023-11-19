@@ -219,7 +219,8 @@
 				{% var col_qty = [] %}
 				{% var col_qtyListsplit = data[i].qty %}
 				{% for(var j=0, len=col_qtyListsplit.length; j<len; j++) { %} {%
-					col_qty.push(numbers[col_qtyListsplit[j]]) %} {% } %} <td>{%= col_qty.join("") %}</td>
+					col_qty.push(numbers[col_qtyListsplit[j]]) %} {% } %}
+					 <td>{%= col_qty.join("") %}</td>
 					{% var from_date = [] %}
 					{% var from_dateListsplit = data[i].from_date.split("") %}
 					{% for(var j=0, len=from_dateListsplit.length; j<len; j++) { %} {% if (from_dateListsplit[j]=="-" )
@@ -227,7 +228,6 @@
 						%} <td>
 						{%= from_date.join("").split("-")[2] %} / {%= from_date.join("").split("-")[1] %} / {%=
 						from_date.join("").split("-")[0] %}</td>
-
 						{% var to_date = [] %}
 						{% var to_dateListsplit = data[i].to_date.split("") %}
 						{% for(var j=0, len=to_dateListsplit.length; j<len; j++) { %} {% if (to_dateListsplit[j]=="-" )

@@ -1,3 +1,15 @@
+frappe.ui.form.on("Vehicle Maintenance Process", "onload", function(frm) {
+    if(!cur_frm.doc.fiscal_year){
+        frappe.call({ method: "frappe.client.get_value", 
+            args: {
+                doctype: "System Defaults",
+                fieldname: "default_fiscal_year",
+            },
+            callback: function(r) { cur_frm.set_value("fiscal_year", r.message.default_fiscal_year); }
+        });
+    }
+});
+
 frappe.ui.form.on('Vehicle Maintenance Process', {
 	cancel_ezn: function (frm) {
 		if (frm.doc.cancel_ezn == 1) {
@@ -900,42 +912,57 @@ frappe.ui.form.on("Vehicle Maintenance Process", "print_mozakira", function (frm
 	});
 });
 
-
-// frappe.ui.form.on("Vehicle Maintenance Process", "print_job_order", function(frm){
-// 	let is_printed = 0;
-// 	$.each(cur_frm.doc.maintenance_print_logs || [], function(i, d) {
-// 		if (cur_frm.doc.enable_print === 0 && d.format_name == "أمر شغل"){
-// 			is_printed = 1;
-// 		}
-// 	})
-// 	if (is_printed == 1){
-// 		frappe.throw(" لقد تم طباعة أمر الشغل من قبل ولا يمكن طباعته مرة أخرى ... برجاء الرجوع للإدارة ")
-// 	}
-// 	if (is_printed == 0){
-// 		var myWin = window.open('/printview?doctype=Vehicle%20Maintenance%20Process&name='+ cur_frm.doc.name +'&trigger_print=1&format=Job%20Order%20Print&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');	
-// 	}	
-// 	frappe.call({
-// 		doc: frm.doc,
-// 		method: "print_job_order",
-// 		callback: function(r) {
-// 			frm.refresh_fields();
-// 			frm.refresh();
-// 		}
-// 	});
-// });
-
-frappe.ui.form.on("Vehicle Maintenance Process", "print_job_order", function (frm) {
-	var myWin = window.open('/printview?doctype=Vehicle%20Maintenance%20Process&name=' + cur_frm.doc.name + '&trigger_print=1&format=Job%20Order%20Print&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+frappe.ui.form.on("Vehicle Maintenance Process", "print_mozakira_egaza", function (frm) {
+	var myWin = window.open('/printview?doctype=Vehicle%20Maintenance%20Process&name=' + cur_frm.doc.name + '&trigger_print=1&format=Mozakira%20Egaza&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
 	frm.doc.enable_print = 0
 	frappe.call({
 		doc: frm.doc,
-		method: "print_job_order",
+		method: "print_mozakira",
 		callback: function (r) {
 			frm.refresh_fields();
 			frm.refresh();
 		}
 	});
 });
+
+
+
+frappe.ui.form.on("Vehicle Maintenance Process", "print_job_order", function(frm){
+	let is_printed = 0;
+	$.each(cur_frm.doc.maintenance_print_logs || [], function(i, d) {
+		if (cur_frm.doc.enable_print === 0 && d.format_name == "أمر شغل"){
+			is_printed = 1;
+		}
+	})
+	if (is_printed == 1){
+		frappe.throw(" لقد تم طباعة أمر الشغل من قبل ولا يمكن طباعته مرة أخرى ... برجاء الرجوع للإدارة ")
+	}
+	if (is_printed == 0){
+		var myWin = window.open('/printview?doctype=Vehicle%20Maintenance%20Process&name='+ cur_frm.doc.name +'&trigger_print=1&format=Job%20Order%20Print&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');	
+	}
+	frm.doc.enable_print = 0
+	frappe.call({
+		doc: frm.doc,
+		method: "print_job_order",
+		callback: function(r) {
+			frm.refresh_fields();
+			frm.refresh();
+		}
+	});
+});
+
+// frappe.ui.form.on("Vehicle Maintenance Process", "print_job_order", function (frm) {
+// 	var myWin = window.open('/printview?doctype=Vehicle%20Maintenance%20Process&name=' + cur_frm.doc.name + '&trigger_print=1&format=Job%20Order%20Print&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+// 	frm.doc.enable_print = 0
+// 	frappe.call({
+// 		doc: frm.doc,
+// 		method: "print_job_order",
+// 		callback: function (r) {
+// 			frm.refresh_fields();
+// 			frm.refresh();
+// 		}
+// 	});
+// });
 
 
 frappe.ui.form.on("Vehicle Maintenance Process", "print_templete1", function (frm) {

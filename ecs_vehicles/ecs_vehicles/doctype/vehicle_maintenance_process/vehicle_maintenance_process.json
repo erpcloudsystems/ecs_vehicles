@@ -9,10 +9,6 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "reference_tab",
-  "naming_series",
-  "section_break_3jn8l",
-  "maintenance_print_logs",
   "custody_report_section",
   "section_break_2a8xn",
   "edit_ezn",
@@ -172,6 +168,7 @@
   "edit_in_words2",
   "section_break_vcjhu",
   "add_job_order",
+  "print_mozakira_egaza",
   "column_break_zofzn",
   "print_mozakira",
   "print_mozakira_count",
@@ -233,7 +230,11 @@
   "column_break_z1kwx",
   "print_ezn_sarf",
   "column_break_ioy6t",
-  "print_ezn_ertgaa"
+  "print_ezn_ertgaa",
+  "reference_tab",
+  "naming_series",
+  "section_break_3jn8l",
+  "maintenance_print_logs"
  ],
  "fields": [
   {
@@ -259,7 +260,6 @@
    "reqd": 1
   },
   {
-   "default": "2023/2024",
    "fieldname": "fiscal_year",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -401,8 +401,7 @@
    "fetch_from": "vehicles.maintenance_entity",
    "fieldname": "maintenance_entity",
    "fieldtype": "Data",
-   "label": "\u062c\u0647\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
-   "read_only": 1
+   "label": "\u062c\u0647\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629"
   },
   {
    "allow_on_submit": 1,
@@ -1536,7 +1535,6 @@
   {
    "fieldname": "maintenance_print_logs",
    "fieldtype": "Table",
-   "hidden": 1,
    "no_copy": 1,
    "options": "Maintenance Print Logs",
    "read_only": 1
@@ -1642,12 +1640,18 @@
    "label": "\u0633\u0628\u0628 \u0625\u0644\u063a\u0627\u0621 \u0627\u0644\u0625\u0630\u0646",
    "mandatory_depends_on": "eval:doc.cancel_ezn",
    "no_copy": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "print_mozakira_egaza",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0629 \u0645\u0630\u0643\u0640\u0640\u0640\u0640\u0640\u0640\u0631\u0629 \u0625\u062c\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0640\u0627\u0632\u0629"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
  "make_attachments_public": 1,
- "modified": "2023-09-09 10:45:20.964001",
+ "modified": "2023-10-26 12:08:59.912402",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vehicle Maintenance Process",

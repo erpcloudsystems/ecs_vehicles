@@ -69,6 +69,32 @@ frappe.ui.form.on('Vehicles', {
 });
 
 
+frappe.ui.form.on('Vehicles', {
+	search2: function(frm) {
+        frappe.call({ method: "frappe.client.get_value", args: {
+            doctype: "Vehicles",
+            fieldname: ["name"],
+            filters: {'police_id': cur_frm.doc.search_police_id,}},
+            callback: function(r) {
+                if (r.message.name) {
+                    frappe.set_route('app/vehicles/'+ r.message.name);
+                    frm.set_value("search_vehicle", null);
+			        frm.refresh();
+
+                }
+                else{
+                    frappe.set_route('app/vehicles/');
+                    frm.set_value("search_vehicle", null);
+			        frm.refresh();
+                }
+            },
+            freeze: 1,
+            freeze_message: "جاري البحث عن رقم الشرطة ...",
+        });
+    }
+});
+
+
 //frappe.ui.form.on('Vehicles', {
 //    setup: function(frm) {
 //        frm.set_query("vehicle_no", function() {

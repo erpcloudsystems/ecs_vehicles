@@ -11,6 +11,9 @@
   "master_data",
   "search_vehicle",
   "search",
+  "column_break_hmduo",
+  "search_police_id",
+  "search2",
   "section_break_wyaye",
   "delete_vehicle",
   "section_break_hkuhn",
@@ -32,6 +35,7 @@
   "vehicle_model",
   "vehicle_country",
   "vehicle_status",
+  "damage_cause",
   "processing_type",
   "column_bbreak",
   "entity_name",
@@ -146,6 +150,7 @@
   "edit_status",
   "new_status",
   "edit_status_date",
+  "new_damage_cause",
   "status_remarks",
   "column_break_22",
   "status_table",
@@ -624,6 +629,7 @@
    "default": "0",
    "fieldname": "natural_gas",
    "fieldtype": "Check",
+   "in_standard_filter": 1,
    "label": "\u063a\u0627\u0632 \u0637\u0628\u064a\u0639\u064a"
   },
   {
@@ -638,6 +644,7 @@
   {
    "fieldname": "possession_type",
    "fieldtype": "Link",
+   "in_standard_filter": 1,
    "label": "\u0646\u0648\u0639 \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
    "mandatory_depends_on": "eval:(doc.__islocal)",
    "options": "Possession Type"
@@ -1849,11 +1856,39 @@
   {
    "fieldname": "section_break_wyaye",
    "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.vehicle_status == \"\u0639\u0627\u0637\u0644\u0629\"",
+   "fieldname": "damage_cause",
+   "fieldtype": "Select",
+   "label": "\u0633\u0628\u0628 \u0627\u0644\u0639\u0637\u0644",
+   "options": "\n\u0639\u0645\u0631\u0647 \u0645\u062d\u0631\u0643\n\u0627\u0639\u0637\u0627\u0644 \u0634\u0647\u0631\n\u0627\u0635\u0644\u0627\u062d \u0628\u062e\u0637\u0627\u0628 \u0645\u0646 \u0627\u0644\u062c\u0647\u0629\n\u062d\u0627\u062f\u062b\n\u0635\u064a\u0627\u0646\u0629\n\u0644\u0648\u062d\u0629\n\u0641\u0642\u062f \u0644\u0648\u062d\u0629\n\u062d\u0631\u064a\u0642\n\u0645\u0633\u0631\u0648\u0642\u0629\n\u0625\u0631\u062a\u062c\u0627\u0639"
+  },
+  {
+   "depends_on": "eval:doc.new_status == \"\u0639\u0627\u0637\u0644\u0629\"",
+   "fieldname": "new_damage_cause",
+   "fieldtype": "Select",
+   "label": "\u0633\u0628\u0628 \u0627\u0644\u0639\u0637\u0644",
+   "mandatory_depends_on": "eval:doc.new_status == \"\u0639\u0627\u0637\u0644\u0629\"",
+   "options": "\n\u0639\u0645\u0631\u0647 \u0645\u062d\u0631\u0643\n\u0627\u0639\u0637\u0627\u0644 \u0634\u0647\u0631\n\u0627\u0635\u0644\u0627\u062d \u0628\u062e\u0637\u0627\u0628 \u0645\u0646 \u0627\u0644\u062c\u0647\u0629\n\u062d\u0627\u062f\u062b\n\u0635\u064a\u0627\u0646\u0629\n\u0644\u0648\u062d\u0629\n\u0641\u0642\u062f \u0644\u0648\u062d\u0629\n\u062d\u0631\u064a\u0642\n\u0645\u0633\u0631\u0648\u0642\u0629\n\u0625\u0631\u062a\u062c\u0627\u0639"
+  },
+  {
+   "fieldname": "search_police_id",
+   "fieldtype": "Data",
+   "label": "\u0628\u062d\u062b \u0628\u0631\u0642\u0645 \u0627\u0644\u0634\u0631\u0637\u0629 \u0642\u0628\u0644 \u0627\u0644\u062a\u062e\u0631\u064a\u062f"
+  },
+  {
+   "fieldname": "column_break_hmduo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "search2",
+   "fieldtype": "Button"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-14 14:43:08.652829",
+ "modified": "2023-11-11 14:01:24.706775",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vehicles",

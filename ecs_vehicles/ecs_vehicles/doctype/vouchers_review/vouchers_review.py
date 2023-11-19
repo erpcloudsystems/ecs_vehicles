@@ -13,15 +13,17 @@ class VouchersReview(Document):
             doc.date = nowdate()
 
     @frappe.whitelist()
-    def check_group_no(doc, method=None):
-        if frappe.db.exists("Vouchers Review", {"group_no": doc.group_no, "batch_no": doc.batch_no, "docstatus": 1}):
-            frappe.throw(" رقم المجموعة " + doc.group_no + " تم تسويتها من قبل ل" + doc.received_voucher)
+    def verify_group(doc, method=None):
+        if frappe.db.exists("Vouchers Review", {"liquid_type": doc.liquid_type, "group_no": doc.group_no, "batch_no": doc.batch_no, "docstatus": 1}):
+            frappe.msgprint(" رقم المجموعة " + str(doc.group_no) + " تم تسويتها من قبل ل " + str(doc.received_voucher))
+        else:
+            frappe.msgprint(" متاح للإستخدام ")
 
     def validate(self):
         if not self.review_vouchers_table:
             frappe.throw(" برجاء عمل مسح للباركود الخاص بالبونات ")
         
-        if frappe.db.exists("Vouchers Review", {"group_no": self.group_no, "batch_no": self.batch_no, "docstatus": 1}):
+        if frappe.db.exists("Vouchers Review", {"liquid_type": self.liquid_type, "group_no": self.group_no, "batch_no": self.batch_no, "docstatus": 1}):
             frappe.throw(" رقم المجموعة " + self.group_no + " تم تسويتها من قبل ل" + self.received_voucher)
 
     def on_submit(self):

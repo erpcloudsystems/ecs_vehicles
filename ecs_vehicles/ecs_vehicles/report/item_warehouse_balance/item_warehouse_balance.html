@@ -1,0 +1,338 @@
+
+<style>
+    
+    * {
+            margin:0;
+            padding:0;
+font-family:Mudir MT;
+        }
+        .print-format {
+            padding:0in;
+            
+        }
+
+        
+    .header {
+        display:flex; 
+        flex-direction:column;
+        justify-content:center;
+    }
+    .under-header {
+        display: flex;
+    flex-direction: revert;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 20px;
+    }
+    .esm-algeha {
+        margin-top:30px;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+    table, th, td , th{
+        border:2px solid black;
+        border-collapse:collapse;
+        text-align:center;
+        white-space: nowrap;
+
+    }
+    .print-format th {
+        color:black;
+            text-align:center;
+            font-weight:bold;
+            background-color:lightgray;
+            white-space: nowrap;
+
+    
+    }
+    .print-format td {
+        padding: 0px !important;
+        white-space: nowrap;
+    }
+    .break {
+        flex-basis: 100%;
+        height: 0;
+      }
+      .column1 {
+        border-left: 2px solid black;
+      }
+    .table1 {
+        margin-top:5px;
+        margin-right:20px;
+        margin-left:20px;
+        display:flex; 
+        flex-direction:column;
+    
+    }
+
+.header-box {
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    /* padding: 2px; */
+    border: 2px solid black;
+    /* width: 90%; */
+    /* margin-bottom: 20px; */
+    margin: 10px 20px;
+}
+.sec-three {
+    
+    /* border-right: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 98%;
+
+    /* padding: 7pt; */
+
+
+}
+    </style>
+    {% var numbers = ({"0":"٠","1":"١","2": "٢", "3":"٣", "4":"٤", "5":"٥", "6":"٦", "7":"٧", "8":"٨", "9":"٩"}) %}
+
+    {% var pageNumber = 0 %}
+    {% var months = ["يناير", "فبراير", "مارس", "ابريل", "مايو", "يونيو", "يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر", "ديسمبر"]%}
+    {% data = data.filter((value, idx)=>{ %} {% 
+        return value.stock_balance > 0
+        %} {% }) %}
+    
+{% let loopsNo = Math.ceil((data.length+1) / 22) %}
+{% for(var j=0, f=loopsNo; j<f; j++) { %}
+
+<div class="header">
+
+    <div class="under-header">
+        
+        <div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
+                    <div style="font-weight: bold;">تاريخ الطباعة  </div>
+                    {% let date = [] %}
+                    {% [...frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()).toString()].forEach((item, idx, array)=>{ %}
+                    {% date.push(numbers[item] ? numbers[item] : item  ) %}
+                    {% }) %}                
+                {%= date.join("") %}
+                {{user}}
+            
+                </div>
+                <span style="margin: 2px;"></span>
+
+                <div style="display: flex; direction: rtl; font-weight: bold;">
+                    <div style="text-wrap: nowrap;">
+                    اسم صاحب العهدة  
+                    </div>
+                    <span style="margin: 2px;"></span>
+                    <span> : </span>
+                <span style="margin: 2px;"></span>
+
+                    <span> .................... </span>
+    
+    
+                </div>
+            </div>
+
+    </div>
+        <div style=" display: flex; flex-direction: column;">
+
+            
+            <div style="display: flex;">
+                <div style="border: 2px solid black; width: 50px;"> <br></div>
+                <span style="margin: 1px;"></span>
+                <div style="border: 2px solid black; width: 50px;"> <br></div>
+                <span style="margin: 1px;"></span>
+                <div style="font-weight: bold;font-size: large;">
+                    محضر جرد الأصناف
+                </div>
+            </div>
+            <div style="display: flex; direction: rtl; font-weight: bold;">
+                <div> مخزن: </div>
+                <span style="margin: 3px;"></span>
+
+                {% if (filters.warehouse) { %}
+                <div> {%= filters.warehouse.split("-")[0] %} </div>
+                {% } else { %}
+                <div>...............</div>
+
+                {% } %}
+                <span style="margin: 10px;"></span>
+
+                <div >رقم: </div>
+                <span style="margin: 3px;"></span>
+                <div>...............</div>
+
+            </div>
+
+            
+        </div>
+    <div>
+        <div class="sec-three">
+            <div style="display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 11pt;
+            font-weight: bold;
+        ">
+                <div>
+            <img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
+            </div>
+            <div style="font-weight:bold;">
+                وزارة الداخلية
+            </div>
+            <div style="text-wrap: nowrap;">
+            الادارة العامه لمركبات الشرطه
+            </div>
+            <div>
+            </div>
+            </div>
+            
+        
+            <div style="display: flex; direction: rtl; font-weight: bold;">
+                <div style="text-wrap: nowrap;">
+                    تاريخ الجرد: 
+                </div>
+                <span style="margin: 2px;"></span>
+                <span> : </span>
+                <span style="margin: 20px;"></span>
+                <span>/</span>
+                <span style="margin: 20px;"></span>
+                <span>/</span>
+
+
+            </div>
+           
+           
+        </div>
+    </div>
+    </div>
+
+</div>
+
+
+<div class="table1">
+        <table style="font-family:Cairo" dir="rtl">
+            <thead>
+                <tr>
+                    <th>{%= __("م") %}</th>
+                    <th>{%= __("اسم الصنف") %}</th>
+                    <th>الماركة</th>
+                    <th>الموديل</th>
+                    <th>{%= __("الوحدة") %}</th>
+                    <th>الموجود من 
+                        <br>
+                        واقع الجرد
+                    </th>
+                    <th> {%= __("حالة الصنف") %}</th>
+                    <th> الرصيد 
+                        <br>
+                        الدفتري
+                    </th>
+                    <th> {%= __("حالة الصنف") %}</th>
+
+                    <th>{%= __("الزيادة") %}</th>
+                    <th>{%= __("العجز") %}</th>
+                    <th>{%= __("سعر الوحدة") %}</th>
+                    <th>{%= __("القيمة") %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for(var i=22 * j , ff=22 * (j+1); i<ff;  i++) { %}
+                {% if data.length -1 > i %}
+                <tr>
+                    {% let indes = [] %}
+         {% [...(i+1).toString()].forEach((item, idx, array)=>{ %}
+             {% indes.push(numbers[item] ? numbers[item] : item  ) %}
+         {% }) %}
+                    <td>
+                        {%= indes.join("") %}
+                    </td>
+                {% let item_name = [] %}
+                {% [...data[i].item_name.toString()].forEach((item, idx, array)=>{ %}
+                    {% item_name.push(numbers[item] ? numbers[item] : item  ) %}
+                {% }) %}
+                <td>{%= item_name.join("") %}</td>
+                {% let vehicle_brand = [] %}
+                {% [...data[i].vehicle_brand.toString()].forEach((item, idx, array)=>{ %}
+                    {% vehicle_brand.push(numbers[item] ? numbers[item] : item  ) %}
+                {% }) %}
+                <td>{%= vehicle_brand.join("") %}</td>
+
+                {% let vehicle_model = [] %}
+                {% [...data[i].vehicle_model.toString()].forEach((item, idx, array)=>{ %}
+                    {% vehicle_model.push(numbers[item] ? numbers[item] : item  ) %}
+                {% }) %}
+                <td>{%= vehicle_model.join("") %}</td>
+                
+                {% let stock_uom = [] %}
+                {% [...data[i].stock_uom.toString()].forEach((item, idx, array)=>{ %}
+                    {% stock_uom.push(numbers[item] ? numbers[item] : item  ) %}
+                {% }) %}
+                <td>{%= stock_uom.join("") %}</td>
+                
+                {% let stock_balance = [] %}
+                {% [...data[i].stock_balance.toString()].forEach((item, idx, array)=>{ %}
+                    {% stock_balance.push(numbers[item] ? numbers[item] : item  ) %}
+                {% }) %}
+                <td>{%= stock_balance.join("") %}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                {% let valuation_rate = [] %}
+                {% [...data[i].valuation_rate.toString()].forEach((item, idx, array)=>{ %}
+                    {% valuation_rate.push(numbers[item] ? numbers[item] : item  ) %}
+                {% }) %}
+                <td>{%= valuation_rate.join("") %}</td>
+                {% let stock_rate = [] %}
+                {% [...data[i].stock_rate.toString()].forEach((item, idx, array)=>{ %}
+                    {% stock_rate.push(numbers[item] ? numbers[item] : item  ) %}
+                {% }) %}
+                <td>{%= stock_rate.join("") %}</td>
+
+                </tr>
+                {% } %}
+
+                {% } %}
+
+            </tbody>
+        </table>
+
+    </div>
+
+<footer>
+    <div style="display: flex; flex-direction: row; justify-content: space-between; margin: 5px 20px; direction: rtl; font-weight: bold;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div> توقيع كاتب الشطب </div>
+        <div> .................... </div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div>  توقيع صاحب العهدة </div>
+        <div> .................... </div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div> توقيع لجنة الجرد  </div>
+        <div> .................... </div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div> مدير المخازن  </div>
+        <div> .................... </div>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div>  رئيس المصلحة </div>
+        <div> .................... </div>
+    </div>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        {% let index = [] %}
+    {% [...(j+1).toString()].forEach((item, idx, array)=>{ %}
+        {% index.push(numbers[item] ? numbers[item] : item  ) %}
+    {% }) %}
+                   
+            <div style="font-weight: bold;">صفحة رقم  ({%= index.join("") %})</div>
+    </div>
+</footer>
+<p style="page-break-after: always;">&nbsp;&nbsp;&nbsp;</p>
+
+{% } %}

@@ -35,7 +35,10 @@ class LiquidVouchersIssuing(Document):
                     + y.liquid
                 )
 
-            serial = int(min_code_list[0]["min"])
+            if self.issue_type == "زيت":
+                serial = str(min_code_list[0]["min"])
+            else:
+                serial = int(min_code_list[0]["min"])
             y.from_serial = serial
             if not int(y.notebook_count):
                 frappe.throw(
@@ -44,7 +47,7 @@ class LiquidVouchersIssuing(Document):
                     )
                     + str(y.idx)
                 )
-            if (serial + (y.notebook_count * 25) - 1) > int(min_code_list[0]["max"]):
+            if (int(serial) + (y.notebook_count * 25) - 1) > int(min_code_list[0]["max"]):
                 frappe.throw(
                     " البونات الموجودة لا تكفي ... برجاء إضافة بونات جديدة من "
                     + y.liquid
@@ -71,7 +74,7 @@ class LiquidVouchersIssuing(Document):
     def on_submit(self):
         for x in self.qty_per_liquid:
             serial_count = int(x.to_serial) - int(x.from_serial) + 1
-            voucher = int(x.from_serial)
+            voucher = x.from_serial
             while serial_count > 0:
                 frappe.db.sql(
                     """ UPDATE `tabVoucher` set issue_no = '{issue_no}', issue_date='{issue_date}', entity='{entity}'
@@ -80,13 +83,18 @@ class LiquidVouchersIssuing(Document):
                         issue_no=self.name,
                         issue_date=self.issue_date,
                         entity=self.entity,
-                        serial_no=voucher,
+                        serial_no=str(voucher),
                         fuel_type=x.liquid,
                     )
                 )
 
-                next_serial = voucher + 1
-                voucher = next_serial
+                next_serial = int(voucher) + 1
+                if self.issue_type == "زيت" and len(str(next_serial)) == 5:
+                    voucher = "00" + str(next_serial)
+                elif self.issue_type == "زيت" and len(str(next_serial)) == 6:
+                    voucher = "0" + str(next_serial)
+                else:
+                    voucher = next_serial
                 serial_count -= 1
 
         frappe.db.sql(
@@ -100,26 +108,31 @@ class LiquidVouchersIssuing(Document):
         liquid_issuing.reload()
 
     def on_cancel(self):
-        for x in self.qty_per_liquid:
-            serial_count = int(x.to_serial) - int(x.from_serial) + 1
-            voucher = int(x.from_serial)
-            while serial_count > 0:
-                frappe.db.sql(
-                    """ UPDATE `tabVoucher` set issue_no=null, issue_date=null, entity=null
-                                  WHERE serial_no='{serial_no}' and fuel_type='{fuel_type}' 
-                              """.format(
-                        serial_no=voucher, fuel_type=x.liquid
-                    )
-                )
+        # for x in self.qty_per_liquid:
+        #     serial_count = int(x.to_serial) - int(x.from_serial) + 1
+        #     voucher = int(x.from_serial)
+        #     while serial_count > 0:
+        #         frappe.db.sql(
+        #             """ UPDATE `tabVoucher` set issue_no=null, issue_date=null, entity=null
+        #                           WHERE serial_no='{serial_no}' and fuel_type='{fuel_type}' 
+        #                       """.format(
+        #                 serial_no=voucher, fuel_type=x.liquid
+        #             )
+        #         )
 
-                next_serial = voucher + 1
-                voucher = next_serial
-                serial_count -= 1
+        #         next_serial = voucher + 1
+        #         voucher = next_serial
+        #         serial_count -= 1
+
+        frappe.db.sql(
+            """ UPDATE `tabVoucher` set issue_no=null, issue_date=null, entity=null
+                WHERE issue_no = '{issue_no}' """.format(issue_no=self.name
+            )
+        )
 
         frappe.db.sql(
             """ UPDATE `tabLiquids Issuing` set issue_state = "جاري تحضير الصرفية ومراجعتها"
-                                  WHERE name='{name}' """.format(
-                name=self.liquids_issuing
+                WHERE name='{name}' """.format(name=self.liquids_issuing
             )
         )
 

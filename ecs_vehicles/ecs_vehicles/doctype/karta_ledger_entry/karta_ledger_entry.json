@@ -42,7 +42,8 @@
   "x",
   "sarf",
   "del_flag",
-  "maintenance_method"
+  "maintenance_method",
+  "is_cancelled"
  ],
  "fields": [
   {
@@ -267,11 +268,18 @@
    "fieldtype": "Data",
    "label": "MAINTENANCE_METHOD",
    "search_index": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_cancelled",
+   "fieldtype": "Check",
+   "label": "Is Cancelled",
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-09 14:13:34.576473",
+ "modified": "2023-11-07 13:32:49.495811",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Karta Ledger Entry",

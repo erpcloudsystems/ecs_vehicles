@@ -103,5 +103,10 @@ frappe.query_reports["Vehicles Report"] = {
 			fieldtype: "Link",
 			options: "Cylinder Count",
 		},
+		{
+			fieldname: "assigned_to",
+			label: __("هذا البيان خاص بــ "),
+			fieldtype: "Data",
+		},
 	]
 };

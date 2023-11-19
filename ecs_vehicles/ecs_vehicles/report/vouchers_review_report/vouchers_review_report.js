@@ -18,6 +18,14 @@ frappe.query_reports["Vouchers Review Report"] = {
 			"default": frappe.defaults.get_user_default("fiscal_year"),
 		},
 		{
+			"fieldname": "liquid_type",
+			"label": __("نوع السائل"),
+			"fieldtype": "Select",
+			"options": ["وقود", "زيت", "غاز", "غسيل"],
+			"reqd": 1,
+			"default": "وقود",
+		},
+		{
 			"fieldname": "batch_no",
 			"label": __("رقم الدفعة"),
 			"fieldtype": "Data",
@@ -34,8 +42,6 @@ frappe.query_reports["Vouchers Review Report"] = {
 			"options": "User",
 
 		},
-
-		
 		{
 			"fieldname": "batch_from_date",
 			"label": __("تاريخ الدفعة من"),

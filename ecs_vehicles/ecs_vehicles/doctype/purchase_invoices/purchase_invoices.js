@@ -1,6 +1,17 @@
 // Copyright (c) 2022, erpcloud.systems and contributors
 // For license information, please see license.txt
 
+frappe.ui.form.on("Purchase Invoices", "onload", function(frm) {
+    if(!cur_frm.doc.year){
+        frappe.call({ method: "frappe.client.get_value", 
+            args: {
+                doctype: "System Defaults",
+                fieldname: "default_fiscal_year",
+            },
+            callback: function(r) { cur_frm.set_value("year", r.message.default_fiscal_year); }
+        });
+    }
+});
 
 frappe.ui.form.on("Purchase Invoices", {
 	onload: function (frm) {
@@ -99,3 +110,15 @@ frappe.ui.form.on("Purchase Invoices", "print_format3", function (frm) {
 
 });
 
+
+frappe.ui.form.on("Purchase Invoices", "validate", function(frm) {
+	let date = new Date(frm.doc.date_day);
+	let day_ar = date.toLocaleString('ar', {weekday: 'long'});
+	cur_frm.set_value("day", day_ar);
+   });
+
+
+   frappe.ui.form.on("Purchase Invoices", "print_inspection_report", function (frm) {
+	var myWin = window.open('/printview?doctype=Purchase%20Invoices&name=' + cur_frm.doc.name + '&trigger_print=1&format=Inspection%20Report&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
+
+});

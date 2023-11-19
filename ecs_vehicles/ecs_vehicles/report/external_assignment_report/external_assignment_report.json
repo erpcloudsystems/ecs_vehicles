@@ -1,17 +1,17 @@
 {
  "add_total_row": 0,
  "columns": [],
- "creation": "2023-01-18 17:46:09.377050",
- "disable_prepared_report": 0,
+ "creation": "2023-07-08 13:15:52.957241",
+ "disable_prepared_report": 1,
  "disabled": 0,
  "docstatus": 0,
  "doctype": "Report",
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2023-01-18 17:46:09.377050",
+ "modified": "2023-10-19 10:00:16.467949",
  "modified_by": "Administrator",
- "module": "Ecs Supply",
+ "module": "Ecs Vehicles",
  "name": "External Assignment Report",
  "owner": "Administrator",
  "prepared_report": 0,
@@ -24,9 +24,6 @@
   },
   {
    "role": "HR Manager"
-  },
-  {
-   "role": "Recruit"
   }
  ]
 }

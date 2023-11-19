@@ -1,5 +1,18 @@
 // Copyright (c) 2022, erpcloud.systems and contributors
 // For license information, please see license.txt
+
+frappe.ui.form.on("Presentation Note", "onload", function(frm) {
+    if(!cur_frm.doc.fiscal_year){
+        frappe.call({ method: "frappe.client.get_value", 
+            args: {
+                doctype: "System Defaults",
+                fieldname: "default_fiscal_year",
+            },
+            callback: function(r) { cur_frm.set_value("fiscal_year", r.message.default_fiscal_year); }
+        });
+    }
+});
+
 frappe.ui.form.on("Presentation Note", "print_mozakira_purchase", function (frm) {
 	var myWin = window.open('/printview?doctype=Presentation%20Note&name=' + cur_frm.doc.name + '&trigger_print=1&format=Direct%20Order%20Purchase%20Note&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar');
 });

@@ -19,6 +19,7 @@ def get_last_sarf_detail(vehicles, item_code):
                                                 where stock_ledger.vic_serial = '{vehicles}'
                                                 and stock_ledger.part_universal_code = '{item_code}'
                                                 and stock_ledger.del_flag = "0"
+                                                and is_cancelled = 0
                                                 order by stock_ledger.action_date desc limit 1
                                                 """.format(
             vehicles=vehicles, item_code=item_code
@@ -132,8 +133,8 @@ class VehicleMaintenanceProcess(Document):
             WHERE vehicle_maintenance_process.vehicles = "{vehicles}"
             AND vehicle_maintenance_process.fiscal_year = "{fiscal_year}"
             AND vehicle_maintenance_process.name != "{name}"
-            AND vehicle_maintenance_process.job_order_no  is not NULL
-            AND vehicle_maintenance_process.cancel_ezn  = 0
+            AND vehicle_maintenance_process.job_order_no is not NULL
+            AND vehicle_maintenance_process.cancel_ezn = 0
             """.format(
                     vehicles=self.vehicles, fiscal_year=self.fiscal_year, name=self.name
                 ),
@@ -143,7 +144,7 @@ class VehicleMaintenanceProcess(Document):
             if job_order_list:
                 for y in job_order_list:
                     # purchase_invoices_list = frappe.db.exists("Vehicle Maintenance Process", filters={"vehicles": self.vehicles, "job_order_no":y.job_order_no}, fields={"name"})
-                    if not y.purchase_invoices and self.pass_order == 0:
+                    if not y.purchase_invoices and self.pass_order == 0 and y.job_order_no:
                         # if not purchase_invoices_list and not self.pass_order:
                         return (
                             " لا يجوز إضافة إجراء إصلاح خارجي للمركبة وذلك لوجود أمر شغل ساري رقم "
@@ -354,11 +355,12 @@ class VehicleMaintenanceProcess(Document):
             # if found then update the shadow field to 1
             check_shadow = frappe.db.sql(
                 """
-                select kashf_item.item_code
+                select kashf_item.item_code, vmp.ezn_no as ezn_no, vmp.ezn_date as ezn_date, kashf_item.maintenance_method as maintenance_method
                 from `tabVehicle Maintenance Process` vmp
                 join `tabKashf Ohda Item` kashf_item on kashf_item.parent = vmp.name
                 where vmp.vehicles = '{vehicles}' 
                 and vmp.fiscal_year = '{fiscal_year}'
+                and vmp.cancel_ezn = 0
                 and vmp.name != '{name}'
                 and kashf_item.item_code = '{item_code}'
                 and kashf_item.maintenance_method in ("حافظة مشتريات", "إصلاح خارجي")
@@ -374,6 +376,9 @@ class VehicleMaintenanceProcess(Document):
             if check_shadow:
                 for x in check_shadow:
                     row.shadow = 1
+                    row.last_financial_action_ezn_no = x.ezn_no
+                    row.last_financial_action_date = x.ezn_date
+                    row.custom_maintenance_state = x.maintenance_method
             else:
                 row.shadow = 0
 
@@ -446,35 +451,62 @@ class VehicleMaintenanceProcess(Document):
         for item in self.kashf_ohda_item:
             last_sarf_date = frappe.db.sql(
                 """ select
-                        stock_ledger.action_date, stock_ledger.part_qty
+                        stock_ledger.action_date, stock_ledger.part_qty, stock_ledger.part_universal_code
                         from `tabKarta Ledger Entry` stock_ledger 
                         where stock_ledger.vic_serial = '{vehicles}'
                         and stock_ledger.part_universal_code = '{item_code}'
                         and stock_ledger.del_flag = "0"
-                        and (
-                        (stock_ledger.maintenance_method = "إذن صرف وإرتجاع"
-                        and doc_type = "Vehicle Maintenance Process" ) 
-                        or 
-                        (stock_ledger.maintenance_method = "إصلاح خارجي"
-                        and doc_type = "Purchase Invoices" ) 
-                        or 
-                        (stock_ledger.maintenance_method = "خطاب جهة"
-                        and doc_type = "Add To Karta" )
-                        )
+                       
                         order by stock_ledger.action_date desc limit 1
                 """.format(
                     vehicles=self.vehicles, item_code=item.item_code
                 ),
                 as_dict=1,
             )
-
-            try:
-                if not item.last_issue_detail:
-                    item.last_sarf_qty = last_sarf_date[0].part_qty
-                    item.last_issue_detail = last_sarf_date[0].action_date
-            except:
-                if not item.last_issue_detail:
-                    item.last_issue_detail = "لم يسبق"
+            last_sarf_date_wheels = frappe.db.sql(
+                    """ select  item.item_code, item.item_name, item.item_group, item.description,
+                                                        karta_ledger.action_date, karta_ledger.part_qty
+                                                        from `tabKarta Ledger Entry` karta_ledger
+                                                        JOIN  `tabItem` item ON item.item_code = part_universal_code
+                                                        where karta_ledger.vic_serial = '{vehicles}'
+                                                        and item.item_name Like '%اطار%'
+                                                        and karta_ledger.del_flag = "0"
+                                                        order by karta_ledger.action_date desc
+                                                        limit 1
+                                                        """.format(
+                        vehicles=self.vehicles,
+                    ),
+                    as_dict=1,
+                )
+            last_sarf_date_battaries = frappe.db.sql(
+                    """ select  item.item_code, item.item_name, item.item_group, item.description,
+                                                        karta_ledger.action_date, karta_ledger.part_qty
+                                                        from `tabKarta Ledger Entry` karta_ledger
+                                                        JOIN  `tabItem` item ON item.item_code = part_universal_code
+                                                        where karta_ledger.vic_serial = '{vehicles}'
+                                                        and item.item_name Like '%بطاريه%'
+                                                        and karta_ledger.del_flag = "0"
+                                                        order by karta_ledger.action_date desc
+                                                        limit 1
+                                                        """.format(
+                        vehicles=self.vehicles,
+                    ),
+                    as_dict=1,
+                )
+            if "اطار" in item.item_name and last_sarf_date_wheels and not item.last_issue_detail and not last_sarf_date:
+                item.last_sarf_qty = last_sarf_date_wheels[0].part_qty
+                item.last_issue_detail = last_sarf_date_wheels[0].action_date
+            elif "بطاريه" in item.item_name and last_sarf_date_battaries and not item.last_issue_detail and not last_sarf_date:
+                item.last_sarf_qty = last_sarf_date_battaries[0].part_qty
+                item.last_issue_detail = last_sarf_date_battaries[0].action_date
+            else:
+                try:
+                    if not item.last_issue_detail:
+                        item.last_sarf_qty = last_sarf_date[0].part_qty
+                        item.last_issue_detail = last_sarf_date[0].action_date
+                except:
+                    if not item.last_issue_detail:
+                        item.last_issue_detail = "لم يسبق"
         self.assign_shadow()
         self.ezn_egraa_item = []
         for item in self.kashf_ohda_item:
@@ -558,6 +590,15 @@ class VehicleMaintenanceProcess(Document):
 
         self.edit_ezn = 0
         self.karta_new_function()
+
+        if self.cancel_ezn == 1:
+            frappe.db.sql(
+            """ update `tabKarta Ledger Entry` set is_cancelled = "1"
+                where ord_serial ='{ord_serial}'
+            """.format(
+                ord_serial=self.name
+            )
+        )
 
     def on_trash(self):
         frappe.db.sql(

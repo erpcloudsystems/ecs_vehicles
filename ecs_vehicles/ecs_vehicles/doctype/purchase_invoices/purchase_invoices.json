@@ -69,7 +69,37 @@
   "tab_break_wswlq",
   "purchase_invoices_items",
   "purchase_invoice",
-  "doc_no"
+  "doc_no",
+  "custom_tab_break_6jwku",
+  "section_break_niamt",
+  "print_inspection_report",
+  "\u062a\u0627\u0631\u064a\u062e_\u0645\u062d\u0636\u0631_\u0627\u0644\u0641\u062d\u0635_section",
+  "day",
+  "column_break_yhi0b",
+  "date_day",
+  "section_break_ir7kj",
+  "publish_order_no",
+  "column_break_ix3bm",
+  "published_date",
+  "section_break_dkzrc",
+  "published_to",
+  "column_break_jfjaq",
+  "publish_no",
+  "section_break_cqkmg",
+  "publish_date",
+  "section_break_kobxi",
+  "custom_manger",
+  "custom_column_break_vggge",
+  "custom_section_break_qzmkd",
+  "custom_mister1",
+  "custom_mister2",
+  "custom_mister3",
+  "custom_mister4",
+  "custom_column_break_vgmdx",
+  "custom_job1",
+  "custom_job2",
+  "custom_job3",
+  "custom_job4"
  ],
  "fields": [
   {
@@ -77,7 +107,7 @@
    "fieldtype": "Select",
    "hidden": 1,
    "label": "naming_series",
-   "options": "MINV-",
+   "options": "M-PI-",
    "read_only": 1
   },
   {
@@ -186,9 +216,8 @@
   },
   {
    "fieldname": "maintenance_entity",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "\u062c\u0647\u0629 \u0627\u0644\u0635\u064a\u0627\u0646\u0629",
-   "options": "Maintenance Entity",
    "read_only": 1
   },
   {
@@ -220,7 +249,6 @@
   {
    "fieldname": "pre_no_type",
    "fieldtype": "Select",
-   "in_filter": 1,
    "in_global_search": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
@@ -235,7 +263,7 @@
   {
    "fieldname": "warehouse",
    "fieldtype": "Link",
-   "label": "<span style=\"color: green; font-weight: bolder; font-size: 14pt; text-decoration: underline;\">\u0627\u0644\u0645\u062e\u0632\u0646</span>",
+   "label": "\u0627\u0644\u0645\u062e\u0632\u0646",
    "options": "Warehouse"
   },
   {
@@ -295,7 +323,6 @@
   {
    "fieldname": "store_code",
    "fieldtype": "Data",
-   "hidden": 1,
    "label": "STORE_CODE"
   },
   {
@@ -327,7 +354,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "<span style=\"color: blue; font-weight: bolder; font-size: 12pt; font-size: 13pt; text-decoration: underline;\">\u0631\u0642\u0645 \u0627\u0644\u0641\u0627\u062a\u0648\u0631\u0629</span>"
+   "label": "\u0631\u0642\u0645 \u0627\u0644\u0641\u0627\u062a\u0648\u0631\u0629"
   },
   {
    "fieldname": "ezn_no",
@@ -421,7 +448,7 @@
   {
    "fieldname": "purchase_invoices_status",
    "fieldtype": "Data",
-   "label": "<span style=\"font-weight: bold; font-size: 14pt; color: red;\">\u062d\u0627\u0644\u0629 \u0623\u0645\u0631 \u0627\u0644\u0634\u063a\u0644 \u0639\u0644\u0649 \u0627\u0644\u0641\u0627\u062a\u0648\u0631\u0629</span>",
+   "label": "\u062d\u0627\u0644\u0629 \u0623\u0645\u0631 \u0627\u0644\u0634\u063a\u0644 \u0639\u0644\u0649 \u0627\u0644\u0641\u0627\u062a\u0648\u0631\u0629",
    "read_only": 1
   },
   {
@@ -439,8 +466,7 @@
    "depends_on": "eval:!(doc.__islocal)",
    "fieldname": "print_format1",
    "fieldtype": "Button",
-   "label": "\u0637\u0628\u0627\u0639\u0629 \u0645\u062d\u0636\u0631 \u0641\u062d\u0635",
-   "permlevel": 1
+   "label": "\u0637\u0628\u0627\u0639\u0629 \u0645\u062d\u0636\u0631 \u0641\u062d\u0635 \u0623\u0645\u0631 \u0634\u063a\u0644"
   },
   {
    "fieldname": "column_break_4lb8m",
@@ -472,12 +498,164 @@
    "fieldname": "occasion",
    "fieldtype": "Check",
    "label": "\u0645\u0624\u062a\u0645\u0631"
+  },
+  {
+   "fieldname": "custom_tab_break_6jwku",
+   "fieldtype": "Tab Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0645\u062d\u0636\u0631 \u0627\u0644\u0641\u062d\u0635"
+  },
+  {
+   "fieldname": "custom_manger",
+   "fieldtype": "Data",
+   "label": "\u0628\u0631\u0626\u0627\u0633\u0629 \u0627\u0644\u0633\u064a\u062f",
+   "translatable": 1
+  },
+  {
+   "fieldname": "custom_column_break_vggge",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "custom_section_break_qzmkd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "custom_mister1",
+   "fieldtype": "Data",
+   "label": "Mister1",
+   "translatable": 1
+  },
+  {
+   "fieldname": "custom_mister2",
+   "fieldtype": "Data",
+   "label": "Mister2",
+   "translatable": 1
+  },
+  {
+   "fieldname": "custom_mister3",
+   "fieldtype": "Data",
+   "label": "Mister3",
+   "translatable": 1
+  },
+  {
+   "fieldname": "custom_mister4",
+   "fieldtype": "Data",
+   "label": "Mister4",
+   "translatable": 1
+  },
+  {
+   "fieldname": "custom_column_break_vgmdx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "custom_job1",
+   "fieldtype": "Data",
+   "label": "job1",
+   "translatable": 1
+  },
+  {
+   "fieldname": "custom_job2",
+   "fieldtype": "Data",
+   "label": "job2",
+   "translatable": 1
+  },
+  {
+   "fieldname": "custom_job3",
+   "fieldtype": "Data",
+   "label": "job3",
+   "translatable": 1
+  },
+  {
+   "fieldname": "custom_job4",
+   "fieldtype": "Data",
+   "label": "job4",
+   "translatable": 1
+  },
+  {
+   "fieldname": "day",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u064a\u0648\u0645"
+  },
+  {
+   "fieldname": "column_break_yhi0b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_day",
+   "fieldtype": "Date",
+   "label": "\u0627\u0644\u0645\u0648\u0627\u0641\u0642"
+  },
+  {
+   "fieldname": "section_break_ir7kj",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0642\u0631\u0627\u0631"
+  },
+  {
+   "fieldname": "publish_order_no",
+   "fieldtype": "Data",
+   "label": "\u0627\u0644\u0642\u0631\u0627\u0631 \u0631\u0642\u0645"
+  },
+  {
+   "fieldname": "column_break_ix3bm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "published_date",
+   "fieldtype": "Date",
+   "label": "\u0627\u0644\u0635\u0627\u062f\u0631 \u0628\u062a\u0627\u0631\u064a\u062e"
+  },
+  {
+   "fieldname": "section_break_dkzrc",
+   "fieldtype": "Section Break",
+   "label": "\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0645\u0631 \u0627\u0644\u062a\u0648\u0631\u064a\u062f"
+  },
+  {
+   "fieldname": "published_to",
+   "fieldtype": "Data",
+   "label": "\u0627\u0645\u0631 \u0627\u0644\u062a\u0648\u0631\u064a\u062f \u0627\u0644\u0635\u0627\u062f\u0631 \u0625\u0644\u0649"
+  },
+  {
+   "fieldname": "column_break_jfjaq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "publish_no",
+   "fieldtype": "Int",
+   "label": "\u0628\u0631\u0642\u0645"
+  },
+  {
+   "fieldname": "section_break_cqkmg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "publish_date",
+   "fieldtype": "Date",
+   "label": "\u0628\u062a\u0627\u0631\u064a\u062e"
+  },
+  {
+   "fieldname": "section_break_kobxi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "\u062a\u0627\u0631\u064a\u062e_\u0645\u062d\u0636\u0631_\u0627\u0644\u0641\u062d\u0635_section",
+   "fieldtype": "Section Break",
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0645\u062d\u0636\u0631 \u0627\u0644\u0641\u062d\u0635"
+  },
+  {
+   "fieldname": "section_break_niamt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "print_inspection_report",
+   "fieldtype": "Button",
+   "label": "\u0637\u0628\u0627\u0639\u0629 \u0645\u062d\u0636\u0631 \u0641\u062d\u0635 \u0623\u0645\u0631 \u062a\u0648\u0631\u064a\u062f"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-01 13:08:01.476964",
+ "modified": "2023-11-07 13:10:00.858052",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Purchase Invoices",

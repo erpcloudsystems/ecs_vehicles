@@ -164,6 +164,9 @@ def get_item_price_qty_data(filters):
         )
 
         for item_dict in item_results:
+            if isinstance(item_dict.qty, str):
+                if "." in item_dict.qty:
+                    item_dict.qty = item_dict.qty.split(".")[0]
             data = {
                 "entity": item_dict.entity,
                 "vehicle_status": item_dict.vehicle_status,
@@ -242,6 +245,9 @@ def get_item_price_qty_data(filters):
         )
 
         for item_dict in item_results:
+            if isinstance(item_dict.qty, str):
+                if "." in item_dict.qty:
+                    item_dict.qty = item_dict.qty.split(".")[0]
             data = {
                 "entity": item_dict.entity,
                 "vehicle_status": item_dict.vehicle_status,

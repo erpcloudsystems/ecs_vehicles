@@ -13,6 +13,14 @@ frappe.query_reports["Total Count Of Reviewed Vouchers"] = {
 			default: frappe.defaults.get_user_default("fiscal_year"),
 		},
 		{
+			fieldname: "liquid_type",
+			label: __("نوع السائل"),
+			fieldtype: "Select",
+			options: ["وقود", "زيت", "غاز", "غسيل"],
+			reqd: 1,
+			default: "وقود",
+		},
+		{
 			fieldname: "batch_no",
 			label: __("رقم الدفعة"),
 			fieldtype: "Int",

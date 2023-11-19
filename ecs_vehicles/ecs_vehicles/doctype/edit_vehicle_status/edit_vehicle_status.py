@@ -253,12 +253,17 @@ class EditVehicleStatus(Document):
                     vehicle.updated = 1
                     vic = frappe.get_doc("Vehicles", {"name": vehicle.vehicle})
                     vic.vehicle_status = vehicle.vehicle_status_new
+                    if vehicle.vehicle_status_new == "عاطلة":
+                        vic.damage_cause = vehicle.damage_cause
+                    else:
+                        vic.damage_cause = None
                     row = vic.append("status_table", {})
                     row.date = vehicle.cur_date
                     row.value = vehicle.vehicle_status_new
                     row.edited_by = frappe.db.get_value("User", self.owner, "full_name")
                     row.old_transaction_no = self.name
                     row.remarks = vehicle.notes
+                    row.damage_cause = vehicle.damage_cause
                     vic.save()
                 elif frappe.db.exists("Boats", {"name": vehicle.vehicle}):
                     vehicle.updated = 1
@@ -299,11 +304,16 @@ class EditVehicleStatus(Document):
             if frappe.db.exists("Vehicles", {"name": vehicle.vehicle}):
                 vic = frappe.get_doc("Vehicles", {"name": vehicle.vehicle})
                 vic.vehicle_status = vehicle.vehicle_status
+                if vehicle.vehicle_status != "عاطلة":
+                    vic.damage_cause = None
+
                 vic.save()
 
             elif frappe.db.exists("Boats", {"name": vehicle.vehicle}):
                 vic = frappe.get_doc("Boats", {"name": vehicle.vehicle})
                 vic.boat_validity = vehicle.vehicle_status
+                # if vehicle.vehicle_status != "عاطلة":
+                #     vic.damage_cause = None
                 vic.save()
 
 

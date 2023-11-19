@@ -39,9 +39,10 @@ def get_item_price_qty_data(filters):
         """ select CONVERT(group_no, SIGNED) as group_no
             from `tabVouchers Review` 
             where docstatus = 1
+            and liquid_type = '{liquid_type}'
             and batch_no = '{batch_no}'
             and fiscal_year = '{fiscal_year}'
-        """.format(batch_no=filters.get("batch_no"), fiscal_year=filters.get("fiscal_year")), filters, as_dict=1)
+        """.format(liquid_type=filters.get("liquid_type"), batch_no=filters.get("batch_no"), fiscal_year=filters.get("fiscal_year")), filters, as_dict=1)
     
     for item in reviewed_groups_dict:
         reviewed_groups_list.append(item.group_no)
@@ -53,5 +54,8 @@ def get_item_price_qty_data(filters):
                     "group": x
                 }
                 result.append(data)
+
+    else:
+        frappe.msgprint("لا يوجد بيانات")
 
     return result

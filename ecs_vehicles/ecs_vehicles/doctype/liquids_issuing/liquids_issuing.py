@@ -385,7 +385,8 @@ class LiquidsIssuing(Document):
     def get_total_vehicles(self):
         last_doc = frappe.db.sql(
             """
-            SELECT `tabLiquids Issuing`.name as name, 
+            SELECT `tabLiquids Issuing`.name as name,
+                    `tabLiquids Issuing`.issue_date as last_issue_date,
                     `tabLiquids Issuing`.from_date as from_date, 
                     `tabLiquids Issuing`.to_date as to_date
             FROM `tabLiquids Issuing`
@@ -407,6 +408,7 @@ class LiquidsIssuing(Document):
                 " من " + str(last_doc[0].from_date) + " إلى " + str(last_doc[0].to_date)
             )
             self.last_issue = last_issue
+            self.compare_with_date = last_doc[0].last_issue_date
         if self.issue_type == "وقود":
             total_vehicle_list = frappe.db.sql(
                 """ Select count(`tabVehicles`.name) as total_count 

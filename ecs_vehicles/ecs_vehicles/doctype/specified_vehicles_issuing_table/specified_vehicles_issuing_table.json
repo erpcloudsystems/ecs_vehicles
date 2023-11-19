@@ -36,6 +36,7 @@
    "search_index": 1
   },
   {
+   "columns": 1,
    "fieldname": "vehicle_type",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -110,7 +111,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-07-13 17:12:29.814797",
+ "modified": "2023-11-08 13:04:40.161851",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Specified Vehicles Issuing Table",

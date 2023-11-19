@@ -7,8 +7,7 @@ frappe.query_reports["Detailed Vehicles Report"] = {
         {
 			fieldname: "name",
 			label: __("رقم المركبة"),
-			fieldtype: "Link",
-			options: "Vehicles",
+			fieldtype: "Data",
 		},
 		{
 			fieldname: "vehicle_type",
@@ -104,15 +103,10 @@ frappe.query_reports["Detailed Vehicles Report"] = {
 			fieldtype: "Link",
 			options: "Cylinder Count",
 		},
-//		{
-//			fieldname: "from_date",
-//			label: __("منشئة من تاريخ"),
-//			fieldtype: "Date",
-//		},
-//		{
-//			fieldname: "to_date",
-//			label: __("منشئة إلى تاريخ"),
-//			fieldtype: "Date",
-//		},
+		{
+			fieldname: "assigned_to",
+			label: __("هذا البيان خاص بــ "),
+			fieldtype: "Data",
+		}
 	]
 };

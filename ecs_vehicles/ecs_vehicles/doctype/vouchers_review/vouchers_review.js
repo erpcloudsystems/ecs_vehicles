@@ -15,6 +15,18 @@ frappe.ui.form.on("Vouchers Review", "onload", function (frm) {
     });
 });
 
+frappe.ui.form.on("Vouchers Review", "onload", function(frm) {
+    if(!cur_frm.doc.fiscal_year){
+        frappe.call({ method: "frappe.client.get_value", 
+            args: {
+                doctype: "System Defaults",
+                fieldname: "default_fiscal_year",
+            },
+            callback: function(r) { cur_frm.set_value("fiscal_year", r.message.default_fiscal_year); }
+        });
+    }
+});
+
 
 frappe.ui.form.on("Vouchers Review", {
     refresh: function (frm, cdt, cdn) {
@@ -51,10 +63,10 @@ frappe.ui.form.on('Vouchers Review', {
 
 
 frappe.ui.form.on('Vouchers Review', {
-    group_no: function (frm) {
+    verify_group: function (frm) {
         frappe.call({
             doc: frm.doc,
-            method: "check_group_no",
+            method: "verify_group",
             callback: function (r) {
             }
         });

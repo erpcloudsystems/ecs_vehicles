@@ -19,34 +19,6 @@ frappe.ui.form.on("Edit Vehicle Status", {
         }
     }
 });
-// frappe.ui.form.on("Edit Vehicle Status Table", "notes", function (frm, cdt, cdn) {
-//     let d = locals[cdt][cdn];
-
-//     if (d.vehicle_status_new == "صالحة") {
-//         let result = d.notes.search("اعطال");
-//         if (result) {
-
-//             frappe.msgprint("الرجاء اختيار حالة السيارة بشكل صحيح");
-//         }
-//         result = text.search("أعطال");
-//         if (result) {
-
-//             frappe.msgprint("الرجاء اختيار حالة السيارة بشكل صحيح");
-//         }
-//     }
-//     if (d.vehicle_status_new == "عاطلة") {
-//         let result = d.notes.search("اصلاح");
-//         if (result) {
-
-//             frappe.msgprint("الرجاء اختيار حالة السيارة بشكل صحيح");
-//         }
-//         result = text.search("إصلاح");
-//         if (result) {
-
-//             frappe.msgprint("الرجاء اختيار حالة السيارة بشكل صحيح");
-//         }
-//     }
-// });
 
 frappe.ui.form.on("Edit Vehicle Status Table", "vehicle_status_new", function (frm, cdt, cdn) {
     let item = locals[cdt][cdn];
@@ -54,6 +26,7 @@ frappe.ui.form.on("Edit Vehicle Status Table", "vehicle_status_new", function (f
         frappe.msgprint(`المركبة رقم ${item.vehicle_no} الحالة الحالية (${item.vehicle_status}) والحالة الجديدة (${item.vehicle_status_new})`, "تنبيه")
     }
 });
+
 frappe.ui.form.on("Edit Vehicle Status", "get_vehicle", function (frm, cdt, cdn) {
     if (frm.doc.vehicle_no && frm.doc.entity_name) {
         frappe.call({
@@ -65,7 +38,6 @@ frappe.ui.form.on("Edit Vehicle Status", "get_vehicle", function (frm, cdt, cdn)
                 cur_frm.refresh_fields();
                 frm.scroll_to_field('vehicle_no');
                 if (r.message) {
-
                     cur_frm.set_value("status_table", []);
                     cur_frm.set_value("motor_no", r.message.motor_no);
                     cur_frm.set_value("chassie_no", r.message.chassis_no);

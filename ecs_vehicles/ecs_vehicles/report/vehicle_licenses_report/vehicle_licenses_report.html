@@ -152,9 +152,13 @@
                 {% for(var i=0, f=data.length -1; i<f; i++) { %}
 
                 <tr>
-                    <td>
-                        {%= i+1 %}
-                    </td>
+                    {% var idx = [] %}
+                    {% var loopIndex = (i + 1).toString() %}
+                    {% var idxListsplit = loopIndex.split("") %}
+                    {% for(var j=0, len=idxListsplit.length; j<len; j++) { %} {% idx.push(numbers[idxListsplit[j]]) %} {% }
+                        %} 
+                    <td>{%= idx.join("") %}</td>
+
                     {% var vehicle_no = [] %}
                         {% var vehicle_noListsplit =  data[i].police_no.split("") %}
                         {% console.log(vehicle_noListsplit)%}

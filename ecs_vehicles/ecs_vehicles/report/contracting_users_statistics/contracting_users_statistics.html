@@ -1,0 +1,196 @@
+
+<style>
+    * {
+            margin:0;
+            padding:0;
+            direction:rtl;
+        }
+        .print-format {
+            padding:0in;
+            
+        }
+    .header {
+        margin-top:20px;
+        display:flex; 
+        flex-direction:column;
+        justify-content:center;
+    }
+    .under-header {
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+    }
+    .esm-algeha {
+        margin-top:30px;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+    }
+    table, th, td , th{
+        border:2px solid black;
+        border-collapse:collapse;
+        text-align:center;
+        white-space: nowrap;
+
+    }
+    .print-format th {
+        color:black;
+            text-align:center;
+            font-weight:bold;
+            background-color:lightgray;
+            white-space: nowrap;
+
+    
+    }
+    .print-format td {
+        padding: 0px !important;
+        white-space: nowrap;
+    }
+    .break {
+        flex-basis: 100%;
+        height: 0;
+      }
+      .column1 {
+        border-left: 2px solid black;
+      }
+    .table1 {
+        margin-top:5px;
+        margin-right:20px;
+        margin-left:20px;
+        display:flex; 
+        flex-direction:column;
+    
+    }
+    </style>
+    {% var numbers = ["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"] %}
+
+    {% var pageNumber = 0 %}
+    {% var months = ["يناير", "فبراير", "مارس", "ابريل", "مايو", "يونيو", "يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر", "ديسمبر"]%}
+    
+<div class="header">
+
+    <div class="under-header">
+    <div style="display:flex; flex-direction:column; align-items:center; margin-right:20px;">
+        <div>
+    <img style="width:40px; height:40px; margin-top:16px;" src="/files/markabat logoce3b5ed30c07.png">
+    </div>
+    <div style="font-weight:bold;">
+        وزارة الداخلية
+    </div>
+    <div>
+    الادارة العامه لمركبات الشرطه
+    </div>
+    <div>
+    </div>
+    </div>
+
+    {% var to_date = [] %}
+    {% var to_dateListsplit =  filters.to_date.split("") %}
+
+{% for(var j=0, len=to_dateListsplit.length; j<len; j++) { %}
+{% if (to_dateListsplit[j] == "-") { %}
+{% to_date.push("-") %}
+    {%  } %}
+
+    {% to_date.push(numbers[to_dateListsplit[j]]) %}
+
+  {%  } %}
+    
+{% var from_date = [] %}
+    {% var from_dateListsplit =  filters.from_date.split("") %}
+
+{% for(var j=0, len=from_dateListsplit.length; j<len; j++) { %}
+    {% if (from_dateListsplit[j] == "-") { %}
+    {% from_date.push("-") %}
+    {%  } %}
+
+    {% from_date.push(numbers[from_dateListsplit[j]]) %}
+
+  {%  } %}
+                        
+    <div style="font-weight: bold;
+    font-size: 12pt;
+    text-decoration: underline;">
+            تقرير إحصائي لمستخدمي التعاقدات من {%= from_date.join("").split("-")[2] %} / {%= from_date.join("").split("-")[1] %} / {%= from_date.join("").split("-")[0] %} إلى تاريخ {%= to_date.join("").split("-")[2] %} / {%= to_date.join("").split("-")[1] %} / {%= to_date.join("").split("-")[0] %}
+
+
+</div>
+    <div>
+        <div style="display: flex; flex-direction: row; align-items: center;">
+            <div style="font-weight: bold;">تاريخ الطباعة  </div>
+            <div style="border:2px solid black; width:100px; text-align:center; margin-left:10px;margin-right:10px; font-weight:bold;">
+                {%= frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}
+                {{data[0].cur_user}}
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+</div>
+
+
+{% var counter = 1 %}
+
+<br>
+<div class="table1">
+        <table style="font-family:Cairo" dir="rtl">
+            <thead>
+                <tr>
+                    <th>{%= __("م") %}</th>
+                    <th>{%= __("اسم المستخدم") %}</th>
+                    <th>{%= __("عدد طلبات عروض الأسعار") %}</th>
+                    <th>{%= __("عدد مذكرات العرض") %}</th>
+                    <th>{%= __("عدد أوامر الشغل") %}</th>
+                    <th>{%= __("إجمالي العدد") %}</th>
+                </tr>
+            </thead>
+            <tbody>
+			{% for(var i=0, l=data.length; i<l; i++) { %} <tr>
+				{% var idx = [] %}
+				{% var loopIndex = (i + 1).toString() %}
+				{% var idxListsplit = loopIndex.split("") %}
+				{% for(var j=0, len=idxListsplit.length; j<len; j++) { %} {% idx.push(numbers[idxListsplit[j]]) %} {% }
+					%} <td>{%= idx.join("") %}</td>
+
+                    <td>{%= data[i].username %}</td>
+
+                    {% var rfq_count = [] %}
+					{% var rfq_countListsplit2 = data[i].rfq_count.toString() %}
+					{% var rfq_countListsplit3 = rfq_countListsplit2.split(".")[0] %}
+					{% var rfq_countListsplit = rfq_countListsplit3.split("") %}
+					{% for(var j=0, len=rfq_countListsplit.length; j<len; j++) { %} {%
+                    rfq_count.push(numbers[rfq_countListsplit[j]]) %} {% } %}
+                    <td>{%= rfq_count.join("") %}</td>
+
+                    {% var note_count = [] %}
+                    {% var note_countListsplit2 = data[i].note_count.toString() %}
+                    {% var note_countListsplit3 = note_countListsplit2.split(".")[0] %}
+                    {% var note_countListsplit = note_countListsplit3.split("") %}
+                    {% for(var j=0, len=note_countListsplit.length; j<len; j++) { %} {%
+                    note_count.push(numbers[note_countListsplit[j]]) %} {% } %}
+                    <td>{%= note_count.join("") %}</td>
+
+                    {% var jo_count = [] %}
+                    {% var jo_countListsplit2 = data[i].jo_count.toString() %}
+                    {% var jo_countListsplit3 = jo_countListsplit2.split(".")[0] %}
+                    {% var jo_countListsplit = jo_countListsplit3.split("") %}
+                    {% for(var j=0, len=jo_countListsplit.length; j<len; j++) { %} {%
+                    jo_count.push(numbers[jo_countListsplit[j]]) %} {% } %}
+                    <td>{%= jo_count.join("") %}</td>
+
+                    {% var total_count = [] %}
+                    {% var total_countListsplit2 = data[i].total_count.toString() %}
+                    {% var total_countListsplit3 = total_countListsplit2.split(".")[0] %}
+                    {% var total_countListsplit = total_countListsplit3.split("") %}
+                    {% for(var j=0, len=total_countListsplit.length; j<len; j++) { %} {%
+                    total_count.push(numbers[total_countListsplit[j]]) %} {% } %}
+                    <td>{%= total_count.join("") %}</td>                            
+                </tr>
+                
+                {% } %}
+
+            </tbody>
+        </table>
+    </div>

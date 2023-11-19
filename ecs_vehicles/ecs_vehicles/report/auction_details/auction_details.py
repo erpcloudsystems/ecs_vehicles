@@ -10,7 +10,13 @@ def execute(filters=None):
     columns, data = [], []
     columns = get_columns()
     data = get_data(filters, columns)
-    return columns, data
+    header = ""
+    
+    total_count = "<b> العدد الإجمالي: {0}<span style='margin-right:50px'></span></b> ".format(data[0]["total_count"])
+    header = " "  + total_count
+
+    message = [header]
+    return columns, data, message
 
 
 def get_columns():
@@ -26,19 +32,13 @@ def get_columns():
             "label": _("تاريخ المزاد"),
             "fieldname": "auction_date",
             "fieldtype": "Date",
-            "width": 150,
+            "width": 120,
         },
         {
             "label": _("رقم اللوط"),
             "fieldname": "idx",
             "fieldtype": "Integer",
-            "width": 150,
-        },
-        {
-            "label": _("عدد البونات"),
-            "fieldname": "count_voucher",
-            "fieldtype": "Integer",
-            "width": 120,
+            "width": 100,
         },
         {
             "label": _("رقم اللوط المجمع"),
@@ -50,61 +50,61 @@ def get_columns():
             "label": _("رقم الشرطة"),
             "fieldname": "police_id",
             "fieldtype": "Data",
-            "width": 130,
+            "width": 120,
         },
         {
             "label": _("الجهة"),
             "fieldname": "entity",
             "fieldtype": "Data",
-            "width": 110,
+            "width": 200,
         },
         {
             "label": _("النوع"),
             "fieldname": "vehicle_type",
             "fieldtype": "Data",
-            "width": 160,
+            "width": 100,
         },
         {
             "label": _("الطراز"),
             "fieldname": "vehicle_style",
             "fieldtype": "Data",
-            "width": 160,
+            "width": 110,
         },
         {
             "label": _("الشكل"),
             "fieldname": "vehicle_shape",
             "fieldtype": "Data",
-            "width": 160,
+            "width": 110,
         },
         {
             "label": _("الماركة"),
             "fieldname": "vehicle_brand",
             "fieldtype": "Data",
-            "width": 160,
+            "width": 120,
         },
         {
             "label": _("الموديل"),
             "fieldname": "vehicle_model",
             "fieldtype": "Data",
-            "width": 160,
+            "width": 100,
         },
         {
             "label": _("اللون"),
             "fieldname": "vehicle_color",
             "fieldtype": "Data",
-            "width": 160,
+            "width": 110,
         },
         {
             "label": _("الشاسيه"),
             "fieldname": "chassis_no",
             "fieldtype": "Data",
-            "width": 160,
+            "width": 120,
         },
         {
             "label": _("الموتور"),
             "fieldname": "motor_no",
             "fieldtype": "Data",
-            "width": 160,
+            "width": 120,
         },
     ]
 
@@ -137,7 +137,8 @@ def get_conditions(filters):
 
 
 def get_item_price_qty_data(conditions):
-    voucher_type_list = frappe.db.sql(
+    result = []
+    item_results = frappe.db.sql(
         """
         select  
 			auction.name,
@@ -168,5 +169,29 @@ def get_item_price_qty_data(conditions):
         ),
         as_dict=1,
     )
-    if voucher_type_list:
-        return voucher_type_list
+    counter = 0
+    for item_dict in item_results:
+        counter += 1
+        data = {
+            'name': item_dict.name,
+            'auction_date': item_dict.auction_date,
+            'idx': item_dict.idx,
+            'accumulated_lot': item_dict.accumulated_lot,
+            'vehicle': item_dict.vehicle,
+            'police_id': item_dict.police_id,
+            'entity': item_dict.entity,
+            'vehicle_type': item_dict.vehicle_type,
+            'vehicle_style': item_dict.vehicle_style,
+            'vehicle_shape': item_dict.vehicle_shape,
+            'vehicle_brand': item_dict.vehicle_brand,
+            'vehicle_model': item_dict.vehicle_model,
+            'vehicle_color': item_dict.vehicle_color,
+            'chassis_no': item_dict.chassis_no,
+            'motor_no': item_dict.motor_no,
+        }
+        result.append(data)
+    try:
+        result[0]["total_count"] = counter
+    except:
+        pass
+    return result

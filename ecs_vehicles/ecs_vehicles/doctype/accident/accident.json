@@ -72,6 +72,7 @@
   "column_break_58",
   "total_deduction_amount",
   "in_words",
+  "edit_inwords",
   "deduction_form_tab",
   "deduction_party_info_section",
   "deduction_party",
@@ -625,9 +626,9 @@
    "allow_on_submit": 1,
    "fieldname": "in_words",
    "fieldtype": "Data",
-   "hidden": 1,
    "label": "\u0627\u0644\u062a\u0641\u0642\u064a\u0637",
-   "read_only": 1
+   "read_only": 1,
+   "read_only_depends_on": "eval:!doc.edit_inwords"
   },
   {
    "allow_on_submit": 1,
@@ -663,12 +664,19 @@
    "fieldname": "note",
    "fieldtype": "Text",
    "label": "\u0645\u0644\u0627\u062d\u0638\u0627\u062a"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "edit_inwords",
+   "fieldtype": "Check",
+   "label": "\u062a\u0639\u062f\u064a\u0644 \u0627\u0644\u062a\u0641\u0642\u064a\u0637"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-07-25 12:46:41.434227",
+ "modified": "2023-10-09 11:11:49.163680",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Accident",

@@ -105,7 +105,6 @@ class Accident(Document):
 		self.deduction_amount = total
 		self.administrative_expenses = total * 0.1
 		self.total_deduction_amount = self.deduction_amount + self.administrative_expenses
-		self.in_words = in_words(self.total_deduction_amount, "EGP")
 
 		if self.deduction_party == "أطراف الوزارة":
 			self.party_name = self.ministry_party_type + "/ " + self.ministry_party_name

@@ -151,7 +151,6 @@
    "read_only": 1
   }
  ],
- "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [
   {
@@ -159,7 +158,7 @@
    "link_fieldname": "engine_no"
   }
  ],
- "modified": "2023-09-16 12:37:34.191210",
+ "modified": "2023-11-06 10:25:29.109595",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Boat Motor",

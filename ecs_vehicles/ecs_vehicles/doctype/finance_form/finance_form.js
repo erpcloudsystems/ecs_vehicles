@@ -1,6 +1,18 @@
 // Copyright (c) 2023, erpcloud.systems and contributors
 // For license information, please see license.txt
 
+frappe.ui.form.on("Finance Form", "onload", function(frm) {
+    if(!cur_frm.doc.year){
+        frappe.call({ method: "frappe.client.get_value", 
+            args: {
+                doctype: "System Defaults",
+                fieldname: "default_fiscal_year",
+            },
+            callback: function(r) { cur_frm.set_value("year", r.message.default_fiscal_year); }
+        });
+    }
+});
+
 frappe.ui.form.on('Finance Form',{
     refresh: (frm) => {
         frm.set_query("purchase_invoices", "form_invoices", () => {

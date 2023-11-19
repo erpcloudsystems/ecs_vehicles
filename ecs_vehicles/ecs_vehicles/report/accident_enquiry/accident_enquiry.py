@@ -10,7 +10,13 @@ def execute(filters=None):
     columns, data = [], []
     columns = get_columns()
     data = get_data(filters, columns)
-    return columns, data
+    header = ""
+    
+    total_count = "<b> العدد الإجمالي: {0}<span style='margin-right:50px'></span></b> ".format(data[0]["total_count"])
+    header = " "  + total_count
+
+    message = [header]
+    return columns, data, message
 
 
 def get_columns():
@@ -151,8 +157,10 @@ def get_item_price_qty_data(filters):
             `tabAccident`.docstatus = 1
             {conditions}
         """.format(conditions=conditions), filters, as_dict=1)
-
+    
+    counter = 0
     for item_dict in item_results:
+        counter += 1
         data = {
             'police_no': item_dict.police_no,
             'entity': item_dict.entity,
@@ -172,4 +180,8 @@ def get_item_price_qty_data(filters):
             'fuel_type': item_dict.fuel_type,
         }
         result.append(data)
+    try:
+        result[0]["total_count"] = counter
+    except:
+        pass
     return result

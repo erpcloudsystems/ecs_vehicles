@@ -9,6 +9,14 @@ frappe.query_reports["Non Reviewed Groups"] = {
 			"reqd": 1,
 		},
 		{
+			fieldname: "liquid_type",
+			label: __("نوع السائل"),
+			fieldtype: "Select",
+			options: ["وقود", "زيت", "غاز", "غسيل"],
+			reqd: 1,
+			default: "وقود",
+		},
+		{
 			"fieldname": "batch_no",
 			"label": __("رقم الدفعة"),
 			"fieldtype": "Data",

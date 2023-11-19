@@ -98,7 +98,6 @@ def get_data(filters, columns):
 
 def get_qty_per_liquids(filters):
     conditions = ""
-    conditions2 = "" 
     if filters.get("company_name"):
         conditions += " and voucher_review.company_name ='%s'" % filters.get("company_name")
     if filters.get("fiscal_year"):
@@ -107,22 +106,16 @@ def get_qty_per_liquids(filters):
         conditions += " AND voucher_review.group_no ='%s'" % filters.get("group_no")
     if filters.get("user"):
         conditions += " AND voucher_review.owner ='%s'" % filters.get("user")
-    if filters.get("entity"):
-        conditions2 += " AND voucher_revie_table.entity ='%s'" % filters.get("entity")
-    if filters.get("voucher_type"):
-        conditions2 += " AND voucher_revie_table.voucher_type LIKE '%{0}%' ".format(filters.get("voucher_type"))
-
+    if filters.get("liquid_type"):
+        conditions += " AND voucher_review.liquid_type ='%s'" % filters.get("liquid_type")
     if filters.get("batch_no"):
         conditions += " AND voucher_review.batch_no ='%s'" % filters.get("batch_no")
-
     if filters.get("batch_from_date"):
         conditions += " AND voucher_review.batch_date >='%s'" % filters.get("batch_from_date")
-
     if filters.get("batch_to_date"):
         conditions += " AND voucher_review.batch_date <='%s'" % filters.get("batch_to_date")
     if filters.get("revision_from_date"):
         conditions += " AND voucher_review.date >='%s'" % filters.get("revision_from_date")
-
     if filters.get("revision_to_date"):
         conditions += " AND voucher_review.date <='%s'" % filters.get("revision_to_date")
     item_results = frappe.db.sql("""
@@ -140,6 +133,7 @@ def get_qty_per_liquids(filters):
         {conditions}
         ORDER BY user, batch_no, CONVERT(voucher_review.group_no, SIGNED)
         """.format(conditions=conditions), as_dict=1)
+    
     def item_results_map(parent, conditions):
         return frappe.db.sql("""
         Select
@@ -178,7 +172,6 @@ def get_qty_per_liquids(filters):
                 'voucher_type': row.voucher_type,
                 'total_count': row.voucher_type_count,
                 "cur_user":user_printed
-                
             }
                 result.append(data)
         result[-1]["users"] = users

@@ -123,7 +123,7 @@
    "fieldname": "license_status",
    "fieldtype": "Select",
    "label": "\u0627\u0644\u062d\u0627\u0644\u0629",
-   "options": "\u0633\u0644\u064a\u0645\n\u062a\u0627\u0644\u0641",
+   "options": "\u0633\u0644\u064a\u0645\n\u062a\u0627\u0644\u0641\n\u0645\u0639\u062f\u0645",
    "search_index": 1
   },
   {
@@ -204,7 +204,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-07-13 17:21:03.720192",
+ "modified": "2023-10-26 13:56:23.881301",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vehicle License Entries",

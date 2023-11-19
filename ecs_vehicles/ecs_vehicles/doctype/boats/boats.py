@@ -3,6 +3,7 @@
 
 import frappe
 from datetime import datetime
+from frappe.utils import getdate
 from frappe.model.document import Document
 
 
@@ -191,6 +192,7 @@ class Boats(Document):
                         new_boat_name.entity = row.entity
                         new_boat_name.motor_capacity = row.motor_capacity
                         new_boat_name.current_validity = row.current_validity
+                    new_boat_name.boat_validity = "صالحة"
                     new_boat_name.save(ignore_permissions=True)
             self.remove_engine_from_boat()
             frappe.msgprint("تم نقل المحرك إلى اللانش الجديد")
@@ -277,6 +279,50 @@ class Boats(Document):
         """
 
     def validate(self):
+        if self.edit_status:
+            last_status_date = frappe.db.sql(
+                """ Select date as date from `tabVehicle Status Logs` 
+                    where parent = '{parent}'
+                    order by date desc limit 1
+                """.format(
+                    parent=self.name
+                ),
+                as_dict=1,
+            )
+
+            for v in last_status_date:
+                if getdate(self.edit_status_date) < getdate(v.date):
+                    frappe.throw(" لا يمكن تخصيص حالة المركبة قبل " + str(v.date))
+
+            if self.boat_validity == self.new_status:
+                frappe.throw(" يجب إختيار حالة مختلفة عن الحالة الحالية للبدن ")
+
+            if self.new_status == "صالحة" and self.boat_validity == "تحت التخريد":
+                frappe.throw(
+                    " يجب تخصيص حالة البدن إلى عاطلة أولا حتى تتمكن من تخصيص حالته إلى صالحة "
+                )
+
+            if self.new_status == "تحت التخريد" and self.boat_validity != "عاطلة":
+                frappe.throw(
+                    " يجب تخصيص حالة البدن إلى عاطلة أولا حتى تتمكن من تخصيص حالتها إلى تحت التخريد "
+                )
+
+            if self.new_status == "مخردة" and self.boat_validity != "تحت التخريد":
+                frappe.throw(
+                    " يجب تخصيص حالة البدن إلى تحت التخريد أولا حتى تتمكن من تخصيص حالتها إلى مخردة "
+                )
+
+            status = self.append("validity_table", {})
+            status.date = self.edit_status_date
+            status.value = self.new_status
+            status.remarks = self.status_remarks
+            status.edited_by = frappe.db.get_value("User", frappe.session.user, "full_name")
+            self.boat_validity = self.new_status
+            self.edit_status = ""
+            self.new_status = ""
+            self.edit_status_date = ""
+            self.status_remarks = ""
+
         if len(self.engine_table) > 2:
             frappe.throw(" لا يمكن إضافة أكثر من محركين للانش " + self.boat_no)
         elif not self.engine_no and not self.engine_no2:

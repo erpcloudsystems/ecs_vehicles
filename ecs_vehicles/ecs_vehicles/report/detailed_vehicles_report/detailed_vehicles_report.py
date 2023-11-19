@@ -10,7 +10,13 @@ def execute(filters=None):
     columns, data = [], []
     columns = get_columns()
     data = get_data(filters, columns)
-    return columns, data
+    header = ""
+    
+    total_count = "<b> عدد المركبات : {0}<span style='margin-right:50px'></span></b> ".format(data[0]["total_count"])
+    header = " "  + total_count
+
+    message = [header]
+    return columns, data, message
 
 
 def get_columns():
@@ -27,18 +33,6 @@ def get_columns():
             "fieldname": "vehicle_no",
             "fieldtype": "Data",
             "width": 110,
-        },
-        {
-            "label": _("نوع الزيت"),
-            "fieldname": "oil_type",
-            "fieldtype": "Data",
-            "width": 150,
-        },
-        {
-            "label": _("مقرر الزيت"),
-            "fieldname": "oil_count",
-            "fieldtype": "Data",
-            "width": 90,
         },
         {
             "label": _("النوع"),
@@ -71,6 +65,12 @@ def get_columns():
             "width": 80,
         },
         {
+            "label": _("الحالة"),
+            "fieldname": "vehicle_status",
+            "fieldtype": "Data",
+            "width": 110,
+        },
+        {
             "label": _("اللون"),
             "fieldname": "vehicle_color",
             "fieldtype": "Data",
@@ -101,12 +101,6 @@ def get_columns():
             "width": 120,
         },
         {
-            "label": _("الحالة"),
-            "fieldname": "vehicle_status",
-            "fieldtype": "Data",
-            "width": 110,
-        },
-        {
             "label": _("جهة الصيانة"),
             "fieldname": "maintenance_entity",
             "fieldtype": "Data",
@@ -123,6 +117,12 @@ def get_columns():
             "fieldname": "exchange_allowance",
             "fieldtype": "Data",
             "width": 200,
+        },
+        {
+            "label": _("نوع الحيازة"),
+            "fieldname": "possession_type",
+            "fieldtype": "Data",
+            "width": 120,
         },
         {
             "label": _("تاريخ الحيازة"),
@@ -161,6 +161,18 @@ def get_columns():
             "width": 90,
         },
         {
+            "label": _("نوع الزيت"),
+            "fieldname": "oil_type",
+            "fieldtype": "Data",
+            "width": 150,
+        },
+        {
+            "label": _("مقرر الزيت"),
+            "fieldname": "oil_count",
+            "fieldtype": "Data",
+            "width": 90,
+        },
+        {
             "label": _("بون الغاز"),
             "fieldname": "gas_voucher",
             "fieldtype": "Data",
@@ -194,49 +206,65 @@ def get_data(filters, columns):
 
 
 def get_item_price_qty_data(filters):
-    conditions = ""
+    conditions1 = ""
+    conditions2 = ""
     if filters.get("name"):
-        conditions += "and name = %(name)s"
+        conditions1 += "and (vehicle_no = %(name)s or police_id = %(name)s) "
+        conditions2 += "and boat_no = %(name)s "
     if filters.get("vehicle_type"):
-        conditions += "and vehicle_type = %(vehicle_type)s"
+        conditions1 += "and vehicle_type = %(vehicle_type)s"
+    if filters.get("vehicle_type") and (filters.get("vehicle_type") != "لانش"):
+        conditions2 += "and body_type = %(vehicle_type)s "
     if filters.get("vehicle_shape"):
-        conditions += "and vehicle_shape = %(vehicle_shape)s"
+        conditions1 += "and vehicle_shape = %(vehicle_shape)s"
+        conditions2 += "and body_type = %(vehicle_shape)s"
     if filters.get("vehicle_brand"):
-        conditions += "and vehicle_brand = %(vehicle_brand)s"
+        conditions1 += "and vehicle_brand = %(vehicle_brand)s"
+        conditions2 += "and boat_brand = %(vehicle_brand)s"
     if filters.get("vehicle_style"):
-        conditions += "and vehicle_style = %(vehicle_style)s"
+        conditions1 += "and vehicle_style = %(vehicle_style)s"
+        conditions2 += "and body_type not in ('مطاطي','فيبر جلاس','خشبي','صلب','موتوسيكل مائى','معدنى')"
     if filters.get("vehicle_model"):
-        conditions += "and vehicle_model = %(vehicle_model)s"
+        conditions1 += "and vehicle_model = %(vehicle_model)s"
+        conditions2 += "and boat_model = %(vehicle_model)s"
     if filters.get("vehicle_color"):
-        conditions += "and vehicle_color = %(vehicle_color)s"
+        conditions1 += "and vehicle_color = %(vehicle_color)s"
+        conditions2 += "and body_type not in ('مطاطي','فيبر جلاس','خشبي','صلب','موتوسيكل مائى','معدنى')"
     if filters.get("entity"):
-        conditions += "and entity_name = %(entity)s"
+        conditions1 += "and entity_name = %(entity)s"
+        conditions2 += "and entity_name = %(entity)s"
     if filters.get("motor_no"):
-        conditions += "and motor_no = %(motor_no)s"
+        conditions1 += "and motor_no = %(motor_no)s"
+        conditions2 += "and engine_no = %(motor_no)s"
     if filters.get("chassis_no"):
-        conditions += "and chassis_no = %(chassis_no)s"
+        conditions1 += "and chassis_no = %(chassis_no)s"
+        conditions2 += "and body_type not in ('مطاطي','فيبر جلاس','خشبي','صلب','موتوسيكل مائى','معدنى')"
     if filters.get("private_no"):
-        conditions += "and private_no = %(private_no)s"
-    if filters.get("vehicle_status"):
-        conditions += "and vehicle_status = %(vehicle_status)s"
+        conditions1 += "and private_no = %(private_no)s"
+        conditions2 += "and body_type not in ('مطاطي','فيبر جلاس','خشبي','صلب','موتوسيكل مائى','معدنى')"
     if filters.get("maintenance_entity"):
-        conditions += "and maintenance_entity = %(maintenance_entity)s"
+        conditions1 += "and maintenance_entity = %(maintenance_entity)s"
+        conditions2 += "and body_type not in ('مطاطي','فيبر جلاس','خشبي','صلب','موتوسيكل مائى','معدنى')"
     if filters.get("processing_type"):
-        conditions += "and processing_type = %(processing_type)s"
+        conditions1 += "and processing_type = %(processing_type)s"
+        conditions2 += "and body_type not in ('مطاطي','فيبر جلاس','خشبي','صلب','موتوسيكل مائى','معدنى')"
     if filters.get("exchange_allowance"):
-        conditions += "and exchange_allowance = %(exchange_allowance)s"
+        conditions1 += "and exchange_allowance = %(exchange_allowance)s"
+        conditions2 += "and body_type not in ('مطاطي','فيبر جلاس','خشبي','صلب','موتوسيكل مائى','معدنى')"
+    if filters.get("vehicle_status"):
+        conditions1 += "and vehicle_status = %(vehicle_status)s"
+        conditions2 += "and boat_validity = %(vehicle_status)s"
     if filters.get("fuel_type"):
-        conditions += "and fuel_type = %(fuel_type)s"
+        conditions1 += "and fuel_type = %(fuel_type)s"
+        conditions2 += "and fuel_type = %(fuel_type)s"
     if filters.get("cylinder_count"):
-        conditions += "and cylinder_count = %(cylinder_count)s"
-    # if filters.get("from_date"):
-    #     conditions += " and creation >= %(from_date)s"
-    # if filters.get("to_date"):
-    #     conditions += " and creation <= %(to_date)s"
+        conditions1 += "and cylinder_count = %(cylinder_count)s"
+        conditions2 += "and cylinder_count = %(cylinder_count)s"
 
-    item_results = frappe.db.sql(
-        """
-        Select
+
+    item_results = frappe.db.sql("""
+        (
+        SELECT
             name as name,
             vehicle_no as vehicle_no,
             police_id as police_id,
@@ -255,6 +283,7 @@ def get_item_price_qty_data(filters):
             processing_type as processing_type,
             exchange_allowance as exchange_allowance,
             possession_date as possession_date,
+            possession_type as possession_type,
             fuel_type as fuel_type,
             litre_capacity as litre_capacity,
             cylinder_count as cylinder_count,
@@ -266,119 +295,90 @@ def get_item_price_qty_data(filters):
             gas_count as gas_count,
             washing_voucher as washing_voucher,
             washing_count as washing_count
-        from `tabVehicles`
-        where docstatus = 0
-        {conditions}
-        order by modified desc
-        """.format(
-            conditions=conditions
-        ),
-        filters,
-        as_dict=1,
-    )
+        FROM `tabVehicles`
+        WHERE 1=1
+        {conditions1}
+        )
+    UNION
+        (
+        SELECT
+            name as name,
+            boat_no as vehicle_no,
+            boat_no as police_id,
+            'لانش' as vehicle_type,
+            body_type as vehicle_shape,
+            boat_brand as vehicle_brand,
+            '-----------' as vehicle_style,
+            boat_model as vehicle_model,
+            '-----------' as vehicle_color,
+            entity_name as entity_name,
+            engine_no as motor_no,
+            '-----------' as chassis_no,
+            '-----------' as private_no,
+            boat_validity as vehicle_status,
+            '-----------' as maintenance_entity,
+            '-----------' as processing_type,
+            '-----------' as exchange_allowance,
+            '-----------' as possession_type,
+            issue_date as possession_date,
+            fuel_type as fuel_type,
+            motor_capacity as litre_capacity,
+            motor_cylinder_count as cylinder_count,
+            fuel_voucher as fuel_voucher,
+            qty as litre_count,
+            '-----------' as oil_type,
+            '-----------' as oil_count,
+            '-----------' as gas_voucher,
+            '-----------' as gas_count,
+            '-----------' as washing_voucher,
+            '-----------' as washing_count
+        FROM `tabBoats`
+        WHERE 1=1
+        {conditions2}
+        )
+    ORDER BY entity_name desc, vehicle_type
+        """.format(conditions1=conditions1, conditions2=conditions2), filters, as_dict=1)
 
     result = []
+    counter = 0
     if item_results:
         for item_dict in item_results:
+            counter += 1
             data = {
-                "name": item_dict.name,
-                "vehicle_no": item_dict.vehicle_no
-                if item_dict.vehicle_no
-                else item_dict.police_id,
-                "vehicle_type": item_dict.vehicle_type
-                if item_dict.vehicle_type
-                else "-----------",
-                "vehicle_shape": item_dict.vehicle_shape
-                if item_dict.vehicle_shape
-                else "-----------",
-                "vehicle_brand": item_dict.vehicle_brand
-                if item_dict.vehicle_brand
-                else "-----------",
-                "vehicle_style": item_dict.vehicle_style
-                if item_dict.vehicle_style
-                else "-----------",
-                "vehicle_model": item_dict.vehicle_model
-                if item_dict.vehicle_model
-                else "-----------",
-                "vehicle_color": item_dict.vehicle_color
-                if item_dict.vehicle_color
-                else "-----------",
-                "entity_name": item_dict.entity_name
-                if item_dict.entity_name
-                else "-----------",
-                "motor_no": item_dict.motor_no if item_dict.motor_no else "-----------",
-                "chassis_no": item_dict.chassis_no
-                if item_dict.chassis_no
-                else "-----------",
-                "private_no": item_dict.private_no
-                if item_dict.private_no
-                else "-----------",
-                "vehicle_status": item_dict.vehicle_status
-                if item_dict.vehicle_status
-                else "-----------",
-                "maintenance_entity": item_dict.maintenance_entity
-                if item_dict.maintenance_entity
-                else "-----------",
-                "processing_type": item_dict.processing_type
-                if item_dict.processing_type
-                else "-----------",
-                "exchange_allowance": item_dict.exchange_allowance
-                if item_dict.exchange_allowance
-                else "-----------",
-                "possession_date": item_dict.possession_date
-                if item_dict.possession_date
-                else "-----------",
-                "fuel_type": item_dict.fuel_type
-                if item_dict.fuel_type
-                else "-----------",
-                "litre_capacity": item_dict.litre_capacity
-                if item_dict.litre_capacity
-                else "-----------",
-                "cylinder_count": item_dict.cylinder_count
-                if item_dict.cylinder_count
-                else "-----------",
-                "fuel_voucher": item_dict.fuel_voucher
-                if item_dict.fuel_voucher
-                else "-----------",
-                "litre_count": item_dict.litre_count
-                if item_dict.litre_count
-                else "-----------",
-                "oil_type": item_dict.oil_type if item_dict.oil_type else "-----------",
-                "oil_count": item_dict.oil_count
-                if item_dict.oil_count
-                else "-----------",
-                "gas_voucher": item_dict.gas_voucher
-                if item_dict.gas_voucher
-                else "-----------",
-                "gas_count": item_dict.gas_count
-                if item_dict.gas_count
-                else "-----------",
-                "washing_voucher": item_dict.washing_voucher
-                if item_dict.washing_voucher
-                else "-----------",
-                "washing_count": item_dict.washing_count
-                if item_dict.washing_count
-                else "-----------",
+                'name': item_dict.name,
+                'vehicle_no': item_dict.vehicle_no if item_dict.vehicle_no else item_dict.police_id,
+                'vehicle_type': item_dict.vehicle_type if item_dict.vehicle_type else "-----------",
+                'vehicle_shape': item_dict.vehicle_shape if item_dict.vehicle_shape else "-----------",
+                'vehicle_brand': item_dict.vehicle_brand if item_dict.vehicle_brand else "-----------",
+                'vehicle_style': item_dict.vehicle_style if item_dict.vehicle_style else "-----------",
+                'vehicle_model': item_dict.vehicle_model if item_dict.vehicle_model else "-----------",
+                'vehicle_color': item_dict.vehicle_color if item_dict.vehicle_color else "-----------",
+                'entity_name': item_dict.entity_name if item_dict.entity_name else "-----------",
+                'motor_no': item_dict.motor_no if item_dict.motor_no else "-----------",
+                'chassis_no': item_dict.chassis_no if item_dict.chassis_no else "-----------",
+                'private_no': item_dict.private_no if item_dict.private_no else "-----------",
+                'vehicle_status': item_dict.vehicle_status if item_dict.vehicle_status else "-----------",
+                'maintenance_entity': item_dict.maintenance_entity if item_dict.maintenance_entity else "-----------",
+                'processing_type': item_dict.processing_type if item_dict.processing_type else "-----------",
+                'exchange_allowance': item_dict.exchange_allowance if item_dict.exchange_allowance else "-----------",
+                'possession_date': item_dict.possession_date if item_dict.possession_date else "-----------",
+                'possession_type': item_dict.possession_type if item_dict.possession_type else "-----------",
+                'fuel_type': item_dict.fuel_type if item_dict.fuel_type else "-----------",
+                'litre_capacity': item_dict.litre_capacity if item_dict.litre_capacity else "-----------",
+                'cylinder_count': item_dict.cylinder_count if item_dict.cylinder_count else "-----------",
+                'fuel_voucher': item_dict.fuel_voucher if item_dict.fuel_voucher else "-----------",
+                'litre_count': item_dict.litre_count if item_dict.litre_count else "-----------",
+                'oil_type': item_dict.oil_type if item_dict.oil_type else "-----------",
+                'oil_count': item_dict.oil_count if item_dict.oil_count else "-----------",
+                'gas_voucher': item_dict.gas_voucher if item_dict.gas_voucher else "-----------",
+                'gas_count': item_dict.gas_count if item_dict.gas_count else "-----------",
+                'washing_voucher': item_dict.washing_voucher if item_dict.washing_voucher else "-----------",
+                'washing_count': item_dict.washing_count if item_dict.washing_count else "-----------",
             }
             result.append(data)
-
-        if (
-            filters.get("name")
-            or filters.get("vehicle_type")
-            or filters.get("vehicle_shape")
-            or filters.get("vehicle_brand")
-            or filters.get("vehicle_style")
-            or filters.get("vehicle_model")
-            or filters.get("vehicle_color")
-            or filters.get("entity")
-            or filters.get("motor_no")
-            or filters.get("chassis_no")
-            or filters.get("private_no")
-            or filters.get("vehicle_status")
-            or filters.get("maintenance_entity")
-            or filters.get("processing_type")
-            or filters.get("exchange_allowance")
-            or filters.get("fuel_type")
-            or filters.get("cylinder_count")
-        ):
-            return result
+    try:
+        result[0]["cur_user"] = frappe.db.get_value("User", frappe.session.user, ["full_name"])
+        result[0]["total_count"] = counter
+    except:
+        pass
+    return result

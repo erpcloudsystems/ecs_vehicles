@@ -16,7 +16,9 @@
   "fuel_type",
   "entity",
   "motor_capacity",
-  "current_validity"
+  "current_validity",
+  "motor_cylinder_count",
+  "motor_fuel_type"
  ],
  "fields": [
   {
@@ -120,12 +122,22 @@
    "label": "\u0627\u0644\u0635\u0644\u0627\u062d\u064a\u0629 \u0627\u0644\u062d\u0627\u0644\u064a\u0629",
    "options": "\n\u0635\u0627\u0644\u062d\n\u0639\u0627\u0637\u0644\n\u062a\u062d\u062a \u0627\u0644\u062a\u062e\u0631\u064a\u062f\n\u0645\u062e\u0631\u062f\n\u0627\u062d\u062a\u064a\u0627\u0637\u064a \u0645\u062e\u0632\u0646",
    "read_only": 1
+  },
+  {
+   "fieldname": "motor_cylinder_count",
+   "fieldtype": "Data",
+   "label": "motor_cylinder_count"
+  },
+  {
+   "fieldname": "motor_fuel_type",
+   "fieldtype": "Data",
+   "label": "motor_fuel_type"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-09-18 20:30:10.787120",
+ "modified": "2023-10-18 16:28:30.380839",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Engine Table",

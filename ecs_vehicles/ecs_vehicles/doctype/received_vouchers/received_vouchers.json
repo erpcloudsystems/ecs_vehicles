@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format: \u062f\u0641\u0639\u0629 ({batch_no}) \u0644\u0633\u0646\u0629 {fiscal_year}",
+ "autoname": "format: \u062f\u0641\u0639\u0629 ({batch_no}) \u0644\u0633\u0646\u0629 {fiscal_year} ({liquid_type})",
  "creation": "2022-10-26 13:16:32.053192",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -9,9 +9,9 @@
  "field_order": [
   "naming_series",
   "fiscal_year",
+  "liquid_type",
   "company_name",
   "receiver_name",
-  "liquid_type",
   "column_break_4",
   "batch_no",
   "invoice_no",
@@ -41,6 +41,7 @@
   {
    "fieldname": "receiver_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_standard_filter": 1,
    "label": "\u0627\u0633\u0645 \u0627\u0644\u0645\u0633\u062a\u0644\u0645"
   },
@@ -55,6 +56,7 @@
    "in_standard_filter": 1,
    "label": "\u0631\u0642\u0645 \u0627\u0644\u062f\u0641\u0639\u0629",
    "no_copy": 1,
+   "read_only_depends_on": "eval:!(doc.__islocal)",
    "reqd": 1
   },
   {
@@ -99,8 +101,10 @@
   {
    "fieldname": "liquid_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "\u0646\u0648\u0639 \u0627\u0644\u0633\u0627\u0626\u0644",
-   "options": "\n\u0648\u0642\u0648\u062f\n\u0632\u064a\u062a\n\u063a\u0633\u064a\u0644",
+   "options": "\n\u0648\u0642\u0648\u062f\n\u0632\u064a\u062a\n\u063a\u0633\u064a\u0644\n\u063a\u0627\u0632",
    "reqd": 1
   },
   {
@@ -123,7 +127,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-01 15:06:28.949656",
+ "modified": "2023-10-22 11:45:15.614928",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Received Vouchers",

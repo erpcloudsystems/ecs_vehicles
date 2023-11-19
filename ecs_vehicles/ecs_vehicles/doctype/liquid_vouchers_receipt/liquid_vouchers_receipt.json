@@ -121,14 +121,14 @@
   },
   {
    "fieldname": "from_voucher",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "\u0645\u0646 \u0645\u0633\u0644\u0633\u0644 \u0628\u0648\u0646",
    "length": 20,
    "no_copy": 1
   },
   {
    "fieldname": "to_voucher",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "\u0625\u0644\u0649 \u0645\u0633\u0644\u0633\u0644 \u0628\u0648\u0646",
    "length": 20,
    "no_copy": 1
@@ -203,6 +203,7 @@
    "read_only": 1
   },
   {
+   "default": "1",
    "fieldname": "from_notebook",
    "fieldtype": "Int",
    "label": "\u0645\u0633\u0644\u0633\u0644 \u0623\u0648\u0644 \u062f\u0641\u062a\u0631",
@@ -259,7 +260,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-07-18 18:24:09.589769",
+ "modified": "2023-11-08 14:22:52.651790",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Liquid Vouchers Receipt",

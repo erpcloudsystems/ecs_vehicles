@@ -38,10 +38,11 @@ def get_item_price_qty_data(filters):
         """ select `tabVoucher`.voucher_type as voucher_type
             from `tabVoucher` 
             where `tabVoucher`.reviewed = 1
+            and `tabVoucher`.liquid_type = '{liquid_type}'
             and `tabVoucher`.batch_no = '{batch_no}'
             and `tabVoucher`.fiscal_year = '{fiscal_year}'
             group by `tabVoucher`.voucher_type
-        """.format(batch_no=filters.get("batch_no"), fiscal_year=filters.get("fiscal_year")), filters, as_dict=1)
+        """.format(liquid_type=filters.get("liquid_type"), batch_no=filters.get("batch_no"), fiscal_year=filters.get("fiscal_year")), filters, as_dict=1)
 
     result = []
     if voucher_type_list:
@@ -53,11 +54,12 @@ def get_item_price_qty_data(filters):
 				""" select count(`tabVoucher`.name) as vouchers_count
 					from `tabVoucher` 
 					where `tabVoucher`.reviewed = 1
+                    and `tabVoucher`.liquid_type = '{liquid_type}'
                     and `tabVoucher`.batch_no = '{batch_no}'
                     and `tabVoucher`.fiscal_year = '{fiscal_year}'
 					and `tabVoucher`.voucher_type = '{voucher_type}'
 				""".format(voucher_type=x.voucher_type, batch_no=filters.get("batch_no"), 
-							fiscal_year=filters.get("fiscal_year")), filters, as_dict=1)
+							liquid_type=filters.get("liquid_type"), fiscal_year=filters.get("fiscal_year")), filters, as_dict=1)
 
             for item_dict in item_results:
                 data['vouchers_count'] = item_dict.vouchers_count

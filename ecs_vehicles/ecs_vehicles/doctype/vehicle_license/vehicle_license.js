@@ -1,5 +1,40 @@
 // Copyright (c) 2022, erpcloud.systems and contributors
 // For license information, please see license.txt
+// frappe.ui.form.on('Vehicle License', 'vehicle_no', function(frm) {
+//     if (frm.doc.police_no_5){
+
+//         cur_frm.set_value("vehicle_license_logs_table", "");
+//         // call with all options
+//             frappe.call({
+//         method: 'ecs_vehicles.ecs_vehicles.doctype.vehicle_license.vehicle_license.history_vehicle1',
+//         args: {
+//             police_no: frm.doc.police_no_5
+//         },
+//         freeze: true,
+//         callback: (r) => {
+//             if(r.message){
+//                 r.message.forEach((row, idx, array)=>{
+//                     let vehicle_license_logs_table = frm.add_child("vehicle_license_logs_table");
+//                     vehicle_license_logs_table.license_no = row.license_no;
+//                     vehicle_license_logs_table.vehicle = row.vehicle;
+//                     vehicle_license_logs_table.note = frm.doc.vehicle_no != row.vehicle ? "<span style='color:red;'>رخصة على مركبة مختلفة</span>":"<span style='color:green;'>رخصة على نفس المركبة</span>";
+//                     vehicle_license_logs_table.issue_status = row.issue_status;
+//                     vehicle_license_logs_table.renewal_type = row.renewal_type;
+//                     vehicle_license_logs_table.license_duration = row.license_duration;
+//                     vehicle_license_logs_table.license_from_date = row.from_date;
+//                     vehicle_license_logs_table.license_to_date = row.to_date;
+//                     vehicle_license_logs_table.license_status = row.license_status;
+//                     vehicle_license_logs_table.entity = row.entity;
+//                     vehicle_license_logs_table.user = row.user;
+//                     cur_frm.refresh_field("vehicle_license_logs_table");
+//                 })
+//             }
+//         },
+    
+//     })
+//     }
+ 
+// });
 
 frappe.ui.form.on("Vehicle License", {
     onload(frm) {

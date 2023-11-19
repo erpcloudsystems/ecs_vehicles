@@ -507,6 +507,10 @@ class Vehicles(Document):
 
             if self.private_no == self.new_private_no:
                 frappe.throw(" يجب إختيار رقم ملاكي جديد للمركبة ")
+            
+            if self.vehicle_color in ("مموه", "أبيض * كحلي") and self.new_private_no != "0":
+                frappe.throw(" لا يمكن تخصيص رقم ملاكي للمركبة حيث أن لون المركبة " + str(self.vehicle_color))
+
             if (
                 frappe.db.exists(
                     "Vehicles",
@@ -820,6 +824,9 @@ class Vehicles(Document):
             if self.entity_name == self.new_entity:
                 frappe.throw(" يجب إختيار جهة جديدة للمركبة ")
 
+            if self.attached_entity == self.new_entity:
+                frappe.throw(" يجب إختيار جهة مختلفة عن جهة الإلحاق للمركبة ")
+            
             else:
                 entity = self.append("entity_table", {})
                 entity.date = self.edit_entity_date
@@ -912,8 +919,10 @@ class Vehicles(Document):
                 if getdate(self.edit_status_date) < getdate(v.date):
                     frappe.throw(" لا يمكن تخصيص حالة المركبة قبل " + str(v.date))
 
+            
             if self.vehicle_status == self.new_status:
                 frappe.throw(" يجب إختيار حالة جديدة للمركبة ")
+
 
             if self.new_status == "صالحة" and self.vehicle_status == "تحت التخريد":
                 frappe.throw(
@@ -963,11 +972,14 @@ class Vehicles(Document):
                 status.value = self.new_status
                 status.remarks = self.status_remarks
                 status.edited_by = frappe.session.user
+                if self.new_status == "عاطلة":
+                    status.damage_cause = self.new_damage_cause
                 self.vehicle_status = self.new_status
                 self.edit_status = ""
                 self.new_status = ""
                 self.edit_status_date = ""
                 self.status_remarks = ""
+                self.new_damage_cause = ""
 
         if self.edit_chassis_no:
             last_chassis_date = frappe.db.sql(

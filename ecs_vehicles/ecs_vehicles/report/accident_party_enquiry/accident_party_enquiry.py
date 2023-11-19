@@ -10,7 +10,13 @@ def execute(filters=None):
     columns, data = [], []
     columns = get_columns()
     data = get_data(filters, columns)
-    return columns, data
+    header = ""
+    
+    total_count = "<b> العدد الإجمالي: {0}<span style='margin-right:50px'></span></b> ".format(data[0]["total_count"])
+    header = " "  + total_count
+
+    message = [header]
+    return columns, data, message
 
 
 def get_columns():
@@ -134,7 +140,9 @@ def get_item_price_qty_data(filters):
             {conditions}
         """.format(conditions=conditions), filters, as_dict=1)
 
+    counter = 0
     for item_dict in item_results:
+        counter += 1
         data = {
             'party_name': item_dict.party_name,
             'party_id': item_dict.party_id,
@@ -151,4 +159,8 @@ def get_item_price_qty_data(filters):
             'total_deduction_amount': item_dict.total_deduction_amount,
         }
         result.append(data)
+    try:
+        result[0]["total_count"] = counter
+    except:
+        pass
     return result

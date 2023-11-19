@@ -6,6 +6,147 @@ from frappe.model.document import Document
 
 class AuctionInfo(Document):
 	@frappe.whitelist()
+	def get_searched_vehicles(self):
+		if frappe.db.exists(
+			"Vehicles",
+			{"vehicle_no": self.vehicle_no, "vehicle_status": "مخردة"},
+		):
+			if self.vehicle_type2:
+				vic = frappe.get_doc(
+					"Vehicles",
+					{
+						"vehicle_no": self.vehicle_no,
+						"vehicle_status": "مخردة",
+						"vehicle_type": self.vehicle_type2
+					},
+				)
+				get_list_count = frappe.db.get_list(
+					"Vehicles",
+					filters={
+						"vehicle_no": self.vehicle_no,
+						"vehicle_status": "مخردة",
+						"vehicle_type": self.vehicle_type2
+					},
+					fields=["vehicle_no", "vehicle_type"],
+				)
+				if len(get_list_count) > 1:
+					vehicle_types = " <br> "
+					for row in get_list_count:
+						vehicle_types = vehicle_types + " <br> " + row.vehicle_type
+					vehicle_no = "يوجد عدد {count} مركبة بنفس رقم الشرطة {vehicle_no} <br> \
+					برجاء تحديد نوع المركبة : {vehicle_types}".format(
+						count=len(get_list_count),
+						vehicle_no=self.vehicle_no,
+						vehicle_types=vehicle_types,
+					)
+					frappe.throw(vehicle_no)
+
+			else:
+				vic = frappe.get_doc(
+					"Vehicles",
+					{
+						"vehicle_no": self.vehicle_no,
+						"vehicle_status": "مخردة"
+					},
+				)
+
+			if vic.vehicle_status != "مخردة":
+				frappe.throw(
+					"المركبة رقم {vehicle_no} ليست مخردة".format(
+						vehicle_no=vic.vehicle_no
+					)
+				)
+
+
+			vehicle = self.append("auction_sales_slips", {})
+			vehicle.vehicle = vic.name
+			vehicle.police_id = self.vehicle_no
+			vehicle.entity = vic.entity_name
+			vehicle.vehicle_type = vic.vehicle_type
+			vehicle.vehicle_shape = vic.vehicle_shape
+			vehicle.vehicle_brand = vic.vehicle_brand
+			vehicle.vehicle_model = vic.vehicle_model
+			vehicle.vehicle_style = vic.vehicle_style
+			vehicle.vehicle_color = vic.vehicle_color
+			vehicle.chassis_no = vic.chassis_no
+			vehicle.motor_no = vic.motor_no
+
+		elif frappe.db.exists(
+			"Vehicles",
+			{"police_id": self.vehicle_no, "vehicle_status": "مخردة"},
+		):
+			if self.vehicle_type2:
+				vic = frappe.get_doc(
+					"Vehicles",
+					{
+						"police_id": self.vehicle_no,
+						"vehicle_type": self.vehicle_type2
+					},
+				)
+				get_list_count = frappe.db.get_list(
+					"Vehicles",
+					filters={
+						"police_id": self.vehicle_no,
+						"vehicle_status": "مخردة",
+						"vehicle_type": self.vehicle_type2,
+					},
+					fields=["police_id", "vehicle_type"],
+				)
+				if len(get_list_count) > 1:
+					vehicle_types = " <br> "
+					for row in get_list_count:
+						vehicle_types = vehicle_types + " <br> " + row.vehicle_type
+					vehicle_no = "يوجد عدد {count} مركبة بنفس رقم الشرطة {vehicle_no} <br> \
+					برجاء تحديد نوع المركبة : {vehicle_types}".format(
+						count=len(get_list_count),
+						vehicle_no=self.vehicle_no,
+						vehicle_types=vehicle_types,
+					)
+					frappe.throw(vehicle_no)
+						
+			else:
+				vic = frappe.get_doc(
+					"Vehicles",
+					{
+						"police_id": self.vehicle_no,
+						"vehicle_status": "مخردة"
+					},
+				)
+
+
+			if vic.vehicle_status != "مخردة":
+				frappe.throw(
+					"المركبة رقم {vehicle_no} ليست مخردة".format(
+						vehicle_no=vic.vehicle_no
+					)
+				)
+
+
+			vehicle = self.append("auction_sales_slips", {})
+			vehicle.vehicle = vic.name
+			vehicle.police_id = self.vehicle_no
+			vehicle.entity = vic.entity_name
+			vehicle.vehicle_type = vic.vehicle_type
+			vehicle.vehicle_shape = vic.vehicle_shape
+			vehicle.vehicle_brand = vic.vehicle_brand
+			vehicle.vehicle_model = vic.vehicle_model
+			vehicle.vehicle_style = vic.vehicle_style
+			vehicle.vehicle_color = vic.vehicle_color
+			vehicle.chassis_no = vic.chassis_no
+			vehicle.motor_no = vic.motor_no
+
+		else:
+			vehicle_no = self.vehicle_no
+
+			frappe.throw(
+				"لا يوجد مركبة برقم {vehicle_no}".format(vehicle_no=vehicle_no)
+			)
+
+		self.vehicle_type2 = None
+			
+
+	
+	@frappe.whitelist()
 	def validate(self):
 		for d in self.auction_sales_slips:
 			vehicle_status = frappe.db.get_value("Vehicles", d.vehicle, "vehicle_status")

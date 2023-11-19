@@ -1,3 +1,15 @@
+frappe.ui.form.on("Scrapped Vehicle Certificate", "onload", function(frm) {
+    if(!cur_frm.doc.fiscal_year){
+        frappe.call({ method: "frappe.client.get_value", 
+            args: {
+                doctype: "System Defaults",
+                fieldname: "default_fiscal_year",
+            },
+            callback: function(r) { cur_frm.set_value("fiscal_year", r.message.default_fiscal_year); }
+        });
+    }
+});
+
 frappe.ui.form.on('Scrapped Vehicle Certificate', {
 	onload: function(frm) {
 		frm.set_query("vehicle", function() {
