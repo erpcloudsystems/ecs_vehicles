@@ -5,6 +5,17 @@ import frappe
 from frappe.utils import now, nowdate
 from frappe.model.document import Document
 
+def pad_zeros_to_10_digits(input_str):
+    """
+    Pad zeros to the beginning of the input string to make it have a length of 10 digits.
+    """
+    current_length = len(input_str)
+    if current_length < 10:
+        zeros_to_add = 10 - current_length
+        padded_str = '0' * zeros_to_add + input_str
+        return padded_str
+    else:
+        return input_str
 
 def liquid_voucher_receipt(name):
     self = frappe.get_doc("Liquid Vouchers Receipt", name)
@@ -30,6 +41,7 @@ def liquid_voucher_receipt(name):
 
     if frappe.db.exists("Receipt Voucher Table", 1):
         record_name = int(max_id[0]["max_name"]) + 1
+
     frappe.db.sql(
         """ INSERT INTO `tabReceipt Voucher Table` (receipt_id, receipt_no, receipt_group, receipt_date, po_no, 
                                 po_date, liquid_voucher,edition_no, notebook_count, from_voucher, to_voucher,
@@ -92,12 +104,7 @@ def liquid_voucher_receipt(name):
         if self.liquid_type == "زيت":
             voucher_type = self.oil_type
             fuel_type = self.oil_type
-
-            if len(str(no)) == 5:
-                no = "00" + str(no)
-            
-            elif len(str(no)) == 6:
-                no = "0" + str(no)
+            no = pad_zeros_to_10_digits(str(no))
 
             barcode_no = (
                 str(frappe.db.get_value("Oil Type", self.oil_type, "code"))
@@ -135,6 +142,7 @@ def liquid_voucher_receipt(name):
         if self.liquid_type == "غسيل":
             voucher_type = self.washing_voucher
             fuel_type = self.washing_voucher
+            no = pad_zeros_to_10_digits(str(no))
             barcode_no = (
                 str(
                     frappe.db.get_value(
@@ -191,8 +199,6 @@ class LiquidVouchersReceipt(Document):
     def set_today_date(doc, method=None):
         if not doc.receipt_date:
             doc.receipt_date = nowdate()
-
-
     def before_insert(self):
         if (
             frappe.db.exists(
@@ -286,15 +292,15 @@ class LiquidVouchersReceipt(Document):
             )
 
         if self.liquid_type == "زيت":
-            if len(str(self.from_voucher)) == 5:
-                self.from_voucher = "00" + str(self.from_voucher)
-            if len(str(self.to_voucher)) == 5:
-                self.to_voucher = "00" + str(self.to_voucher)
-            if len(str(self.from_voucher)) == 6:
-                self.from_voucher = "0" + str(self.from_voucher)
-            if len(str(self.to_voucher)) == 6:
-                self.to_voucher = "0" + str(self.to_voucher)
-
+           
+            self.from_voucher =pad_zeros_to_10_digits(str(self.from_voucher))
+        
+            self.to_voucher = pad_zeros_to_10_digits(str(self.to_voucher))
+        elif self.liquid_type == "غسيل":
+           
+            self.from_voucher =pad_zeros_to_10_digits(str(self.from_voucher))
+        
+            self.to_voucher = pad_zeros_to_10_digits(str(self.to_voucher))  
         if self.liquid_type == "غاز":
             self.qty = (
                 frappe.db.get_value("Gas Voucher", self.gas_type, "gas_count")

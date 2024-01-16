@@ -16,7 +16,8 @@ def get_cards_no():
                                 from_serial,
                                 to_serial
                                 from `tabAdd License Cards`
-                                WHERE `tabAdd License Cards`.default = 1""",
+                                WHERE `tabAdd License Cards`.default = 1
+                                AND docstatus = 1""",
         as_dict=1,
     )
     try:
@@ -254,16 +255,16 @@ class VehicleLicense(Document):
                 " برجاء إختيار مركبة مختلفة حيث أنك قمت بإختيار نفس المركبة في المركبة (3) والمركبة (4) "
             )
 
-        if self.vehicle_color in ("مموه", "أبيض * كحلي") and self.private_no != "0" and self.private_no is not None:
+        if self.vehicle_color in ("مموه", "أبيض * كحلي") and self.private_no != "0" and self.private_no is not None and self.private_no != "":
             frappe.throw(" لا يمكن إصدار رخصة للمركبة (1) رقم " + str(self.police_no) + " لوجود رقم ملاكي " + str(self.private_no) + " على المركبة ولون المركبة " + str(self.vehicle_color))
 
-        if self.vehicle_color2 in ("مموه", "أبيض * كحلي") and self.private_no2 != "0" and self.private_no2 is not None:
+        if self.vehicle_color2 in ("مموه", "أبيض * كحلي") and self.private_no2 != "0" and self.private_no2 is not None and self.private_no2 != "":
             frappe.throw(" لا يمكن إصدار رخصة للمركبة (2) رقم " + str(self.police_no2) + " لوجود رقم ملاكي " + str(self.private_no2) + " على المركبة ولون المركبة " + str(self.vehicle_color2))
 
-        if self.vehicle_color3 in ("مموه", "أبيض * كحلي") and self.private_no3 != "0" and self.private_no3 is not None:
+        if self.vehicle_color3 in ("مموه", "أبيض * كحلي") and self.private_no3 != "0" and self.private_no3 is not None  and self.private_no3 != "":
             frappe.throw(" لا يمكن إصدار رخصة للمركبة (3) رقم " + str(self.police_no3) + " لوجود رقم ملاكي " + str(self.private_no3) + " على المركبة ولون المركبة " + str(self.vehicle_color3))
 
-        if self.vehicle_color4 in ("مموه", "أبيض * كحلي") and self.private_no4 != "0" and self.private_no4 is not None:
+        if self.vehicle_color4 in ("مموه", "أبيض * كحلي") and self.private_no4 != "0" and self.private_no4 is not None  and self.private_no4 != "":
             frappe.throw(" لا يمكن إصدار رخصة للمركبة (4) رقم " + str(self.police_no4) + " لوجود رقم ملاكي " + str(self.private_no4) + " على المركبة ولون المركبة " + str(self.vehicle_color4))
         
         user = frappe.session.user

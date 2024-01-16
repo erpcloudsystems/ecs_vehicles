@@ -380,6 +380,14 @@ class LiquidsIssuing(Document):
                 compare_with_date=doc.compare_with_date, name=doc.name
             )
         )
+    @frappe.whitelist()
+    def get_rows_inpage(doc, method=None):
+        frappe.db.sql(
+            """ UPDATE `tabLiquids Issuing` SET rows_inpage = '{rows_inpage}'
+                      WHERE name = '{name}' """.format(
+                rows_inpage=doc.rows_inpage, name=doc.name
+            )
+        )
 
     @frappe.whitelist()
     def get_total_vehicles(self):

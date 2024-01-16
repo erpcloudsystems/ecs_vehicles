@@ -929,11 +929,12 @@
    "read_only": 1
   },
   {
+   "allow_on_submit": 1,
    "fetch_from": "vehicle2.possession_date",
+   "fetch_if_empty": 1,
    "fieldname": "possession_date2",
    "fieldtype": "Data",
-   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629",
-   "read_only": 1
+   "label": "\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u062d\u064a\u0627\u0632\u0629"
   },
   {
    "fieldname": "column_break_60",
@@ -1471,7 +1472,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-03 12:35:21.383208",
+ "modified": "2023-11-26 15:49:24.328082",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Vehicle License",

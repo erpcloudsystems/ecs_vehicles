@@ -330,9 +330,23 @@ frappe.ui.form.on('Liquids Issuing', {
 
         frappe.call({
             doc: frm.doc,
-            method: "get_compare_with_date",
+            method: "get_get_rows_inpage",
             callback: function (r) {
                 frm.refresh_field("compare_with_date");
+                frm.refresh_fields();
+                frm.refresh()
+            }
+        });
+
+    },
+
+    rows_inpage: function (frm) {
+
+        frappe.call({
+            doc: frm.doc,
+            method: "get_rows_inpage",
+            callback: function (r) {
+                frm.refresh_field("rows_inpage");
                 frm.refresh_fields();
                 frm.refresh()
             }

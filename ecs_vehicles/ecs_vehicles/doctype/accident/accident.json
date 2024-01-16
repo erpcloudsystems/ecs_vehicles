@@ -272,14 +272,16 @@
    "allow_on_submit": 1,
    "fieldname": "ministry_party_name",
    "fieldtype": "Data",
-   "label": "\u0627\u0644\u0627\u0633\u0645"
+   "label": "\u0627\u0644\u0627\u0633\u0645",
+   "reqd": 1
   },
   {
    "allow_on_submit": 1,
    "fieldname": "ministry_party_type",
    "fieldtype": "Link",
    "label": "\u0646\u0648\u0639\u064a\u062a\u0647",
-   "options": "Ministry Party Type"
+   "options": "Ministry Party Type",
+   "reqd": 1
   },
   {
    "allow_on_submit": 1,
@@ -676,7 +678,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-09 11:11:49.163680",
+ "modified": "2024-01-15 13:40:28.401425",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Accident",

@@ -13,6 +13,11 @@
   "column_break_3",
   "code",
   "disabled",
+  "liquid_type",
+  "fuel_voucher",
+  "oil_type",
+  "gas_type",
+  "washing_voucher",
   "section_break_5",
   "receipt_table"
  ],
@@ -65,11 +70,46 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "\u062a\u0639\u0637\u064a\u0644"
+  },
+  {
+   "fieldname": "liquid_type",
+   "fieldtype": "Select",
+   "label": "\u0646\u0648\u0639 \u0627\u0644\u0633\u0627\u0626\u0644",
+   "options": "\n\u0648\u0642\u0648\u062f\n\u0632\u064a\u062a\n\u063a\u0627\u0632\n\u063a\u0633\u064a\u0644"
+  },
+  {
+   "depends_on": "eval:doc.liquid_type == \"\u0648\u0642\u0648\u062f\"",
+   "fieldname": "fuel_voucher",
+   "fieldtype": "Link",
+   "label": "\u0628\u0648\u0646 \u0627\u0644\u0648\u0642\u0648\u062f",
+   "options": "Fuel Voucher"
+  },
+  {
+   "depends_on": "eval:doc.liquid_type == \"\u0632\u064a\u062a\"",
+   "fieldname": "oil_type",
+   "fieldtype": "Link",
+   "label": "\u0628\u0648\u0646 \u0627\u0644\u0632\u064a\u062a",
+   "options": "Oil Type"
+  },
+  {
+   "default": "\u063a\u0627\u0632 \u0637\u0628\u064a\u0639\u064a \u0641\u0626\u0629 15 \u0645\u062a\u0631 \u0645\u0643\u0639\u0628",
+   "depends_on": "eval:doc.liquid_type == \"\u063a\u0627\u0632\"",
+   "fieldname": "gas_type",
+   "fieldtype": "Link",
+   "label": "\u0628\u0648\u0646 \u0627\u0644\u063a\u0627\u0632",
+   "options": "Gas Voucher"
+  },
+  {
+   "depends_on": "eval:doc.liquid_type == \"\u063a\u0633\u064a\u0644\"",
+   "fieldname": "washing_voucher",
+   "fieldtype": "Link",
+   "label": "\u0628\u0648\u0646 \u0627\u0644\u063a\u0633\u064a\u0644",
+   "options": "Washing Vouchers"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-06-13 14:53:58.934493",
+ "modified": "2023-12-03 10:41:48.727949",
  "modified_by": "Administrator",
  "module": "Ecs Vehicles",
  "name": "Release Date",

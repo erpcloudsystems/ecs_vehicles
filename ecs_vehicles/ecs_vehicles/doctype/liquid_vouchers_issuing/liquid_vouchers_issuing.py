@@ -35,8 +35,8 @@ class LiquidVouchersIssuing(Document):
                     + y.liquid
                 )
 
-            if self.issue_type == "زيت":
-                serial = str(min_code_list[0]["min"])
+            if self.issue_type == "زيت" or self.issue_type == "غسيل":
+                serial = pad_zeros_to_10_digits(str(min_code_list[0]["min"]))
             else:
                 serial = int(min_code_list[0]["min"])
             y.from_serial = serial
@@ -69,7 +69,7 @@ class LiquidVouchersIssuing(Document):
                 ),
                 as_dict=1,
             )
-            y.to_serial = to_serial[-1].serial_no
+            y.to_serial = pad_zeros_to_10_digits(str(to_serial[-1].serial_no))
 
     def on_submit(self):
         for x in self.qty_per_liquid:
@@ -87,14 +87,8 @@ class LiquidVouchersIssuing(Document):
                         fuel_type=x.liquid,
                     )
                 )
-
                 next_serial = int(voucher) + 1
-                if self.issue_type == "زيت" and len(str(next_serial)) == 5:
-                    voucher = "00" + str(next_serial)
-                elif self.issue_type == "زيت" and len(str(next_serial)) == 6:
-                    voucher = "0" + str(next_serial)
-                else:
-                    voucher = next_serial
+                voucher = pad_zeros_to_10_digits(str(next_serial))
                 serial_count -= 1
 
         frappe.db.sql(
@@ -138,3 +132,15 @@ class LiquidVouchersIssuing(Document):
 
         liquid_issuing = frappe.get_doc("Liquids Issuing", self.liquids_issuing)
         liquid_issuing.reload()
+
+def pad_zeros_to_10_digits(input_str):
+    """
+    Pad zeros to the beginning of the input string to make it have a length of 10 digits.
+    """
+    current_length = len(input_str)
+    if current_length < 10:
+        zeros_to_add = 10 - current_length
+        padded_str = '0' * zeros_to_add + input_str
+        return padded_str
+    else:
+        return input_str
